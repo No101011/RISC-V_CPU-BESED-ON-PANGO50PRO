@@ -1,0 +1,75 @@
+{
+  "configuration": "B2",
+  "created_date": "2026-10-11",
+  "isa": "rv32im_zba_zicsr",
+  "optimization": "O3",
+  "lto": false,
+  "compiler": "xPack GCC 15.2.0",
+  "cpu_rtl_changed": false,
+  "active_dat_selected_by_this_build": false,
+  "existing_active_mode": "validation",
+  "recommended_first_package": "performance_long",
+  "b1_reference_cycles_per_iteration": 395793.1659090909,
+  "b1_reference_coremark_per_mhz": 2.5265721748962395,
+  "packages": [
+    {
+      "package": "performance",
+      "run_mode": "performance",
+      "iterations": 2200,
+      "cpu_hz": 83333333,
+      "text_bytes": 21836,
+      "static_zba_instruction_sites": 43,
+      "test_status": "not run; user will compare B2",
+      "imem_sha256": "fc6c9e7ef22c7581f025fad7938b5b349fff15b8fd786dd7cde2c5f07daf090a",
+      "dmem_sha256": "32c7e3ad06166416e1a2943625a963e9c9c2f51b8e7639df2f36bba6d9855bcd"
+    },
+    {
+      "package": "performance_long",
+      "run_mode": "performance",
+      "iterations": 4000,
+      "cpu_hz": 83333333,
+      "text_bytes": 21836,
+      "static_zba_instruction_sites": 43,
+      "test_status": "performance passed per user-provided UART log, 2026-10-11; 19.007083 seconds; CRC passed; PDS timing not rechecked",
+      "board_log": "performance_long/board_performance_2026-10-11.log",
+      "board_coremark": 210.447866,
+      "board_coremark_per_mhz": 2.525374404859298,
+      "board_cycles_per_iteration": 395980.88825,
+      "imem_sha256": "bb1ab486cd9d7fd1bfde652e6d4e478bd0210e79e783d622e39ae8be6bea4dc9",
+      "dmem_sha256": "bc70aaf18e7caf7ffd60ec70df2d4e4231f0c154f8d08f426d02dd169191f133"
+    },
+    {
+      "package": "validation",
+      "run_mode": "validation",
+      "iterations": 4000,
+      "cpu_hz": 83333333,
+      "text_bytes": 21836,
+      "static_zba_instruction_sites": 43,
+      "test_status": "not run; user will compare B2",
+      "imem_sha256": "145824a60420dc1ead9b772afa546bcd0cfb3b4d571d544fd77b8cb8e2d05cd5",
+      "dmem_sha256": "f1f1789ce978701536b458039b4e309b523f75bc908eaa7e5f3aaa58df189b95"
+    },
+    {
+      "package": "sim_performance",
+      "run_mode": "performance",
+      "iterations": 10,
+      "cpu_hz": 100000000,
+      "text_bytes": 21836,
+      "static_zba_instruction_sites": 43,
+      "test_status": "not run; user will compare B2",
+      "imem_sha256": "87a5146ec246caa061d0f64bb75d84736178a6f7aa1841cddaf008a0ffc9aa08",
+      "dmem_sha256": "e1741c0506f7efbc1faeb4b16554a5593e7ae779610eeedbb9ef26adf84ee819"
+    },
+    {
+      "package": "sim_validation",
+      "run_mode": "validation",
+      "iterations": 10,
+      "cpu_hz": 100000000,
+      "text_bytes": 21836,
+      "static_zba_instruction_sites": 43,
+      "test_status": "not run; user will compare B2",
+      "imem_sha256": "b86a614eb8e441a8eb44641f39bc6419edf877be8442d48ced4cfb078b2e29a1",
+      "dmem_sha256": "f940e282377371ac251d7bdf5abd81ff2522ce6dca86d3e0c0f27c392cc691e5"
+    }
+  ]
+}

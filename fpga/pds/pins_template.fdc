@@ -1,0 +1,485 @@
+# ============================================================
+# RISCV_BASEDON_PANGU   pin/package constraint TEMPLATE  (76 ports)
+# Top module : top   (rtl/perip/top.sv)     Package: FBG484 (PGL50H)
+#
+# !! DO NOT ADD THIS FILE TO THE PROJECT WHILE TODO IS STILL THERE !!
+# Every PAP_IO_LOC below is the placeholder TODO. PDS reads it as a literal
+# package pin named "TODO" and refuses to place it, one error per port:
+#     E: UserConstraintEditor-0008: ... Package pin TODO can not be placed.
+#
+# HOW TO USE
+#   1. Replace every {TODO} with the real pin number from the board schematic,
+#      e.g.  define_attribute {p:i_uart_rx} {PAP_IO_LOC} {D18}
+#   2. Check PAP_IO_VCCIO / PAP_IO_STANDARD against the bank voltage of that pin
+#      (LVCMOS33/3.3 below is only a placeholder; the clock pair uses LVDS25).
+#   3. Only when no TODO is left:
+#        - either add this file to the project (Add Constraint File),
+#        - or paste the Io Table section into pins.fdc.
+#   4. Ports that you leave unconstrained are simply auto-placed by PDS;
+#      you can also delete the lines you do not want to constrain yet.
+# ============================================================
+
+###==== BEGIN Io Table
+
+# ---- 200 MHz differential clock pair (LVDS) ----
+define_attribute {p:i_sys_clk_p} {PAP_IO_DIRECTION} {Input}
+define_attribute {p:i_sys_clk_p} {PAP_IO_LOC} {TODO}
+define_attribute {p:i_sys_clk_p} {PAP_IO_VCCIO} {2.5}
+define_attribute {p:i_sys_clk_p} {PAP_IO_STANDARD} {LVDS25}
+
+define_attribute {p:i_sys_clk_p} {PAP_IO_DIFF_IN_TERM_MODE} {OFF}
+
+define_attribute {p:i_sys_clk_n} {PAP_IO_DIRECTION} {Input}
+define_attribute {p:i_sys_clk_n} {PAP_IO_LOC} {TODO}
+define_attribute {p:i_sys_clk_n} {PAP_IO_VCCIO} {2.5}
+define_attribute {p:i_sys_clk_n} {PAP_IO_STANDARD} {LVDS25}
+
+define_attribute {p:i_sys_clk_n} {PAP_IO_DIFF_IN_TERM_MODE} {OFF}
+
+# ---- UART ----
+define_attribute {p:i_uart_rx} {PAP_IO_DIRECTION} {Input}
+define_attribute {p:i_uart_rx} {PAP_IO_LOC} {TODO}
+define_attribute {p:i_uart_rx} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:i_uart_rx} {PAP_IO_STANDARD} {LVCMOS33}
+
+define_attribute {p:o_uart_tx} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:o_uart_tx} {PAP_IO_LOC} {TODO}
+define_attribute {p:o_uart_tx} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:o_uart_tx} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:o_uart_tx} {PAP_IO_DRIVE} {8}
+
+# ---- virtual_led[31:0] ----
+define_attribute {p:virtual_led[0]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[0]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[0]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[0]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[0]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[1]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[1]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[1]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[1]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[1]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[2]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[2]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[2]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[2]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[2]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[3]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[3]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[3]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[3]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[3]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[4]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[4]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[4]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[4]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[4]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[5]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[5]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[5]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[5]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[5]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[6]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[6]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[6]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[6]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[6]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[7]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[7]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[7]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[7]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[7]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[8]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[8]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[8]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[8]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[8]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[9]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[9]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[9]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[9]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[9]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[10]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[10]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[10]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[10]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[10]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[11]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[11]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[11]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[11]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[11]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[12]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[12]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[12]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[12]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[12]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[13]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[13]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[13]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[13]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[13]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[14]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[14]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[14]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[14]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[14]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[15]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[15]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[15]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[15]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[15]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[16]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[16]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[16]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[16]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[16]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[17]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[17]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[17]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[17]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[17]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[18]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[18]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[18]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[18]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[18]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[19]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[19]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[19]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[19]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[19]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[20]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[20]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[20]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[20]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[20]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[21]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[21]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[21]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[21]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[21]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[22]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[22]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[22]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[22]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[22]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[23]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[23]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[23]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[23]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[23]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[24]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[24]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[24]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[24]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[24]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[25]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[25]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[25]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[25]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[25]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[26]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[26]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[26]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[26]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[26]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[27]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[27]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[27]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[27]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[27]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[28]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[28]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[28]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[28]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[28]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[29]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[29]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[29]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[29]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[29]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[30]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[30]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[30]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[30]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[30]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_led[31]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_led[31]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_led[31]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_led[31]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_led[31]} {PAP_IO_DRIVE} {8}
+
+# ---- virtual_seg[39:0]  (bit 7/17/27/37 = decimal point, tied to 0 in RTL) ----
+define_attribute {p:virtual_seg[0]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[0]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[0]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[0]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[0]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[1]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[1]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[1]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[1]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[1]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[2]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[2]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[2]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[2]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[2]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[3]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[3]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[3]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[3]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[3]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[4]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[4]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[4]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[4]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[4]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[5]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[5]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[5]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[5]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[5]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[6]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[6]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[6]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[6]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[6]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[7]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[7]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[7]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[7]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[7]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[8]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[8]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[8]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[8]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[8]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[9]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[9]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[9]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[9]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[9]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[10]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[10]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[10]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[10]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[10]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[11]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[11]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[11]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[11]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[11]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[12]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[12]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[12]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[12]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[12]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[13]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[13]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[13]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[13]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[13]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[14]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[14]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[14]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[14]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[14]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[15]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[15]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[15]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[15]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[15]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[16]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[16]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[16]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[16]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[16]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[17]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[17]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[17]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[17]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[17]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[18]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[18]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[18]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[18]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[18]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[19]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[19]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[19]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[19]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[19]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[20]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[20]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[20]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[20]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[20]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[21]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[21]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[21]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[21]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[21]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[22]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[22]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[22]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[22]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[22]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[23]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[23]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[23]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[23]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[23]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[24]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[24]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[24]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[24]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[24]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[25]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[25]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[25]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[25]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[25]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[26]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[26]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[26]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[26]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[26]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[27]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[27]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[27]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[27]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[27]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[28]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[28]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[28]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[28]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[28]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[29]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[29]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[29]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[29]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[29]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[30]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[30]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[30]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[30]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[30]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[31]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[31]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[31]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[31]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[31]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[32]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[32]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[32]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[32]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[32]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[33]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[33]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[33]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[33]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[33]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[34]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[34]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[34]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[34]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[34]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[35]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[35]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[35]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[35]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[35]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[36]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[36]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[36]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[36]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[36]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[37]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[37]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[37]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[37]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[37]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[38]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[38]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[38]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[38]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[38]} {PAP_IO_DRIVE} {8}
+
+define_attribute {p:virtual_seg[39]} {PAP_IO_DIRECTION} {Output}
+define_attribute {p:virtual_seg[39]} {PAP_IO_LOC} {TODO}
+define_attribute {p:virtual_seg[39]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:virtual_seg[39]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:virtual_seg[39]} {PAP_IO_DRIVE} {8}
+
+###==== END Io Table

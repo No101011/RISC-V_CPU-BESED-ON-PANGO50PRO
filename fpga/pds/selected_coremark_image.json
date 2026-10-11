@@ -1,0 +1,42 @@
+{
+  "run_mode": "validation",
+  "iterations": 4000,
+  "cpu_hz": 83333333,
+  "total_data_size": 2000,
+  "instruction_words": 4928,
+  "initial_data_words": 781,
+  "official_commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777",
+  "official_source_md5_lf": {
+    "core_main.c": "4a9e6dadce1ac3866381021fbe843fc9",
+    "core_list_join.c": "9007fe7861b60ee6f210d156b62974c8",
+    "core_matrix.c": "5fa21a0f7c3964167c9691db531ca652",
+    "core_state.c": "fb49e7605c125306575a83f14f5798ac",
+    "core_util.c": "45540ba2145adea1ec7ea2c72a1fbbcb",
+    "coremark.h": "b0ec69b6c8e75853d06accb3b1bcf534"
+  },
+  "compiler_flags": "-march=rv32im_zicsr -mabi=ilp32 -mcmodel=medlow -O2 -Wall -Wno-unused-variable -Wno-unused-but-set-variable -Wno-implicit-function-declaration -Wno-unused-function -Isrc -Iport -Ibuild/official/validation -DITERATIONS=4000 -DCPU_HZ=83333333 -DTOTAL_DATA_SIZE=2000 -DVALIDATION_RUN=1 -ffunction-sections -fdata-sections -fno-builtin-printf --specs=nano.specs",
+  "linker_flags": "-march=rv32im_zicsr -mabi=ilp32 -mcmodel=medlow -nostartfiles -T port/link.ld -Wl,--gc-sections -Wl,-Map=build/official/validation/coremark.map --specs=nano.specs",
+  "libraries": "-lc -lgcc -lnosys",
+  "libc": "newlib_nano",
+  "board_validation": "passed; user-provided UART output",
+  "sha256": {
+    "imem_coremark.dat": "a513fbf065390ea943ecad29c76744d2371a842303504fe51dcc3e0b656ad7e4",
+    "dmem_coremark.dat": "c028b05bd579c9ddec1c37ac2de9504918d3f000d403e1c2c2144beee34535dd",
+    "coremark.elf": "ba9386fe869d3ca5d544a5e44231652f6924ac488c6e82c07d3220239af59707",
+    "board_validation.log": "36c9af8e535e0d9b82d2d39b168b59cefd86ba951a408d70002cc5b0c2124476"
+  },
+  "board_run": {
+    "evidence": "board_validation.log",
+    "evidence_source": "user-provided UART output, not independently captured by agent",
+    "iterations": 4000,
+    "cpu_hz": 83333333,
+    "total_ticks": 1588608811,
+    "total_seconds_reported": 19.063306,
+    "iterations_per_second_reported": 209.827196,
+    "seedcrc": "0x18f2",
+    "crclist": "0xe3c1",
+    "crcmatrix": "0x0747",
+    "crcstate": "0x8d84",
+    "crcfinal": "0x5249"
+  }
+}

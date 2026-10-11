@@ -1,0 +1,27 @@
+{
+  "run_mode": "validation",
+  "iterations": 10,
+  "cpu_hz": 100000000,
+  "total_data_size": 2000,
+  "instruction_words": 5459,
+  "initial_data_words": 773,
+  "official_commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777",
+  "official_source_md5_lf": {
+    "core_main.c": "4a9e6dadce1ac3866381021fbe843fc9",
+    "core_list_join.c": "9007fe7861b60ee6f210d156b62974c8",
+    "core_matrix.c": "5fa21a0f7c3964167c9691db531ca652",
+    "core_state.c": "fb49e7605c125306575a83f14f5798ac",
+    "core_util.c": "45540ba2145adea1ec7ea2c72a1fbbcb",
+    "coremark.h": "b0ec69b6c8e75853d06accb3b1bcf534"
+  },
+  "compiler_flags": "-march=rv32im_zba_zicsr -mabi=ilp32 -mcmodel=medlow -O3 -Wall -Wno-unused-variable -Wno-unused-but-set-variable -Wno-implicit-function-declaration -Wno-unused-function -Isrc -Iport -Ibuild/b2/sim_validation -DITERATIONS=10 -DCPU_HZ=100000000 -DTOTAL_DATA_SIZE=2000 -DVALIDATION_RUN=1 -ffunction-sections -fdata-sections -fno-builtin-printf --specs=nano.specs",
+  "linker_flags": "-march=rv32im_zba_zicsr -mabi=ilp32 -mcmodel=medlow -nostartfiles -T port/link.ld -Wl,--gc-sections -Wl,-Map=build/b2/sim_validation/coremark.map --specs=nano.specs",
+  "libraries": "-lc -lgcc -lnosys",
+  "libc": "newlib_nano",
+  "board_validation": "pending; compilation is not a board run",
+  "sha256": {
+    "imem_coremark.dat": "b86a614eb8e441a8eb44641f39bc6419edf877be8442d48ced4cfb078b2e29a1",
+    "dmem_coremark.dat": "f940e282377371ac251d7bdf5abd81ff2522ce6dca86d3e0c0f27c392cc691e5",
+    "coremark.elf": "57ce2b9c017cd127812aeecea86596cc5c0cc017062f2c7271f3e75ec98f954f"
+  }
+}

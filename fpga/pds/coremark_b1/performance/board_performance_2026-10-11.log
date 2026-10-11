@@ -1,0 +1,20 @@
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 870744965
+Total time (secs): 10.448940
+Iterations/Sec   : 210.547680
+Iterations       : 2200
+Compiler version : GCC 15.2.0
+Compiler flags   : -march=rv32im_zba_zicsr -mabi=ilp32 -mcmodel=medlow -O2 -Wall -Wno-unused-variable -Wno-unused-but-set-variable -Wno-implicit-function-declaration -Wno-unused-function -Isrc -Iport -Ibuild/b1/performance -DITERATIONS=2200 -DCPU_HZ=83333333 -DTOTAL_DATA_SIZE=2000 -DPERFORMANCE_RUN=1 -ffunction-sections -fdata-sections -fno-builtin-printf --specs=nano.specs
+Memory location  : STATIC; code=IROM(BRAM), data=DRAM(BRAM); memory/core clock=1:1
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0x33ff
+Correct operation validated. See README.md for run and reporting rules.
+CoreMark 1.0 : 210.547680 / GCC 15.2.0 -march=rv32im_zba_zicsr -mabi=ilp32 -mcmodel=medlow -O2 -Wall -Wno-unused-variable -Wno-unused-but-set-variable -Wno-implicit-function-declaration -Wno-unused-function -Isrc -Iport -Ibuild/b1/performance -DITERATIONS=2200 -DCPU_HZ=83333333 -DTOTAL_DATA_SIZE=2000 -DPERFORMANCE_RUN=1 -ffunction-sections -fdata-sections -fno-builtin-printf --specs=nano.specs / STATIC; code=IROM(BRAM), data=DRAM(BRAM); memory/core clock=1:1
+CPU clock (Hz)   : 83333333
+Linker flags     : -march=rv32im_zba_zicsr -mabi=ilp32 -mcmodel=medlow -nostartfiles -T port/link.ld -Wl,--gc-sections -Wl,-Map=build/b1/performance/coremark.map --specs=nano.specs
+Link libraries   : -lc -lgcc -lnosys
+C library        : newlib_nano

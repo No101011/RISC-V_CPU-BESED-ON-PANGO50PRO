@@ -1,0 +1,123 @@
+# RISCV_BASEDON_PANGU -- PanGu 50Pro / MES2L50HP, PG2L50H-FBG484-6
+# Updated 2026-10-10 from the 50Pro material supplied in the workspace.
+# Sources (E:/download/PanGu50Pro material, original directory uses Chinese):
+#   3_Hardware/50Pro hardware manual, V1.0 (2023-12-13):
+#     printed p14: 125 MHz GCLK_DDR_P/N = V4/W4;
+#     printed p33, table 3-5: UART TX/RX = K19/P14;
+#     printed p40-41, table 3-9: LED1..8 = F13 F14 E13 E14 E16 D16 F16 E17.
+#   3_Hardware/MES-2L484-V1.4 core schematic: BANK R5 = 1.5 V;
+#     clock input has external 100 Ohm termination (R73).
+#   2_Demo/Demo/04_uart_test/uart_test.fdc and 01_led_test/led_test.fdc:
+#     confirm UART/LED locations and LVCMOS33 on BANK L3/L4/L5 (3.3 V).
+# The 50Pro SINGLE-ended oscillator is 27 MHz at Y18, not 50 MHz at P20.
+# This design uses the 125 MHz differential oscillator to preserve both clocks.
+
+# Master: 125 MHz LVDS. Do not declare a second clock on the negative input.
+create_clock -name {clk_125m} [get_ports {clk_125m_p}] -period {8} -waveform {0 4}
+
+# Logos2 GPLL: CLKIN=125, IDIV=1, MDIV=1, FDIV=6 -> VCO=750 MHz.
+# clkout0: ODIV0=15 -> 50 MHz; clkout1: ODIV1=9 -> 83.333333 MHz.
+create_generated_clock -name {clkout0} -source [get_ports {clk_125m_p}] [get_pins {pll_inst.clkout0}] -master_clock [get_clocks {clk_125m}] -multiply_by {2} -divide_by {5}
+create_generated_clock -name {clkout1} -source [get_ports {clk_125m_p}] [get_pins {pll_inst.clkout1}] -master_clock [get_clocks {clk_125m}] -multiply_by {2} -divide_by {3}
+
+# All 12 physical top-level pins are fixed below.
+# GTP_INBUFDS in top.sv sets TERM_DIFF=OFF because R73 already terminates LVDS.
+# Use SSTL15D_I at 1.5 V, exactly as the 50Pro DDR3 demo constrains V4/W4.
+# The oscillator is LVDS; the PDS port standard follows the board's R5 bank.
+define_attribute {p:clk_125m_p} {PAP_IO_DIRECTION} {INPUT}
+define_attribute {p:clk_125m_p} {PAP_IO_LOC} {V4}
+define_attribute {p:clk_125m_p} {PAP_IO_VCCIO} {1.5}
+define_attribute {p:clk_125m_p} {PAP_IO_STANDARD} {SSTL15D_I}
+define_attribute {p:clk_125m_p} {PAP_IO_NONE} {TRUE}
+
+define_attribute {p:clk_125m_n} {PAP_IO_DIRECTION} {INPUT}
+define_attribute {p:clk_125m_n} {PAP_IO_LOC} {W4}
+define_attribute {p:clk_125m_n} {PAP_IO_VCCIO} {1.5}
+define_attribute {p:clk_125m_n} {PAP_IO_STANDARD} {SSTL15D_I}
+define_attribute {p:clk_125m_n} {PAP_IO_NONE} {TRUE}
+
+define_attribute {p:i_uart_rx} {PAP_IO_DIRECTION} {INPUT}
+define_attribute {p:i_uart_rx} {PAP_IO_LOC} {P14}
+define_attribute {p:i_uart_rx} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:i_uart_rx} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:i_uart_rx} {PAP_IO_NONE} {TRUE}
+
+define_attribute {p:o_uart_tx} {PAP_IO_DIRECTION} {OUTPUT}
+define_attribute {p:o_uart_tx} {PAP_IO_LOC} {K19}
+define_attribute {p:o_uart_tx} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:o_uart_tx} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:o_uart_tx} {PAP_IO_DRIVE} {8}
+define_attribute {p:o_uart_tx} {PAP_IO_SLEW} {SLOW}
+define_attribute {p:o_uart_tx} {PAP_IO_NONE} {TRUE}
+
+define_attribute {p:led[0]} {PAP_IO_DIRECTION} {OUTPUT}
+define_attribute {p:led[0]} {PAP_IO_LOC} {F13}
+define_attribute {p:led[0]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:led[0]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:led[0]} {PAP_IO_DRIVE} {8}
+define_attribute {p:led[0]} {PAP_IO_SLEW} {SLOW}
+define_attribute {p:led[0]} {PAP_IO_NONE} {TRUE}
+
+define_attribute {p:led[1]} {PAP_IO_DIRECTION} {OUTPUT}
+define_attribute {p:led[1]} {PAP_IO_LOC} {F14}
+define_attribute {p:led[1]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:led[1]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:led[1]} {PAP_IO_DRIVE} {8}
+define_attribute {p:led[1]} {PAP_IO_SLEW} {SLOW}
+define_attribute {p:led[1]} {PAP_IO_NONE} {TRUE}
+
+define_attribute {p:led[2]} {PAP_IO_DIRECTION} {OUTPUT}
+define_attribute {p:led[2]} {PAP_IO_LOC} {E13}
+define_attribute {p:led[2]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:led[2]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:led[2]} {PAP_IO_DRIVE} {8}
+define_attribute {p:led[2]} {PAP_IO_SLEW} {SLOW}
+define_attribute {p:led[2]} {PAP_IO_NONE} {TRUE}
+
+define_attribute {p:led[3]} {PAP_IO_DIRECTION} {OUTPUT}
+define_attribute {p:led[3]} {PAP_IO_LOC} {E14}
+define_attribute {p:led[3]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:led[3]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:led[3]} {PAP_IO_DRIVE} {8}
+define_attribute {p:led[3]} {PAP_IO_SLEW} {SLOW}
+define_attribute {p:led[3]} {PAP_IO_NONE} {TRUE}
+
+define_attribute {p:led[4]} {PAP_IO_DIRECTION} {OUTPUT}
+define_attribute {p:led[4]} {PAP_IO_LOC} {E16}
+define_attribute {p:led[4]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:led[4]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:led[4]} {PAP_IO_DRIVE} {8}
+define_attribute {p:led[4]} {PAP_IO_SLEW} {SLOW}
+define_attribute {p:led[4]} {PAP_IO_NONE} {TRUE}
+
+define_attribute {p:led[5]} {PAP_IO_DIRECTION} {OUTPUT}
+define_attribute {p:led[5]} {PAP_IO_LOC} {D16}
+define_attribute {p:led[5]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:led[5]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:led[5]} {PAP_IO_DRIVE} {8}
+define_attribute {p:led[5]} {PAP_IO_SLEW} {SLOW}
+define_attribute {p:led[5]} {PAP_IO_NONE} {TRUE}
+
+define_attribute {p:led[6]} {PAP_IO_DIRECTION} {OUTPUT}
+define_attribute {p:led[6]} {PAP_IO_LOC} {F16}
+define_attribute {p:led[6]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:led[6]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:led[6]} {PAP_IO_DRIVE} {8}
+define_attribute {p:led[6]} {PAP_IO_SLEW} {SLOW}
+define_attribute {p:led[6]} {PAP_IO_NONE} {TRUE}
+
+define_attribute {p:led[7]} {PAP_IO_DIRECTION} {OUTPUT}
+define_attribute {p:led[7]} {PAP_IO_LOC} {E17}
+define_attribute {p:led[7]} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:led[7]} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:led[7]} {PAP_IO_DRIVE} {8}
+define_attribute {p:led[7]} {PAP_IO_SLEW} {SLOW}
+define_attribute {p:led[7]} {PAP_IO_NONE} {TRUE}
+
+# CPU frequency changes require synchronized PLL, FDC and CoreMark updates.
+# With this VCO: CPU = 750 / N MHz; generated-clock ratio = 6 / N from 125 MHz.
+# Current N=9, CPU_HZ=83333333, ITERS=2200 (unchanged board image).
+# Keep clkout0 at 50 MHz for UART CLK_FREQ=50000000.
+# Re-run Compile -> Synthesize -> Device Map -> P&R after changing this file.
+# Use the current multi-corner report for the selected seed (seed_*/top.rtr);
+# check clkout1 -> clkout1 WNS/TNS and setup/hold for all clock pairs.

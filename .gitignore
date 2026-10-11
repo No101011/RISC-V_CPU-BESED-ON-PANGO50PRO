@@ -1,0 +1,72 @@
+# 保留空目录占位文件
+!.gitkeep
+
+# 本地编辑器 / 工具配置，不上传
+.vscode/
+.claude/
+.workbuddy/
+
+# ModelSim / Questa 自动生成的仿真产物，不上传
+sim/programs/work/
+sim/programs/transcript
+sim/programs/vsim_stacktrace.vstf
+sim/programs/*.wlf
+sim/programs/*.vcd
+sim/programs/*.log
+sim/programs/backup/
+
+# CoreMark 编译中间产物，不上传
+tests/coremark/build/**/*.o
+tests/coremark/build/*.elf
+tests/coremark/build/*.map
+tests/coremark/build/*.dis
+tests/coremark/build/*.bin
+tests/coremark/build/coremark_build_info.h
+tests/coremark/build/**/coremark_build_info.h
+tests/coremark/build/sim_validation/
+tests/coremark/build/sim_performance/
+tests/coremark/build/official/
+fpga/pds/coremark_official/**/*.elf
+fpga/pds/_backup_coremark_selection_*/
+sim/programs/coremark_official_work/
+tests/coremark/_backup_pre_build_report_20261010/
+
+# CoreMark 仿真镜像：保留上传，也可以重新make直接跑仿真
+!tests/coremark/build/imem.hex
+!tests/coremark/build/dmem.hex
+
+# 常见临时文件
+*.tmp
+*.bak
+*.swp
+*~
+# 会话导出（体积大，不入库）
+_session_export/
+
+# ===== 重建为全新仓库时补齐 =====
+
+# 脚本里 %SystemDrive% 未展开而误建的目录（内含 Windows 缓存 .db，绝不能入库）
+%SystemDrive%/
+
+# 临时 / 备份 / 派生目录
+tmp/
+_pdf_pages/
+_backup_*/
+*_backup_*/
+transcript
+*.bak_*
+
+# Questa / ModelSim 自动生成的仿真库与数据库（可由源码重新编译生成）
+@_opt/
+*.qpg
+*.qdb
+*.qtl
+*.wlf
+*.vstf
+
+# 编译产物补齐（原规则只覆盖 tests/coremark/build，这里覆盖全仓库）
+*.dump
+*.dis
+*.map
+*.elf
+fpga/pds/**/*.zip

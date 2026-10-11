@@ -1,0 +1,41 @@
+{
+  "run_mode": "performance",
+  "iterations": 2200,
+  "cpu_hz": 83333333,
+  "total_data_size": 2000,
+  "instruction_words": 4877,
+  "initial_data_words": 779,
+  "official_commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777",
+  "official_source_md5_lf": {
+    "core_main.c": "4a9e6dadce1ac3866381021fbe843fc9",
+    "core_list_join.c": "9007fe7861b60ee6f210d156b62974c8",
+    "core_matrix.c": "5fa21a0f7c3964167c9691db531ca652",
+    "core_state.c": "fb49e7605c125306575a83f14f5798ac",
+    "core_util.c": "45540ba2145adea1ec7ea2c72a1fbbcb",
+    "coremark.h": "b0ec69b6c8e75853d06accb3b1bcf534"
+  },
+  "compiler_flags": "-march=rv32im_zba_zicsr -mabi=ilp32 -mcmodel=medlow -O2 -Wall -Wno-unused-variable -Wno-unused-but-set-variable -Wno-implicit-function-declaration -Wno-unused-function -Isrc -Iport -Ibuild/b1/performance -DITERATIONS=2200 -DCPU_HZ=83333333 -DTOTAL_DATA_SIZE=2000 -DPERFORMANCE_RUN=1 -ffunction-sections -fdata-sections -fno-builtin-printf --specs=nano.specs",
+  "linker_flags": "-march=rv32im_zba_zicsr -mabi=ilp32 -mcmodel=medlow -nostartfiles -T port/link.ld -Wl,--gc-sections -Wl,-Map=build/b1/performance/coremark.map --specs=nano.specs",
+  "libraries": "-lc -lgcc -lnosys",
+  "libc": "newlib_nano",
+  "board_validation": "performance passed per user-provided UART log, 2026-10-11; B1 validation-mode run still pending; PDS timing not rechecked",
+  "board_run_evidence": {
+    "source": "user-provided UART text; not directly captured by the agent",
+    "log": "board_performance_2026-10-11.log",
+    "iterations": 2200,
+    "total_ticks": 870744965,
+    "total_time_seconds": 10.448940,
+    "coremark": 210.547680,
+    "coremark_per_mhz": 2.5265721748962395,
+    "seedcrc": "e9f5",
+    "crclist": "e714",
+    "crcmatrix": "1fd7",
+    "crcstate": "8e3a",
+    "crcfinal": "33ff"
+  },
+  "sha256": {
+    "imem_coremark.dat": "58799e9a43c5fe2f61308088f919933e58de43eb8e7bdc005b08b2222ec5b5d7",
+    "dmem_coremark.dat": "fd1e181065d7b6f89811cdcb74375a5633a016c41d7f95b9f7fc9367eb8dd1db",
+    "coremark.elf": "bda2d034a0074fef1996c0d3e7fa34021b1ff7b5bfbf3ffe87f8c2bbcfbe4da2"
+  }
+}
