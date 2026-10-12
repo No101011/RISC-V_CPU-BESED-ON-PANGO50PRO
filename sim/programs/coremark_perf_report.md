@@ -96,3 +96,45 @@ EXIT/TIMEOUT 打印延后一小步，避免与统计线程在同一个仿真事�
 2026-10-11 检查记录：ModelSim 2020.4 的 vlog 编译和 vopt 展开均为
 0 Errors / 0 Warnings；当前性能镜像与 10 次短验证镜像的 ELF/HEX 元数据匹配。
 本次未运行 RTL 仿真，窗口与 UART ticks 的动态对账、统计数值和 CSV 内容尚待运行确认。
+
+2026-10-11 后续动态检查：新BTB配合B1 Zba+O2、10次performance/validation镜像
+均正常EXIT，CRC正确，UART ticks与观察窗口分别3557698/3566657，均MATCH。
+对照修改前myCPU备份，同一performance镜像为3956123周期。
+详细结果及原始CSV在 `sim/results/btb_2bit_tag_20261011_194410/`。
+发现ModelSim 2020.4在自动task内将packed计数切片直接传给函数时，
+部分CPI/比例错误地显示0；独立诊断中复制到局部64位变量后调用函数正常。
+正式TB尚未修复此显示问题，不能使用其原始CPI/准确率字段作结论；
+此次summary.json与README的比例均根据原始整数计数重新计算。
+计时窗口对账、原始计数以及每迭代周期不受此次已观察到的显示问题影响。
+
+## B2 PC 热点统计与比例修复（2026-10-11）
+
+用户授权运行B2热点仿真后，现已补充可选的计时区间PC统计：
+
+```powershell
+$env:COREMARK_HOTSPOT_CSV = '../results/my_run/hotspots.csv'
+```
+
+输出目录需预先存在。使用当前新BTB RTL时，testbench输出
+`scope,metric,pc,value` 四列CSV；仅在正常EXIT、完整计时窗口且UART ticks对账成功后导出。
+每个新start_time采样会清空PC桶，因此与整体报表一样只保留最后一组计时窗口。
+
+- load/mul消费者：按实际hazard信号归因到ID的`d_pc`，每个对应周期计一次。
+- 生产者：分别归因到EX1、EX2、MEM1的load/mul PC；阶段桶可能重叠，不能当成互斥损失相加。
+- branch：EX2解析事件及方向/目标错误，计数口径与现有整体计数一致。
+- jump：分为JAL、标准RET（jalr x0,0(x1/x5)）、其他jump；互斥分组之和等于原jump总计。
+- D1：EX1推进且load地址已就绪时的probe、hit、SB/L0选择、miss；这是地址已就绪查询的命中率，不是全部load或全部L0访问的命中率。
+
+ModelSim 2020.4比例问题已修复：原始packed task输入先复制到局部64位数组，
+比例使用现场`real'(...)`转换和除法，避免数组/切片作为嵌套函数实参时的错误。
+仅复制到unpacked数组后继续调用函数仍会显示错误，因此最终修复采用现场计算。
+独立诊断及两次完整B2运行已验证：原始计数、PC直方图完全一致，最终CPI与Python重算一致。
+
+B2为Zba+O3、无LTO，10次performance @TB 100MHz：正常EXIT，CRC=e714/1fd7/8e3a，
+seedcrc=e9f5，计时窗口3507488周期与UART MATCH；CPI_arch=1.207882134。
+load依赖321131周期（9.156%），mul依赖129600（3.695%），计时区间MDU停顿0。
+分支准确率92.535%，jump准确率99.423%；RET误预测299/13735。
+按PC桶汇总与整体计数逐项核对，通过；函数/指令从匹配ELF和反汇编映射。
+
+完整日志、CSV、注释后的PC清单、汇总脚本和复现命令在
+`sim/results/b2_hotspots_20261011_220300/`。短仿真不足10秒提示为预期，正式分数继续采用上板B2成绩。

@@ -1,0 +1,35 @@
+{
+  "official_url": "https://github.com/eembc/coremark",
+  "acquisition": "Official codeload HEAD ZIP after git clone connection failures",
+  "archive_url": "https://codeload.github.com/eembc/coremark/zip/HEAD",
+  "archive_sha256": "2fb1065f40af2dc7dd533a366c737b219416aab77abd7e4db7a2067a908be4cb",
+  "archive_git_comment": "1f483d5b8316753a742cbf5590caf5bd0a4e4777",
+  "official_source": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark_official_reclone_20261011\\official_source\\coremark-HEAD",
+  "build_workspace": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark_official_reclone_20261011\\rebuild_workspace\\tests\\coremark",
+  "source_comparison": {
+    "core_main.c": {
+      "fresh_md5_lf": "4a9e6dadce1ac3866381021fbe843fc9",
+      "same_as_existing": true
+    },
+    "core_list_join.c": {
+      "fresh_md5_lf": "9007fe7861b60ee6f210d156b62974c8",
+      "same_as_existing": true
+    },
+    "core_matrix.c": {
+      "fresh_md5_lf": "5fa21a0f7c3964167c9691db531ca652",
+      "same_as_existing": true
+    },
+    "core_state.c": {
+      "fresh_md5_lf": "fb49e7605c125306575a83f14f5798ac",
+      "same_as_existing": true
+    },
+    "core_util.c": {
+      "fresh_md5_lf": "45540ba2145adea1ec7ea2c72a1fbbcb",
+      "same_as_existing": true
+    },
+    "coremark.h": {
+      "fresh_md5_lf": "b0ec69b6c8e75853d06accb3b1bcf534",
+      "same_as_existing": true
+    }
+  }
+}

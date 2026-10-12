@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/riscv-software-src/riscv-tests",
+  "download_url": "https://codeload.github.com/riscv-software-src/riscv-tests/zip/HEAD",
+  "commit": "7b68f7b91f827f8d94cc1c57ff123752c5c8f704",
+  "archive_sha256": "2d2c733e8c6f9986f658decb869e091233ac8a2ed1d3cb0b0501a82a20edc26f",
+  "files_sha256": {
+    "isa/rv32um/divu.S": "c9314b6ea880763293a537d3eb849906fcc83d111ef4c617b193014ef27ea8fc",
+    "isa/macros/scalar/test_macros.h": "b09abb7eec47539dde829096ca973a33b2d293d38f0902133ad2aaa6fab892dc",
+    "LICENSE": "43b7309213293b4323d65301a90e05472579abcd51feb260a850354bcb49ff8f"
+  }
+}

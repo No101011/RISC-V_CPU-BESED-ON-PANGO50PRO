@@ -17,6 +17,11 @@ typedef unsigned int   ee_u32;
 typedef ee_u32         ee_ptr_int;
 typedef size_t         ee_size_t;
 
+/* Called by the official matrix initializer; declare the pointer return type
+ * before use so LTO sees the same signature as the port implementation.
+ */
+ee_u8 *align_mem(void *memblock);
+
 #ifndef NULL
 #define NULL ((void *)0)
 #endif

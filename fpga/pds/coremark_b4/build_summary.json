@@ -1,0 +1,156 @@
+{
+  "variant": "B4",
+  "optimization": "O3",
+  "lto": true,
+  "generated_at": "2026-10-11T21:20:09+08:00",
+  "packages": [
+    {
+      "package": "performance_long",
+      "mode": "performance",
+      "iterations": 4000,
+      "cpu_hz": 83333333,
+      "text_bytes": 30060,
+      "initial_data_bytes": 3136,
+      "static_zba_sites": 42,
+      "build_exit_code": 0,
+      "sha256": {
+        "imem_coremark.dat": "3cf1338eb230ad34d9fb5ed3caf8e692cf25811462ff53acb2acef65ea7c1d0f",
+        "dmem_coremark.dat": "3087a92e25e496a21f4d6c6388745eb85612862e883c822bca9b57d9d218972f",
+        "coremark.elf": "1372162653b88b4f87dadc1d41f70744a0d11e8f86761d6dcde20181de6c8710",
+        "imem.hex": "983687e2c02fa8b154edbac172c450a4c462c2ed58f94e4cc18ee0e0eedcb1fe",
+        "dmem.hex": "bfa96cd3052fdb911cf057c6943ff1d67cca71c9dc24fa746381c698a3235412",
+        "coremark.map": "86f9d617e2a4ab687c44c1645c85758888feeb0855e152874903f75bdba3a049",
+        "coremark.dis": "c5b92778f0bb4e057c56961647853320e5cc6e8bf926145112d269b25d9dfea8",
+        "coremark.text.bin": "c2c89fda3382ed6e3cdfcf3062a09043fa1993ae02c0424b5a043ad91c49cdfc",
+        "coremark.data.bin": "48bea7a1a9956d42e594ef5b4373809dc9c8383db95559c8bb15c993ca2d7b30",
+        "coremark_build_info.h": "ed785f8e39ed2c1613d22427f1f53a967b597e1310ad2a942a880aa0fc20e072",
+        "build_log.txt": "b8dc1fa3b774edb82a67d30060fa1906ccda338e4d159c9185fc4a4bda7ebcd7"
+      }
+    },
+    {
+      "package": "validation",
+      "mode": "validation",
+      "iterations": 4000,
+      "cpu_hz": 83333333,
+      "text_bytes": 30056,
+      "initial_data_bytes": 3128,
+      "static_zba_sites": 42,
+      "build_exit_code": 0,
+      "sha256": {
+        "imem_coremark.dat": "0edcdbdd87b85aff8f3fccbefeb97a20c589949175c678a0fffe85b1e1e7d157",
+        "dmem_coremark.dat": "c605ca59926f0934e4009f8fde1d3bf6947688e6264be0a2a7a93e1839d941fc",
+        "coremark.elf": "8eb5bd10b5be7f30d634d4c0e444eb1efda3f7f4a4999e6a5a5d9e590481ff49",
+        "imem.hex": "50dea858c492c69638d96276d6fb48cf36511e40f9481741fb5695c1b11b52f6",
+        "dmem.hex": "d601fee89863cbb32d6c60897b22f2d8cce09e64a194bee095b2e6f1c92fcd4c",
+        "coremark.map": "3b5d9f8419b76d3ff10aebfd939f41c01eb8dfa159719506935b5cc45a76f81b",
+        "coremark.dis": "9fc470a0b69fb7b85d74ce75d2a60931eb6feee81daeac706df04805b85df8c0",
+        "coremark.text.bin": "e2ec266a8dc363d0aa665119c2f4751b072d21caad41de3fb4ad078a605c61db",
+        "coremark.data.bin": "8203b2a7db1e842911c02c375cc8e5c5afd6975fb6b46239bc74b83e9b06fddb",
+        "coremark_build_info.h": "46593a08020e48e43b661734af2875a6e2221d879a499e60f9e88594d87216bd",
+        "build_log.txt": "493ae6e0e222df62fa511fb6ab657eb69e723069daa66c8225a6b2215ffc0eb8",
+        "board_validation_2026-10-11.log": "702ac77e8a7e1f9e6e7ec315796224f7ede525559f2992e69309dfec78447a9b"
+      },
+      "board_result": {
+        "evidence": "user-pasted UART; not independently captured; bitstream hash and current PDS timing not checked",
+        "log_file": "board_validation_2026-10-11.log",
+        "run_mode": "validation",
+        "iterations": 4000,
+        "cpu_hz": 83333333,
+        "total_ticks": 1402217102,
+        "seconds": 16.82660529130642,
+        "iterations_per_sec": 237.7187751629633,
+        "cycles_per_iteration": 350554.2755,
+        "seedcrc": "0x18f2",
+        "crclist": "0xe3c1",
+        "crcmatrix": "0x0747",
+        "crcstate": "0x8d84",
+        "crcfinal": "0x5249",
+        "crc_and_time_check": "passed",
+        "comparison_b2_validation": {
+          "baseline_ticks": 1408802359,
+          "cycle_change_percent": -0.46743653983333244,
+          "throughput_change_percent": 0.4696317703305253
+        },
+        "comparison_b3_validation": {
+          "baseline_ticks": 1440200765,
+          "throughput_change_percent": 2.7088289642041463
+        },
+        "performance_score": "not reported: validation mode"
+      }
+    },
+    {
+      "package": "sim_performance",
+      "mode": "performance",
+      "iterations": 10,
+      "cpu_hz": 100000000,
+      "text_bytes": 30060,
+      "initial_data_bytes": 3128,
+      "static_zba_sites": 42,
+      "build_exit_code": 0,
+      "sha256": {
+        "imem_coremark.dat": "e3bc1966af29c58fdcf51ef25ab1342d61091e77a0af04d82e54b9cb9141a9c1",
+        "dmem_coremark.dat": "4e9bc6a65ce72f0d8a41e835225c372fb8a8c8001b6d35c9de9edc4bc8a34e42",
+        "coremark.elf": "4ce26969207fd0c417e53018d5cf4fd3e5b7e50358af06be1e38be09a125d003",
+        "imem.hex": "827365beec51996f73c4219d8a5d115bf21a70b2120a7ec269b09cd055db8cdb",
+        "dmem.hex": "013935be17635447e947b380b9f30779b058264840dd2cf45a8b8db6c60a8967",
+        "coremark.map": "c39e2eaf11ab4f878d99218df4e0f429d5131c6f0fff741937629949dbdaa71f",
+        "coremark.dis": "1b3cc56f67eaf0d677b710e3e6325379a78ff9819ad6f3b023a0a3822c0e591f",
+        "coremark.text.bin": "b70ed5f268bd77233ee3695db5d59ae363e078fccb3f088f807a860205850598",
+        "coremark.data.bin": "98ce4bc50d0579b837dd832f92a5ead7ea44f019abc889a5d80ed92d3c5f62ab",
+        "coremark_build_info.h": "20d76dbd9d23441232570d794967c799c0b67dedea06a1d41311158374507c09",
+        "build_log.txt": "877aaac74d04baf908e56a3364ffa8482df7dd47c9584b5a8ee8367838794ea6"
+      }
+    },
+    {
+      "package": "sim_validation",
+      "mode": "validation",
+      "iterations": 10,
+      "cpu_hz": 100000000,
+      "text_bytes": 30056,
+      "initial_data_bytes": 3136,
+      "static_zba_sites": 42,
+      "build_exit_code": 0,
+      "sha256": {
+        "imem_coremark.dat": "22b438950f7ff5de1ddf7e5731b27f618ca0055f6b1cb754d1e8c077409aa403",
+        "dmem_coremark.dat": "807487da422d0c4b2e4528d4a91217cda7be245b50c211f3799cfe44fdda31e2",
+        "coremark.elf": "90d9a9fcc12e8919f6a8f2ce5ac77bda4965abfc38807f12d53835f53bf2df5d",
+        "imem.hex": "e9b53db18ffe27b154d08d71e7e60ed23414bc63f8281877d1f4e52242349f3e",
+        "dmem.hex": "463d979253625439df426d2a265c0bcd415979cef02103f81279730679452ad8",
+        "coremark.map": "f5a06e887d22fd1af3015874fe7e65d3fd73b5f5df4ed44af68f58126c807440",
+        "coremark.dis": "b13ee9c5f59ee9df7f7a694f6b79ed190e56e4a1a5d15701f192b47ca8043631",
+        "coremark.text.bin": "4ab2cd5370787710e0ebd5096fb1c0a7911f7d5ef8fd93e3f52779ef4b31eb18",
+        "coremark.data.bin": "e2552ea4f3702d2ad37f7a900970354f4da145a96773e015b532f26280bef8c8",
+        "coremark_build_info.h": "b723190936f90998a14f946e2ea6e380421e14ea9cff2bc217cb646df6212841",
+        "build_log.txt": "39aefd3e7d510064c1dae2695825329fe4a8b1944392b20989c41baaa3175dca"
+      }
+    }
+  ],
+  "execution_status": "compiled and packaged; B4 validation passed per user UART; performance and agent RTL simulation pending",
+  "board_validation_result": {
+    "evidence": "user-pasted UART; not independently captured; bitstream hash and current PDS timing not checked",
+    "log_file": "board_validation_2026-10-11.log",
+    "run_mode": "validation",
+    "iterations": 4000,
+    "cpu_hz": 83333333,
+    "total_ticks": 1402217102,
+    "seconds": 16.82660529130642,
+    "iterations_per_sec": 237.7187751629633,
+    "cycles_per_iteration": 350554.2755,
+    "seedcrc": "0x18f2",
+    "crclist": "0xe3c1",
+    "crcmatrix": "0x0747",
+    "crcstate": "0x8d84",
+    "crcfinal": "0x5249",
+    "crc_and_time_check": "passed",
+    "comparison_b2_validation": {
+      "baseline_ticks": 1408802359,
+      "cycle_change_percent": -0.46743653983333244,
+      "throughput_change_percent": 0.4696317703305253
+    },
+    "comparison_b3_validation": {
+      "baseline_ticks": 1440200765,
+      "throughput_change_percent": 2.7088289642041463
+    },
+    "performance_score": "not reported: validation mode"
+  }
+}

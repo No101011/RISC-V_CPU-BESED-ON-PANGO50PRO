@@ -11,7 +11,8 @@
       -CpuHz 100000000 # -DCPU_HZ：仿真台 100 MHz；50Pro 上板 83333333
       -Libc newlib_nano | picolibc | newlib
       -Isa rv32im_zicsr | rv32im_zba_zicsr
-      -Optimization O2 | O3  # B1=Zba+O2, B2=Zba+O3; no LTO
+      -Optimization O2 | O3  # B1=Zba+O2, B2=Zba+O3
+      -Lto                   # B3=Zba+O2+LTO, B4=Zba+O3+LTO
 
   RunMode=Performance / Validation 使用官方两组种子；BuildDir 可分开保存产物。
   两种常用组合（默认产物落在 build\，会互相覆盖，跑完请对号入座）：
@@ -37,7 +38,8 @@ param(
     [string]$BuildDir = 'build',
     [ValidateSet('rv32im_zicsr','rv32im_zba_zicsr')][string]$Isa = 'rv32im_zicsr',
     [string]$Python = 'python',
-    [ValidateSet('O2','O3')][string]$Optimization = 'O2'
+    [ValidateSet('O2','O3')][string]$Optimization = 'O2',
+    [switch]$Lto
 )
 # 故意用 Continue：gcc 会把 warning 写到 stderr，PowerShell 5.1 会把它当成“错误记录”，
 # 若设成 Stop 就会在第一条 warning 处中断构建。这里改成靠 $LASTEXITCODE 判断成败。
@@ -54,6 +56,12 @@ Write-Host "toolchain : $GCCV"
 
 $ARCH = @(('-march=' + $Isa),'-mabi=ilp32','-mcmodel=medlow')
 $OPT  = @(('-' + $Optimization))
+$LINKOPT = @()
+if ($Lto) {
+    $OPT += '-flto'
+    # Match the compile optimization level when GCC executes LTO at link time.
+    $LINKOPT = @(('-' + $Optimization), '-flto')
+}
 $WARN = @('-Wall','-Wno-unused-variable','-Wno-unused-but-set-variable','-Wno-implicit-function-declaration','-Wno-unused-function')
 $buildPath = $BuildDir.Replace('\', '/').TrimEnd('/')
 if (-not $buildPath) { throw 'BuildDir 不能为空' }
@@ -61,6 +69,7 @@ $INC  = @('-Isrc','-Iport',('-I' + $buildPath))
 # 从实际参数生成 C 字符串头文件，避免 PowerShell 5.1 的 -D 字符串引号转义。
 $modeDefine = if ($RunMode -eq 'Validation') { '-DVALIDATION_RUN=1' } else { '-DPERFORMANCE_RUN=1' }
 $DEFS = @("-DITERATIONS=$Iters","-DCPU_HZ=$CpuHz",'-DTOTAL_DATA_SIZE=2000',$modeDefine)
+if ($Lto) { $DEFS += '-DCOREMARK_LTO=1' }
 # 也不用 -u _printf_float：端口自带 port\ee_printf.c（core_portme.h 里 HAS_PRINTF=0），
 # 几百字节就支持 %f。newlib-nano 的浮点 printf 会把 .text 撑到 40680 字节，
 # 超出 32KB IROM，链接必然失败。
@@ -70,7 +79,7 @@ switch ($Libc) {
     default       { $SPEC = @();                          $LIBS = @('-lc','-lgcc','-lnosys'); $FLOAT = @() }
 }
 $CFLAGS = $ARCH + $OPT + $WARN + $INC + $DEFS + @('-ffunction-sections','-fdata-sections','-fno-builtin-printf') + $SPEC
-$LDFLAGS = $ARCH + @('-nostartfiles','-T','port/link.ld','-Wl,--gc-sections',("-Wl,-Map=$buildPath/coremark.map")) + $FLOAT + $SPEC
+$LDFLAGS = $ARCH + $LINKOPT + @('-nostartfiles','-T','port/link.ld','-Wl,--gc-sections',("-Wl,-Map=$buildPath/coremark.map")) + $FLOAT + $SPEC
 
 New-Item -ItemType Directory -Force -Path "$buildPath/src", "$buildPath/port" | Out-Null
 $buildInfoArgs = @('--output', "$buildPath/coremark_build_info.h",

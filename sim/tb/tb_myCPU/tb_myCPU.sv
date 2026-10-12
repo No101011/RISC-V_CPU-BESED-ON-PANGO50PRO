@@ -296,11 +296,122 @@ module tb_myCPU #(
   wire perf_mul_dep = perf_e1mul || perf_e2mul;
   wire perf_d1_probe = perf_e1_advance && u_cpu.e1_mem_re && u_cpu.spec_addr_valid;
 
+  // Optional simulation-only PC attribution, covering the 32 KB instruction
+  // window. Consumer dependency buckets are cycle unions; individual producer
+  // stage buckets can overlap and must not be added as lost-cycle totals.
+  localparam H_LDC=0, H_MULC=1, H_E1LD=2, H_E2LD=3, H_M1LD=4,
+      H_E1MUL=5, H_E2MUL=6, H_BR=7, H_BRMIS=8, H_BRDIR=9, H_BRTARGET=10,
+      H_JAL=11, H_JALMIS=12, H_RET=13, H_RETMIS=14,
+      H_OTHERJ=15, H_OTHERJMIS=16, H_D1TRY=17, H_D1HIT=18,
+      H_D1SB=19, H_D1L0=20, H_D1MISS=21, H_COUNT=22;
+  longint unsigned hotspot_count [0:H_COUNT-1][0:IROM_WORDS-1];
+  bit hotspot_enabled = 0;
+  integer hotspot_csv = 0;
+  string hotspot_csv_path;
+
+  function automatic string hotspot_name(input integer k);
+    case (k)
+      H_LDC: return "load_dependency_consumer_cycles";
+      H_MULC: return "mul_dependency_consumer_cycles";
+      H_E1LD: return "e1_load_producer_cycles";
+      H_E2LD: return "e2_load_producer_cycles";
+      H_M1LD: return "m1_load_producer_cycles";
+      H_E1MUL: return "e1_mul_producer_cycles";
+      H_E2MUL: return "e2_mul_producer_cycles";
+      H_BR: return "resolved_branches";
+      H_BRMIS: return "branch_mispredictions";
+      H_BRDIR: return "branch_direction_errors";
+      H_BRTARGET: return "branch_target_errors";
+      H_JAL: return "resolved_jal";
+      H_JALMIS: return "jal_mispredictions";
+      H_RET: return "resolved_returns";
+      H_RETMIS: return "return_mispredictions";
+      H_OTHERJ: return "resolved_other_jumps";
+      H_OTHERJMIS: return "other_jump_mispredictions";
+      H_D1TRY: return "d1_eligible_probes";
+      H_D1HIT: return "d1_fastpath_hits";
+      H_D1SB: return "d1_store_buffer_selected";
+      H_D1L0: return "d1_l0_selected";
+      H_D1MISS: return "d1_fastpath_misses";
+      default: return "unknown";
+    endcase
+  endfunction
+
+  task automatic hotspot_reset;
+    integer k, p;
+    if (hotspot_enabled)
+      for (k=0; k<H_COUNT; k=k+1)
+        for (p=0; p<IROM_WORDS; p=p+1) hotspot_count[k][p] = 0;
+  endtask
+
+  task automatic hotspot_add(input integer k, input logic [31:0] pc);
+    if (pc >= 32'h80000000 && pc < 32'h80008000 && pc[1:0] == 0)
+      hotspot_count[k][pc[14:2]] = hotspot_count[k][pc[14:2]] + 1;
+    else $fatal(1, "Hotspot PC outside the IROM window: %08h", pc);
+  endtask
+
+  task automatic hotspot_sample;
+    integer jump_kind;
+    if (hotspot_enabled) begin
+      // The hazard detector compares ID operands, so attribute the waiting
+      // consumer to d_pc (not to the younger fetch queue head).
+      if (perf_ld_dep) hotspot_add(H_LDC, u_cpu.d_pc);
+      if (perf_mul_dep) hotspot_add(H_MULC, u_cpu.d_pc);
+      if (perf_e1ld) hotspot_add(H_E1LD, u_cpu.e1_pc);
+      if (perf_e2ld) hotspot_add(H_E2LD, u_cpu.e2_pc);
+      if (perf_m1ld) hotspot_add(H_M1LD, u_cpu.m1_pc4 - 32'd4);
+      if (perf_e1mul) hotspot_add(H_E1MUL, u_cpu.e1_pc);
+      if (perf_e2mul) hotspot_add(H_E2MUL, u_cpu.e2_pc);
+      if (perf_br_event) begin
+        hotspot_add(H_BR, u_cpu.e2_pc);
+        if (perf_events[P_BRMIS]) hotspot_add(H_BRMIS, u_cpu.e2_pc);
+        if (perf_events[P_BRDIR]) hotspot_add(H_BRDIR, u_cpu.e2_pc);
+        if (perf_events[P_BRTARGET]) hotspot_add(H_BRTARGET, u_cpu.e2_pc);
+      end
+      if (perf_jmp_event) begin
+        jump_kind = u_cpu.btb_ret ? H_RET : (u_cpu.btb_jal ? H_JAL : H_OTHERJ);
+        hotspot_add(jump_kind, u_cpu.e2_pc);
+        if (perf_events[P_JMPMIS]) hotspot_add(jump_kind+1, u_cpu.e2_pc);
+      end
+      if (perf_d1_probe) begin
+        hotspot_add(H_D1TRY, u_cpu.e1_pc);
+        if (u_cpu.d1_hit) begin
+          hotspot_add(H_D1HIT, u_cpu.e1_pc);
+          hotspot_add(u_cpu.d1_sb_hit ? H_D1SB : H_D1L0, u_cpu.e1_pc);
+        end else hotspot_add(H_D1MISS, u_cpu.e1_pc);
+      end
+    end
+  endtask
+
+  task automatic hotspot_dump;
+    integer k, p;
+    logic [31:0] pc;
+    if (hotspot_csv) begin
+      for (k=0; k<H_COUNT; k=k+1)
+        for (p=0; p<IROM_WORDS; p=p+1)
+          if (hotspot_count[k][p] != 0) begin
+            pc = 32'h80000000 + 4*p;
+            $fdisplay(hotspot_csv, "COREMARK_TIMED,%s,%08h,%0d",
+                      hotspot_name(k), pc, hotspot_count[k][p]);
+          end
+      $fclose(hotspot_csv);
+      hotspot_csv = 0;
+      $display("[PERF] PC hotspots CSV = %s", hotspot_csv_path);
+    end
+  endtask
+
   initial begin
     perf_plusarg_result = $value$plusargs("PERF_ENABLE=%d", perf_enabled);
     perf_plusarg_result = $value$plusargs("PERF_START_PC=%h", perf_start_pc);
     perf_plusarg_result = $value$plusargs("PERF_STOP_PC=%h", perf_stop_pc);
     perf_plusarg_result = $value$plusargs("PERF_ITERATIONS=%d", perf_iterations);
+    if ($value$plusargs("PERF_HOTSPOT_CSV=%s", hotspot_csv_path)) begin
+      if (!perf_enabled) $fatal(1, "PC hotspots require enabled timer metadata");
+      hotspot_csv = $fopen(hotspot_csv_path, "w");
+      if (!hotspot_csv) $fatal(1, "Cannot open hotspot CSV: %s", hotspot_csv_path);
+      hotspot_enabled = 1;
+      $fdisplay(hotspot_csv, "scope,metric,pc,value");
+    end
     if (perf_enabled && (perf_start_pc == 0 || perf_stop_pc == 0 || perf_start_pc == perf_stop_pc))
       $fatal(1, "Invalid CoreMark timer PCs");
     if ($value$plusargs("PERF_REPORT_CSV=%s", perf_csv_path)) begin
@@ -372,6 +483,7 @@ module tb_myCPU #(
       if (perf_start_event) begin
         if (perf_active) perf_boundary_errors = perf_boundary_errors + 1;
         perf_window = '0;
+        hotspot_reset;
         perf_start_tick = u_cpu.csr_rdata;
         perf_active = 1;
       end
@@ -392,6 +504,7 @@ module tb_myCPU #(
             perf_window[k] = perf_window[k] + ((k == P_ARCH && u_cpu.instret_dbl) ? 64'd2 : 64'd1);
         end
       end
+      if (perf_active) hotspot_sample;
       perf_prev_any = u_cpu.stall;
       perf_prev_dep = u_cpu.load_use_stall;
       perf_prev_ld = perf_ld_dep;
@@ -460,45 +573,48 @@ module tb_myCPU #(
 
   task automatic print_perf_scope(input string scope, input perf_stats_t s);
     integer k;
+    logic [63:0] counts [0:P_COUNT-1];
     begin
+      // ModelSim 2020.4: use inline real casts; task array function arguments are unreliable.
+      for (k=0; k<P_COUNT; k=k+1) counts[k] = s[k];
       $display("---------------- %s ----------------", scope);
       $display(" cycles=%0d  arch_inst=%0d  retired_units=%0d  fused_pairs=%0d",
-               s[P_CYC], s[P_ARCH], s[P_UNIT], s[P_FUSED]);
+               counts[P_CYC], counts[P_ARCH], counts[P_UNIT], counts[P_FUSED]);
       $display(" CPI_arch=%.6f  cycles/retired_unit=%.6f",
-               perf_ratio(s[P_CYC],s[P_ARCH]), perf_ratio(s[P_CYC],s[P_UNIT]));
+               ((counts[P_ARCH]) == 0 ? 0.0 : real'(counts[P_CYC]) / real'(counts[P_ARCH])), ((counts[P_UNIT]) == 0 ? 0.0 : real'(counts[P_CYC]) / real'(counts[P_UNIT])));
       $display(" branch: resolved=%0d mispred=%0d direction=%0d target=%0d accuracy=%.2f%%",
-               s[P_BR],s[P_BRMIS],s[P_BRDIR],s[P_BRTARGET],
-               100.0*perf_ratio(s[P_BR]-s[P_BRMIS],s[P_BR]));
+               counts[P_BR],counts[P_BRMIS],counts[P_BRDIR],counts[P_BRTARGET],
+               100.0*((counts[P_BR]) == 0 ? 0.0 : real'(counts[P_BR]-counts[P_BRMIS]) / real'(counts[P_BR])));
       $display(" jump: resolved=%0d mispred=%0d not_taken_prediction=%0d target=%0d accuracy=%.2f%%",
-               s[P_JMP],s[P_JMPMIS],s[P_JMPNOT],s[P_JMPTARGET],
-               100.0*perf_ratio(s[P_JMP]-s[P_JMPMIS],s[P_JMP]));
+               counts[P_JMP],counts[P_JMPMIS],counts[P_JMPNOT],counts[P_JMPTARGET],
+               100.0*((counts[P_JMP]) == 0 ? 0.0 : real'(counts[P_JMP]-counts[P_JMPMIS]) / real'(counts[P_JMP])));
       $display(" prediction: redirects=%0d spurious_taken=%0d (events, not lost cycles)",
-               s[P_REDIRECT],s[P_SPURIOUS]);
+               counts[P_REDIRECT],counts[P_SPURIOUS]);
       $display(" stalls: any=%0d (%.3f%%) overlapping=%0d runs=%0d",
-               s[P_ANY],100.0*perf_ratio(s[P_ANY],s[P_CYC]),s[P_OVERLAP],s[P_ANY_RUN]);
+               counts[P_ANY],100.0*((counts[P_CYC]) == 0 ? 0.0 : real'(counts[P_ANY]) / real'(counts[P_CYC])),counts[P_OVERLAP],counts[P_ANY_RUN]);
       $display(" stall causes: dram=%0d (%.3f%%) dependency=%0d (%.3f%%) mdu=%0d (%.3f%%) csr=%0d (%.3f%%)",
-               s[P_DRAM],100.0*perf_ratio(s[P_DRAM],s[P_CYC]),
-               s[P_DEP],100.0*perf_ratio(s[P_DEP],s[P_CYC]),
-               s[P_MDU],100.0*perf_ratio(s[P_MDU],s[P_CYC]),
-               s[P_CSR],100.0*perf_ratio(s[P_CSR],s[P_CYC]));
+               counts[P_DRAM],100.0*((counts[P_CYC]) == 0 ? 0.0 : real'(counts[P_DRAM]) / real'(counts[P_CYC])),
+               counts[P_DEP],100.0*((counts[P_CYC]) == 0 ? 0.0 : real'(counts[P_DEP]) / real'(counts[P_CYC])),
+               counts[P_MDU],100.0*((counts[P_CYC]) == 0 ? 0.0 : real'(counts[P_MDU]) / real'(counts[P_CYC])),
+               counts[P_CSR],100.0*((counts[P_CYC]) == 0 ? 0.0 : real'(counts[P_CSR]) / real'(counts[P_CYC])));
       $display(" dependency: load=%0d (%.3f%%) mul=%0d (%.3f%%) both=%0d",
-               s[P_LD],100.0*perf_ratio(s[P_LD],s[P_CYC]),
-               s[P_MUL],100.0*perf_ratio(s[P_MUL],s[P_CYC]),s[P_BOTH]);
+               counts[P_LD],100.0*((counts[P_CYC]) == 0 ? 0.0 : real'(counts[P_LD]) / real'(counts[P_CYC])),
+               counts[P_MUL],100.0*((counts[P_CYC]) == 0 ? 0.0 : real'(counts[P_MUL]) / real'(counts[P_CYC])),counts[P_BOTH]);
       $display(" dependency stages: e1_load=%0d e1_mul=%0d e2_load=%0d e2_mul=%0d m1_load=%0d",
-               s[P_E1LD],s[P_E1MUL],s[P_E2LD],s[P_E2MUL],s[P_M1LD]);
+               counts[P_E1LD],counts[P_E1MUL],counts[P_E2LD],counts[P_E2MUL],counts[P_M1LD]);
       $display(" dependency runs: any=%0d load=%0d mul=%0d (contiguous assertion starts)",
-               s[P_DEP_RUN],s[P_LD_RUN],s[P_MUL_RUN]);
+               counts[P_DEP_RUN],counts[P_LD_RUN],counts[P_MUL_RUN]);
       $display(" frontend_empty_opportunity=%0d (%.3f%%) no_retirement=%0d (%.3f%%)",
-               s[P_FEEMPTY],100.0*perf_ratio(s[P_FEEMPTY],s[P_CYC]),
-               s[P_NORET],100.0*perf_ratio(s[P_NORET],s[P_CYC]));
+               counts[P_FEEMPTY],100.0*((counts[P_CYC]) == 0 ? 0.0 : real'(counts[P_FEEMPTY]) / real'(counts[P_CYC])),
+               counts[P_NORET],100.0*((counts[P_CYC]) == 0 ? 0.0 : real'(counts[P_NORET]) / real'(counts[P_CYC])));
       $display(" D1 eligible probes=%0d hits=%0d (%.2f%%) SB_selected=%0d L0_selected=%0d misses=%0d store_conflicts=%0d",
-               s[P_D1TRY],s[P_D1HIT],100.0*perf_ratio(s[P_D1HIT],s[P_D1TRY]),
-               s[P_D1SB],s[P_D1L0],s[P_D1MISS],s[P_STCONFLICT]);
+               counts[P_D1TRY],counts[P_D1HIT],100.0*((counts[P_D1TRY]) == 0 ? 0.0 : real'(counts[P_D1HIT]) / real'(counts[P_D1TRY])),
+               counts[P_D1SB],counts[P_D1L0],counts[P_D1MISS],counts[P_STCONFLICT]);
       if (perf_csv) begin
         for (k=0; k<P_COUNT; k=k+1)
-          $fdisplay(perf_csv,"%s,%s,%0d",scope,perf_metric_name(k),s[k]);
-        $fdisplay(perf_csv,"%s,cpi_arch,%.9f",scope,perf_ratio(s[P_CYC],s[P_ARCH]));
-        $fdisplay(perf_csv,"%s,cycles_per_retired_unit,%.9f",scope,perf_ratio(s[P_CYC],s[P_UNIT]));
+          $fdisplay(perf_csv,"%s,%s,%0d",scope,perf_metric_name(k),counts[k]);
+        $fdisplay(perf_csv,"%s,cpi_arch,%.9f",scope,((counts[P_ARCH]) == 0 ? 0.0 : real'(counts[P_CYC]) / real'(counts[P_ARCH])));
+        $fdisplay(perf_csv,"%s,cycles_per_retired_unit,%.9f",scope,((counts[P_UNIT]) == 0 ? 0.0 : real'(counts[P_CYC]) / real'(counts[P_UNIT])));
       end
     end
   endtask
@@ -522,6 +638,7 @@ module tb_myCPU #(
         end else $display(" Total ticks cross-check: unavailable (UART line not received).");
         if (tag == "EXIT" && perf_iterations_seen && perf_iterations > 0 &&
             perf_ticks_seen && perf_reported_ticks == perf_window[P_CYC]) begin
+          hotspot_dump;
           $display(" iterations=%0d cycles/iteration=%.6f arch_instructions/iteration=%.6f",
                    perf_iterations,perf_ratio(perf_window[P_CYC],perf_iterations),
                    perf_ratio(perf_window[P_ARCH],perf_iterations));

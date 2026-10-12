@@ -1,0 +1,1346 @@
+metric,pc,function,offset,instruction,count,bucket_percent
+load_dependency_consumer_cycles,80000da8,core_bench_list,124,"bne	a2,s10,80000d98 <core_bench_list+0x6c>",57900,18.0300251299314
+load_dependency_consumer_cycles,80000da4,core_bench_list,120,"lh	a2,2(a4)",56802,17.688108591197985
+load_dependency_consumer_cycles,80000e60,core_bench_list,308,"beq	s8,a3,80000dac <core_bench_list+0x80>",55820,17.382314382603983
+load_dependency_consumer_cycles,80000e5c,core_bench_list,304,"lbu	s8,0(a4)",54669,17.02389367578963
+load_dependency_consumer_cycles,80001e58,core_state_transition,12,"beqz	a5,800020c4 <core_state_transition+0x278>",20480,6.377459665993006
+load_dependency_consumer_cycles,80001f34,core_state_transition,232,"beqz	a4,8000205c <core_state_transition+0x210>",15828,4.928829667643423
+load_dependency_consumer_cycles,80001f14,core_state_transition,200,"beqz	a4,800020b8 <core_state_transition+0x26c>",12880,4.010824243065914
+load_dependency_consumer_cycles,8000207c,core_state_transition,560,"beqz	t1,80002118 <core_state_transition+0x2cc>",8468,2.636930100177186
+load_dependency_consumer_cycles,80001ecc,core_state_transition,128,"beqz	a4,800020b8 <core_state_transition+0x26c>",6400,1.9929561456228144
+load_dependency_consumer_cycles,80001f60,core_state_transition,276,"beqz	a3,80002110 <core_state_transition+0x2c4>",3840,1.1957736873736886
+load_dependency_consumer_cycles,80000ea0,core_bench_list,372,"lb	a5,1(a5)",3660,1.139721795778047
+load_dependency_consumer_cycles,80000ea4,core_bench_list,376,"andi	a5,a5,1",3660,1.139721795778047
+load_dependency_consumer_cycles,80001610,matrix_test,104,"add	a4,s3,a4",3240,1.0089340487215497
+load_dependency_consumer_cycles,80000ff8,core_bench_list,716,"slli	a6,a2,0x10",2434,0.7579461341321766
+load_dependency_consumer_cycles,80000b9c,cmp_complex,204,"srai	a5,a6,0x7",2244,0.6987802485589993
+load_dependency_consumer_cycles,80000fe0,core_bench_list,692,"slli	t0,a2,0x10",2076,0.6464651497364005
+load_dependency_consumer_cycles,80001f8c,core_state_transition,320,"beqz	a3,800020e8 <core_state_transition+0x29c>",1680,0.5231509882259888
+load_dependency_consumer_cycles,80002058,core_state_transition,524,"bnez	a4,80001f3c <core_state_transition+0xf0>",1440,0.44841513276513323
+load_dependency_consumer_cycles,80002b94,crc16,460,"xor	a2,a3,a2",1340,0.4172751929897768
+load_dependency_consumer_cycles,800022ec,core_bench_state,440,"xor	a3,a4,s7",1041,0.3241667730614609
+load_dependency_consumer_cycles,8000231c,core_bench_state,488,"xor	a3,a5,s5",1040,0.3238553736637073
+load_dependency_consumer_cycles,80002970,crcu32,952,"xor	a0,a2,a0",640,0.19929561456228143
+load_dependency_consumer_cycles,80001038,core_bench_list,780,"bne	s8,a5,80001028 <core_bench_list+0x2fc>",580,0.18061165069706756
+load_dependency_consumer_cycles,80000f10,core_bench_list,484,"lh	a5,2(a5)",560,0.17438366274199626
+load_dependency_consumer_cycles,80000f14,core_bench_list,488,"bne	a5,s10,80000f04 <core_bench_list+0x1d8>",560,0.17438366274199626
+load_dependency_consumer_cycles,80001034,core_bench_list,776,"lbu	a5,0(a5)",560,0.17438366274199626
+load_dependency_consumer_cycles,80000dd8,core_bench_list,172,"andi	a3,a4,1",420,0.1307877470564972
+load_dependency_consumer_cycles,80000df8,core_bench_list,204,"sw	a3,0(a5)",400,0.1245597591014259
+load_dependency_consumer_cycles,80002560,crcu16,456,"xor	a2,a3,a2",300,0.09341981932606942
+load_dependency_consumer_cycles,80000b64,cmp_complex,148,"mv	a1,a5",39,0.012144576512389024
+load_dependency_consumer_cycles,80000c28,cmp_complex,344,"mv	a1,a5",39,0.012144576512389024
+load_dependency_consumer_cycles,80000ee4,core_bench_list,440,"sw	a2,4(a5)",20,0.0062279879550712946
+load_dependency_consumer_cycles,80000f00,core_bench_list,468,"beq	a5,s10,80000f18 <core_bench_list+0x1ec>",20,0.0062279879550712946
+load_dependency_consumer_cycles,80002308,core_bench_state,468,"bnez	a5,80002238 <core_bench_state+0x104>",20,0.0062279879550712946
+load_dependency_consumer_cycles,80000edc,core_bench_list,432,"lw	a2,4(s3)",10,0.0031139939775356473
+load_dependency_consumer_cycles,80002398,crcu16,0,"zext.b	a5,a1",8,0.002491195182028518
+load_dependency_consumer_cycles,80000f08,core_bench_list,476,"beqz	s2,80001268 <core_bench_list+0x53c>",7,0.002179795784274953
+load_dependency_consumer_cycles,80000d9c,core_bench_list,112,"beqz	a5,80000e8c <core_bench_list+0x160>",3,0.0009341981932606942
+load_dependency_consumer_cycles,80000e48,core_bench_list,284,"lbu	s8,0(a4)",1,0.00031139939775356475
+load_dependency_consumer_cycles,8000102c,core_bench_list,768,"beqz	s2,80001268 <core_bench_list+0x53c>",1,0.00031139939775356475
+load_dependency_consumer_cycles,80002218,core_bench_state,228,"xor	a3,a4,s7",1,0.00031139939775356475
+mul_dependency_consumer_cycles,8000194c,matrix_test,932,"add	t4,t4,a5",58320,45.0
+mul_dependency_consumer_cycles,80001828,matrix_test,640,"add	t3,t3,a5",29160,22.5
+mul_dependency_consumer_cycles,80001938,matrix_test,912,"srai	a6,a5,0x2",29160,22.5
+mul_dependency_consumer_cycles,80001654,matrix_test,172,"sw	a4,-4(a3)",6480,5.0
+mul_dependency_consumer_cycles,8000172c,matrix_test,388,"add	a2,a2,a4",6480,5.0
+e1_load_producer_cycles,80000da4,core_bench_list,120,"lh	a2,2(a4)",28950,20.314649002161282
+e1_load_producer_cycles,80000da0,core_bench_list,116,"lw	a4,4(a5)",28872,20.259915232829034
+e1_load_producer_cycles,80000e5c,core_bench_list,304,"lbu	s8,0(a4)",27910,19.58486541106464
+e1_load_producer_cycles,80000e58,core_bench_list,300,"lw	a4,4(a5)",27780,19.49364246217756
+e1_load_producer_cycles,80001e54,core_state_transition,8,"lbu	a5,0(a4)",10240,7.185561512336149
+e1_load_producer_cycles,80002078,core_state_transition,556,"lbu	t1,1(a4)",4234,2.9710612737530524
+e1_load_producer_cycles,80001ec8,core_state_transition,124,"lbu	a4,1(a4)",3200,2.245487972605047
+e1_load_producer_cycles,80001f5c,core_state_transition,272,"lbu	a3,1(a5)",1920,1.347292783563028
+e1_load_producer_cycles,80000e9c,core_bench_list,368,"lw	a5,4(a5)",1830,1.2841384343335112
+e1_load_producer_cycles,80000ea0,core_bench_list,372,"lb	a5,1(a5)",1830,1.2841384343335112
+e1_load_producer_cycles,80000ff4,core_bench_list,712,"lh	a2,0(a7)",1217,0.8539871445813568
+e1_load_producer_cycles,80000b98,cmp_complex,200,"lh	a6,0(s1)",1131,0.7936396553175962
+e1_load_producer_cycles,80002054,core_state_transition,520,"lbu	a4,1(a4)",720,0.5052347938361356
+e1_load_producer_cycles,800022e8,core_bench_state,436,"lbu	a4,0(a5)",541,0.3796278103685407
+e1_load_producer_cycles,80002318,core_bench_state,484,"lbu	a5,0(a4)",540,0.37892609537710165
+e1_load_producer_cycles,80000f0c,core_bench_list,480,"lw	a5,4(s2)",290,0.20349734751733237
+e1_load_producer_cycles,80001030,core_bench_list,772,"lw	a5,4(s2)",290,0.20349734751733237
+e1_load_producer_cycles,80001034,core_bench_list,776,"lbu	a5,0(a5)",290,0.20349734751733237
+e1_load_producer_cycles,80000f10,core_bench_list,484,"lh	a5,2(a5)",280,0.19648019760294158
+e1_load_producer_cycles,80000dd4,core_bench_list,168,"lh	a4,0(a4)",210,0.1473601482022062
+e1_load_producer_cycles,80000df4,core_bench_list,200,"lw	a3,0(a4)",210,0.1473601482022062
+e1_load_producer_cycles,80000efc,core_bench_list,464,"lh	a5,2(a5)",10,0.007017149914390771
+e1_load_producer_cycles,80000f04,core_bench_list,472,"lw	s2,0(s2)",7,0.00491200494007354
+e1_load_producer_cycles,80000d98,core_bench_list,108,"lw	a5,0(a5)",3,0.0021051449743172313
+e1_load_producer_cycles,80000e44,core_bench_list,280,"lw	a4,4(a5)",1,0.0007017149914390771
+e1_load_producer_cycles,80001028,core_bench_list,764,"lw	s2,0(s2)",1,0.0007017149914390771
+e1_load_producer_cycles,80002214,core_bench_state,224,"lbu	a4,0(a5)",1,0.0007017149914390771
+e2_load_producer_cycles,80000da4,core_bench_list,120,"lh	a2,2(a4)",28950,16.2073193261786
+e2_load_producer_cycles,80000da0,core_bench_list,116,"lw	a4,4(a5)",27930,15.636284241111166
+e2_load_producer_cycles,80000e5c,core_bench_list,304,"lbu	s8,0(a4)",27910,15.625087474737295
+e2_load_producer_cycles,80000e58,core_bench_list,300,"lw	a4,4(a5)",26889,15.05349255135117
+e2_load_producer_cycles,80001f2c,core_state_transition,224,"lbu	a4,1(a5)",15828,8.861120908281688
+e2_load_producer_cycles,80001f0c,core_state_transition,192,"lbu	a4,1(a5)",12880,7.210717544773069
+e2_load_producer_cycles,80001e54,core_state_transition,8,"lbu	a5,0(a4)",10240,5.732744383422068
+e2_load_producer_cycles,80002078,core_state_transition,556,"lbu	t1,1(a4)",4234,2.3703554413485386
+e2_load_producer_cycles,80001608,matrix_test,96,"lhu	a4,0(a5)",3240,1.8138761525671385
+e2_load_producer_cycles,80001ec8,core_state_transition,124,"lbu	a4,1(a4)",3200,1.791482619819396
+e2_load_producer_cycles,80000fd8,core_bench_list,684,"lh	a2,0(a0)",2076,1.1622243496078333
+e2_load_producer_cycles,80001f5c,core_state_transition,272,"lbu	a3,1(a5)",1920,1.0748895718916376
+e2_load_producer_cycles,80000e9c,core_bench_list,368,"lw	a5,4(a5)",1830,1.0245041232092171
+e2_load_producer_cycles,80000ea0,core_bench_list,372,"lb	a5,1(a5)",1830,1.0245041232092171
+e2_load_producer_cycles,80001f84,core_state_transition,312,"lbu	a3,2(a5)",1680,0.940528375405183
+e2_load_producer_cycles,80002b8c,crc16,452,"lhu	a3,0(a3)",1340,0.7501833470493722
+e2_load_producer_cycles,80000ff4,core_bench_list,712,"lh	a2,0(a7)",1217,0.6813232338500641
+e2_load_producer_cycles,80000b98,cmp_complex,200,"lh	a6,0(s1)",1113,0.6231000487059337
+e2_load_producer_cycles,80002054,core_state_transition,520,"lbu	a4,1(a4)",720,0.4030835894593641
+e2_load_producer_cycles,80002968,crcu32,944,"lhu	a2,0(a2)",640,0.35829652396387923
+e2_load_producer_cycles,800022e8,core_bench_state,436,"lbu	a4,0(a5)",500,0.27991915934678063
+e2_load_producer_cycles,80002318,core_bench_state,484,"lbu	a5,0(a4)",500,0.27991915934678063
+e2_load_producer_cycles,80002558,crcu16,448,"lhu	a3,0(a3)",300,0.16795149560806838
+e2_load_producer_cycles,80001034,core_bench_list,776,"lbu	a5,0(a5)",290,0.1623531124211328
+e2_load_producer_cycles,80000f10,core_bench_list,484,"lh	a5,2(a5)",280,0.15675472923419717
+e2_load_producer_cycles,80000f0c,core_bench_list,480,"lw	a5,4(s2)",270,0.15115634604726155
+e2_load_producer_cycles,80001030,core_bench_list,772,"lw	a5,4(s2)",270,0.15115634604726155
+e2_load_producer_cycles,80000dd4,core_bench_list,168,"lh	a4,0(a4)",210,0.11756604692564787
+e2_load_producer_cycles,80000df4,core_bench_list,200,"lw	a3,0(a4)",190,0.10636928055177665
+e2_load_producer_cycles,80000cd8,cmp_complex,520,"lhu	a5,56(s0)",39,0.02183369442904889
+e2_load_producer_cycles,80000d24,cmp_complex,596,"lhu	a5,56(s0)",38,0.02127385611035533
+e2_load_producer_cycles,80000edc,core_bench_list,432,"lw	a2,4(s3)",20,0.011196766373871226
+e2_load_producer_cycles,80002300,core_bench_state,460,"lbu	a5,0(s1)",20,0.011196766373871226
+e2_load_producer_cycles,80000ed4,core_bench_list,424,"lw	s3,0(a5)",10,0.005598383186935613
+e2_load_producer_cycles,80000efc,core_bench_list,464,"lh	a5,2(a5)",10,0.005598383186935613
+e2_load_producer_cycles,800000f4,iterate,148,"lhu	a1,56(s0)",8,0.004478706549548491
+e2_load_producer_cycles,80000b5c,cmp_complex,140,"lhu	a5,56(s0)",1,0.0005598383186935613
+e1_mul_producer_cycles,80001948,matrix_test,928,"mul	a5,a6,a5",29160,81.81818181818181
+e1_mul_producer_cycles,80001650,matrix_test,168,"mul	a4,a4,s3",3240,9.090909090909092
+e1_mul_producer_cycles,80001728,matrix_test,384,"mul	a4,a4,a6",3240,9.090909090909092
+e2_mul_producer_cycles,80001820,matrix_test,632,"mul	a5,a5,a4",29160,31.03448275862069
+e2_mul_producer_cycles,80001930,matrix_test,904,"mul	a5,a5,a4",29160,31.03448275862069
+e2_mul_producer_cycles,80001948,matrix_test,928,"mul	a5,a6,a5",29160,31.03448275862069
+e2_mul_producer_cycles,80001650,matrix_test,168,"mul	a4,a4,s3",3240,3.4482758620689653
+e2_mul_producer_cycles,80001728,matrix_test,384,"mul	a4,a4,a6",3240,3.4482758620689653
+resolved_branches,80000dc4,core_bench_list,152,"bnez	a4,80000db4 <core_bench_list+0x88>",61200,11.556153085039691
+resolved_branches,8000182c,matrix_test,644,"bltu	a6,s0,80001810 <matrix_test+0x268>",29160,5.50616705816597
+resolved_branches,80001950,matrix_test,936,"bltu	a7,s0,80001920 <matrix_test+0x378>",29160,5.50616705816597
+resolved_branches,80000da8,core_bench_list,124,"bne	a2,s10,80000d98 <core_bench_list+0x6c>",28950,5.466513591697697
+resolved_branches,80000d9c,core_bench_list,112,"beqz	a5,80000e8c <core_bench_list+0x160>",28870,5.451407509233593
+resolved_branches,80000e60,core_bench_list,308,"beq	s8,a3,80000dac <core_bench_list+0x80>",27910,5.270134519664343
+resolved_branches,80000e68,core_bench_list,316,"bnez	a5,80000e58 <core_bench_list+0x12c>",27780,5.245587135660173
+resolved_branches,80001f3c,core_state_transition,240,"beq	a4,a3,80002034 <core_state_transition+0x1e8>",16560,3.1269590700695633
+resolved_branches,80001ed0,core_state_transition,132,"beq	a4,a3,800020cc <core_state_transition+0x280>",16240,3.0665347402131466
+resolved_branches,80001f34,core_state_transition,232,"beqz	a4,8000205c <core_state_transition+0x210>",15840,2.991004327892626
+resolved_branches,80001f48,core_state_transition,252,"bne	a3,a0,8000200c <core_state_transition+0x1c0>",14800,2.794625255859272
+resolved_branches,80001ed8,core_state_transition,140,"beq	a4,a3,80001f20 <core_state_transition+0xd4>",13120,2.4773975241130843
+resolved_branches,80001f14,core_state_transition,200,"beqz	a4,800020b8 <core_state_transition+0x26c>",13040,2.46229144164898
+resolved_branches,80002018,core_state_transition,460,"bgeu	a3,a4,80001f2c <core_state_transition+0xe0>",12880,2.4320792767207715
+resolved_branches,80001ee8,core_state_transition,156,"bgeu	a3,a4,80001f0c <core_state_transition+0xc0>",10400,1.9637907203335423
+resolved_branches,80001e58,core_state_transition,12,"beqz	a5,800020c4 <core_state_transition+0x278>",10240,1.933578555405334
+resolved_branches,80001e64,core_state_transition,24,"beq	a5,a3,8000203c <core_state_transition+0x1f0>",10240,1.933578555405334
+resolved_branches,80001e6c,core_state_transition,32,"beq	a5,a6,80002044 <core_state_transition+0x1f8>",9360,1.767411648300188
+resolved_branches,80001e70,core_state_transition,36,"bltu	a6,a5,80001ea8 <core_state_transition+0x5c>",8640,1.6314569061232504
+resolved_branches,800021f4,core_bench_state,192,"bnez	a3,800021d0 <core_bench_state+0x9c>",5120,0.966789277702667
+resolved_branches,8000225c,core_bench_state,296,"bnez	a3,80002238 <core_bench_state+0x104>",5120,0.966789277702667
+resolved_branches,80001e7c,core_state_transition,48,"beqz	a5,80002068 <core_state_transition+0x21c>",4320,0.8157284530616252
+resolved_branches,80001eb4,core_state_transition,104,"bltu	a0,a5,80001e80 <core_state_transition+0x34>",4320,0.8157284530616252
+resolved_branches,8000207c,core_state_transition,560,"beqz	t1,80002118 <core_state_transition+0x2cc>",4320,0.8157284530616252
+resolved_branches,80002080,core_state_transition,564,"beq	t1,a3,80002124 <core_state_transition+0x2d8>",4320,0.8157284530616252
+resolved_branches,80002098,core_state_transition,588,"bgeu	a7,a3,80001f08 <core_state_transition+0xbc>",4320,0.8157284530616252
+resolved_branches,80001618,matrix_test,112,"bne	a5,a3,80001608 <matrix_test+0x60>",3240,0.611796339796219
+resolved_branches,80001658,matrix_test,176,"bne	a5,a2,80001644 <matrix_test+0x9c>",3240,0.611796339796219
+resolved_branches,800016e8,matrix_test,320,"bne	a6,a5,800016bc <matrix_test+0x114>",3240,0.611796339796219
+resolved_branches,80001730,matrix_test,392,"bne	a5,s8,80001718 <matrix_test+0x170>",3240,0.611796339796219
+resolved_branches,80001788,matrix_test,480,"bgeu	a6,s0,800017d0 <matrix_test+0x228>",3240,0.611796339796219
+resolved_branches,80001840,matrix_test,664,"bltu	a3,s0,80001800 <matrix_test+0x258>",3240,0.611796339796219
+resolved_branches,80001964,matrix_test,956,"bltu	a3,s0,80001910 <matrix_test+0x368>",3240,0.611796339796219
+resolved_branches,800019ec,matrix_test,1092,"bgeu	a0,s0,80001a00 <matrix_test+0x458>",3240,0.611796339796219
+resolved_branches,80001a3c,matrix_test,1172,"bltu	a3,s0,80001a28 <matrix_test+0x480>",3240,0.611796339796219
+resolved_branches,80001ecc,core_state_transition,128,"beqz	a4,800020b8 <core_state_transition+0x26c>",3200,0.6042432985641668
+resolved_branches,80001898,matrix_test,752,"bgeu	a6,s0,800018e0 <matrix_test+0x338>",3080,0.5815841748680106
+resolved_branches,800016d8,matrix_test,304,"bge	s2,a2,800016b0 <matrix_test+0x108>",2880,0.5438189687077501
+resolved_branches,800017ac,matrix_test,516,"bge	s2,a2,80001780 <matrix_test+0x1d8>",2880,0.5438189687077501
+resolved_branches,800018bc,matrix_test,788,"bge	s2,a2,80001890 <matrix_test+0x2e8>",2880,0.5438189687077501
+resolved_branches,800019e0,matrix_test,1080,"bge	s2,a2,800019b4 <matrix_test+0x40c>",2880,0.5438189687077501
+resolved_branches,80000f98,core_bench_list,620,"beqz	a1,80000fa0 <core_bench_list+0x274>",2309,0.4359993051202066
+resolved_branches,80000fb8,core_bench_list,652,"bgtz	a5,80000f98 <core_bench_list+0x26c>",2289,0.4322227845041806
+resolved_branches,80000f78,core_bench_list,588,"bge	a5,t4,80000f88 <core_bench_list+0x25c>",2160,0.4078642265308126
+resolved_branches,80000f9c,core_bench_list,624,"bnez	s0,80000fcc <core_bench_list+0x2a0>",2086,0.39389110025151625
+resolved_branches,8000100c,core_bench_list,736,"bge	t1,t3,800010a0 <core_bench_list+0x374>",2076,0.39200283994350327
+resolved_branches,80000dc8,core_bench_list,156,"beqz	a5,80000e94 <core_bench_list+0x168>",2040,0.38520510283465637
+resolved_branches,80000e14,core_bench_list,232,"bltz	a2,80000e74 <core_bench_list+0x148>",2040,0.38520510283465637
+resolved_branches,80001f60,core_state_transition,276,"beqz	a3,80002110 <core_state_transition+0x2c4>",1920,0.3625459791385001
+resolved_branches,80001f68,core_state_transition,284,"beq	a3,a0,800020dc <core_state_transition+0x290>",1920,0.3625459791385001
+resolved_branches,80001f80,core_state_transition,308,"bnez	a3,80002000 <core_state_transition+0x1b4>",1920,0.3625459791385001
+resolved_branches,80001fd8,core_state_transition,396,"beqz	a3,800020fc <core_state_transition+0x2b0>",1840,0.34743989667439595
+resolved_branches,80001fdc,core_state_transition,400,"beq	a3,a7,80002104 <core_state_transition+0x2b8>",1840,0.34743989667439595
+resolved_branches,80001f8c,core_state_transition,320,"beqz	a3,800020e8 <core_state_transition+0x29c>",1680,0.3172277317461876
+resolved_branches,80001f90,core_state_transition,324,"beq	a3,a0,800020f0 <core_state_transition+0x2a4>",1680,0.3172277317461876
+resolved_branches,80001fac,core_state_transition,352,"bgeu	a6,a3,80001fc0 <core_state_transition+0x174>",1680,0.3172277317461876
+resolved_branches,80000f84,core_bench_list,600,"bnez	a2,80000f78 <core_bench_list+0x24c>",1580,0.2983451286660574
+resolved_branches,80001178,core_bench_list,1100,"beqz	s11,80001180 <core_bench_list+0x454>",1303,0.24604031813409669
+resolved_branches,800010a8,core_bench_list,892,"beqz	a4,800010c0 <core_bench_list+0x394>",1267,0.2392425810252498
+resolved_branches,80001198,core_bench_list,1132,"bgtz	s2,80001178 <core_bench_list+0x44c>",1254,0.23678784262483288
+resolved_branches,8000117c,core_bench_list,1104,"bnez	s0,800011ac <core_bench_list+0x480>",1132,0.21375106686707404
+resolved_branches,80000af8,cmp_complex,40,"bnez	a5,80000b98 <cmp_complex+0xc8>",1113,0.21016337228184928
+resolved_branches,80000ba4,cmp_complex,212,"beqz	a5,80000bc4 <cmp_complex+0xf4>",1113,0.21016337228184928
+resolved_branches,800011bc,core_bench_list,1168,"blez	a0,80001234 <core_bench_list+0x508>",1113,0.21016337228184928
+resolved_branches,80001158,core_bench_list,1068,"bge	s2,s5,80001168 <core_bench_list+0x43c>",1080,0.2039321132654063
+resolved_branches,80000e2c,core_bench_list,256,"beq	t3,a6,80000eb4 <core_bench_list+0x188>",1020,0.19260255141732818
+resolved_branches,80000e7c,core_bench_list,336,"beq	t3,a6,80000eb0 <core_bench_list+0x184>",1020,0.19260255141732818
+resolved_branches,80000e40,core_bench_list,276,"bgez	s10,80000d90 <core_bench_list+0x64>",1010,0.19071429110931518
+resolved_branches,8000209c,core_state_transition,592,"beq	t1,a6,800020b0 <core_state_transition+0x264>",960,0.18127298956925006
+resolved_branches,80001020,core_bench_list,756,"bnez	a2,80000fb4 <core_bench_list+0x288>",809,0.15276025891825343
+resolved_branches,80001164,core_bench_list,1080,"bnez	a5,80001158 <core_bench_list+0x42c>",790,0.1491725643330287
+resolved_branches,80002058,core_state_transition,524,"bnez	a4,80001f3c <core_state_transition+0xf0>",720,0.13595474217693754
+resolved_branches,80001054,core_bench_list,808,"beqz	a1,8000107c <core_bench_list+0x350>",611,0.1153727048195956
+resolved_branches,80001068,core_bench_list,828,"bnez	a4,80001048 <core_bench_list+0x31c>",611,0.1153727048195956
+resolved_branches,80000f94,core_bench_list,616,"blez	a5,80000fbc <core_bench_list+0x290>",601,0.11348444451158259
+resolved_branches,80000fc0,core_bench_list,660,"blez	a1,80001080 <core_bench_list+0x354>",600,0.11329561848078129
+resolved_branches,8000123c,core_bench_list,1296,"beqz	s3,80001254 <core_bench_list+0x528>",599,0.11310679244997998
+resolved_branches,800010f4,core_bench_list,968,"bnez	s0,800010dc <core_bench_list+0x3b0>",580,0.10951909786475525
+resolved_branches,80001080,core_bench_list,852,"bnez	a2,80000f6c <core_bench_list+0x240>",560,0.1057425772487292
+resolved_branches,80001fe0,core_state_transition,404,"bgeu	a6,a5,80001fc0 <core_state_transition+0x174>",560,0.1057425772487292
+resolved_branches,80000f30,core_bench_list,516,"bnez	s2,80000f18 <core_bench_list+0x1ec>",540,0.10196605663270315
+resolved_branches,800011d0,core_bench_list,1188,"bnez	a5,80001194 <core_bench_list+0x468>",514,0.0970565798318693
+resolved_branches,800022f0,core_bench_state,444,"beq	a4,a2,800022f8 <core_bench_state+0x1c4>",500,0.09441301540065107
+resolved_branches,800022fc,core_bench_state,456,"bltu	a5,s8,800022e8 <core_bench_state+0x1b4>",500,0.09441301540065107
+resolved_branches,80002320,core_bench_state,492,"beq	a5,a2,80002328 <core_bench_state+0x1f4>",500,0.09441301540065107
+resolved_branches,8000232c,core_bench_state,504,"bltu	a4,s8,80002318 <core_bench_state+0x1e4>",500,0.09441301540065107
+resolved_branches,80000fc4,core_bench_list,664,"beqz	a2,80001084 <core_bench_list+0x358>",438,0.08270580149097034
+resolved_branches,80000fc8,core_bench_list,668,"beqz	a5,8000105c <core_bench_list+0x330>",398,0.07515276025891825
+resolved_branches,80001624,matrix_test,124,"beq	a0,s0,80001630 <matrix_test+0x88>",360,0.06797737108846877
+resolved_branches,80001664,matrix_test,188,"beq	a0,a7,80001670 <matrix_test+0xc8>",360,0.06797737108846877
+resolved_branches,800016ac,matrix_test,260,"blt	s2,a2,800016dc <matrix_test+0x134>",360,0.06797737108846877
+resolved_branches,800016f0,matrix_test,328,"beq	a7,t1,800016fc <matrix_test+0x154>",360,0.06797737108846877
+resolved_branches,80001740,matrix_test,408,"bne	a7,s9,8000170c <matrix_test+0x164>",360,0.06797737108846877
+resolved_branches,8000177c,matrix_test,468,"blt	s2,a2,800017b0 <matrix_test+0x208>",360,0.06797737108846877
+resolved_branches,800017d8,matrix_test,560,"bltu	a0,s0,80001758 <matrix_test+0x1b0>",360,0.06797737108846877
+resolved_branches,80001850,matrix_test,680,"bltu	t5,s0,800017f4 <matrix_test+0x24c>",360,0.06797737108846877
+resolved_branches,8000188c,matrix_test,740,"blt	s2,a2,800018c0 <matrix_test+0x318>",360,0.06797737108846877
+resolved_branches,800018e8,matrix_test,832,"bltu	t1,s0,80001868 <matrix_test+0x2c0>",360,0.06797737108846877
+resolved_branches,80001974,matrix_test,972,"bltu	t6,s0,80001904 <matrix_test+0x35c>",360,0.06797737108846877
+resolved_branches,800019b0,matrix_test,1032,"blt	s2,a2,800019e4 <matrix_test+0x43c>",360,0.06797737108846877
+resolved_branches,80001a0c,matrix_test,1124,"bltu	t1,s0,8000198c <matrix_test+0x3e4>",360,0.06797737108846877
+resolved_branches,80001a48,matrix_test,1184,"bltu	a2,s0,80001a20 <matrix_test+0x478>",360,0.06797737108846877
+resolved_branches,80001174,core_bench_list,1096,"blez	s2,8000119c <core_bench_list+0x470>",339,0.06401202444164143
+resolved_branches,800022b4,core_bench_state,384,"bne	s3,s0,80002290 <core_bench_state+0x15c>",320,0.060424329856416686
+resolved_branches,80000fb0,core_bench_list,644,"beqz	a2,80001040 <core_bench_list+0x314>",313,0.05910254764080757
+resolved_branches,800011a0,core_bench_list,1140,"blez	s11,80001218 <core_bench_list+0x4ec>",300,0.056647809240390645
+resolved_branches,80000f08,core_bench_list,476,"beqz	s2,80001268 <core_bench_list+0x53c>",290,0.054759548932377625
+resolved_branches,8000102c,core_bench_list,768,"beqz	s2,80001268 <core_bench_list+0x53c>",290,0.054759548932377625
+resolved_branches,80001038,core_bench_list,780,"bne	s8,a5,80001028 <core_bench_list+0x2fc>",290,0.054759548932377625
+resolved_branches,80000f14,core_bench_list,488,"bne	a5,s10,80000f04 <core_bench_list+0x1d8>",280,0.0528712886243646
+resolved_branches,80001218,core_bench_list,1260,"bnez	a5,8000114c <core_bench_list+0x420>",260,0.049094768008338556
+resolved_branches,80001058,core_bench_list,812,"beqz	a2,8000107c <core_bench_list+0x350>",253,0.04777298579272944
+resolved_branches,80000ddc,core_bench_list,176,"beqz	a3,80000dec <core_bench_list+0xc0>",210,0.03965346646827345
+resolved_branches,80000df0,core_bench_list,196,"beqz	a4,80000e08 <core_bench_list+0xdc>",210,0.03965346646827345
+resolved_branches,800011f0,core_bench_list,1220,"beqz	s11,80001218 <core_bench_list+0x4ec>",196,0.03700990203705522
+resolved_branches,80001204,core_bench_list,1240,"bnez	a3,800011e4 <core_bench_list+0x4b8>",196,0.03700990203705522
+resolved_branches,80001190,core_bench_list,1124,"beqz	a5,800011d4 <core_bench_list+0x4a8>",191,0.03606577188304871
+resolved_branches,800018c8,matrix_test,800,"bgeu	a6,s0,800018dc <matrix_test+0x334>",160,0.030212164928208343
+resolved_branches,80000b20,cmp_complex,80,"beqz	a3,80000ce0 <cmp_complex+0x210>",150,0.028323904620195323
+resolved_branches,800011a4,core_bench_list,1144,"beqz	a5,8000121c <core_bench_list+0x4f0>",147,0.027757426527791416
+resolved_branches,800011a8,core_bench_list,1148,"beqz	s2,800011dc <core_bench_list+0x4b0>",137,0.025869166219778392
+resolved_branches,80000b28,cmp_complex,88,"bne	a3,a2,80000c74 <cmp_complex+0x1a4>",130,0.024547384004169278
+resolved_branches,80000be4,cmp_complex,276,"beqz	a3,80000c94 <cmp_complex+0x1c4>",130,0.024547384004169278
+resolved_branches,80000bec,cmp_complex,284,"bne	a3,a2,80000c84 <cmp_complex+0x1b4>",110,0.020770863388143237
+resolved_branches,80001088,core_bench_list,860,"beq	t5,t6,800010d4 <core_bench_list+0x3a8>",100,0.018882603080130213
+resolved_branches,800010cc,core_bench_list,928,"bgtz	a5,80000fd0 <core_bench_list+0x2a4>",99,0.01869377704932891
+resolved_branches,800011f4,core_bench_list,1224,"beqz	a5,8000121c <core_bench_list+0x4f0>",89,0.01680551674131589
+resolved_branches,80001094,core_bench_list,872,"bnez	s0,80000f60 <core_bench_list+0x234>",80,0.015106082464104172
+resolved_branches,8000113c,core_bench_list,1040,"beqz	s0,80001098 <core_bench_list+0x36c>",50,0.009441301540065106
+resolved_branches,80001224,core_bench_list,1272,"beq	s9,a5,800012c4 <core_bench_list+0x598>",50,0.009441301540065106
+resolved_branches,800015b0,matrix_test,8,"beqz	a0,80001a88 <matrix_test+0x4e0>",40,0.007553041232052086
+resolved_branches,800021cc,core_bench_state,152,"beqz	a1,8000233c <core_bench_state+0x208>",40,0.007553041232052086
+resolved_branches,80002200,core_bench_state,204,"bgeu	s1,s8,80002238 <core_bench_state+0x104>",40,0.007553041232052086
+resolved_branches,80002210,core_bench_state,220,"bne	s6,a4,800022e8 <core_bench_state+0x1b4>",40,0.007553041232052086
+resolved_branches,80002260,core_bench_state,300,"bgeu	s1,s8,8000228c <core_bench_state+0x158>",40,0.007553041232052086
+resolved_branches,80002268,core_bench_state,308,"bne	s6,a5,80002310 <core_bench_state+0x1dc>",40,0.007553041232052086
+resolved_branches,80002308,core_bench_state,468,"bnez	a5,80002238 <core_bench_state+0x104>",40,0.007553041232052086
+resolved_branches,80000b58,cmp_complex,136,"bnez	a5,80000d24 <cmp_complex+0x254>",20,0.003776520616026043
+resolved_branches,80000c1c,cmp_complex,332,"bnez	a5,80000cd8 <cmp_complex+0x208>",20,0.003776520616026043
+resolved_branches,80000c98,cmp_complex,456,"bltu	a3,a2,80000ca0 <cmp_complex+0x1d0>",20,0.003776520616026043
+resolved_branches,80000cd0,cmp_complex,512,"bnez	a5,80000cd8 <cmp_complex+0x208>",20,0.003776520616026043
+resolved_branches,80000ce4,cmp_complex,532,"bltu	a3,a2,80000cec <cmp_complex+0x21c>",20,0.003776520616026043
+resolved_branches,80000d1c,cmp_complex,588,"bnez	a5,80000d24 <cmp_complex+0x254>",20,0.003776520616026043
+resolved_branches,80000d6c,core_bench_list,64,"blez	t3,80001290 <core_bench_list+0x564>",20,0.003776520616026043
+resolved_branches,80000d70,core_bench_list,68,"bltz	a1,800012a0 <core_bench_list+0x574>",20,0.003776520616026043
+resolved_branches,80000ec8,core_bench_list,412,"bgtz	a1,80001138 <core_bench_list+0x40c>",20,0.003776520616026043
+resolved_branches,80000ef4,core_bench_list,456,"bltz	s10,80001030 <core_bench_list+0x304>",20,0.003776520616026043
+resolved_branches,80000f5c,core_bench_list,560,"beqz	s0,80001098 <core_bench_list+0x36c>",20,0.003776520616026043
+resolved_branches,800010d8,core_bench_list,940,"beqz	s0,800010f8 <core_bench_list+0x3cc>",20,0.003776520616026043
+resolved_branches,8000126c,core_bench_list,1344,"beqz	s2,80000f3c <core_bench_list+0x210>",20,0.003776520616026043
+resolved_branches,80001288,core_bench_list,1372,"bnez	s2,80000f18 <core_bench_list+0x1ec>",20,0.003776520616026043
+resolved_branches,80001260,core_bench_list,1332,"bgtz	s2,800011ac <core_bench_list+0x480>",11,0.0020770863388143235
+resolved_branches,80000d74,core_bench_list,72,"beqz	s0,800012cc <core_bench_list+0x5a0>",10,0.0018882603080130215
+resolved_branches,80000f00,core_bench_list,468,"beq	a5,s10,80000f18 <core_bench_list+0x1ec>",10,0.0018882603080130215
+resolved_branches,800012a0,core_bench_list,1396,"beqz	s0,800012cc <core_bench_list+0x5a0>",10,0.0018882603080130215
+resolved_branches,80000100,iterate,160,"bne	s2,s1,800000cc <iterate+0x6c>",9,0.0016994342772117194
+resolved_branches,80000078,iterate,24,"beqz	s2,8000010c <iterate+0xac>",1,0.00018882603080130214
+resolved_branches,800000c8,iterate,104,"beq	s2,s1,80000104 <iterate+0xa4>",1,0.00018882603080130214
+branch_mispredictions,8000182c,matrix_test,644,"bltu	a6,s0,80001810 <matrix_test+0x268>",3241,8.198214150203627
+branch_mispredictions,80001950,matrix_test,936,"bltu	a7,s0,80001920 <matrix_test+0x378>",3241,8.198214150203627
+branch_mispredictions,80001ed0,core_state_transition,132,"beq	a4,a3,800020cc <core_state_transition+0x280>",3120,7.892140743176586
+branch_mispredictions,80001ed8,core_state_transition,140,"beq	a4,a3,80001f20 <core_state_transition+0xd4>",2720,6.880327827384717
+branch_mispredictions,80001e70,core_state_transition,36,"bltu	a6,a5,80001ea8 <core_state_transition+0x5c>",2401,6.0734070270407
+branch_mispredictions,80000dc4,core_bench_list,152,"bnez	a4,80000db4 <core_bench_list+0x88>",2041,5.162775402828017
+branch_mispredictions,80001f48,core_state_transition,252,"bne	a3,a0,8000200c <core_state_transition+0x1c0>",1921,4.859231528090456
+branch_mispredictions,80001f3c,core_state_transition,240,"beq	a4,a3,80002034 <core_state_transition+0x1e8>",1760,4.451976829484228
+branch_mispredictions,80001eb4,core_state_transition,104,"bltu	a0,a5,80001e80 <core_state_transition+0x34>",1360,3.4401639136923583
+branch_mispredictions,80001e6c,core_state_transition,32,"beq	a5,a6,80002044 <core_state_transition+0x1f8>",960,2.428350997900488
+branch_mispredictions,80002098,core_state_transition,588,"bgeu	a7,a3,80001f08 <core_state_transition+0xbc>",958,2.423291933321529
+branch_mispredictions,80000d9c,core_bench_list,112,"beqz	a5,80000e8c <core_bench_list+0x160>",940,2.3777603521108945
+branch_mispredictions,80000e68,core_bench_list,316,"bnez	a5,80000e58 <core_bench_list+0x12c>",891,2.2538132699263906
+branch_mispredictions,80001e64,core_state_transition,24,"beq	a5,a3,8000203c <core_state_transition+0x1f0>",880,2.225988414742114
+branch_mispredictions,8000100c,core_bench_list,736,"bge	t1,t3,800010a0 <core_bench_list+0x374>",783,1.9806237826625857
+branch_mispredictions,80001ee8,core_state_transition,156,"bgeu	a3,a4,80001f0c <core_state_transition+0xc0>",721,1.8237927807148457
+branch_mispredictions,8000209c,core_state_transition,592,"beq	t1,a6,800020b0 <core_state_transition+0x264>",720,1.8212632484253661
+branch_mispredictions,80000f78,core_bench_list,588,"bge	a5,t4,80000f88 <core_bench_list+0x25c>",595,1.5050717122404067
+branch_mispredictions,800011bc,core_bench_list,1168,"blez	a0,80001234 <core_bench_list+0x508>",569,1.4393038727139351
+branch_mispredictions,80001fdc,core_state_transition,400,"beq	a3,a7,80002104 <core_state_transition+0x2b8>",561,1.4190676143980978
+branch_mispredictions,80000fb8,core_bench_list,652,"bgtz	a5,80000f98 <core_bench_list+0x26c>",546,1.3811246300559026
+branch_mispredictions,80001618,matrix_test,112,"bne	a5,a3,80001608 <matrix_test+0x60>",361,0.9131611565021628
+branch_mispredictions,80001658,matrix_test,176,"bne	a5,a2,80001644 <matrix_test+0x9c>",361,0.9131611565021628
+branch_mispredictions,800016e8,matrix_test,320,"bne	a6,a5,800016bc <matrix_test+0x114>",361,0.9131611565021628
+branch_mispredictions,80001730,matrix_test,392,"bne	a5,s8,80001718 <matrix_test+0x170>",361,0.9131611565021628
+branch_mispredictions,80001840,matrix_test,664,"bltu	a3,s0,80001800 <matrix_test+0x258>",361,0.9131611565021628
+branch_mispredictions,80001964,matrix_test,956,"bltu	a3,s0,80001910 <matrix_test+0x368>",361,0.9131611565021628
+branch_mispredictions,80001a3c,matrix_test,1172,"bltu	a3,s0,80001a28 <matrix_test+0x480>",361,0.9131611565021628
+branch_mispredictions,80001788,matrix_test,480,"bgeu	a6,s0,800017d0 <matrix_test+0x228>",360,0.9106316242126831
+branch_mispredictions,80001898,matrix_test,752,"bgeu	a6,s0,800018e0 <matrix_test+0x338>",360,0.9106316242126831
+branch_mispredictions,800019ec,matrix_test,1092,"bgeu	a0,s0,80001a00 <matrix_test+0x458>",360,0.9106316242126831
+branch_mispredictions,80001198,core_bench_list,1132,"bgtz	s2,80001178 <core_bench_list+0x44c>",320,0.8094503326334961
+branch_mispredictions,80001fe0,core_state_transition,404,"bgeu	a6,a5,80001fc0 <core_state_transition+0x174>",319,0.8069208003440164
+branch_mispredictions,80001158,core_bench_list,1068,"bge	s2,s5,80001168 <core_bench_list+0x43c>",305,0.771507348291301
+branch_mispredictions,80000f98,core_bench_list,620,"beqz	a1,80000fa0 <core_bench_list+0x274>",250,0.6323830723699188
+branch_mispredictions,80002018,core_state_transition,460,"bgeu	a3,a4,80001f2c <core_state_transition+0xe0>",241,0.6096172817646017
+branch_mispredictions,80001f80,core_state_transition,308,"bnez	a3,80002000 <core_state_transition+0x1b4>",240,0.607087749475122
+branch_mispredictions,80000dc8,core_bench_list,156,"beqz	a5,80000e94 <core_bench_list+0x168>",208,0.5261427162117724
+branch_mispredictions,80001054,core_bench_list,808,"beqz	a1,8000107c <core_bench_list+0x350>",193,0.4881997318695773
+branch_mispredictions,80001178,core_bench_list,1100,"beqz	s11,80001180 <core_bench_list+0x454>",189,0.4780816027116586
+branch_mispredictions,80000fc0,core_bench_list,660,"blez	a1,80001080 <core_bench_list+0x354>",175,0.44266815065894316
+branch_mispredictions,80001fac,core_state_transition,352,"bgeu	a6,a3,80001fc0 <core_state_transition+0x174>",161,0.4072546986062277
+branch_mispredictions,800018bc,matrix_test,788,"bge	s2,a2,80001890 <matrix_test+0x2e8>",157,0.397136569448309
+branch_mispredictions,800011a0,core_bench_list,1140,"blez	s11,80001218 <core_bench_list+0x4ec>",145,0.3667821819745529
+branch_mispredictions,80000e60,core_bench_list,308,"beq	s8,a3,80000dac <core_bench_list+0x80>",130,0.3288391976323578
+branch_mispredictions,80000f9c,core_bench_list,624,"bnez	s0,80000fcc <core_bench_list+0x2a0>",111,0.2807780841322439
+branch_mispredictions,800010a8,core_bench_list,892,"beqz	a4,800010c0 <core_bench_list+0x394>",100,0.2529532289479675
+branch_mispredictions,80000ddc,core_bench_list,176,"beqz	a3,80000dec <core_bench_list+0xc0>",92,0.23271697063213012
+branch_mispredictions,80000da8,core_bench_list,124,"bne	a2,s10,80000d98 <core_bench_list+0x6c>",82,0.20742164773733338
+branch_mispredictions,80001080,core_bench_list,852,"bnez	a2,80000f6c <core_bench_list+0x240>",71,0.17959679255305694
+branch_mispredictions,800011f0,core_bench_list,1220,"beqz	s11,80001218 <core_bench_list+0x4ec>",67,0.16947866339513823
+branch_mispredictions,80001058,core_bench_list,812,"beqz	a2,8000107c <core_bench_list+0x350>",51,0.12900614676346345
+branch_mispredictions,80000ba4,cmp_complex,212,"beqz	a5,80000bc4 <cmp_complex+0xf4>",49,0.12394708218450408
+branch_mispredictions,80001740,matrix_test,408,"bne	a7,s9,8000170c <matrix_test+0x164>",41,0.10371082386866669
+branch_mispredictions,800017d8,matrix_test,560,"bltu	a0,s0,80001758 <matrix_test+0x1b0>",41,0.10371082386866669
+branch_mispredictions,80001850,matrix_test,680,"bltu	t5,s0,800017f4 <matrix_test+0x24c>",41,0.10371082386866669
+branch_mispredictions,8000188c,matrix_test,740,"blt	s2,a2,800018c0 <matrix_test+0x318>",41,0.10371082386866669
+branch_mispredictions,800018e8,matrix_test,832,"bltu	t1,s0,80001868 <matrix_test+0x2c0>",41,0.10371082386866669
+branch_mispredictions,80001974,matrix_test,972,"bltu	t6,s0,80001904 <matrix_test+0x35c>",41,0.10371082386866669
+branch_mispredictions,80001a0c,matrix_test,1124,"bltu	t1,s0,8000198c <matrix_test+0x3e4>",41,0.10371082386866669
+branch_mispredictions,80001a48,matrix_test,1184,"bltu	a2,s0,80001a20 <matrix_test+0x478>",41,0.10371082386866669
+branch_mispredictions,800021f4,core_bench_state,192,"bnez	a3,800021d0 <core_bench_state+0x9c>",41,0.10371082386866669
+branch_mispredictions,8000225c,core_bench_state,296,"bnez	a3,80002238 <core_bench_state+0x104>",41,0.10371082386866669
+branch_mispredictions,800022b4,core_bench_state,384,"bne	s3,s0,80002290 <core_bench_state+0x15c>",41,0.10371082386866669
+branch_mispredictions,800022fc,core_bench_state,456,"bltu	a5,s8,800022e8 <core_bench_state+0x1b4>",41,0.10371082386866669
+branch_mispredictions,8000232c,core_bench_state,504,"bltu	a4,s8,80002318 <core_bench_state+0x1e4>",41,0.10371082386866669
+branch_mispredictions,80000fc4,core_bench_list,664,"beqz	a2,80001084 <core_bench_list+0x358>",40,0.10118129157918701
+branch_mispredictions,800011d0,core_bench_list,1188,"bnez	a5,80001194 <core_bench_list+0x468>",40,0.10118129157918701
+branch_mispredictions,80001624,matrix_test,124,"beq	a0,s0,80001630 <matrix_test+0x88>",40,0.10118129157918701
+branch_mispredictions,80001664,matrix_test,188,"beq	a0,a7,80001670 <matrix_test+0xc8>",40,0.10118129157918701
+branch_mispredictions,800016f0,matrix_test,328,"beq	a7,t1,800016fc <matrix_test+0x154>",40,0.10118129157918701
+branch_mispredictions,800022f0,core_bench_state,444,"beq	a4,a2,800022f8 <core_bench_state+0x1c4>",40,0.10118129157918701
+branch_mispredictions,80002320,core_bench_state,492,"beq	a5,a2,80002328 <core_bench_state+0x1f4>",40,0.10118129157918701
+branch_mispredictions,80000af8,cmp_complex,40,"bnez	a5,80000b98 <cmp_complex+0xc8>",38,0.09612222700022766
+branch_mispredictions,80000e14,core_bench_list,232,"bltz	a2,80000e74 <core_bench_list+0x148>",38,0.09612222700022766
+branch_mispredictions,800011f4,core_bench_list,1224,"beqz	a5,8000121c <core_bench_list+0x4f0>",38,0.09612222700022766
+branch_mispredictions,80000b28,cmp_complex,88,"bne	a3,a2,80000c74 <cmp_complex+0x1a4>",31,0.07841550097386993
+branch_mispredictions,8000117c,core_bench_list,1104,"bnez	s0,800011ac <core_bench_list+0x480>",31,0.07841550097386993
+branch_mispredictions,80000be4,cmp_complex,276,"beqz	a3,80000c94 <cmp_complex+0x1c4>",30,0.07588596868439025
+branch_mispredictions,80000bec,cmp_complex,284,"bne	a3,a2,80000c84 <cmp_complex+0x1b4>",21,0.05312017807907318
+branch_mispredictions,80000f30,core_bench_list,516,"bnez	s2,80000f18 <core_bench_list+0x1ec>",21,0.05312017807907318
+branch_mispredictions,80000f84,core_bench_list,600,"bnez	a2,80000f78 <core_bench_list+0x24c>",21,0.05312017807907318
+branch_mispredictions,800010f4,core_bench_list,968,"bnez	s0,800010dc <core_bench_list+0x3b0>",21,0.05312017807907318
+branch_mispredictions,80000b20,cmp_complex,80,"beqz	a3,80000ce0 <cmp_complex+0x210>",20,0.050590645789593505
+branch_mispredictions,80000ec8,core_bench_list,412,"bgtz	a1,80001138 <core_bench_list+0x40c>",20,0.050590645789593505
+branch_mispredictions,80001088,core_bench_list,860,"beq	t5,t6,800010d4 <core_bench_list+0x3a8>",20,0.050590645789593505
+branch_mispredictions,80000d70,core_bench_list,68,"bltz	a1,800012a0 <core_bench_list+0x574>",19,0.04806111350011383
+branch_mispredictions,80000ef4,core_bench_list,456,"bltz	s10,80001030 <core_bench_list+0x304>",19,0.04806111350011383
+branch_mispredictions,800010cc,core_bench_list,928,"bgtz	a5,80000fd0 <core_bench_list+0x2a4>",19,0.04806111350011383
+branch_mispredictions,8000123c,core_bench_list,1296,"beqz	s3,80001254 <core_bench_list+0x528>",12,0.030354387473756104
+branch_mispredictions,80001164,core_bench_list,1080,"bnez	a5,80001158 <core_bench_list+0x42c>",11,0.027824855184276426
+branch_mispredictions,80001218,core_bench_list,1260,"bnez	a5,8000114c <core_bench_list+0x420>",11,0.027824855184276426
+branch_mispredictions,80000e2c,core_bench_list,256,"beq	t3,a6,80000eb4 <core_bench_list+0x188>",10,0.025295322894796753
+branch_mispredictions,80000e7c,core_bench_list,336,"beq	t3,a6,80000eb0 <core_bench_list+0x184>",10,0.025295322894796753
+branch_mispredictions,80000f08,core_bench_list,476,"beqz	s2,80001268 <core_bench_list+0x53c>",10,0.025295322894796753
+branch_mispredictions,8000102c,core_bench_list,768,"beqz	s2,80001268 <core_bench_list+0x53c>",10,0.025295322894796753
+branch_mispredictions,800011a4,core_bench_list,1144,"beqz	a5,8000121c <core_bench_list+0x4f0>",10,0.025295322894796753
+branch_mispredictions,80001224,core_bench_list,1272,"beq	s9,a5,800012c4 <core_bench_list+0x598>",10,0.025295322894796753
+branch_mispredictions,80000100,iterate,160,"bne	s2,s1,800000cc <iterate+0x6c>",2,0.00505906457895935
+branch_mispredictions,80001020,core_bench_list,756,"bnez	a2,80000fb4 <core_bench_list+0x288>",2,0.00505906457895935
+branch_mispredictions,80000b58,cmp_complex,136,"bnez	a5,80000d24 <cmp_complex+0x254>",1,0.002529532289479675
+branch_mispredictions,80000c1c,cmp_complex,332,"bnez	a5,80000cd8 <cmp_complex+0x208>",1,0.002529532289479675
+branch_mispredictions,80000cd0,cmp_complex,512,"bnez	a5,80000cd8 <cmp_complex+0x208>",1,0.002529532289479675
+branch_mispredictions,80000ce4,cmp_complex,532,"bltu	a3,a2,80000cec <cmp_complex+0x21c>",1,0.002529532289479675
+branch_mispredictions,80000d1c,cmp_complex,588,"bnez	a5,80000d24 <cmp_complex+0x254>",1,0.002529532289479675
+branch_mispredictions,80000e40,core_bench_list,276,"bgez	s10,80000d90 <core_bench_list+0x64>",1,0.002529532289479675
+branch_mispredictions,80000f14,core_bench_list,488,"bne	a5,s10,80000f04 <core_bench_list+0x1d8>",1,0.002529532289479675
+branch_mispredictions,80000fc8,core_bench_list,668,"beqz	a5,8000105c <core_bench_list+0x330>",1,0.002529532289479675
+branch_mispredictions,80001038,core_bench_list,780,"bne	s8,a5,80001028 <core_bench_list+0x2fc>",1,0.002529532289479675
+branch_mispredictions,80001068,core_bench_list,828,"bnez	a4,80001048 <core_bench_list+0x31c>",1,0.002529532289479675
+branch_mispredictions,80001094,core_bench_list,872,"bnez	s0,80000f60 <core_bench_list+0x234>",1,0.002529532289479675
+branch_mispredictions,800011a8,core_bench_list,1148,"beqz	s2,800011dc <core_bench_list+0x4b0>",1,0.002529532289479675
+branch_mispredictions,80001204,core_bench_list,1240,"bnez	a3,800011e4 <core_bench_list+0x4b8>",1,0.002529532289479675
+branch_mispredictions,80001260,core_bench_list,1332,"bgtz	s2,800011ac <core_bench_list+0x480>",1,0.002529532289479675
+branch_mispredictions,80001288,core_bench_list,1372,"bnez	s2,80000f18 <core_bench_list+0x1ec>",1,0.002529532289479675
+branch_mispredictions,800016ac,matrix_test,260,"blt	s2,a2,800016dc <matrix_test+0x134>",1,0.002529532289479675
+branch_mispredictions,800017ac,matrix_test,516,"bge	s2,a2,80001780 <matrix_test+0x1d8>",1,0.002529532289479675
+branch_mispredictions,800019b0,matrix_test,1032,"blt	s2,a2,800019e4 <matrix_test+0x43c>",1,0.002529532289479675
+branch_mispredictions,80001e7c,core_state_transition,48,"beqz	a5,80002068 <core_state_transition+0x21c>",1,0.002529532289479675
+branch_mispredictions,80002058,core_state_transition,524,"bnez	a4,80001f3c <core_state_transition+0xf0>",1,0.002529532289479675
+branch_mispredictions,80002210,core_bench_state,220,"bne	s6,a4,800022e8 <core_bench_state+0x1b4>",1,0.002529532289479675
+branch_mispredictions,80002268,core_bench_state,308,"bne	s6,a5,80002310 <core_bench_state+0x1dc>",1,0.002529532289479675
+branch_mispredictions,80002308,core_bench_state,468,"bnez	a5,80002238 <core_bench_state+0x104>",1,0.002529532289479675
+branch_direction_errors,8000182c,matrix_test,644,"bltu	a6,s0,80001810 <matrix_test+0x268>",3241,8.198214150203627
+branch_direction_errors,80001950,matrix_test,936,"bltu	a7,s0,80001920 <matrix_test+0x378>",3241,8.198214150203627
+branch_direction_errors,80001ed0,core_state_transition,132,"beq	a4,a3,800020cc <core_state_transition+0x280>",3120,7.892140743176586
+branch_direction_errors,80001ed8,core_state_transition,140,"beq	a4,a3,80001f20 <core_state_transition+0xd4>",2720,6.880327827384717
+branch_direction_errors,80001e70,core_state_transition,36,"bltu	a6,a5,80001ea8 <core_state_transition+0x5c>",2401,6.0734070270407
+branch_direction_errors,80000dc4,core_bench_list,152,"bnez	a4,80000db4 <core_bench_list+0x88>",2041,5.162775402828017
+branch_direction_errors,80001f48,core_state_transition,252,"bne	a3,a0,8000200c <core_state_transition+0x1c0>",1921,4.859231528090456
+branch_direction_errors,80001f3c,core_state_transition,240,"beq	a4,a3,80002034 <core_state_transition+0x1e8>",1760,4.451976829484228
+branch_direction_errors,80001eb4,core_state_transition,104,"bltu	a0,a5,80001e80 <core_state_transition+0x34>",1360,3.4401639136923583
+branch_direction_errors,80001e6c,core_state_transition,32,"beq	a5,a6,80002044 <core_state_transition+0x1f8>",960,2.428350997900488
+branch_direction_errors,80002098,core_state_transition,588,"bgeu	a7,a3,80001f08 <core_state_transition+0xbc>",958,2.423291933321529
+branch_direction_errors,80000d9c,core_bench_list,112,"beqz	a5,80000e8c <core_bench_list+0x160>",940,2.3777603521108945
+branch_direction_errors,80000e68,core_bench_list,316,"bnez	a5,80000e58 <core_bench_list+0x12c>",891,2.2538132699263906
+branch_direction_errors,80001e64,core_state_transition,24,"beq	a5,a3,8000203c <core_state_transition+0x1f0>",880,2.225988414742114
+branch_direction_errors,8000100c,core_bench_list,736,"bge	t1,t3,800010a0 <core_bench_list+0x374>",783,1.9806237826625857
+branch_direction_errors,80001ee8,core_state_transition,156,"bgeu	a3,a4,80001f0c <core_state_transition+0xc0>",721,1.8237927807148457
+branch_direction_errors,8000209c,core_state_transition,592,"beq	t1,a6,800020b0 <core_state_transition+0x264>",720,1.8212632484253661
+branch_direction_errors,80000f78,core_bench_list,588,"bge	a5,t4,80000f88 <core_bench_list+0x25c>",595,1.5050717122404067
+branch_direction_errors,800011bc,core_bench_list,1168,"blez	a0,80001234 <core_bench_list+0x508>",569,1.4393038727139351
+branch_direction_errors,80001fdc,core_state_transition,400,"beq	a3,a7,80002104 <core_state_transition+0x2b8>",561,1.4190676143980978
+branch_direction_errors,80000fb8,core_bench_list,652,"bgtz	a5,80000f98 <core_bench_list+0x26c>",546,1.3811246300559026
+branch_direction_errors,80001618,matrix_test,112,"bne	a5,a3,80001608 <matrix_test+0x60>",361,0.9131611565021628
+branch_direction_errors,80001658,matrix_test,176,"bne	a5,a2,80001644 <matrix_test+0x9c>",361,0.9131611565021628
+branch_direction_errors,800016e8,matrix_test,320,"bne	a6,a5,800016bc <matrix_test+0x114>",361,0.9131611565021628
+branch_direction_errors,80001730,matrix_test,392,"bne	a5,s8,80001718 <matrix_test+0x170>",361,0.9131611565021628
+branch_direction_errors,80001840,matrix_test,664,"bltu	a3,s0,80001800 <matrix_test+0x258>",361,0.9131611565021628
+branch_direction_errors,80001964,matrix_test,956,"bltu	a3,s0,80001910 <matrix_test+0x368>",361,0.9131611565021628
+branch_direction_errors,80001a3c,matrix_test,1172,"bltu	a3,s0,80001a28 <matrix_test+0x480>",361,0.9131611565021628
+branch_direction_errors,80001788,matrix_test,480,"bgeu	a6,s0,800017d0 <matrix_test+0x228>",360,0.9106316242126831
+branch_direction_errors,80001898,matrix_test,752,"bgeu	a6,s0,800018e0 <matrix_test+0x338>",360,0.9106316242126831
+branch_direction_errors,800019ec,matrix_test,1092,"bgeu	a0,s0,80001a00 <matrix_test+0x458>",360,0.9106316242126831
+branch_direction_errors,80001198,core_bench_list,1132,"bgtz	s2,80001178 <core_bench_list+0x44c>",320,0.8094503326334961
+branch_direction_errors,80001fe0,core_state_transition,404,"bgeu	a6,a5,80001fc0 <core_state_transition+0x174>",319,0.8069208003440164
+branch_direction_errors,80001158,core_bench_list,1068,"bge	s2,s5,80001168 <core_bench_list+0x43c>",305,0.771507348291301
+branch_direction_errors,80000f98,core_bench_list,620,"beqz	a1,80000fa0 <core_bench_list+0x274>",250,0.6323830723699188
+branch_direction_errors,80002018,core_state_transition,460,"bgeu	a3,a4,80001f2c <core_state_transition+0xe0>",241,0.6096172817646017
+branch_direction_errors,80001f80,core_state_transition,308,"bnez	a3,80002000 <core_state_transition+0x1b4>",240,0.607087749475122
+branch_direction_errors,80000dc8,core_bench_list,156,"beqz	a5,80000e94 <core_bench_list+0x168>",208,0.5261427162117724
+branch_direction_errors,80001054,core_bench_list,808,"beqz	a1,8000107c <core_bench_list+0x350>",193,0.4881997318695773
+branch_direction_errors,80001178,core_bench_list,1100,"beqz	s11,80001180 <core_bench_list+0x454>",189,0.4780816027116586
+branch_direction_errors,80000fc0,core_bench_list,660,"blez	a1,80001080 <core_bench_list+0x354>",175,0.44266815065894316
+branch_direction_errors,80001fac,core_state_transition,352,"bgeu	a6,a3,80001fc0 <core_state_transition+0x174>",161,0.4072546986062277
+branch_direction_errors,800018bc,matrix_test,788,"bge	s2,a2,80001890 <matrix_test+0x2e8>",157,0.397136569448309
+branch_direction_errors,800011a0,core_bench_list,1140,"blez	s11,80001218 <core_bench_list+0x4ec>",145,0.3667821819745529
+branch_direction_errors,80000e60,core_bench_list,308,"beq	s8,a3,80000dac <core_bench_list+0x80>",130,0.3288391976323578
+branch_direction_errors,80000f9c,core_bench_list,624,"bnez	s0,80000fcc <core_bench_list+0x2a0>",111,0.2807780841322439
+branch_direction_errors,800010a8,core_bench_list,892,"beqz	a4,800010c0 <core_bench_list+0x394>",100,0.2529532289479675
+branch_direction_errors,80000ddc,core_bench_list,176,"beqz	a3,80000dec <core_bench_list+0xc0>",92,0.23271697063213012
+branch_direction_errors,80000da8,core_bench_list,124,"bne	a2,s10,80000d98 <core_bench_list+0x6c>",82,0.20742164773733338
+branch_direction_errors,80001080,core_bench_list,852,"bnez	a2,80000f6c <core_bench_list+0x240>",71,0.17959679255305694
+branch_direction_errors,800011f0,core_bench_list,1220,"beqz	s11,80001218 <core_bench_list+0x4ec>",67,0.16947866339513823
+branch_direction_errors,80001058,core_bench_list,812,"beqz	a2,8000107c <core_bench_list+0x350>",51,0.12900614676346345
+branch_direction_errors,80000ba4,cmp_complex,212,"beqz	a5,80000bc4 <cmp_complex+0xf4>",49,0.12394708218450408
+branch_direction_errors,80001740,matrix_test,408,"bne	a7,s9,8000170c <matrix_test+0x164>",41,0.10371082386866669
+branch_direction_errors,800017d8,matrix_test,560,"bltu	a0,s0,80001758 <matrix_test+0x1b0>",41,0.10371082386866669
+branch_direction_errors,80001850,matrix_test,680,"bltu	t5,s0,800017f4 <matrix_test+0x24c>",41,0.10371082386866669
+branch_direction_errors,8000188c,matrix_test,740,"blt	s2,a2,800018c0 <matrix_test+0x318>",41,0.10371082386866669
+branch_direction_errors,800018e8,matrix_test,832,"bltu	t1,s0,80001868 <matrix_test+0x2c0>",41,0.10371082386866669
+branch_direction_errors,80001974,matrix_test,972,"bltu	t6,s0,80001904 <matrix_test+0x35c>",41,0.10371082386866669
+branch_direction_errors,80001a0c,matrix_test,1124,"bltu	t1,s0,8000198c <matrix_test+0x3e4>",41,0.10371082386866669
+branch_direction_errors,80001a48,matrix_test,1184,"bltu	a2,s0,80001a20 <matrix_test+0x478>",41,0.10371082386866669
+branch_direction_errors,800021f4,core_bench_state,192,"bnez	a3,800021d0 <core_bench_state+0x9c>",41,0.10371082386866669
+branch_direction_errors,8000225c,core_bench_state,296,"bnez	a3,80002238 <core_bench_state+0x104>",41,0.10371082386866669
+branch_direction_errors,800022b4,core_bench_state,384,"bne	s3,s0,80002290 <core_bench_state+0x15c>",41,0.10371082386866669
+branch_direction_errors,800022fc,core_bench_state,456,"bltu	a5,s8,800022e8 <core_bench_state+0x1b4>",41,0.10371082386866669
+branch_direction_errors,8000232c,core_bench_state,504,"bltu	a4,s8,80002318 <core_bench_state+0x1e4>",41,0.10371082386866669
+branch_direction_errors,80000fc4,core_bench_list,664,"beqz	a2,80001084 <core_bench_list+0x358>",40,0.10118129157918701
+branch_direction_errors,800011d0,core_bench_list,1188,"bnez	a5,80001194 <core_bench_list+0x468>",40,0.10118129157918701
+branch_direction_errors,80001624,matrix_test,124,"beq	a0,s0,80001630 <matrix_test+0x88>",40,0.10118129157918701
+branch_direction_errors,80001664,matrix_test,188,"beq	a0,a7,80001670 <matrix_test+0xc8>",40,0.10118129157918701
+branch_direction_errors,800016f0,matrix_test,328,"beq	a7,t1,800016fc <matrix_test+0x154>",40,0.10118129157918701
+branch_direction_errors,800022f0,core_bench_state,444,"beq	a4,a2,800022f8 <core_bench_state+0x1c4>",40,0.10118129157918701
+branch_direction_errors,80002320,core_bench_state,492,"beq	a5,a2,80002328 <core_bench_state+0x1f4>",40,0.10118129157918701
+branch_direction_errors,80000af8,cmp_complex,40,"bnez	a5,80000b98 <cmp_complex+0xc8>",38,0.09612222700022766
+branch_direction_errors,80000e14,core_bench_list,232,"bltz	a2,80000e74 <core_bench_list+0x148>",38,0.09612222700022766
+branch_direction_errors,800011f4,core_bench_list,1224,"beqz	a5,8000121c <core_bench_list+0x4f0>",38,0.09612222700022766
+branch_direction_errors,80000b28,cmp_complex,88,"bne	a3,a2,80000c74 <cmp_complex+0x1a4>",31,0.07841550097386993
+branch_direction_errors,8000117c,core_bench_list,1104,"bnez	s0,800011ac <core_bench_list+0x480>",31,0.07841550097386993
+branch_direction_errors,80000be4,cmp_complex,276,"beqz	a3,80000c94 <cmp_complex+0x1c4>",30,0.07588596868439025
+branch_direction_errors,80000bec,cmp_complex,284,"bne	a3,a2,80000c84 <cmp_complex+0x1b4>",21,0.05312017807907318
+branch_direction_errors,80000f30,core_bench_list,516,"bnez	s2,80000f18 <core_bench_list+0x1ec>",21,0.05312017807907318
+branch_direction_errors,80000f84,core_bench_list,600,"bnez	a2,80000f78 <core_bench_list+0x24c>",21,0.05312017807907318
+branch_direction_errors,800010f4,core_bench_list,968,"bnez	s0,800010dc <core_bench_list+0x3b0>",21,0.05312017807907318
+branch_direction_errors,80000b20,cmp_complex,80,"beqz	a3,80000ce0 <cmp_complex+0x210>",20,0.050590645789593505
+branch_direction_errors,80000ec8,core_bench_list,412,"bgtz	a1,80001138 <core_bench_list+0x40c>",20,0.050590645789593505
+branch_direction_errors,80001088,core_bench_list,860,"beq	t5,t6,800010d4 <core_bench_list+0x3a8>",20,0.050590645789593505
+branch_direction_errors,80000d70,core_bench_list,68,"bltz	a1,800012a0 <core_bench_list+0x574>",19,0.04806111350011383
+branch_direction_errors,80000ef4,core_bench_list,456,"bltz	s10,80001030 <core_bench_list+0x304>",19,0.04806111350011383
+branch_direction_errors,800010cc,core_bench_list,928,"bgtz	a5,80000fd0 <core_bench_list+0x2a4>",19,0.04806111350011383
+branch_direction_errors,8000123c,core_bench_list,1296,"beqz	s3,80001254 <core_bench_list+0x528>",12,0.030354387473756104
+branch_direction_errors,80001164,core_bench_list,1080,"bnez	a5,80001158 <core_bench_list+0x42c>",11,0.027824855184276426
+branch_direction_errors,80001218,core_bench_list,1260,"bnez	a5,8000114c <core_bench_list+0x420>",11,0.027824855184276426
+branch_direction_errors,80000e2c,core_bench_list,256,"beq	t3,a6,80000eb4 <core_bench_list+0x188>",10,0.025295322894796753
+branch_direction_errors,80000e7c,core_bench_list,336,"beq	t3,a6,80000eb0 <core_bench_list+0x184>",10,0.025295322894796753
+branch_direction_errors,80000f08,core_bench_list,476,"beqz	s2,80001268 <core_bench_list+0x53c>",10,0.025295322894796753
+branch_direction_errors,8000102c,core_bench_list,768,"beqz	s2,80001268 <core_bench_list+0x53c>",10,0.025295322894796753
+branch_direction_errors,800011a4,core_bench_list,1144,"beqz	a5,8000121c <core_bench_list+0x4f0>",10,0.025295322894796753
+branch_direction_errors,80001224,core_bench_list,1272,"beq	s9,a5,800012c4 <core_bench_list+0x598>",10,0.025295322894796753
+branch_direction_errors,80000100,iterate,160,"bne	s2,s1,800000cc <iterate+0x6c>",2,0.00505906457895935
+branch_direction_errors,80001020,core_bench_list,756,"bnez	a2,80000fb4 <core_bench_list+0x288>",2,0.00505906457895935
+branch_direction_errors,80000b58,cmp_complex,136,"bnez	a5,80000d24 <cmp_complex+0x254>",1,0.002529532289479675
+branch_direction_errors,80000c1c,cmp_complex,332,"bnez	a5,80000cd8 <cmp_complex+0x208>",1,0.002529532289479675
+branch_direction_errors,80000cd0,cmp_complex,512,"bnez	a5,80000cd8 <cmp_complex+0x208>",1,0.002529532289479675
+branch_direction_errors,80000ce4,cmp_complex,532,"bltu	a3,a2,80000cec <cmp_complex+0x21c>",1,0.002529532289479675
+branch_direction_errors,80000d1c,cmp_complex,588,"bnez	a5,80000d24 <cmp_complex+0x254>",1,0.002529532289479675
+branch_direction_errors,80000e40,core_bench_list,276,"bgez	s10,80000d90 <core_bench_list+0x64>",1,0.002529532289479675
+branch_direction_errors,80000f14,core_bench_list,488,"bne	a5,s10,80000f04 <core_bench_list+0x1d8>",1,0.002529532289479675
+branch_direction_errors,80000fc8,core_bench_list,668,"beqz	a5,8000105c <core_bench_list+0x330>",1,0.002529532289479675
+branch_direction_errors,80001038,core_bench_list,780,"bne	s8,a5,80001028 <core_bench_list+0x2fc>",1,0.002529532289479675
+branch_direction_errors,80001068,core_bench_list,828,"bnez	a4,80001048 <core_bench_list+0x31c>",1,0.002529532289479675
+branch_direction_errors,80001094,core_bench_list,872,"bnez	s0,80000f60 <core_bench_list+0x234>",1,0.002529532289479675
+branch_direction_errors,800011a8,core_bench_list,1148,"beqz	s2,800011dc <core_bench_list+0x4b0>",1,0.002529532289479675
+branch_direction_errors,80001204,core_bench_list,1240,"bnez	a3,800011e4 <core_bench_list+0x4b8>",1,0.002529532289479675
+branch_direction_errors,80001260,core_bench_list,1332,"bgtz	s2,800011ac <core_bench_list+0x480>",1,0.002529532289479675
+branch_direction_errors,80001288,core_bench_list,1372,"bnez	s2,80000f18 <core_bench_list+0x1ec>",1,0.002529532289479675
+branch_direction_errors,800016ac,matrix_test,260,"blt	s2,a2,800016dc <matrix_test+0x134>",1,0.002529532289479675
+branch_direction_errors,800017ac,matrix_test,516,"bge	s2,a2,80001780 <matrix_test+0x1d8>",1,0.002529532289479675
+branch_direction_errors,800019b0,matrix_test,1032,"blt	s2,a2,800019e4 <matrix_test+0x43c>",1,0.002529532289479675
+branch_direction_errors,80001e7c,core_state_transition,48,"beqz	a5,80002068 <core_state_transition+0x21c>",1,0.002529532289479675
+branch_direction_errors,80002058,core_state_transition,524,"bnez	a4,80001f3c <core_state_transition+0xf0>",1,0.002529532289479675
+branch_direction_errors,80002210,core_bench_state,220,"bne	s6,a4,800022e8 <core_bench_state+0x1b4>",1,0.002529532289479675
+branch_direction_errors,80002268,core_bench_state,308,"bne	s6,a5,80002310 <core_bench_state+0x1dc>",1,0.002529532289479675
+branch_direction_errors,80002308,core_bench_state,468,"bnez	a5,80002238 <core_bench_state+0x104>",1,0.002529532289479675
+branch_target_errors,80001ed0,core_state_transition,132,"beq	a4,a3,800020cc <core_state_transition+0x280>",3120,18.06601042269832
+branch_target_errors,80001ed8,core_state_transition,140,"beq	a4,a3,80001f20 <core_state_transition+0xd4>",1760,10.19108280254777
+branch_target_errors,80001f3c,core_state_transition,240,"beq	a4,a3,80002034 <core_state_transition+0x1e8>",1760,10.19108280254777
+branch_target_errors,80001e70,core_state_transition,36,"bltu	a6,a5,80001ea8 <core_state_transition+0x5c>",1281,7.417486971627099
+branch_target_errors,80001eb4,core_state_transition,104,"bltu	a0,a5,80001e80 <core_state_transition+0x34>",1120,6.485234510712218
+branch_target_errors,80000d9c,core_bench_list,112,"beqz	a5,80000e8c <core_bench_list+0x160>",940,5.4429646786334684
+branch_target_errors,80001e64,core_state_transition,24,"beq	a5,a3,8000203c <core_state_transition+0x1f0>",880,5.095541401273885
+branch_target_errors,80001e6c,core_state_transition,32,"beq	a5,a6,80002044 <core_state_transition+0x1f8>",720,4.169079328314997
+branch_target_errors,80000f78,core_bench_list,588,"bge	a5,t4,80000f88 <core_bench_list+0x25c>",580,3.3584250144759697
+branch_target_errors,80002098,core_state_transition,588,"bgeu	a7,a3,80001f08 <core_state_transition+0xbc>",480,2.779386218876665
+branch_target_errors,80001788,matrix_test,480,"bgeu	a6,s0,800017d0 <matrix_test+0x228>",360,2.0845396641574987
+branch_target_errors,80001898,matrix_test,752,"bgeu	a6,s0,800018e0 <matrix_test+0x338>",360,2.0845396641574987
+branch_target_errors,800019ec,matrix_test,1092,"bgeu	a0,s0,80001a00 <matrix_test+0x458>",360,2.0845396641574987
+branch_target_errors,8000100c,core_bench_list,736,"bge	t1,t3,800010a0 <core_bench_list+0x374>",329,1.905037637521714
+branch_target_errors,80001158,core_bench_list,1068,"bge	s2,s5,80001168 <core_bench_list+0x43c>",290,1.6792125072379849
+branch_target_errors,800011bc,core_bench_list,1168,"blez	a0,80001234 <core_bench_list+0x508>",285,1.6502605674580197
+branch_target_errors,80001f80,core_state_transition,308,"bnez	a3,80002000 <core_state_transition+0x1b4>",240,1.3896931094383325
+branch_target_errors,8000209c,core_state_transition,592,"beq	t1,a6,800020b0 <core_state_transition+0x264>",240,1.3896931094383325
+branch_target_errors,80000fb8,core_bench_list,652,"bgtz	a5,80000f98 <core_bench_list+0x26c>",201,1.1638679791546034
+branch_target_errors,80000f98,core_bench_list,620,"beqz	a1,80000fa0 <core_bench_list+0x274>",199,1.1522872032426172
+branch_target_errors,80001178,core_bench_list,1100,"beqz	s11,80001180 <core_bench_list+0x454>",171,0.9901563404748118
+branch_target_errors,80000e60,core_bench_list,308,"beq	s8,a3,80000dac <core_bench_list+0x80>",130,0.7527504342790967
+branch_target_errors,80000fc0,core_bench_list,660,"blez	a1,80001080 <core_bench_list+0x354>",118,0.6832657788071801
+branch_target_errors,80001198,core_bench_list,1132,"bgtz	s2,80001178 <core_bench_list+0x44c>",107,0.6195715112912565
+branch_target_errors,800010a8,core_bench_list,892,"beqz	a4,800010c0 <core_bench_list+0x394>",99,0.5732484076433121
+branch_target_errors,80000ddc,core_bench_list,176,"beqz	a3,80000dec <core_bench_list+0xc0>",90,0.5211349160393747
+branch_target_errors,80001fe0,core_state_transition,404,"bgeu	a6,a5,80001fc0 <core_state_transition+0x174>",80,0.46323103647944414
+branch_target_errors,80001054,core_bench_list,808,"beqz	a1,8000107c <core_bench_list+0x350>",76,0.4400694846554719
+branch_target_errors,800011a0,core_bench_list,1140,"blez	s11,80001218 <core_bench_list+0x4ec>",65,0.37637521713954836
+branch_target_errors,800018bc,matrix_test,788,"bge	s2,a2,80001890 <matrix_test+0x2e8>",60,0.3474232773595831
+branch_target_errors,80000f9c,core_bench_list,624,"bnez	s0,80000fcc <core_bench_list+0x2a0>",41,0.2374059061957151
+branch_target_errors,80000dc8,core_bench_list,156,"beqz	a5,80000e94 <core_bench_list+0x168>",40,0.23161551823972207
+branch_target_errors,80000fc4,core_bench_list,664,"beqz	a2,80001084 <core_bench_list+0x358>",40,0.23161551823972207
+branch_target_errors,80001058,core_bench_list,812,"beqz	a2,8000107c <core_bench_list+0x350>",40,0.23161551823972207
+branch_target_errors,80001624,matrix_test,124,"beq	a0,s0,80001630 <matrix_test+0x88>",40,0.23161551823972207
+branch_target_errors,80001664,matrix_test,188,"beq	a0,a7,80001670 <matrix_test+0xc8>",40,0.23161551823972207
+branch_target_errors,800016f0,matrix_test,328,"beq	a7,t1,800016fc <matrix_test+0x154>",40,0.23161551823972207
+branch_target_errors,8000188c,matrix_test,740,"blt	s2,a2,800018c0 <matrix_test+0x318>",40,0.23161551823972207
+branch_target_errors,800022f0,core_bench_state,444,"beq	a4,a2,800022f8 <core_bench_state+0x1c4>",40,0.23161551823972207
+branch_target_errors,80002320,core_bench_state,492,"beq	a5,a2,80002328 <core_bench_state+0x1f4>",40,0.23161551823972207
+branch_target_errors,800011f4,core_bench_list,1224,"beqz	a5,8000121c <core_bench_list+0x4f0>",30,0.17371163867979156
+branch_target_errors,800011f0,core_bench_list,1220,"beqz	s11,80001218 <core_bench_list+0x4ec>",22,0.12738853503184713
+branch_target_errors,80000af8,cmp_complex,40,"bnez	a5,80000b98 <cmp_complex+0xc8>",20,0.11580775911986103
+branch_target_errors,80000b20,cmp_complex,80,"beqz	a3,80000ce0 <cmp_complex+0x210>",20,0.11580775911986103
+branch_target_errors,80000be4,cmp_complex,276,"beqz	a3,80000c94 <cmp_complex+0x1c4>",20,0.11580775911986103
+branch_target_errors,80000e14,core_bench_list,232,"bltz	a2,80000e74 <core_bench_list+0x148>",20,0.11580775911986103
+branch_target_errors,80001088,core_bench_list,860,"beq	t5,t6,800010d4 <core_bench_list+0x3a8>",20,0.11580775911986103
+branch_target_errors,80000ba4,cmp_complex,212,"beqz	a5,80000bc4 <cmp_complex+0xf4>",19,0.11001737116386798
+branch_target_errors,80000b28,cmp_complex,88,"bne	a3,a2,80000c74 <cmp_complex+0x1a4>",11,0.06369426751592357
+branch_target_errors,80001080,core_bench_list,852,"bnez	a2,80000f6c <core_bench_list+0x240>",11,0.06369426751592357
+branch_target_errors,8000117c,core_bench_list,1104,"bnez	s0,800011ac <core_bench_list+0x480>",11,0.06369426751592357
+branch_target_errors,8000123c,core_bench_list,1296,"beqz	s3,80001254 <core_bench_list+0x528>",11,0.06369426751592357
+branch_target_errors,80000d70,core_bench_list,68,"bltz	a1,800012a0 <core_bench_list+0x574>",10,0.05790387955993052
+branch_target_errors,80000e2c,core_bench_list,256,"beq	t3,a6,80000eb4 <core_bench_list+0x188>",10,0.05790387955993052
+branch_target_errors,80000e7c,core_bench_list,336,"beq	t3,a6,80000eb0 <core_bench_list+0x184>",10,0.05790387955993052
+branch_target_errors,80000ec8,core_bench_list,412,"bgtz	a1,80001138 <core_bench_list+0x40c>",10,0.05790387955993052
+branch_target_errors,80000ef4,core_bench_list,456,"bltz	s10,80001030 <core_bench_list+0x304>",10,0.05790387955993052
+branch_target_errors,80000f08,core_bench_list,476,"beqz	s2,80001268 <core_bench_list+0x53c>",10,0.05790387955993052
+branch_target_errors,8000102c,core_bench_list,768,"beqz	s2,80001268 <core_bench_list+0x53c>",10,0.05790387955993052
+branch_target_errors,800011a4,core_bench_list,1144,"beqz	a5,8000121c <core_bench_list+0x4f0>",10,0.05790387955993052
+branch_target_errors,80001224,core_bench_list,1272,"beq	s9,a5,800012c4 <core_bench_list+0x598>",10,0.05790387955993052
+branch_target_errors,80000da8,core_bench_list,124,"bne	a2,s10,80000d98 <core_bench_list+0x6c>",2,0.011580775911986103
+branch_target_errors,80000100,iterate,160,"bne	s2,s1,800000cc <iterate+0x6c>",1,0.005790387955993051
+branch_target_errors,80000b58,cmp_complex,136,"bnez	a5,80000d24 <cmp_complex+0x254>",1,0.005790387955993051
+branch_target_errors,80000bec,cmp_complex,284,"bne	a3,a2,80000c84 <cmp_complex+0x1b4>",1,0.005790387955993051
+branch_target_errors,80000c1c,cmp_complex,332,"bnez	a5,80000cd8 <cmp_complex+0x208>",1,0.005790387955993051
+branch_target_errors,80000cd0,cmp_complex,512,"bnez	a5,80000cd8 <cmp_complex+0x208>",1,0.005790387955993051
+branch_target_errors,80000ce4,cmp_complex,532,"bltu	a3,a2,80000cec <cmp_complex+0x21c>",1,0.005790387955993051
+branch_target_errors,80000d1c,cmp_complex,588,"bnez	a5,80000d24 <cmp_complex+0x254>",1,0.005790387955993051
+branch_target_errors,80000dc4,core_bench_list,152,"bnez	a4,80000db4 <core_bench_list+0x88>",1,0.005790387955993051
+branch_target_errors,80000e40,core_bench_list,276,"bgez	s10,80000d90 <core_bench_list+0x64>",1,0.005790387955993051
+branch_target_errors,80000e68,core_bench_list,316,"bnez	a5,80000e58 <core_bench_list+0x12c>",1,0.005790387955993051
+branch_target_errors,80000f14,core_bench_list,488,"bne	a5,s10,80000f04 <core_bench_list+0x1d8>",1,0.005790387955993051
+branch_target_errors,80000f30,core_bench_list,516,"bnez	s2,80000f18 <core_bench_list+0x1ec>",1,0.005790387955993051
+branch_target_errors,80000f84,core_bench_list,600,"bnez	a2,80000f78 <core_bench_list+0x24c>",1,0.005790387955993051
+branch_target_errors,80000fc8,core_bench_list,668,"beqz	a5,8000105c <core_bench_list+0x330>",1,0.005790387955993051
+branch_target_errors,80001020,core_bench_list,756,"bnez	a2,80000fb4 <core_bench_list+0x288>",1,0.005790387955993051
+branch_target_errors,80001038,core_bench_list,780,"bne	s8,a5,80001028 <core_bench_list+0x2fc>",1,0.005790387955993051
+branch_target_errors,80001068,core_bench_list,828,"bnez	a4,80001048 <core_bench_list+0x31c>",1,0.005790387955993051
+branch_target_errors,80001094,core_bench_list,872,"bnez	s0,80000f60 <core_bench_list+0x234>",1,0.005790387955993051
+branch_target_errors,800010cc,core_bench_list,928,"bgtz	a5,80000fd0 <core_bench_list+0x2a4>",1,0.005790387955993051
+branch_target_errors,800010f4,core_bench_list,968,"bnez	s0,800010dc <core_bench_list+0x3b0>",1,0.005790387955993051
+branch_target_errors,80001164,core_bench_list,1080,"bnez	a5,80001158 <core_bench_list+0x42c>",1,0.005790387955993051
+branch_target_errors,800011a8,core_bench_list,1148,"beqz	s2,800011dc <core_bench_list+0x4b0>",1,0.005790387955993051
+branch_target_errors,800011d0,core_bench_list,1188,"bnez	a5,80001194 <core_bench_list+0x468>",1,0.005790387955993051
+branch_target_errors,80001204,core_bench_list,1240,"bnez	a3,800011e4 <core_bench_list+0x4b8>",1,0.005790387955993051
+branch_target_errors,80001218,core_bench_list,1260,"bnez	a5,8000114c <core_bench_list+0x420>",1,0.005790387955993051
+branch_target_errors,80001260,core_bench_list,1332,"bgtz	s2,800011ac <core_bench_list+0x480>",1,0.005790387955993051
+branch_target_errors,80001288,core_bench_list,1372,"bnez	s2,80000f18 <core_bench_list+0x1ec>",1,0.005790387955993051
+branch_target_errors,80001618,matrix_test,112,"bne	a5,a3,80001608 <matrix_test+0x60>",1,0.005790387955993051
+branch_target_errors,80001658,matrix_test,176,"bne	a5,a2,80001644 <matrix_test+0x9c>",1,0.005790387955993051
+branch_target_errors,800016ac,matrix_test,260,"blt	s2,a2,800016dc <matrix_test+0x134>",1,0.005790387955993051
+branch_target_errors,800016e8,matrix_test,320,"bne	a6,a5,800016bc <matrix_test+0x114>",1,0.005790387955993051
+branch_target_errors,80001730,matrix_test,392,"bne	a5,s8,80001718 <matrix_test+0x170>",1,0.005790387955993051
+branch_target_errors,80001740,matrix_test,408,"bne	a7,s9,8000170c <matrix_test+0x164>",1,0.005790387955993051
+branch_target_errors,800017ac,matrix_test,516,"bge	s2,a2,80001780 <matrix_test+0x1d8>",1,0.005790387955993051
+branch_target_errors,800017d8,matrix_test,560,"bltu	a0,s0,80001758 <matrix_test+0x1b0>",1,0.005790387955993051
+branch_target_errors,8000182c,matrix_test,644,"bltu	a6,s0,80001810 <matrix_test+0x268>",1,0.005790387955993051
+branch_target_errors,80001840,matrix_test,664,"bltu	a3,s0,80001800 <matrix_test+0x258>",1,0.005790387955993051
+branch_target_errors,80001850,matrix_test,680,"bltu	t5,s0,800017f4 <matrix_test+0x24c>",1,0.005790387955993051
+branch_target_errors,800018e8,matrix_test,832,"bltu	t1,s0,80001868 <matrix_test+0x2c0>",1,0.005790387955993051
+branch_target_errors,80001950,matrix_test,936,"bltu	a7,s0,80001920 <matrix_test+0x378>",1,0.005790387955993051
+branch_target_errors,80001964,matrix_test,956,"bltu	a3,s0,80001910 <matrix_test+0x368>",1,0.005790387955993051
+branch_target_errors,80001974,matrix_test,972,"bltu	t6,s0,80001904 <matrix_test+0x35c>",1,0.005790387955993051
+branch_target_errors,800019b0,matrix_test,1032,"blt	s2,a2,800019e4 <matrix_test+0x43c>",1,0.005790387955993051
+branch_target_errors,80001a0c,matrix_test,1124,"bltu	t1,s0,8000198c <matrix_test+0x3e4>",1,0.005790387955993051
+branch_target_errors,80001a3c,matrix_test,1172,"bltu	a3,s0,80001a28 <matrix_test+0x480>",1,0.005790387955993051
+branch_target_errors,80001a48,matrix_test,1184,"bltu	a2,s0,80001a20 <matrix_test+0x478>",1,0.005790387955993051
+branch_target_errors,80001e7c,core_state_transition,48,"beqz	a5,80002068 <core_state_transition+0x21c>",1,0.005790387955993051
+branch_target_errors,80001ee8,core_state_transition,156,"bgeu	a3,a4,80001f0c <core_state_transition+0xc0>",1,0.005790387955993051
+branch_target_errors,80001f48,core_state_transition,252,"bne	a3,a0,8000200c <core_state_transition+0x1c0>",1,0.005790387955993051
+branch_target_errors,80001fac,core_state_transition,352,"bgeu	a6,a3,80001fc0 <core_state_transition+0x174>",1,0.005790387955993051
+branch_target_errors,80001fdc,core_state_transition,400,"beq	a3,a7,80002104 <core_state_transition+0x2b8>",1,0.005790387955993051
+branch_target_errors,80002018,core_state_transition,460,"bgeu	a3,a4,80001f2c <core_state_transition+0xe0>",1,0.005790387955993051
+branch_target_errors,80002058,core_state_transition,524,"bnez	a4,80001f3c <core_state_transition+0xf0>",1,0.005790387955993051
+branch_target_errors,800021f4,core_bench_state,192,"bnez	a3,800021d0 <core_bench_state+0x9c>",1,0.005790387955993051
+branch_target_errors,80002210,core_bench_state,220,"bne	s6,a4,800022e8 <core_bench_state+0x1b4>",1,0.005790387955993051
+branch_target_errors,8000225c,core_bench_state,296,"bnez	a3,80002238 <core_bench_state+0x104>",1,0.005790387955993051
+branch_target_errors,80002268,core_bench_state,308,"bne	s6,a5,80002310 <core_bench_state+0x1dc>",1,0.005790387955993051
+branch_target_errors,800022b4,core_bench_state,384,"bne	s3,s0,80002290 <core_bench_state+0x15c>",1,0.005790387955993051
+branch_target_errors,800022fc,core_bench_state,456,"bltu	a5,s8,800022e8 <core_bench_state+0x1b4>",1,0.005790387955993051
+branch_target_errors,80002308,core_bench_state,468,"bnez	a5,80002238 <core_bench_state+0x104>",1,0.005790387955993051
+branch_target_errors,8000232c,core_bench_state,504,"bltu	a4,s8,80002318 <core_bench_state+0x1e4>",1,0.005790387955993051
+resolved_jal,80001f1c,core_state_transition,208,j	80001ed0 <core_state_transition+0x84>,13040,26.414406384831974
+resolved_jal,800021d8,core_bench_state,164,jal	80001e4c <core_state_transition>,5120,10.371300666437094
+resolved_jal,80002240,core_bench_state,268,jal	80001e4c <core_state_transition>,5120,10.371300666437094
+resolved_jal,800020d8,core_state_transition,652,j	80001ea0 <core_state_transition+0x54>,3120,6.320011343610104
+resolved_jal,800019fc,matrix_test,1108,j	800019c8 <matrix_test+0x420>,2880,5.833856624870865
+resolved_jal,80002040,core_state_transition,500,j	80001ea0 <core_state_transition+0x54>,2640,5.347701906131626
+resolved_jal,80000db0,core_bench_list,132,j	80000db8 <core_bench_list+0x8c>,2040,4.132315109283529
+resolved_jal,80000eac,core_bench_list,384,j	80000e08 <core_bench_list+0xdc>,1830,3.7069297303866957
+resolved_jal,8000210c,core_state_transition,704,j	80001ea0 <core_state_transition+0x54>,1280,2.5928251666092734
+resolved_jal,800010bc,core_bench_list,912,j	80000fb8 <core_bench_list+0x28c>,1168,2.365952964530962
+resolved_jal,800011b8,core_bench_list,1164,jal	80000ad0 <cmp_complex>,1113,2.2545425081532198
+resolved_jal,80000d94,core_bench_list,104,j	80000da0 <core_bench_list+0x74>,1020,2.0661575546417645
+resolved_jal,80000e88,core_bench_list,348,j	80000e58 <core_bench_list+0x12c>,1010,2.0459011080276297
+resolved_jal,80000e90,core_bench_list,356,j	80000dac <core_bench_list+0x80>,940,1.9041059817286852
+resolved_jal,80000e70,core_bench_list,324,j	80000dac <core_bench_list+0x80>,890,1.8028237486580103
+resolved_jal,80001250,core_bench_list,1316,j	80001198 <core_bench_list+0x46c>,588,1.191079060911135
+resolved_jal,800010e8,core_bench_list,956,jal	800029c8 <crc16>,580,1.174873903619827
+resolved_jal,80000f24,core_bench_list,504,jal	800029c8 <crc16>,540,1.0938481171632872
+resolved_jal,800020ac,core_state_transition,608,j	80001ea0 <core_state_transition+0x54>,480,0.9723094374784775
+resolved_jal,800020b4,core_state_transition,616,j	80001f2c <core_state_transition+0xe0>,480,0.9723094374784775
+resolved_jal,8000162c,matrix_test,132,j	80001604 <matrix_test+0x5c>,320,0.6482062916523184
+resolved_jal,8000166c,matrix_test,196,j	8000163c <matrix_test+0x94>,320,0.6482062916523184
+resolved_jal,800016f8,matrix_test,336,j	8000168c <matrix_test+0xe4>,320,0.6482062916523184
+resolved_jal,8000229c,core_bench_state,360,jal	800025b8 <crcu32>,320,0.6482062916523184
+resolved_jal,800022ac,core_bench_state,376,jal	800025b8 <crcu32>,320,0.6482062916523184
+resolved_jal,80002008,core_state_transition,444,j	80001ea0 <core_state_transition+0x54>,240,0.48615471873923877
+resolved_jal,80002030,core_state_transition,484,j	80001ea0 <core_state_transition+0x54>,240,0.48615471873923877
+resolved_jal,800018d8,matrix_test,816,j	800018a4 <matrix_test+0x2fc>,160,0.3241031458261592
+resolved_jal,80000b70,cmp_complex,160,jal	80002398 <crcu16>,150,0.30384669921202423
+resolved_jal,800011e0,core_bench_list,1204,j	800011f8 <core_bench_list+0x4cc>,137,0.2775133186136488
+resolved_jal,80000c34,cmp_complex,356,jal	80002398 <crcu16>,130,0.26333380598375433
+resolved_jal,80000c80,cmp_complex,432,j	80000b64 <cmp_complex+0x94>,110,0.22282091275548443
+resolved_jal,80000c90,cmp_complex,448,j	80000c28 <cmp_complex+0x158>,90,0.18230801952721454
+resolved_jal,80000cdc,cmp_complex,524,j	80000c28 <cmp_complex+0x158>,40,0.0810257864565398
+resolved_jal,80001230,core_bench_list,1284,j	8000113c <core_bench_list+0x410>,40,0.0810257864565398
+resolved_jal,80001700,matrix_test,344,jal	800029c8 <crc16>,40,0.0810257864565398
+resolved_jal,800017e0,matrix_test,568,jal	800029c8 <crc16>,40,0.0810257864565398
+resolved_jal,800018f0,matrix_test,840,jal	800029c8 <crc16>,40,0.0810257864565398
+resolved_jal,80001a14,matrix_test,1132,jal	800029c8 <crc16>,40,0.0810257864565398
+resolved_jal,80001aec,core_bench_matrix,36,jal	800015a8 <matrix_test>,40,0.0810257864565398
+resolved_jal,80001b00,core_bench_matrix,56,j	800029c8 <crc16>,40,0.0810257864565398
+resolved_jal,80002330,core_bench_state,508,j	8000228c <core_bench_state+0x158>,40,0.0810257864565398
+resolved_jal,80000d28,cmp_complex,600,j	80000b64 <cmp_complex+0x94>,39,0.0790001417951263
+resolved_jal,800011d8,core_bench_list,1196,j	80001174 <core_bench_list+0x448>,39,0.0790001417951263
+resolved_jal,80000b40,cmp_complex,112,jal	80001ac8 <core_bench_matrix>,20,0.0405128932282699
+resolved_jal,80000c04,cmp_complex,308,jal	80001ac8 <core_bench_matrix>,20,0.0405128932282699
+resolved_jal,80000cb8,cmp_complex,488,jal	80002134 <core_bench_state>,20,0.0405128932282699
+resolved_jal,80000d04,cmp_complex,564,jal	80002134 <core_bench_state>,20,0.0405128932282699
+resolved_jal,8000127c,core_bench_list,1360,jal	800029c8 <crc16>,20,0.0405128932282699
+resolved_jal,800010d0,core_bench_list,932,j	80000fbc <core_bench_list+0x290>,19,0.038487248566856404
+resolved_jal,80001264,core_bench_list,1336,j	8000119c <core_bench_list+0x470>,10,0.02025644661413495
+resolved_jal,800012c0,core_bench_list,1428,j	80000e58 <core_bench_list+0x12c>,10,0.02025644661413495
+resolved_jal,800012c8,core_bench_list,1436,j	80000ecc <core_bench_list+0x1a0>,10,0.02025644661413495
+resolved_jal,800000d4,iterate,116,jal	80000d2c <core_bench_list>,9,0.018230801952721455
+resolved_jal,800000e0,iterate,128,jal	80002398 <crcu16>,9,0.018230801952721455
+resolved_jal,800000f0,iterate,144,jal	80000d2c <core_bench_list>,9,0.018230801952721455
+resolved_jal,800000f8,iterate,152,jal	80002398 <crcu16>,9,0.018230801952721455
+resolved_jal,8000008c,iterate,44,jal	80000d2c <core_bench_list>,1,0.0020256446614134948
+resolved_jal,80000098,iterate,56,jal	80002398 <crcu16>,1,0.0020256446614134948
+resolved_jal,800000a8,iterate,72,jal	80000d2c <core_bench_list>,1,0.0020256446614134948
+resolved_jal,800000b0,iterate,80,jal	80002398 <crcu16>,1,0.0020256446614134948
+resolved_jal,8000035c,main,572,jal	80000060 <iterate>,1,0.0020256446614134948
+resolved_jal,80000360,main,576,jal	80002c0c <stop_time>,1,0.0020256446614134948
+resolved_jal,80001024,core_bench_list,760,j	80001040 <core_bench_list+0x314>,1,0.0020256446614134948
+resolved_jal,80001044,core_bench_list,792,j	80000f94 <core_bench_list+0x268>,1,0.0020256446614134948
+jal_mispredictions,8000008c,iterate,44,jal	80000d2c <core_bench_list>,1,1.5384615384615385
+jal_mispredictions,80000098,iterate,56,jal	80002398 <crcu16>,1,1.5384615384615385
+jal_mispredictions,800000a8,iterate,72,jal	80000d2c <core_bench_list>,1,1.5384615384615385
+jal_mispredictions,800000b0,iterate,80,jal	80002398 <crcu16>,1,1.5384615384615385
+jal_mispredictions,800000d4,iterate,116,jal	80000d2c <core_bench_list>,1,1.5384615384615385
+jal_mispredictions,800000e0,iterate,128,jal	80002398 <crcu16>,1,1.5384615384615385
+jal_mispredictions,800000f0,iterate,144,jal	80000d2c <core_bench_list>,1,1.5384615384615385
+jal_mispredictions,800000f8,iterate,152,jal	80002398 <crcu16>,1,1.5384615384615385
+jal_mispredictions,8000035c,main,572,jal	80000060 <iterate>,1,1.5384615384615385
+jal_mispredictions,80000360,main,576,jal	80002c0c <stop_time>,1,1.5384615384615385
+jal_mispredictions,80000b40,cmp_complex,112,jal	80001ac8 <core_bench_matrix>,1,1.5384615384615385
+jal_mispredictions,80000b70,cmp_complex,160,jal	80002398 <crcu16>,1,1.5384615384615385
+jal_mispredictions,80000c04,cmp_complex,308,jal	80001ac8 <core_bench_matrix>,1,1.5384615384615385
+jal_mispredictions,80000c34,cmp_complex,356,jal	80002398 <crcu16>,1,1.5384615384615385
+jal_mispredictions,80000c80,cmp_complex,432,j	80000b64 <cmp_complex+0x94>,1,1.5384615384615385
+jal_mispredictions,80000c90,cmp_complex,448,j	80000c28 <cmp_complex+0x158>,1,1.5384615384615385
+jal_mispredictions,80000cb8,cmp_complex,488,jal	80002134 <core_bench_state>,1,1.5384615384615385
+jal_mispredictions,80000cdc,cmp_complex,524,j	80000c28 <cmp_complex+0x158>,1,1.5384615384615385
+jal_mispredictions,80000d04,cmp_complex,564,jal	80002134 <core_bench_state>,1,1.5384615384615385
+jal_mispredictions,80000d28,cmp_complex,600,j	80000b64 <cmp_complex+0x94>,1,1.5384615384615385
+jal_mispredictions,80000d94,core_bench_list,104,j	80000da0 <core_bench_list+0x74>,1,1.5384615384615385
+jal_mispredictions,80000db0,core_bench_list,132,j	80000db8 <core_bench_list+0x8c>,1,1.5384615384615385
+jal_mispredictions,80000e70,core_bench_list,324,j	80000dac <core_bench_list+0x80>,1,1.5384615384615385
+jal_mispredictions,80000e88,core_bench_list,348,j	80000e58 <core_bench_list+0x12c>,1,1.5384615384615385
+jal_mispredictions,80000e90,core_bench_list,356,j	80000dac <core_bench_list+0x80>,1,1.5384615384615385
+jal_mispredictions,80000eac,core_bench_list,384,j	80000e08 <core_bench_list+0xdc>,1,1.5384615384615385
+jal_mispredictions,80000f24,core_bench_list,504,jal	800029c8 <crc16>,1,1.5384615384615385
+jal_mispredictions,80001024,core_bench_list,760,j	80001040 <core_bench_list+0x314>,1,1.5384615384615385
+jal_mispredictions,80001044,core_bench_list,792,j	80000f94 <core_bench_list+0x268>,1,1.5384615384615385
+jal_mispredictions,800010bc,core_bench_list,912,j	80000fb8 <core_bench_list+0x28c>,1,1.5384615384615385
+jal_mispredictions,800010d0,core_bench_list,932,j	80000fbc <core_bench_list+0x290>,1,1.5384615384615385
+jal_mispredictions,800010e8,core_bench_list,956,jal	800029c8 <crc16>,1,1.5384615384615385
+jal_mispredictions,800011b8,core_bench_list,1164,jal	80000ad0 <cmp_complex>,1,1.5384615384615385
+jal_mispredictions,800011d8,core_bench_list,1196,j	80001174 <core_bench_list+0x448>,1,1.5384615384615385
+jal_mispredictions,800011e0,core_bench_list,1204,j	800011f8 <core_bench_list+0x4cc>,1,1.5384615384615385
+jal_mispredictions,80001230,core_bench_list,1284,j	8000113c <core_bench_list+0x410>,1,1.5384615384615385
+jal_mispredictions,80001250,core_bench_list,1316,j	80001198 <core_bench_list+0x46c>,1,1.5384615384615385
+jal_mispredictions,80001264,core_bench_list,1336,j	8000119c <core_bench_list+0x470>,1,1.5384615384615385
+jal_mispredictions,8000127c,core_bench_list,1360,jal	800029c8 <crc16>,1,1.5384615384615385
+jal_mispredictions,800012c0,core_bench_list,1428,j	80000e58 <core_bench_list+0x12c>,1,1.5384615384615385
+jal_mispredictions,800012c8,core_bench_list,1436,j	80000ecc <core_bench_list+0x1a0>,1,1.5384615384615385
+jal_mispredictions,8000162c,matrix_test,132,j	80001604 <matrix_test+0x5c>,1,1.5384615384615385
+jal_mispredictions,8000166c,matrix_test,196,j	8000163c <matrix_test+0x94>,1,1.5384615384615385
+jal_mispredictions,800016f8,matrix_test,336,j	8000168c <matrix_test+0xe4>,1,1.5384615384615385
+jal_mispredictions,80001700,matrix_test,344,jal	800029c8 <crc16>,1,1.5384615384615385
+jal_mispredictions,800017e0,matrix_test,568,jal	800029c8 <crc16>,1,1.5384615384615385
+jal_mispredictions,800018d8,matrix_test,816,j	800018a4 <matrix_test+0x2fc>,1,1.5384615384615385
+jal_mispredictions,800018f0,matrix_test,840,jal	800029c8 <crc16>,1,1.5384615384615385
+jal_mispredictions,800019fc,matrix_test,1108,j	800019c8 <matrix_test+0x420>,1,1.5384615384615385
+jal_mispredictions,80001a14,matrix_test,1132,jal	800029c8 <crc16>,1,1.5384615384615385
+jal_mispredictions,80001aec,core_bench_matrix,36,jal	800015a8 <matrix_test>,1,1.5384615384615385
+jal_mispredictions,80001b00,core_bench_matrix,56,j	800029c8 <crc16>,1,1.5384615384615385
+jal_mispredictions,80001f1c,core_state_transition,208,j	80001ed0 <core_state_transition+0x84>,1,1.5384615384615385
+jal_mispredictions,80002008,core_state_transition,444,j	80001ea0 <core_state_transition+0x54>,1,1.5384615384615385
+jal_mispredictions,80002030,core_state_transition,484,j	80001ea0 <core_state_transition+0x54>,1,1.5384615384615385
+jal_mispredictions,80002040,core_state_transition,500,j	80001ea0 <core_state_transition+0x54>,1,1.5384615384615385
+jal_mispredictions,800020ac,core_state_transition,608,j	80001ea0 <core_state_transition+0x54>,1,1.5384615384615385
+jal_mispredictions,800020b4,core_state_transition,616,j	80001f2c <core_state_transition+0xe0>,1,1.5384615384615385
+jal_mispredictions,800020d8,core_state_transition,652,j	80001ea0 <core_state_transition+0x54>,1,1.5384615384615385
+jal_mispredictions,8000210c,core_state_transition,704,j	80001ea0 <core_state_transition+0x54>,1,1.5384615384615385
+jal_mispredictions,800021d8,core_bench_state,164,jal	80001e4c <core_state_transition>,1,1.5384615384615385
+jal_mispredictions,80002240,core_bench_state,268,jal	80001e4c <core_state_transition>,1,1.5384615384615385
+jal_mispredictions,8000229c,core_bench_state,360,jal	800025b8 <crcu32>,1,1.5384615384615385
+jal_mispredictions,800022ac,core_bench_state,376,jal	800025b8 <crcu32>,1,1.5384615384615385
+jal_mispredictions,80002330,core_bench_state,508,j	8000228c <core_bench_state+0x158>,1,1.5384615384615385
+resolved_returns,80001ea4,core_state_transition,88,ret,9120,66.39970877320714
+resolved_returns,80002be8,crc16,544,ret,1340,9.75609756097561
+resolved_returns,80000bc0,cmp_complex,240,ret,983,7.1568984346559885
+resolved_returns,80001f04,core_state_transition,184,ret,720,5.242082271568984
+resolved_returns,800029c4,crcu32,1036,ret,640,4.659628685839097
+resolved_returns,800025b4,crcu16,540,ret,300,2.184200946487077
+resolved_returns,80001ffc,core_state_transition,432,ret,240,1.7473607571896614
+resolved_returns,80001fbc,core_state_transition,368,ret,160,1.1649071714597743
+resolved_returns,80000c70,cmp_complex,416,ret,130,0.9464870768110666
+resolved_returns,80001a84,matrix_test,1244,ret,40,0.2912267928649436
+resolved_returns,800022e4,core_bench_state,432,ret,40,0.2912267928649436
+resolved_returns,80001134,core_bench_list,1032,ret,20,0.1456133964324718
+resolved_returns,8000011c,iterate,188,ret,1,0.0072806698216235895
+resolved_returns,80002c08,start_time,8,ret,1,0.0072806698216235895
+return_mispredictions,80000c70,cmp_complex,416,ret,130,43.47826086956522
+return_mispredictions,80002be8,crc16,544,ret,41,13.7123745819398
+return_mispredictions,80001a84,matrix_test,1244,ret,40,13.377926421404682
+return_mispredictions,800022e4,core_bench_state,432,ret,40,13.377926421404682
+return_mispredictions,80000bc0,cmp_complex,240,ret,20,6.688963210702341
+return_mispredictions,80001134,core_bench_list,1032,ret,20,6.688963210702341
+return_mispredictions,8000011c,iterate,188,ret,1,0.33444816053511706
+return_mispredictions,80001ea4,core_state_transition,88,ret,1,0.33444816053511706
+return_mispredictions,80001f04,core_state_transition,184,ret,1,0.33444816053511706
+return_mispredictions,80001fbc,core_state_transition,368,ret,1,0.33444816053511706
+return_mispredictions,80001ffc,core_state_transition,432,ret,1,0.33444816053511706
+return_mispredictions,800025b4,crcu16,540,ret,1,0.33444816053511706
+return_mispredictions,800029c4,crcu32,1036,ret,1,0.33444816053511706
+return_mispredictions,80002c08,start_time,8,ret,1,0.33444816053511706
+d1_eligible_probes,80000db8,core_bench_list,140,"lw	a4,0(s0)",61200,15.566062930641998
+d1_eligible_probes,80001810,matrix_test,616,"lh	a5,0(a7)",29160,7.416771161070599
+d1_eligible_probes,80001814,matrix_test,620,"lh	a4,0(t1)",29160,7.416771161070599
+d1_eligible_probes,80001920,matrix_test,888,"lh	a5,0(t1)",29160,7.416771161070599
+d1_eligible_probes,80001924,matrix_test,892,"lh	a4,0(t3)",29160,7.416771161070599
+d1_eligible_probes,80000d98,core_bench_list,108,"lw	a5,0(a5)",28870,7.343010405353505
+d1_eligible_probes,80000e64,core_bench_list,312,"lw	a5,0(a5)",27780,7.065771702830633
+d1_eligible_probes,80001f2c,core_state_transition,224,"lbu	a4,1(a5)",15840,4.0288633467544
+d1_eligible_probes,80001f0c,core_state_transition,192,"lbu	a4,1(a5)",13040,3.3166905329341776
+d1_eligible_probes,80001e4c,core_state_transition,0,"lw	a4,0(a0)",10240,2.6045177191139555
+d1_eligible_probes,800021e0,core_bench_state,172,"lw	a3,12(sp)",5120,1.3022588595569777
+d1_eligible_probes,800021e4,core_bench_state,176,"lw	a5,0(a4)",5120,1.3022588595569777
+d1_eligible_probes,80002248,core_bench_state,276,"lw	a3,12(sp)",5120,1.3022588595569777
+d1_eligible_probes,8000224c,core_bench_state,280,"lw	a5,0(a4)",5120,1.3022588595569777
+d1_eligible_probes,80002068,core_state_transition,540,"lw	a0,0(a1)",4320,1.0987809127511998
+d1_eligible_probes,80002078,core_state_transition,556,"lbu	t1,1(a4)",4320,1.0987809127511998
+d1_eligible_probes,80002084,core_state_transition,568,"lw	a0,8(a1)",4320,1.0987809127511998
+d1_eligible_probes,80001608,matrix_test,96,"lhu	a4,0(a5)",3240,0.8240856845633999
+d1_eligible_probes,80001644,matrix_test,156,"lh	a4,0(a5)",3240,0.8240856845633999
+d1_eligible_probes,80001718,matrix_test,368,"lh	a4,0(a5)",3240,0.8240856845633999
+d1_eligible_probes,8000171c,matrix_test,372,"lh	a6,0(a3)",3240,0.8240856845633999
+d1_eligible_probes,80001a28,matrix_test,1152,"lhu	a4,0(a5)",3240,0.8240856845633999
+d1_eligible_probes,80001eb8,core_state_transition,108,"lw	a0,0(a1)",3200,0.813911787223111
+d1_eligible_probes,80001ec8,core_state_transition,124,"lbu	a4,1(a4)",3200,0.813911787223111
+d1_eligible_probes,800016c0,matrix_test,280,"lw	a4,0(a5)",2880,0.7325206085007999
+d1_eligible_probes,80001794,matrix_test,492,"lw	a4,0(a7)",2880,0.7325206085007999
+d1_eligible_probes,800018a4,matrix_test,764,"lw	a4,0(a7)",2880,0.7325206085007999
+d1_eligible_probes,800019c8,matrix_test,1056,"lw	a4,0(a6)",2880,0.7325206085007999
+d1_eligible_probes,80001f20,core_state_transition,212,"lw	a4,16(a1)",2720,0.6918250191396443
+d1_eligible_probes,80000fd0,core_bench_list,676,"lw	a0,4(a3)",2076,0.5280252719609932
+d1_eligible_probes,80000ff4,core_bench_list,712,"lh	a2,0(a7)",2076,0.5280252719609932
+d1_eligible_probes,80000fcc,core_bench_list,672,"lw	a7,4(s0)",1996,0.5076774772804155
+d1_eligible_probes,80001f4c,core_state_transition,256,"lw	a3,20(a1)",1920,0.4883470723338666
+d1_eligible_probes,80001f5c,core_state_transition,272,"lbu	a3,1(a5)",1920,0.4883470723338666
+d1_eligible_probes,80001f6c,core_state_transition,288,"lw	a4,12(a1)",1920,0.4883470723338666
+d1_eligible_probes,80001fc4,core_state_transition,376,"lbu	a3,1(a4)",1840,0.46799927765328886
+d1_eligible_probes,80000e94,core_bench_list,360,"lw	a5,0(s0)",1830,0.4654558033182166
+d1_eligible_probes,80001f84,core_state_transition,312,"lbu	a3,2(a5)",1680,0.4273036882921333
+d1_eligible_probes,80001f94,core_state_transition,328,"lw	a0,24(a1)",1680,0.4273036882921333
+d1_eligible_probes,80000f7c,core_bench_list,592,"lw	a2,0(a2) # ffff8000 <_estack+0x7fed8000>",1580,0.40186894494141107
+d1_eligible_probes,800010a0,core_bench_list,884,"lw	a0,0(a3)",1267,0.32225819825365054
+d1_eligible_probes,80001e80,core_state_transition,52,"lw	a3,4(a1)",1120,0.28486912552808885
+d1_eligible_probes,80001e84,core_state_transition,56,"lw	a5,0(a1)",1120,0.28486912552808885
+d1_eligible_probes,80000b98,cmp_complex,200,"lh	a6,0(s1)",1113,0.2830886934935383
+d1_eligible_probes,800011ac,core_bench_list,1152,"lw	a1,4(s0)",1113,0.2830886934935383
+d1_eligible_probes,800011b0,core_bench_list,1156,"lw	a0,4(s4)",1113,0.2830886934935383
+d1_eligible_probes,80000e58,core_bench_list,300,"lw	a4,4(a5)",1021,0.25968872961087386
+d1_eligible_probes,80000da0,core_bench_list,116,"lw	a4,4(a5)",1020,0.25943438217736664
+d1_eligible_probes,80000ba8,cmp_complex,216,"lw	ra,28(sp)",983,0.2500235271375994
+d1_eligible_probes,80000bac,cmp_complex,220,"lw	s0,24(sp)",983,0.2500235271375994
+d1_eligible_probes,80000bb4,cmp_complex,228,"lw	s1,20(sp)",983,0.2500235271375994
+d1_eligible_probes,8000101c,core_bench_list,752,"lw	s0,0(s0)",809,0.20576707370734276
+d1_eligible_probes,8000115c,core_bench_list,1072,"lw	a5,0(a5)",790,0.20093447247070553
+d1_eligible_probes,80001eec,core_state_transition,160,"lw	a3,16(a1)",720,0.18313015212519998
+d1_eligible_probes,80002044,core_state_transition,504,"lw	a0,0(a1)",720,0.18313015212519998
+d1_eligible_probes,80002054,core_state_transition,520,"lbu	a4,1(a4)",720,0.18313015212519998
+d1_eligible_probes,80001064,core_bench_list,824,"lw	s0,0(s0)",611,0.15540628187291275
+d1_eligible_probes,80001234,core_bench_list,1288,"lw	a3,0(s4)",599,0.1523541126708261
+d1_eligible_probes,800010dc,core_bench_list,944,"lw	a5,4(s2)",580,0.14752151143418887
+d1_eligible_probes,800010ec,core_bench_list,960,"lw	s0,0(s0)",580,0.14752151143418887
+d1_eligible_probes,80000f18,core_bench_list,492,"lw	a5,4(s0)",540,0.13734761409389998
+d1_eligible_probes,80000f28,core_bench_list,508,"lw	s2,0(s2)",540,0.13734761409389998
+d1_eligible_probes,800011cc,core_bench_list,1184,"lw	s0,0(s0)",514,0.13073458082271222
+d1_eligible_probes,800022e8,core_bench_state,436,"lbu	a4,0(a5)",500,0.1271737167536111
+d1_eligible_probes,80002318,core_bench_state,484,"lbu	a5,0(a4)",500,0.1271737167536111
+d1_eligible_probes,80001694,matrix_test,236,"lw	a4,0(a5)",360,0.09156507606259999
+d1_eligible_probes,80001760,matrix_test,440,"lw	a4,0(a7)",360,0.09156507606259999
+d1_eligible_probes,80001870,matrix_test,712,"lw	a4,0(a7)",360,0.09156507606259999
+d1_eligible_probes,80001994,matrix_test,1004,"lw	a4,0(a6)",360,0.09156507606259999
+d1_eligible_probes,80002290,core_bench_state,348,"lw	a0,0(s0)",320,0.08139117872231111
+d1_eligible_probes,800022a4,core_bench_state,368,"lw	a0,0(s1)",320,0.08139117872231111
+d1_eligible_probes,80000fac,core_bench_list,640,"lw	a3,0(a3)",313,0.07961074668776055
+d1_eligible_probes,80000f04,core_bench_list,472,"lw	s2,0(s2)",290,0.07376075571709444
+d1_eligible_probes,80001028,core_bench_list,764,"lw	s2,0(s2)",290,0.07376075571709444
+d1_eligible_probes,80001fe4,core_state_transition,408,"lw	a5,4(a1)",240,0.061043384041733324
+d1_eligible_probes,8000201c,core_state_transition,464,"lw	a3,20(a1)",240,0.061043384041733324
+d1_eligible_probes,80000dcc,core_bench_list,160,"lw	a4,4(a5)",210,0.05341296103651666
+d1_eligible_probes,80000dec,core_bench_list,192,"lw	a4,0(a5)",210,0.05341296103651666
+d1_eligible_probes,80000dfc,core_bench_list,208,"lw	a5,0(s0)",210,0.05341296103651666
+d1_eligible_probes,80001200,core_bench_list,1236,"lw	s0,0(s0)",196,0.04985209696741555
+d1_eligible_probes,8000118c,core_bench_list,1120,"lw	s4,0(s4)",191,0.04858035979987944
+d1_eligible_probes,80000b14,cmp_complex,68,"lhu	a5,56(s0)",150,0.03815211502608333
+d1_eligible_probes,80000b74,cmp_complex,164,"lw	a6,8(sp)",150,0.03815211502608333
+d1_eligible_probes,80000b7c,cmp_complex,172,"lw	t1,12(sp)",150,0.03815211502608333
+d1_eligible_probes,80000b88,cmp_complex,184,"lw	s2,16(sp)",150,0.03815211502608333
+d1_eligible_probes,80000bdc,cmp_complex,268,"lhu	a5,56(s0)",130,0.03306516635593888
+d1_eligible_probes,80000c38,cmp_complex,360,"lw	a6,8(sp)",130,0.03306516635593888
+d1_eligible_probes,80000c48,cmp_complex,376,"lw	a7,12(sp)",130,0.03306516635593888
+d1_eligible_probes,80000c4c,cmp_complex,380,"lw	ra,28(sp)",130,0.03306516635593888
+d1_eligible_probes,80000c50,cmp_complex,384,"lw	s0,24(sp)",130,0.03306516635593888
+d1_eligible_probes,80000c60,cmp_complex,400,"lw	s2,16(sp)",130,0.03306516635593888
+d1_eligible_probes,80000c64,cmp_complex,404,"lw	s1,20(sp)",130,0.03306516635593888
+d1_eligible_probes,80000fd4,core_bench_list,680,"lh	t1,2(a7)",80,0.020347794680577777
+d1_eligible_probes,80000cd8,cmp_complex,520,"lhu	a5,56(s0)",40,0.010173897340288889
+d1_eligible_probes,80001a4c,matrix_test,1188,"lw	s0,40(sp)",40,0.010173897340288889
+d1_eligible_probes,80001a50,matrix_test,1192,"lw	ra,44(sp)",40,0.010173897340288889
+d1_eligible_probes,80001a58,matrix_test,1200,"lw	s1,36(sp)",40,0.010173897340288889
+d1_eligible_probes,80001a5c,matrix_test,1204,"lw	s2,32(sp)",40,0.010173897340288889
+d1_eligible_probes,80001a60,matrix_test,1208,"lw	s3,28(sp)",40,0.010173897340288889
+d1_eligible_probes,80001a64,matrix_test,1212,"lw	s4,24(sp)",40,0.010173897340288889
+d1_eligible_probes,80001a68,matrix_test,1216,"lw	s5,20(sp)",40,0.010173897340288889
+d1_eligible_probes,80001a6c,matrix_test,1220,"lw	s6,16(sp)",40,0.010173897340288889
+d1_eligible_probes,80001a70,matrix_test,1224,"lw	s7,12(sp)",40,0.010173897340288889
+d1_eligible_probes,80001a74,matrix_test,1228,"lw	s8,8(sp)",40,0.010173897340288889
+d1_eligible_probes,80001a78,matrix_test,1232,"lw	s9,4(sp)",40,0.010173897340288889
+d1_eligible_probes,80001ad0,core_bench_matrix,8,"lw	a3,8(a0)",40,0.010173897340288889
+d1_eligible_probes,80001adc,core_bench_matrix,20,"lw	a2,4(a0)",40,0.010173897340288889
+d1_eligible_probes,80001ae0,core_bench_matrix,24,"lw	a1,12(a0)",40,0.010173897340288889
+d1_eligible_probes,80001ae4,core_bench_matrix,28,"lw	a0,0(a0)",40,0.010173897340288889
+d1_eligible_probes,80001af4,core_bench_matrix,44,"lw	s0,8(sp)",40,0.010173897340288889
+d1_eligible_probes,80001af8,core_bench_matrix,48,"lw	ra,12(sp)",40,0.010173897340288889
+d1_eligible_probes,80002164,core_bench_state,48,"lbu	a1,0(a1)",40,0.010173897340288889
+d1_eligible_probes,800022b8,core_bench_state,388,"lw	ra,124(sp)",40,0.010173897340288889
+d1_eligible_probes,800022bc,core_bench_state,392,"lw	s0,120(sp)",40,0.010173897340288889
+d1_eligible_probes,800022c0,core_bench_state,396,"lw	s1,116(sp)",40,0.010173897340288889
+d1_eligible_probes,800022c4,core_bench_state,400,"lw	s2,112(sp)",40,0.010173897340288889
+d1_eligible_probes,800022c8,core_bench_state,404,"lw	s3,108(sp)",40,0.010173897340288889
+d1_eligible_probes,800022cc,core_bench_state,408,"lw	s4,104(sp)",40,0.010173897340288889
+d1_eligible_probes,800022d0,core_bench_state,412,"lw	s5,100(sp)",40,0.010173897340288889
+d1_eligible_probes,800022d4,core_bench_state,416,"lw	s6,96(sp)",40,0.010173897340288889
+d1_eligible_probes,800022d8,core_bench_state,420,"lw	s7,92(sp)",40,0.010173897340288889
+d1_eligible_probes,800022dc,core_bench_state,424,"lw	s8,88(sp)",40,0.010173897340288889
+d1_eligible_probes,80002300,core_bench_state,460,"lbu	a5,0(s1)",40,0.010173897340288889
+d1_eligible_probes,80000d24,cmp_complex,596,"lhu	a5,56(s0)",39,0.009919549906781665
+d1_eligible_probes,80000b44,cmp_complex,116,"lhu	a5,60(s0)",20,0.005086948670144444
+d1_eligible_probes,80000b4c,cmp_complex,124,"lw	a6,8(sp)",20,0.005086948670144444
+d1_eligible_probes,80000b50,cmp_complex,128,"lw	t1,12(sp)",20,0.005086948670144444
+d1_eligible_probes,80000c08,cmp_complex,312,"lhu	a5,60(s0)",20,0.005086948670144444
+d1_eligible_probes,80000c10,cmp_complex,320,"lw	a6,8(sp)",20,0.005086948670144444
+d1_eligible_probes,80000c14,cmp_complex,324,"lw	a7,12(sp)",20,0.005086948670144444
+d1_eligible_probes,80000ca0,cmp_complex,464,"lh	a3,2(s0)",20,0.005086948670144444
+d1_eligible_probes,80000ca4,cmp_complex,468,"lh	a2,0(s0)",20,0.005086948670144444
+d1_eligible_probes,80000ca8,cmp_complex,472,"lw	a1,20(s0)",20,0.005086948670144444
+d1_eligible_probes,80000cac,cmp_complex,476,"lw	a0,24(s0)",20,0.005086948670144444
+d1_eligible_probes,80000cbc,cmp_complex,492,"lhu	a5,62(s0)",20,0.005086948670144444
+d1_eligible_probes,80000cc4,cmp_complex,500,"lw	a6,8(sp)",20,0.005086948670144444
+d1_eligible_probes,80000cc8,cmp_complex,504,"lw	a7,12(sp)",20,0.005086948670144444
+d1_eligible_probes,80000cec,cmp_complex,540,"lh	a3,2(s0)",20,0.005086948670144444
+d1_eligible_probes,80000cf0,cmp_complex,544,"lh	a2,0(s0)",20,0.005086948670144444
+d1_eligible_probes,80000cf4,cmp_complex,548,"lw	a1,20(s0)",20,0.005086948670144444
+d1_eligible_probes,80000cf8,cmp_complex,552,"lw	a0,24(s0)",20,0.005086948670144444
+d1_eligible_probes,80000d08,cmp_complex,568,"lhu	a5,62(s0)",20,0.005086948670144444
+d1_eligible_probes,80000d10,cmp_complex,576,"lw	a6,8(sp)",20,0.005086948670144444
+d1_eligible_probes,80000d14,cmp_complex,580,"lw	t1,12(sp)",20,0.005086948670144444
+d1_eligible_probes,80000d2c,core_bench_list,0,"lh	t3,4(a0)",20,0.005086948670144444
+d1_eligible_probes,80000d68,core_bench_list,60,"lw	s0,36(a0)",20,0.005086948670144444
+d1_eligible_probes,80000ecc,core_bench_list,416,"lw	a5,0(s0)",20,0.005086948670144444
+d1_eligible_probes,80000f34,core_bench_list,520,"lw	s2,0(s0)",20,0.005086948670144444
+d1_eligible_probes,80000f38,core_bench_list,524,"lw	a4,4(s3)",20,0.005086948670144444
+d1_eligible_probes,800010d4,core_bench_list,936,"lw	s0,0(s2)",20,0.005086948670144444
+d1_eligible_probes,800010f8,core_bench_list,972,"lw	ra,60(sp)",20,0.005086948670144444
+d1_eligible_probes,800010fc,core_bench_list,976,"lw	s0,56(sp)",20,0.005086948670144444
+d1_eligible_probes,80001100,core_bench_list,980,"lw	s2,48(sp)",20,0.005086948670144444
+d1_eligible_probes,80001104,core_bench_list,984,"lw	s3,44(sp)",20,0.005086948670144444
+d1_eligible_probes,80001108,core_bench_list,988,"lw	s4,40(sp)",20,0.005086948670144444
+d1_eligible_probes,8000110c,core_bench_list,992,"lw	s5,36(sp)",20,0.005086948670144444
+d1_eligible_probes,80001110,core_bench_list,996,"lw	s6,32(sp)",20,0.005086948670144444
+d1_eligible_probes,80001114,core_bench_list,1000,"lw	s7,28(sp)",20,0.005086948670144444
+d1_eligible_probes,80001118,core_bench_list,1004,"lw	s8,24(sp)",20,0.005086948670144444
+d1_eligible_probes,8000111c,core_bench_list,1008,"lw	s9,20(sp)",20,0.005086948670144444
+d1_eligible_probes,80001120,core_bench_list,1012,"lw	s10,16(sp)",20,0.005086948670144444
+d1_eligible_probes,80001124,core_bench_list,1016,"lw	s11,12(sp)",20,0.005086948670144444
+d1_eligible_probes,8000112c,core_bench_list,1024,"lw	s1,52(sp)",20,0.005086948670144444
+d1_eligible_probes,80001268,core_bench_list,1340,"lw	s2,0(s0)",20,0.005086948670144444
+d1_eligible_probes,80001270,core_bench_list,1348,"lw	a5,4(s0)",20,0.005086948670144444
+d1_eligible_probes,80001280,core_bench_list,1364,"lw	s2,0(s2)",20,0.005086948670144444
+d1_eligible_probes,80000ee0,core_bench_list,436,"lw	a3,0(s3)",10,0.002543474335072222
+d1_eligible_probes,80000ef8,core_bench_list,460,"lw	a5,4(s2)",10,0.002543474335072222
+d1_eligible_probes,80001030,core_bench_list,772,"lw	a5,4(s2)",10,0.002543474335072222
+d1_eligible_probes,800000d8,iterate,120,"lhu	a1,56(s0)",9,0.0022891269015649996
+d1_eligible_probes,800000f4,iterate,148,"lhu	a1,56(s0)",9,0.0022891269015649996
+d1_eligible_probes,80000068,iterate,8,"lw	s2,28(a0)",1,0.0002543474335072222
+d1_eligible_probes,80000090,iterate,48,"lhu	a1,56(s0)",1,0.0002543474335072222
+d1_eligible_probes,800000ac,iterate,76,"lhu	a1,56(s0)",1,0.0002543474335072222
+d1_eligible_probes,80000104,iterate,164,"lw	s0,8(sp)",1,0.0002543474335072222
+d1_eligible_probes,80000108,iterate,168,"lw	s1,4(sp)",1,0.0002543474335072222
+d1_eligible_probes,8000010c,iterate,172,"lw	ra,12(sp)",1,0.0002543474335072222
+d1_eligible_probes,80000110,iterate,176,"lw	s2,0(sp)",1,0.0002543474335072222
+d1_eligible_probes,80000ad0,cmp_complex,0,"lh	a6,0(a0)",1,0.0002543474335072222
+d1_eligible_probes,80000b5c,cmp_complex,140,"lhu	a5,56(s0)",1,0.0002543474335072222
+d1_fastpath_hits,80000db8,core_bench_list,140,"lw	a4,0(s0)",61171,28.873176280674592
+d1_fastpath_hits,80000d98,core_bench_list,108,"lw	a5,0(a5)",28869,13.626387112304766
+d1_fastpath_hits,80000e64,core_bench_list,312,"lw	a5,0(a5)",27780,13.112370846923218
+d1_fastpath_hits,80001e4c,core_state_transition,0,"lw	a4,0(a0)",10240,4.833357720392144
+d1_fastpath_hits,800021e0,core_bench_state,172,"lw	a3,12(sp)",5120,2.416678860196072
+d1_fastpath_hits,800021e4,core_bench_state,176,"lw	a5,0(a4)",5120,2.416678860196072
+d1_fastpath_hits,80002248,core_bench_state,276,"lw	a3,12(sp)",5120,2.416678860196072
+d1_fastpath_hits,8000224c,core_bench_state,280,"lw	a5,0(a4)",5100,2.407238708398431
+d1_fastpath_hits,80002068,core_state_transition,540,"lw	a0,0(a1)",4320,2.0390727882904356
+d1_fastpath_hits,80002084,core_state_transition,568,"lw	a0,8(a1)",4320,2.0390727882904356
+d1_fastpath_hits,80001eb8,core_state_transition,108,"lw	a0,0(a1)",3200,1.5104242876225449
+d1_fastpath_hits,800016c0,matrix_test,280,"lw	a4,0(a5)",2880,1.3593818588602904
+d1_fastpath_hits,80001794,matrix_test,492,"lw	a4,0(a7)",2880,1.3593818588602904
+d1_fastpath_hits,800018a4,matrix_test,764,"lw	a4,0(a7)",2880,1.3593818588602904
+d1_fastpath_hits,800019c8,matrix_test,1056,"lw	a4,0(a6)",2880,1.3593818588602904
+d1_fastpath_hits,80001f20,core_state_transition,212,"lw	a4,16(a1)",2720,1.2838606444791631
+d1_fastpath_hits,80000fd0,core_bench_list,676,"lw	a0,4(a3)",2076,0.9798877565951261
+d1_fastpath_hits,80000fcc,core_bench_list,672,"lw	a7,4(s0)",1996,0.9421271494045624
+d1_fastpath_hits,80001f4c,core_state_transition,256,"lw	a3,20(a1)",1920,0.9062545725735269
+d1_fastpath_hits,80001f6c,core_state_transition,288,"lw	a4,12(a1)",1920,0.9062545725735269
+d1_fastpath_hits,80000e94,core_bench_list,360,"lw	a5,0(s0)",1830,0.8637738894841429
+d1_fastpath_hits,80001f94,core_state_transition,328,"lw	a0,24(a1)",1660,0.7835325992041952
+d1_fastpath_hits,80000f7c,core_bench_list,592,"lw	a2,0(a2) # ffff8000 <_estack+0x7fed8000>",1580,0.7457719920136315
+d1_fastpath_hits,800010a0,core_bench_list,884,"lw	a0,0(a3)",1267,0.5980336163805514
+d1_fastpath_hits,80001e80,core_state_transition,52,"lw	a3,4(a1)",1120,0.5286485006678907
+d1_fastpath_hits,80001e84,core_state_transition,56,"lw	a5,0(a1)",1120,0.5286485006678907
+d1_fastpath_hits,80000e58,core_bench_list,300,"lw	a4,4(a5)",1020,0.48144774167968624
+d1_fastpath_hits,80000da0,core_bench_list,116,"lw	a4,4(a5)",1018,0.4805037264999221
+d1_fastpath_hits,80000ba8,cmp_complex,216,"lw	ra,28(sp)",983,0.4639834608540505
+d1_fastpath_hits,80000bac,cmp_complex,220,"lw	s0,24(sp)",983,0.4639834608540505
+d1_fastpath_hits,80000bb4,cmp_complex,228,"lw	s1,20(sp)",983,0.4639834608540505
+d1_fastpath_hits,800011b0,core_bench_list,1156,"lw	a0,4(s4)",865,0.4082865652479692
+d1_fastpath_hits,80000ff4,core_bench_list,712,"lh	a2,0(a7)",859,0.4054545197086769
+d1_fastpath_hits,8000101c,core_bench_list,752,"lw	s0,0(s0)",809,0.38185414021457464
+d1_fastpath_hits,800011ac,core_bench_list,1152,"lw	a1,4(s0)",801,0.3780780794955183
+d1_fastpath_hits,80001eec,core_state_transition,160,"lw	a3,16(a1)",720,0.3398454647150726
+d1_fastpath_hits,80002044,core_state_transition,504,"lw	a0,0(a1)",720,0.3398454647150726
+d1_fastpath_hits,80001064,core_bench_list,824,"lw	s0,0(s0)",611,0.2883966374179297
+d1_fastpath_hits,800010dc,core_bench_list,944,"lw	a5,4(s2)",580,0.27376440213158626
+d1_fastpath_hits,800010ec,core_bench_list,960,"lw	s0,0(s0)",580,0.27376440213158626
+d1_fastpath_hits,8000115c,core_bench_list,1072,"lw	a5,0(a5)",570,0.2690443262327658
+d1_fastpath_hits,80001234,core_bench_list,1288,"lw	a3,0(s4)",557,0.2629082275642992
+d1_fastpath_hits,80000f18,core_bench_list,492,"lw	a5,4(s0)",540,0.25488409853630445
+d1_fastpath_hits,80000f28,core_bench_list,508,"lw	s2,0(s2)",540,0.25488409853630445
+d1_fastpath_hits,80001694,matrix_test,236,"lw	a4,0(a5)",360,0.1699227323575363
+d1_fastpath_hits,80001760,matrix_test,440,"lw	a4,0(a7)",360,0.1699227323575363
+d1_fastpath_hits,80001870,matrix_test,712,"lw	a4,0(a7)",360,0.1699227323575363
+d1_fastpath_hits,80001994,matrix_test,1004,"lw	a4,0(a6)",360,0.1699227323575363
+d1_fastpath_hits,800011cc,core_bench_list,1184,"lw	s0,0(s0)",359,0.16945072476765427
+d1_fastpath_hits,80000fac,core_bench_list,640,"lw	a3,0(a3)",313,0.14773837563308018
+d1_fastpath_hits,80002290,core_bench_state,348,"lw	a0,0(s0)",300,0.14160227696461358
+d1_fastpath_hits,800022a4,core_bench_state,368,"lw	a0,0(s1)",300,0.14160227696461358
+d1_fastpath_hits,80001028,core_bench_list,764,"lw	s2,0(s2)",290,0.13688220106579313
+d1_fastpath_hits,80000f04,core_bench_list,472,"lw	s2,0(s2)",283,0.13357814793661882
+d1_fastpath_hits,80001fe4,core_state_transition,408,"lw	a5,4(a1)",240,0.11328182157169087
+d1_fastpath_hits,8000201c,core_state_transition,464,"lw	a3,20(a1)",240,0.11328182157169087
+d1_fastpath_hits,80000dcc,core_bench_list,160,"lw	a4,4(a5)",210,0.09912159387522951
+d1_fastpath_hits,80000dec,core_bench_list,192,"lw	a4,0(a5)",210,0.09912159387522951
+d1_fastpath_hits,80000dfc,core_bench_list,208,"lw	a5,0(s0)",210,0.09912159387522951
+d1_fastpath_hits,80001f0c,core_state_transition,192,"lbu	a4,1(a5)",160,0.07552121438112724
+d1_fastpath_hits,8000118c,core_bench_list,1120,"lw	s4,0(s4)",153,0.07221716125195293
+d1_fastpath_hits,80000b74,cmp_complex,164,"lw	a6,8(sp)",150,0.07080113848230679
+d1_fastpath_hits,80000b7c,cmp_complex,172,"lw	t1,12(sp)",150,0.07080113848230679
+d1_fastpath_hits,80000b88,cmp_complex,184,"lw	s2,16(sp)",130,0.06136098668466589
+d1_fastpath_hits,80000bdc,cmp_complex,268,"lhu	a5,56(s0)",130,0.06136098668466589
+d1_fastpath_hits,80000c38,cmp_complex,360,"lw	a6,8(sp)",130,0.06136098668466589
+d1_fastpath_hits,80000c48,cmp_complex,376,"lw	a7,12(sp)",130,0.06136098668466589
+d1_fastpath_hits,80001200,core_bench_list,1236,"lw	s0,0(s0)",130,0.06136098668466589
+d1_fastpath_hits,80000c60,cmp_complex,400,"lw	s2,16(sp)",110,0.05192083488702498
+d1_fastpath_hits,80000c4c,cmp_complex,380,"lw	ra,28(sp)",100,0.04720075898820453
+d1_fastpath_hits,80000c50,cmp_complex,384,"lw	s0,24(sp)",100,0.04720075898820453
+d1_fastpath_hits,80000c64,cmp_complex,404,"lw	s1,20(sp)",100,0.04720075898820453
+d1_fastpath_hits,80002078,core_state_transition,556,"lbu	t1,1(a4)",86,0.0405926527298559
+d1_fastpath_hits,800022b8,core_bench_state,388,"lw	ra,124(sp)",40,0.01888030359528181
+d1_fastpath_hits,800022bc,core_bench_state,392,"lw	s0,120(sp)",40,0.01888030359528181
+d1_fastpath_hits,800022c0,core_bench_state,396,"lw	s1,116(sp)",40,0.01888030359528181
+d1_fastpath_hits,800022c4,core_bench_state,400,"lw	s2,112(sp)",40,0.01888030359528181
+d1_fastpath_hits,800022c8,core_bench_state,404,"lw	s3,108(sp)",40,0.01888030359528181
+d1_fastpath_hits,800022d0,core_bench_state,412,"lw	s5,100(sp)",40,0.01888030359528181
+d1_fastpath_hits,800022d4,core_bench_state,416,"lw	s6,96(sp)",40,0.01888030359528181
+d1_fastpath_hits,800022d8,core_bench_state,420,"lw	s7,92(sp)",40,0.01888030359528181
+d1_fastpath_hits,800022dc,core_bench_state,424,"lw	s8,88(sp)",40,0.01888030359528181
+d1_fastpath_hits,80001ad0,core_bench_matrix,8,"lw	a3,8(a0)",39,0.01840829600539977
+d1_fastpath_hits,80001adc,core_bench_matrix,20,"lw	a2,4(a0)",39,0.01840829600539977
+d1_fastpath_hits,80001ae0,core_bench_matrix,24,"lw	a1,12(a0)",39,0.01840829600539977
+d1_fastpath_hits,80001ae4,core_bench_matrix,28,"lw	a0,0(a0)",39,0.01840829600539977
+d1_fastpath_hits,80000cc4,cmp_complex,500,"lw	a6,8(sp)",20,0.009440151797640906
+d1_fastpath_hits,80000cf4,cmp_complex,548,"lw	a1,20(s0)",20,0.009440151797640906
+d1_fastpath_hits,80000d10,cmp_complex,576,"lw	a6,8(sp)",20,0.009440151797640906
+d1_fastpath_hits,80000ecc,core_bench_list,416,"lw	a5,0(s0)",20,0.009440151797640906
+d1_fastpath_hits,80000f34,core_bench_list,520,"lw	s2,0(s0)",20,0.009440151797640906
+d1_fastpath_hits,80000f38,core_bench_list,524,"lw	a4,4(s3)",20,0.009440151797640906
+d1_fastpath_hits,800010d4,core_bench_list,936,"lw	s0,0(s2)",20,0.009440151797640906
+d1_fastpath_hits,80001268,core_bench_list,1340,"lw	s2,0(s0)",20,0.009440151797640906
+d1_fastpath_hits,80001270,core_bench_list,1348,"lw	a5,4(s0)",20,0.009440151797640906
+d1_fastpath_hits,80001280,core_bench_list,1364,"lw	s2,0(s2)",20,0.009440151797640906
+d1_fastpath_hits,800022cc,core_bench_state,408,"lw	s4,104(sp)",20,0.009440151797640906
+d1_fastpath_hits,80002300,core_bench_state,460,"lbu	a5,0(s1)",20,0.009440151797640906
+d1_fastpath_hits,80000ca8,cmp_complex,472,"lw	a1,20(s0)",19,0.008968144207758861
+d1_fastpath_hits,80000cac,cmp_complex,476,"lw	a0,24(s0)",19,0.008968144207758861
+d1_fastpath_hits,80000d68,core_bench_list,60,"lw	s0,36(a0)",19,0.008968144207758861
+d1_fastpath_hits,80001f2c,core_state_transition,224,"lbu	a4,1(a5)",12,0.005664091078584544
+d1_fastpath_hits,80000ee0,core_bench_list,436,"lw	a3,0(s3)",10,0.004720075898820453
+d1_fastpath_hits,80000ef8,core_bench_list,460,"lw	a5,4(s2)",10,0.004720075898820453
+d1_fastpath_hits,80001030,core_bench_list,772,"lw	a5,4(s2)",10,0.004720075898820453
+d1_fastpath_hits,8000111c,core_bench_list,1008,"lw	s9,20(sp)",10,0.004720075898820453
+d1_fastpath_hits,80001120,core_bench_list,1012,"lw	s10,16(sp)",10,0.004720075898820453
+d1_fastpath_hits,80000b14,cmp_complex,68,"lhu	a5,56(s0)",2,0.0009440151797640906
+d1_fastpath_hits,80000068,iterate,8,"lw	s2,28(a0)",1,0.0004720075898820453
+d1_fastpath_hits,80000b44,cmp_complex,116,"lhu	a5,60(s0)",1,0.0004720075898820453
+d1_store_buffer_selected,80001e4c,core_state_transition,0,"lw	a4,0(a0)",7920,14.762898896510588
+d1_store_buffer_selected,80000db8,core_bench_list,140,"lw	a4,0(s0)",7900,14.725618848792127
+d1_store_buffer_selected,800021e0,core_bench_state,172,"lw	a3,12(sp)",5120,9.543692215926036
+d1_store_buffer_selected,80002248,core_bench_state,276,"lw	a3,12(sp)",5120,9.543692215926036
+d1_store_buffer_selected,80000d98,core_bench_list,108,"lw	a5,0(a5)",3930,7.325529376677602
+d1_store_buffer_selected,80000e64,core_bench_list,312,"lw	a5,0(a5)",3850,7.176409185803758
+d1_store_buffer_selected,80002068,core_state_transition,540,"lw	a0,0(a1)",2400,4.47360572621533
+d1_store_buffer_selected,80001eb8,core_state_transition,108,"lw	a0,0(a1)",2000,3.728004771846108
+d1_store_buffer_selected,80002084,core_state_transition,568,"lw	a0,8(a1)",1840,3.4297643900984194
+d1_store_buffer_selected,800021e4,core_bench_state,176,"lw	a5,0(a4)",1840,3.4297643900984194
+d1_store_buffer_selected,8000224c,core_bench_state,280,"lw	a5,0(a4)",1840,3.4297643900984194
+d1_store_buffer_selected,80000e94,core_bench_list,360,"lw	a5,0(s0)",1830,3.411124366239189
+d1_store_buffer_selected,80001f20,core_state_transition,212,"lw	a4,16(a1)",1120,2.0876826722338206
+d1_store_buffer_selected,80000ba8,cmp_complex,216,"lw	ra,28(sp)",963,1.7950342976439009
+d1_store_buffer_selected,80000bac,cmp_complex,220,"lw	s0,24(sp)",963,1.7950342976439009
+d1_store_buffer_selected,80000bb4,cmp_complex,228,"lw	s1,20(sp)",963,1.7950342976439009
+d1_store_buffer_selected,80000ff4,core_bench_list,712,"lh	a2,0(a7)",859,1.6011780495079033
+d1_store_buffer_selected,80002044,core_state_transition,504,"lw	a0,0(a1)",720,1.342081717864599
+d1_store_buffer_selected,80001e80,core_state_transition,52,"lw	a3,4(a1)",240,0.44736057262153295
+d1_store_buffer_selected,80001e84,core_state_transition,56,"lw	a5,0(a1)",240,0.44736057262153295
+d1_store_buffer_selected,80000dfc,core_bench_list,208,"lw	a5,0(s0)",210,0.3914405010438413
+d1_store_buffer_selected,800016c0,matrix_test,280,"lw	a4,0(a5)",160,0.29824038174768863
+d1_store_buffer_selected,80001794,matrix_test,492,"lw	a4,0(a7)",160,0.29824038174768863
+d1_store_buffer_selected,800018a4,matrix_test,764,"lw	a4,0(a7)",160,0.29824038174768863
+d1_store_buffer_selected,800019c8,matrix_test,1056,"lw	a4,0(a6)",160,0.29824038174768863
+d1_store_buffer_selected,80000b74,cmp_complex,164,"lw	a6,8(sp)",150,0.2796003578884581
+d1_store_buffer_selected,80000b7c,cmp_complex,172,"lw	t1,12(sp)",150,0.2796003578884581
+d1_store_buffer_selected,80000bdc,cmp_complex,268,"lhu	a5,56(s0)",130,0.24232031016999703
+d1_store_buffer_selected,80000c38,cmp_complex,360,"lw	a6,8(sp)",130,0.24232031016999703
+d1_store_buffer_selected,80000c48,cmp_complex,376,"lw	a7,12(sp)",130,0.24232031016999703
+d1_store_buffer_selected,80000b88,cmp_complex,184,"lw	s2,16(sp)",110,0.20504026245153595
+d1_store_buffer_selected,80000c60,cmp_complex,400,"lw	s2,16(sp)",90,0.16776021473307487
+d1_store_buffer_selected,800010ec,core_bench_list,960,"lw	s0,0(s0)",60,0.11184014315538324
+d1_store_buffer_selected,80000dec,core_bench_list,192,"lw	a4,0(a5)",30,0.05592007157769162
+d1_store_buffer_selected,80000f38,core_bench_list,524,"lw	a4,4(s3)",20,0.03728004771846108
+d1_store_buffer_selected,80000fcc,core_bench_list,672,"lw	a7,4(s0)",20,0.03728004771846108
+d1_store_buffer_selected,80002300,core_bench_state,460,"lbu	a5,0(s1)",20,0.03728004771846108
+d1_store_buffer_selected,80001064,core_bench_list,824,"lw	s0,0(s0)",19,0.035416045332538025
+d1_store_buffer_selected,80000ecc,core_bench_list,416,"lw	a5,0(s0)",10,0.01864002385923054
+d1_store_buffer_selected,80000f04,core_bench_list,472,"lw	s2,0(s2)",10,0.01864002385923054
+d1_store_buffer_selected,80000f34,core_bench_list,520,"lw	s2,0(s0)",10,0.01864002385923054
+d1_store_buffer_selected,80000f7c,core_bench_list,592,"lw	a2,0(a2) # ffff8000 <_estack+0x7fed8000>",10,0.01864002385923054
+d1_store_buffer_selected,80001028,core_bench_list,764,"lw	s2,0(s2)",10,0.01864002385923054
+d1_store_buffer_selected,8000115c,core_bench_list,1072,"lw	a5,0(a5)",10,0.01864002385923054
+d1_store_buffer_selected,80001268,core_bench_list,1340,"lw	s2,0(s0)",10,0.01864002385923054
+d1_store_buffer_selected,80001280,core_bench_list,1364,"lw	s2,0(s2)",10,0.01864002385923054
+d1_store_buffer_selected,8000101c,core_bench_list,752,"lw	s0,0(s0)",1,0.001864002385923054
+d1_l0_selected,80000db8,core_bench_list,140,"lw	a4,0(s0)",53271,33.67043163330447
+d1_l0_selected,80000d98,core_bench_list,108,"lw	a5,0(a5)",24939,15.7629271930878
+d1_l0_selected,80000e64,core_bench_list,312,"lw	a5,0(a5)",23930,15.125179346829906
+d1_l0_selected,800021e4,core_bench_state,176,"lw	a5,0(a4)",3280,2.073154544822486
+d1_l0_selected,8000224c,core_bench_state,280,"lw	a5,0(a4)",3260,2.0605133585735684
+d1_l0_selected,800016c0,matrix_test,280,"lw	a4,0(a5)",2720,1.7192013298527933
+d1_l0_selected,80001794,matrix_test,492,"lw	a4,0(a7)",2720,1.7192013298527933
+d1_l0_selected,800018a4,matrix_test,764,"lw	a4,0(a7)",2720,1.7192013298527933
+d1_l0_selected,800019c8,matrix_test,1056,"lw	a4,0(a6)",2720,1.7192013298527933
+d1_l0_selected,80002084,core_state_transition,568,"lw	a0,8(a1)",2480,1.567507094865782
+d1_l0_selected,80001e4c,core_state_transition,0,"lw	a4,0(a0)",2320,1.4663776048744415
+d1_l0_selected,80000fd0,core_bench_list,676,"lw	a0,4(a3)",2076,1.3121551326376468
+d1_l0_selected,80000fcc,core_bench_list,672,"lw	a7,4(s0)",1976,1.2489492013930588
+d1_l0_selected,80001f4c,core_state_transition,256,"lw	a3,20(a1)",1920,1.2135538798960894
+d1_l0_selected,80001f6c,core_state_transition,288,"lw	a4,12(a1)",1920,1.2135538798960894
+d1_l0_selected,80002068,core_state_transition,540,"lw	a0,0(a1)",1920,1.2135538798960894
+d1_l0_selected,80001f94,core_state_transition,328,"lw	a0,24(a1)",1660,1.0492184586601607
+d1_l0_selected,80001f20,core_state_transition,212,"lw	a4,16(a1)",1600,1.011294899913408
+d1_l0_selected,80000f7c,core_bench_list,592,"lw	a2,0(a2) # ffff8000 <_estack+0x7fed8000>",1570,0.9923331205400314
+d1_l0_selected,800010a0,core_bench_list,884,"lw	a0,0(a3)",1267,0.8008191488689299
+d1_l0_selected,80001eb8,core_state_transition,108,"lw	a0,0(a1)",1200,0.7584711749350559
+d1_l0_selected,80000e58,core_bench_list,300,"lw	a4,4(a5)",1020,0.6447004986947975
+d1_l0_selected,80000da0,core_bench_list,116,"lw	a4,4(a5)",1018,0.6434363800699058
+d1_l0_selected,80001e80,core_state_transition,52,"lw	a3,4(a1)",880,0.5562121949523743
+d1_l0_selected,80001e84,core_state_transition,56,"lw	a5,0(a1)",880,0.5562121949523743
+d1_l0_selected,800011b0,core_bench_list,1156,"lw	a0,4(s4)",865,0.5467313052656861
+d1_l0_selected,8000101c,core_bench_list,752,"lw	s0,0(s0)",808,0.510703924456271
+d1_l0_selected,800011ac,core_bench_list,1152,"lw	a1,4(s0)",801,0.5062795092691498
+d1_l0_selected,80001eec,core_state_transition,160,"lw	a3,16(a1)",720,0.45508270496103354
+d1_l0_selected,80001064,core_bench_list,824,"lw	s0,0(s0)",592,0.3741791129679609
+d1_l0_selected,800010dc,core_bench_list,944,"lw	a5,4(s2)",580,0.36659440121861037
+d1_l0_selected,8000115c,core_bench_list,1072,"lw	a5,0(a5)",560,0.35395321496969273
+d1_l0_selected,80001234,core_bench_list,1288,"lw	a3,0(s4)",557,0.35205703703235514
+d1_l0_selected,80000f18,core_bench_list,492,"lw	a5,4(s0)",540,0.34131202872077515
+d1_l0_selected,80000f28,core_bench_list,508,"lw	s2,0(s2)",540,0.34131202872077515
+d1_l0_selected,800010ec,core_bench_list,960,"lw	s0,0(s0)",520,0.32867084247185757
+d1_l0_selected,80001694,matrix_test,236,"lw	a4,0(a5)",360,0.22754135248051677
+d1_l0_selected,80001760,matrix_test,440,"lw	a4,0(a7)",360,0.22754135248051677
+d1_l0_selected,80001870,matrix_test,712,"lw	a4,0(a7)",360,0.22754135248051677
+d1_l0_selected,80001994,matrix_test,1004,"lw	a4,0(a6)",360,0.22754135248051677
+d1_l0_selected,800011cc,core_bench_list,1184,"lw	s0,0(s0)",359,0.2269092931680709
+d1_l0_selected,80000fac,core_bench_list,640,"lw	a3,0(a3)",313,0.1978345647955604
+d1_l0_selected,80002290,core_bench_state,348,"lw	a0,0(s0)",300,0.18961779373376397
+d1_l0_selected,800022a4,core_bench_state,368,"lw	a0,0(s1)",300,0.18961779373376397
+d1_l0_selected,80001028,core_bench_list,764,"lw	s2,0(s2)",280,0.17697660748484637
+d1_l0_selected,80000f04,core_bench_list,472,"lw	s2,0(s2)",273,0.17255219229772523
+d1_l0_selected,80001fe4,core_state_transition,408,"lw	a5,4(a1)",240,0.15169423498701118
+d1_l0_selected,8000201c,core_state_transition,464,"lw	a3,20(a1)",240,0.15169423498701118
+d1_l0_selected,80000dcc,core_bench_list,160,"lw	a4,4(a5)",210,0.13273245561363478
+d1_l0_selected,80000dec,core_bench_list,192,"lw	a4,0(a5)",180,0.11377067624025838
+d1_l0_selected,80001f0c,core_state_transition,192,"lbu	a4,1(a5)",160,0.10112948999134079
+d1_l0_selected,8000118c,core_bench_list,1120,"lw	s4,0(s4)",153,0.09670507480421962
+d1_l0_selected,80001200,core_bench_list,1236,"lw	s0,0(s0)",130,0.08216771061796439
+d1_l0_selected,80000c4c,cmp_complex,380,"lw	ra,28(sp)",100,0.063205931244588
+d1_l0_selected,80000c50,cmp_complex,384,"lw	s0,24(sp)",100,0.063205931244588
+d1_l0_selected,80000c64,cmp_complex,404,"lw	s1,20(sp)",100,0.063205931244588
+d1_l0_selected,80002078,core_state_transition,556,"lbu	t1,1(a4)",86,0.054357100870345676
+d1_l0_selected,800022b8,core_bench_state,388,"lw	ra,124(sp)",40,0.025282372497835198
+d1_l0_selected,800022bc,core_bench_state,392,"lw	s0,120(sp)",40,0.025282372497835198
+d1_l0_selected,800022c0,core_bench_state,396,"lw	s1,116(sp)",40,0.025282372497835198
+d1_l0_selected,800022c4,core_bench_state,400,"lw	s2,112(sp)",40,0.025282372497835198
+d1_l0_selected,800022c8,core_bench_state,404,"lw	s3,108(sp)",40,0.025282372497835198
+d1_l0_selected,800022d0,core_bench_state,412,"lw	s5,100(sp)",40,0.025282372497835198
+d1_l0_selected,800022d4,core_bench_state,416,"lw	s6,96(sp)",40,0.025282372497835198
+d1_l0_selected,800022d8,core_bench_state,420,"lw	s7,92(sp)",40,0.025282372497835198
+d1_l0_selected,800022dc,core_bench_state,424,"lw	s8,88(sp)",40,0.025282372497835198
+d1_l0_selected,80001ad0,core_bench_matrix,8,"lw	a3,8(a0)",39,0.02465031318538932
+d1_l0_selected,80001adc,core_bench_matrix,20,"lw	a2,4(a0)",39,0.02465031318538932
+d1_l0_selected,80001ae0,core_bench_matrix,24,"lw	a1,12(a0)",39,0.02465031318538932
+d1_l0_selected,80001ae4,core_bench_matrix,28,"lw	a0,0(a0)",39,0.02465031318538932
+d1_l0_selected,80000b88,cmp_complex,184,"lw	s2,16(sp)",20,0.012641186248917599
+d1_l0_selected,80000ba8,cmp_complex,216,"lw	ra,28(sp)",20,0.012641186248917599
+d1_l0_selected,80000bac,cmp_complex,220,"lw	s0,24(sp)",20,0.012641186248917599
+d1_l0_selected,80000bb4,cmp_complex,228,"lw	s1,20(sp)",20,0.012641186248917599
+d1_l0_selected,80000c60,cmp_complex,400,"lw	s2,16(sp)",20,0.012641186248917599
+d1_l0_selected,80000cc4,cmp_complex,500,"lw	a6,8(sp)",20,0.012641186248917599
+d1_l0_selected,80000cf4,cmp_complex,548,"lw	a1,20(s0)",20,0.012641186248917599
+d1_l0_selected,80000d10,cmp_complex,576,"lw	a6,8(sp)",20,0.012641186248917599
+d1_l0_selected,800010d4,core_bench_list,936,"lw	s0,0(s2)",20,0.012641186248917599
+d1_l0_selected,80001270,core_bench_list,1348,"lw	a5,4(s0)",20,0.012641186248917599
+d1_l0_selected,800022cc,core_bench_state,408,"lw	s4,104(sp)",20,0.012641186248917599
+d1_l0_selected,80000ca8,cmp_complex,472,"lw	a1,20(s0)",19,0.012009126936471718
+d1_l0_selected,80000cac,cmp_complex,476,"lw	a0,24(s0)",19,0.012009126936471718
+d1_l0_selected,80000d68,core_bench_list,60,"lw	s0,36(a0)",19,0.012009126936471718
+d1_l0_selected,80001f2c,core_state_transition,224,"lbu	a4,1(a5)",12,0.007584711749350559
+d1_l0_selected,80000ecc,core_bench_list,416,"lw	a5,0(s0)",10,0.006320593124458799
+d1_l0_selected,80000ee0,core_bench_list,436,"lw	a3,0(s3)",10,0.006320593124458799
+d1_l0_selected,80000ef8,core_bench_list,460,"lw	a5,4(s2)",10,0.006320593124458799
+d1_l0_selected,80000f34,core_bench_list,520,"lw	s2,0(s0)",10,0.006320593124458799
+d1_l0_selected,80001030,core_bench_list,772,"lw	a5,4(s2)",10,0.006320593124458799
+d1_l0_selected,8000111c,core_bench_list,1008,"lw	s9,20(sp)",10,0.006320593124458799
+d1_l0_selected,80001120,core_bench_list,1012,"lw	s10,16(sp)",10,0.006320593124458799
+d1_l0_selected,80001268,core_bench_list,1340,"lw	s2,0(s0)",10,0.006320593124458799
+d1_l0_selected,80001280,core_bench_list,1364,"lw	s2,0(s2)",10,0.006320593124458799
+d1_l0_selected,80000b14,cmp_complex,68,"lhu	a5,56(s0)",2,0.00126411862489176
+d1_l0_selected,80000068,iterate,8,"lw	s2,28(a0)",1,0.00063205931244588
+d1_l0_selected,80000b44,cmp_complex,116,"lhu	a5,60(s0)",1,0.00063205931244588
+d1_fastpath_misses,80001810,matrix_test,616,"lh	a5,0(a7)",29160,16.083661515041204
+d1_fastpath_misses,80001814,matrix_test,620,"lh	a4,0(t1)",29160,16.083661515041204
+d1_fastpath_misses,80001920,matrix_test,888,"lh	a5,0(t1)",29160,16.083661515041204
+d1_fastpath_misses,80001924,matrix_test,892,"lh	a4,0(t3)",29160,16.083661515041204
+d1_fastpath_misses,80001f2c,core_state_transition,224,"lbu	a4,1(a5)",15828,8.730184995201377
+d1_fastpath_misses,80001f0c,core_state_transition,192,"lbu	a4,1(a5)",12880,7.104168735038775
+d1_fastpath_misses,80002078,core_state_transition,556,"lbu	t1,1(a4)",4234,2.3353300018753242
+d1_fastpath_misses,80001608,matrix_test,96,"lhu	a4,0(a5)",3240,1.7870735016712447
+d1_fastpath_misses,80001644,matrix_test,156,"lh	a4,0(a5)",3240,1.7870735016712447
+d1_fastpath_misses,80001718,matrix_test,368,"lh	a4,0(a5)",3240,1.7870735016712447
+d1_fastpath_misses,8000171c,matrix_test,372,"lh	a6,0(a3)",3240,1.7870735016712447
+d1_fastpath_misses,80001a28,matrix_test,1152,"lhu	a4,0(a5)",3240,1.7870735016712447
+d1_fastpath_misses,80001ec8,core_state_transition,124,"lbu	a4,1(a4)",3200,1.765010865848143
+d1_fastpath_misses,80001f5c,core_state_transition,272,"lbu	a3,1(a5)",1920,1.0590065195088858
+d1_fastpath_misses,80001fc4,core_state_transition,376,"lbu	a3,1(a4)",1840,1.014881247862682
+d1_fastpath_misses,80001f84,core_state_transition,312,"lbu	a3,2(a5)",1680,0.926630704570275
+d1_fastpath_misses,80000ff4,core_bench_list,712,"lh	a2,0(a7)",1217,0.6712556949178718
+d1_fastpath_misses,80000b98,cmp_complex,200,"lh	a6,0(s1)",1113,0.6138928417778072
+d1_fastpath_misses,80002054,core_state_transition,520,"lbu	a4,1(a4)",720,0.3971274448158321
+d1_fastpath_misses,800022e8,core_bench_state,436,"lbu	a4,0(a5)",500,0.2757829477887723
+d1_fastpath_misses,80002318,core_bench_state,484,"lbu	a5,0(a4)",500,0.2757829477887723
+d1_fastpath_misses,800011ac,core_bench_list,1152,"lw	a1,4(s0)",312,0.17208855942019394
+d1_fastpath_misses,800011b0,core_bench_list,1156,"lw	a0,4(s4)",248,0.13678834210323107
+d1_fastpath_misses,8000115c,core_bench_list,1072,"lw	a5,0(a5)",220,0.12134449702705982
+d1_fastpath_misses,800011cc,core_bench_list,1184,"lw	s0,0(s0)",155,0.08549271381451942
+d1_fastpath_misses,80000b14,cmp_complex,68,"lhu	a5,56(s0)",148,0.08163175254547661
+d1_fastpath_misses,80000fd4,core_bench_list,680,"lh	t1,2(a7)",80,0.04412527164620357
+d1_fastpath_misses,80001200,core_bench_list,1236,"lw	s0,0(s0)",66,0.03640334910811795
+d1_fastpath_misses,80001234,core_bench_list,1288,"lw	a3,0(s4)",42,0.023165767614256875
+d1_fastpath_misses,80000cd8,cmp_complex,520,"lhu	a5,56(s0)",40,0.022062635823101785
+d1_fastpath_misses,80001a4c,matrix_test,1188,"lw	s0,40(sp)",40,0.022062635823101785
+d1_fastpath_misses,80001a50,matrix_test,1192,"lw	ra,44(sp)",40,0.022062635823101785
+d1_fastpath_misses,80001a58,matrix_test,1200,"lw	s1,36(sp)",40,0.022062635823101785
+d1_fastpath_misses,80001a5c,matrix_test,1204,"lw	s2,32(sp)",40,0.022062635823101785
+d1_fastpath_misses,80001a60,matrix_test,1208,"lw	s3,28(sp)",40,0.022062635823101785
+d1_fastpath_misses,80001a64,matrix_test,1212,"lw	s4,24(sp)",40,0.022062635823101785
+d1_fastpath_misses,80001a68,matrix_test,1216,"lw	s5,20(sp)",40,0.022062635823101785
+d1_fastpath_misses,80001a6c,matrix_test,1220,"lw	s6,16(sp)",40,0.022062635823101785
+d1_fastpath_misses,80001a70,matrix_test,1224,"lw	s7,12(sp)",40,0.022062635823101785
+d1_fastpath_misses,80001a74,matrix_test,1228,"lw	s8,8(sp)",40,0.022062635823101785
+d1_fastpath_misses,80001a78,matrix_test,1232,"lw	s9,4(sp)",40,0.022062635823101785
+d1_fastpath_misses,80001af4,core_bench_matrix,44,"lw	s0,8(sp)",40,0.022062635823101785
+d1_fastpath_misses,80001af8,core_bench_matrix,48,"lw	ra,12(sp)",40,0.022062635823101785
+d1_fastpath_misses,80002164,core_bench_state,48,"lbu	a1,0(a1)",40,0.022062635823101785
+d1_fastpath_misses,80000d24,cmp_complex,596,"lhu	a5,56(s0)",39,0.021511069927524242
+d1_fastpath_misses,8000118c,core_bench_list,1120,"lw	s4,0(s4)",38,0.020959504031946696
+d1_fastpath_misses,80000c4c,cmp_complex,380,"lw	ra,28(sp)",30,0.01654697686732634
+d1_fastpath_misses,80000c50,cmp_complex,384,"lw	s0,24(sp)",30,0.01654697686732634
+d1_fastpath_misses,80000c64,cmp_complex,404,"lw	s1,20(sp)",30,0.01654697686732634
+d1_fastpath_misses,80000db8,core_bench_list,140,"lw	a4,0(s0)",29,0.015995410971748794
+d1_fastpath_misses,80000b4c,cmp_complex,124,"lw	a6,8(sp)",20,0.011031317911550893
+d1_fastpath_misses,80000b50,cmp_complex,128,"lw	t1,12(sp)",20,0.011031317911550893
+d1_fastpath_misses,80000b88,cmp_complex,184,"lw	s2,16(sp)",20,0.011031317911550893
+d1_fastpath_misses,80000c08,cmp_complex,312,"lhu	a5,60(s0)",20,0.011031317911550893
+d1_fastpath_misses,80000c10,cmp_complex,320,"lw	a6,8(sp)",20,0.011031317911550893
+d1_fastpath_misses,80000c14,cmp_complex,324,"lw	a7,12(sp)",20,0.011031317911550893
+d1_fastpath_misses,80000c60,cmp_complex,400,"lw	s2,16(sp)",20,0.011031317911550893
+d1_fastpath_misses,80000ca0,cmp_complex,464,"lh	a3,2(s0)",20,0.011031317911550893
+d1_fastpath_misses,80000ca4,cmp_complex,468,"lh	a2,0(s0)",20,0.011031317911550893
+d1_fastpath_misses,80000cbc,cmp_complex,492,"lhu	a5,62(s0)",20,0.011031317911550893
+d1_fastpath_misses,80000cc8,cmp_complex,504,"lw	a7,12(sp)",20,0.011031317911550893
+d1_fastpath_misses,80000cec,cmp_complex,540,"lh	a3,2(s0)",20,0.011031317911550893
+d1_fastpath_misses,80000cf0,cmp_complex,544,"lh	a2,0(s0)",20,0.011031317911550893
+d1_fastpath_misses,80000cf8,cmp_complex,552,"lw	a0,24(s0)",20,0.011031317911550893
+d1_fastpath_misses,80000d08,cmp_complex,568,"lhu	a5,62(s0)",20,0.011031317911550893
+d1_fastpath_misses,80000d14,cmp_complex,580,"lw	t1,12(sp)",20,0.011031317911550893
+d1_fastpath_misses,80000d2c,core_bench_list,0,"lh	t3,4(a0)",20,0.011031317911550893
+d1_fastpath_misses,800010f8,core_bench_list,972,"lw	ra,60(sp)",20,0.011031317911550893
+d1_fastpath_misses,800010fc,core_bench_list,976,"lw	s0,56(sp)",20,0.011031317911550893
+d1_fastpath_misses,80001100,core_bench_list,980,"lw	s2,48(sp)",20,0.011031317911550893
+d1_fastpath_misses,80001104,core_bench_list,984,"lw	s3,44(sp)",20,0.011031317911550893
+d1_fastpath_misses,80001108,core_bench_list,988,"lw	s4,40(sp)",20,0.011031317911550893
+d1_fastpath_misses,8000110c,core_bench_list,992,"lw	s5,36(sp)",20,0.011031317911550893
+d1_fastpath_misses,80001110,core_bench_list,996,"lw	s6,32(sp)",20,0.011031317911550893
+d1_fastpath_misses,80001114,core_bench_list,1000,"lw	s7,28(sp)",20,0.011031317911550893
+d1_fastpath_misses,80001118,core_bench_list,1004,"lw	s8,24(sp)",20,0.011031317911550893
+d1_fastpath_misses,80001124,core_bench_list,1016,"lw	s11,12(sp)",20,0.011031317911550893
+d1_fastpath_misses,8000112c,core_bench_list,1024,"lw	s1,52(sp)",20,0.011031317911550893
+d1_fastpath_misses,80001f94,core_state_transition,328,"lw	a0,24(a1)",20,0.011031317911550893
+d1_fastpath_misses,8000224c,core_bench_state,280,"lw	a5,0(a4)",20,0.011031317911550893
+d1_fastpath_misses,80002290,core_bench_state,348,"lw	a0,0(s0)",20,0.011031317911550893
+d1_fastpath_misses,800022a4,core_bench_state,368,"lw	a0,0(s1)",20,0.011031317911550893
+d1_fastpath_misses,800022cc,core_bench_state,408,"lw	s4,104(sp)",20,0.011031317911550893
+d1_fastpath_misses,80002300,core_bench_state,460,"lbu	a5,0(s1)",20,0.011031317911550893
+d1_fastpath_misses,80000b44,cmp_complex,116,"lhu	a5,60(s0)",19,0.010479752015973348
+d1_fastpath_misses,8000111c,core_bench_list,1008,"lw	s9,20(sp)",10,0.005515658955775446
+d1_fastpath_misses,80001120,core_bench_list,1012,"lw	s10,16(sp)",10,0.005515658955775446
+d1_fastpath_misses,800000d8,iterate,120,"lhu	a1,56(s0)",9,0.0049640930601979015
+d1_fastpath_misses,800000f4,iterate,148,"lhu	a1,56(s0)",9,0.0049640930601979015
+d1_fastpath_misses,80000f04,core_bench_list,472,"lw	s2,0(s2)",7,0.0038609612690428128
+d1_fastpath_misses,80000da0,core_bench_list,116,"lw	a4,4(a5)",2,0.0011031317911550894
+d1_fastpath_misses,80000090,iterate,48,"lhu	a1,56(s0)",1,0.0005515658955775447
+d1_fastpath_misses,800000ac,iterate,76,"lhu	a1,56(s0)",1,0.0005515658955775447
+d1_fastpath_misses,80000104,iterate,164,"lw	s0,8(sp)",1,0.0005515658955775447
+d1_fastpath_misses,80000108,iterate,168,"lw	s1,4(sp)",1,0.0005515658955775447
+d1_fastpath_misses,8000010c,iterate,172,"lw	ra,12(sp)",1,0.0005515658955775447
+d1_fastpath_misses,80000110,iterate,176,"lw	s2,0(sp)",1,0.0005515658955775447
+d1_fastpath_misses,80000ad0,cmp_complex,0,"lh	a6,0(a0)",1,0.0005515658955775447
+d1_fastpath_misses,80000b5c,cmp_complex,140,"lhu	a5,56(s0)",1,0.0005515658955775447
+d1_fastpath_misses,80000ca8,cmp_complex,472,"lw	a1,20(s0)",1,0.0005515658955775447
+d1_fastpath_misses,80000cac,cmp_complex,476,"lw	a0,24(s0)",1,0.0005515658955775447
+d1_fastpath_misses,80000d68,core_bench_list,60,"lw	s0,36(a0)",1,0.0005515658955775447
+d1_fastpath_misses,80000d98,core_bench_list,108,"lw	a5,0(a5)",1,0.0005515658955775447
+d1_fastpath_misses,80000e58,core_bench_list,300,"lw	a4,4(a5)",1,0.0005515658955775447
+d1_fastpath_misses,80001ad0,core_bench_matrix,8,"lw	a3,8(a0)",1,0.0005515658955775447
+d1_fastpath_misses,80001adc,core_bench_matrix,20,"lw	a2,4(a0)",1,0.0005515658955775447
+d1_fastpath_misses,80001ae0,core_bench_matrix,24,"lw	a1,12(a0)",1,0.0005515658955775447
+d1_fastpath_misses,80001ae4,core_bench_matrix,28,"lw	a0,0(a0)",1,0.0005515658955775447

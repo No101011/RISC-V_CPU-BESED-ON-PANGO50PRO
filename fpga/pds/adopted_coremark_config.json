@@ -1,0 +1,17 @@
+{
+  "adopted_variant": "B2",
+  "isa": "rv32im_zba_zicsr",
+  "optimization": "O3",
+  "lto": false,
+  "run_mode": "performance",
+  "iterations": 4000,
+  "cpu_hz": 83333333,
+  "coremark": 237.62839,
+  "coremark_per_mhz": 2.851541,
+  "ip_configuration_backup": "E:\\FPGA\\github\\ZiGuang\\RISCV_BASEDON_PANGU\\_backup_select_b2_20261011_215717_251996",
+  "init_files": {
+    "irom_bram": "E:/FPGA/github/RISCV/RISCV_CPU_BaseOn_Pangu/fpga/pds/coremark_b2/performance_long/imem_coremark.dat",
+    "bram_dram": "E:/FPGA/github/RISCV/RISCV_CPU_BaseOn_Pangu/fpga/pds/coremark_b2/performance_long/dmem_coremark.dat"
+  },
+  "status": "active DAT and IP configuration selected; regenerate both memory IPs and bitstream before downloading; no further comparison tests requested"
+}

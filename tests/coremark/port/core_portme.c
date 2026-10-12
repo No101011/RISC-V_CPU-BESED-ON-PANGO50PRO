@@ -3,7 +3,7 @@
 #include "core_portme.h"
 
 /* CoreMark 要求的对齐工具：把指针 8 字节对齐（向上）*/
-ee_u8 *align_mem(ee_u8 *memblock) {
+ee_u8 *align_mem(void *memblock) {
     return (ee_u8 *)(((ee_ptr_int)memblock + 7) & ~7);
 }
 
@@ -28,17 +28,27 @@ volatile ee_s32 seed5_volatile = 0;
 
 static CORE_TICKS start_ticks, stop_ticks;
 
+/* Keep the measurement boundaries observable under whole-program optimization.
+ * noipa also preserves the two timer symbols used by the RTL report locator.
+ * Non-LTO builds retain their previous function attributes and instruction path.
+ */
+#if defined(COREMARK_LTO) && COREMARK_LTO
+#define COREMARK_TIMER_ATTR __attribute__((noipa))
+#else
+#define COREMARK_TIMER_ATTR
+#endif
+
 static inline ee_u32 read_mcycle_lo(void) {
     ee_u32 v;
-    __asm__ volatile ("csrr %0, mcycle" : "=r"(v));
+    __asm__ volatile ("csrr %0, mcycle" : "=r"(v) : : "memory");
     return v;
 }
 
-void start_time(void) {
+COREMARK_TIMER_ATTR void start_time(void) {
     start_ticks = read_mcycle_lo();
 }
 
-void stop_time(void) {
+COREMARK_TIMER_ATTR void stop_time(void) {
     stop_ticks = read_mcycle_lo();
 }
 

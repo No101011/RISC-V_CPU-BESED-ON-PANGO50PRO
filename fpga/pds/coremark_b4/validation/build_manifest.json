@@ -1,0 +1,73 @@
+{
+  "run_mode": "validation",
+  "iterations": 4000,
+  "cpu_hz": 83333333,
+  "total_data_size": 2000,
+  "instruction_words": 7514,
+  "initial_data_words": 782,
+  "official_commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777",
+  "official_source_md5_lf": {
+    "core_main.c": "4a9e6dadce1ac3866381021fbe843fc9",
+    "core_list_join.c": "9007fe7861b60ee6f210d156b62974c8",
+    "core_matrix.c": "5fa21a0f7c3964167c9691db531ca652",
+    "core_state.c": "fb49e7605c125306575a83f14f5798ac",
+    "core_util.c": "45540ba2145adea1ec7ea2c72a1fbbcb",
+    "coremark.h": "b0ec69b6c8e75853d06accb3b1bcf534"
+  },
+  "compiler_flags": "-march=rv32im_zba_zicsr -mabi=ilp32 -mcmodel=medlow -O3 -flto -Wall -Wno-unused-variable -Wno-unused-but-set-variable -Wno-implicit-function-declaration -Wno-unused-function -Isrc -Iport -Ibuild/b4/validation -DITERATIONS=4000 -DCPU_HZ=83333333 -DTOTAL_DATA_SIZE=2000 -DVALIDATION_RUN=1 -DCOREMARK_LTO=1 -ffunction-sections -fdata-sections -fno-builtin-printf --specs=nano.specs",
+  "linker_flags": "-march=rv32im_zba_zicsr -mabi=ilp32 -mcmodel=medlow -O3 -flto -nostartfiles -T port/link.ld -Wl,--gc-sections -Wl,-Map=build/b4/validation/coremark.map --specs=nano.specs",
+  "libraries": "-lc -lgcc -lnosys",
+  "libc": "newlib_nano",
+  "board_validation": "passed per user UART: 4000 iterations, 16.826605 seconds, official validation CRCs matched",
+  "sha256": {
+    "imem_coremark.dat": "0edcdbdd87b85aff8f3fccbefeb97a20c589949175c678a0fffe85b1e1e7d157",
+    "dmem_coremark.dat": "c605ca59926f0934e4009f8fde1d3bf6947688e6264be0a2a7a93e1839d941fc",
+    "coremark.elf": "8eb5bd10b5be7f30d634d4c0e444eb1efda3f7f4a4999e6a5a5d9e590481ff49",
+    "imem.hex": "50dea858c492c69638d96276d6fb48cf36511e40f9481741fb5695c1b11b52f6",
+    "dmem.hex": "d601fee89863cbb32d6c60897b22f2d8cce09e64a194bee095b2e6f1c92fcd4c",
+    "coremark.map": "3b5d9f8419b76d3ff10aebfd939f41c01eb8dfa159719506935b5cc45a76f81b",
+    "coremark.dis": "9fc470a0b69fb7b85d74ce75d2a60931eb6feee81daeac706df04805b85df8c0",
+    "coremark.text.bin": "e2ec266a8dc363d0aa665119c2f4751b072d21caad41de3fb4ad078a605c61db",
+    "coremark.data.bin": "8203b2a7db1e842911c02c375cc8e5c5afd6975fb6b46239bc74b83e9b06fddb",
+    "coremark_build_info.h": "46593a08020e48e43b661734af2875a6e2221d879a499e60f9e88594d87216bd",
+    "build_log.txt": "493ae6e0e222df62fa511fb6ab657eb69e723069daa66c8225a6b2215ffc0eb8",
+    "board_validation_2026-10-11.log": "702ac77e8a7e1f9e6e7ec315796224f7ede525559f2992e69309dfec78447a9b"
+  },
+  "variant": "B4",
+  "optimization": "O3",
+  "lto": true,
+  "text_bytes": 30056,
+  "initial_data_bytes": 3128,
+  "static_zba_sites": 42,
+  "timer_policy": "start_time/stop_time: noipa; mcycle asm: volatile + memory clobber",
+  "build_exit_code": 0,
+  "rtl_mycpu_sha256": "db8750e0b7772cc7296e3c3e3e772f09bf030fe1265358e451854a9d4ec608cb",
+  "port_core_portme_sha256": "9c0348ed261a69c10cf4ce98f0e8938b7e68416be40a8e4c3fda24526ade4fb0",
+  "board_result": {
+    "evidence": "user-pasted UART; not independently captured; bitstream hash and current PDS timing not checked",
+    "log_file": "board_validation_2026-10-11.log",
+    "run_mode": "validation",
+    "iterations": 4000,
+    "cpu_hz": 83333333,
+    "total_ticks": 1402217102,
+    "seconds": 16.82660529130642,
+    "iterations_per_sec": 237.7187751629633,
+    "cycles_per_iteration": 350554.2755,
+    "seedcrc": "0x18f2",
+    "crclist": "0xe3c1",
+    "crcmatrix": "0x0747",
+    "crcstate": "0x8d84",
+    "crcfinal": "0x5249",
+    "crc_and_time_check": "passed",
+    "comparison_b2_validation": {
+      "baseline_ticks": 1408802359,
+      "cycle_change_percent": -0.46743653983333244,
+      "throughput_change_percent": 0.4696317703305253
+    },
+    "comparison_b3_validation": {
+      "baseline_ticks": 1440200765,
+      "throughput_change_percent": 2.7088289642041463
+    },
+    "performance_score": "not reported: validation mode"
+  }
+}

@@ -1,0 +1,814 @@
+# do ../results/btb_2bit_tag_20261011_194410/riscv_tests_isolated.do
+# ** Error (suppressible): (vdel-19) Failed to access library 'btb_isa_20261011_194410' at "btb_isa_20261011_194410".
+# No such file or directory. (errno = ENOENT)
+# ** Warning: (vdel-57) Library 'btb_isa_20261011_194410' is missing or is not a valid ModelSim library.
+# 1
+# ../../rtl/include
+# Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 19:49:04 on Oct 11,2026
+# vlog -sv -work btb_isa_20261011_194410 "+incdir+../../rtl/include" ../../rtl/core/alu.v ../../rtl/core/branch_comp.v ../../rtl/core/csr_regfile.v ../../rtl/core/ctrl.v ../../rtl/core/ex1_ex2_reg.v ../../rtl/core/ex2_mem1_reg.v ../../rtl/core/forward_unit.v ../../rtl/core/hazard_unit.v ../../rtl/core/id_ex1_reg.v ../../rtl/core/if_id_reg.v ../../rtl/core/imm_gen.v ../../rtl/core/l0_cache.v ../../rtl/core/mdu.v ../../rtl/core/mem_wb_reg.v ../../rtl/core/pc_reg.v ../../rtl/core/perf_counters.v ../../rtl/core/pmul.v ../../rtl/core/ras.v ../../rtl/core/regfile.v ../../rtl/core/store_buffer.v ../../rtl/core/trap_ctrl.v ../../rtl/soc/myCPU.sv ../../sim/tb/tb_myCPU/tb_myCPU.sv 
+# -- Compiling module alu
+# -- Compiling module branch_comp
+# -- Compiling module csr_regfile
+# -- Compiling module ctrl
+# -- Compiling module ex1_ex2_reg
+# -- Compiling module ex2_mem1_reg
+# -- Compiling module forward_unit
+# -- Compiling module hazard_unit
+# -- Compiling module id_ex1_reg
+# -- Compiling module if_id_reg
+# -- Compiling module imm_gen
+# -- Compiling module l0_cache
+# -- Compiling module mdu
+# -- Compiling module mem_wb_reg
+# -- Compiling module pc_reg
+# -- Compiling module perf_counters
+# -- Compiling module pmul
+# -- Compiling module ras
+# -- Compiling module regfile
+# -- Compiling module store_buffer
+# -- Compiling module trap_ctrl
+# -- Compiling module myCPU
+# -- Compiling module tb_myCPU
+# 
+# Top level modules:
+# 	tb_myCPU
+# End time: 19:49:04 on Oct 11,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ../../tests/unofficial_test_data
+# ../../tests/unofficial_test_data/rv32ui-p-add.dat ../../tests/unofficial_test_data/rv32ui-p-addi.dat ../../tests/unofficial_test_data/rv32ui-p-and.dat ../../tests/unofficial_test_data/rv32ui-p-andi.dat ../../tests/unofficial_test_data/rv32ui-p-auipc.dat ../../tests/unofficial_test_data/rv32ui-p-beq.dat ../../tests/unofficial_test_data/rv32ui-p-bge.dat ../../tests/unofficial_test_data/rv32ui-p-bgeu.dat ../../tests/unofficial_test_data/rv32ui-p-blt.dat ../../tests/unofficial_test_data/rv32ui-p-bltu.dat ../../tests/unofficial_test_data/rv32ui-p-bne.dat ../../tests/unofficial_test_data/rv32ui-p-fence_i.dat ../../tests/unofficial_test_data/rv32ui-p-jal.dat ../../tests/unofficial_test_data/rv32ui-p-jalr.dat ../../tests/unofficial_test_data/rv32ui-p-lb.dat ../../tests/unofficial_test_data/rv32ui-p-lbu.dat ../../tests/unofficial_test_data/rv32ui-p-lh.dat ../../tests/unofficial_test_data/rv32ui-p-lhu.dat ../../tests/unofficial_test_data/rv32ui-p-lui.dat ../../tests/unofficial_test_data/rv32ui-p-lw.dat ../../tests/unofficial_test_data/rv32ui-p-or.dat ../../tests/unofficial_test_data/rv32ui-p-ori.dat ../../tests/unofficial_test_data/rv32ui-p-sb.dat ../../tests/unofficial_test_data/rv32ui-p-sh.dat ../../tests/unofficial_test_data/rv32ui-p-simple.dat ../../tests/unofficial_test_data/rv32ui-p-sll.dat ../../tests/unofficial_test_data/rv32ui-p-slli.dat ../../tests/unofficial_test_data/rv32ui-p-slt.dat ../../tests/unofficial_test_data/rv32ui-p-slti.dat ../../tests/unofficial_test_data/rv32ui-p-sltiu.dat ../../tests/unofficial_test_data/rv32ui-p-sltu.dat ../../tests/unofficial_test_data/rv32ui-p-sra.dat ../../tests/unofficial_test_data/rv32ui-p-srai.dat ../../tests/unofficial_test_data/rv32ui-p-srl.dat ../../tests/unofficial_test_data/rv32ui-p-srli.dat ../../tests/unofficial_test_data/rv32ui-p-sub.dat ../../tests/unofficial_test_data/rv32ui-p-sw.dat ../../tests/unofficial_test_data/rv32ui-p-xor.dat ../../tests/unofficial_test_data/rv32ui-p-xori.dat ../../tests/unofficial_test_data/rv32um-p-div.dat ../../tests/unofficial_test_data/rv32um-p-divu.dat ../../tests/unofficial_test_data/rv32um-p-mul.dat ../../tests/unofficial_test_data/rv32um-p-mulh.dat ../../tests/unofficial_test_data/rv32um-p-mulhsu.dat ../../tests/unofficial_test_data/rv32um-p-mulhu.dat ../../tests/unofficial_test_data/rv32um-p-rem.dat ../../tests/unofficial_test_data/rv32um-p-remu.dat
+# ================================================================
+# Running 47 riscv-tests...
+# ================================================================
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-add.dat 
+# Start time: 19:49:04 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# //  ModelSim SE-64 2020.4 Oct 13 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-add.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=555)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5655 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  add
+# End time: 19:49:07 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-addi.dat 
+# Start time: 19:49:08 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-addi.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=263)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 2735 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  addi
+# End time: 19:49:11 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-and.dat 
+# Start time: 19:49:12 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-and.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=525)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5355 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  and
+# End time: 19:49:15 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-andi.dat 
+# Start time: 19:49:15 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-andi.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=215)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 2255 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  andi
+# End time: 19:49:18 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-auipc.dat 
+# Start time: 19:49:19 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-auipc.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=48)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 585 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  auipc
+# End time: 19:49:22 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-beq.dat 
+# Start time: 19:49:22 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-beq.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=425)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 4355 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  beq
+# End time: 19:49:25 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-bge.dat 
+# Start time: 19:49:25 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-bge.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=479)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 4895 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  bge
+# End time: 19:49:28 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-bgeu.dat 
+# Start time: 19:49:29 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-bgeu.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=496)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5065 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  bgeu
+# End time: 19:49:32 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-blt.dat 
+# Start time: 19:49:32 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-blt.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=425)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 4355 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  blt
+# End time: 19:49:35 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-bltu.dat 
+# Start time: 19:49:35 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-bltu.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=435)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 4455 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  bltu
+# End time: 19:49:39 on Oct 11,2026, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-bne.dat 
+# Start time: 19:49:39 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-bne.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=433)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 4435 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  bne
+# End time: 19:49:42 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-fence_i.dat 
+# Start time: 19:49:42 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-fence_i.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=281)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 2915 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  fence_i
+# End time: 19:49:45 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-jal.dat 
+# Start time: 19:49:45 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-jal.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=45)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 555 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  jal
+# End time: 19:49:49 on Oct 11,2026, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-jalr.dat 
+# Start time: 19:49:49 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-jalr.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=146)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 1565 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  jalr
+# End time: 19:49:52 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-lb.dat 
+# Start time: 19:49:52 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-lb.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=287)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 2975 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  lb
+# End time: 19:49:56 on Oct 11,2026, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-lbu.dat 
+# Start time: 19:49:56 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-lbu.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=287)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 2975 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  lbu
+# End time: 19:49:59 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-lh.dat 
+# Start time: 19:49:59 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-lh.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=287)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 2975 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  lh
+# End time: 19:50:03 on Oct 11,2026, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-lhu.dat 
+# Start time: 19:50:03 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-lhu.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=287)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 2975 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  lhu
+# End time: 19:50:06 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-lui.dat 
+# Start time: 19:50:06 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-lui.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=47)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 575 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  lui
+# End time: 19:50:09 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-lw.dat 
+# Start time: 19:50:09 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-lw.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=287)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 2975 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  lw
+# End time: 19:50:13 on Oct 11,2026, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-or.dat 
+# Start time: 19:50:13 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-or.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=522)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5325 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  or
+# End time: 19:50:16 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-ori.dat 
+# Start time: 19:50:16 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-ori.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=219)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 2295 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  ori
+# End time: 19:50:20 on Oct 11,2026, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-sb.dat 
+# Start time: 19:50:20 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-sb.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=528)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5385 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  sb
+# End time: 19:50:23 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-sh.dat 
+# Start time: 19:50:23 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-sh.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=538)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5485 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  sh
+# End time: 19:50:26 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-simple.dat 
+# Start time: 19:50:26 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-simple.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=19)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 295 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  simple
+# End time: 19:50:30 on Oct 11,2026, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-sll.dat 
+# Start time: 19:50:30 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-sll.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=579)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5895 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  sll
+# End time: 19:50:33 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-slli.dat 
+# Start time: 19:50:33 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-slli.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=263)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 2735 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  slli
+# End time: 19:50:37 on Oct 11,2026, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-slt.dat 
+# Start time: 19:50:37 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-slt.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=555)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5655 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  slt
+# End time: 19:50:40 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-slti.dat 
+# Start time: 19:50:40 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-slti.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=263)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 2735 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  slti
+# End time: 19:50:43 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-sltiu.dat 
+# Start time: 19:50:43 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-sltiu.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=263)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 2735 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  sltiu
+# End time: 19:50:47 on Oct 11,2026, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-sltu.dat 
+# Start time: 19:50:47 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-sltu.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=555)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5655 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  sltu
+# End time: 19:50:50 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-sra.dat 
+# Start time: 19:50:50 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-sra.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=585)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5955 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  sra
+# End time: 19:50:53 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-srai.dat 
+# Start time: 19:50:53 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-srai.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=265)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 2755 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  srai
+# End time: 19:50:56 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-srl.dat 
+# Start time: 19:50:56 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-srl.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=585)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5955 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  srl
+# End time: 19:50:59 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-srli.dat 
+# Start time: 19:50:59 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-srli.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=265)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 2755 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  srli
+# End time: 19:51:02 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-sub.dat 
+# Start time: 19:51:02 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-sub.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=549)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5595 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  sub
+# End time: 19:51:06 on Oct 11,2026, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-sw.dat 
+# Start time: 19:51:06 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-sw.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=533)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5435 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  sw
+# End time: 19:51:09 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-xor.dat 
+# Start time: 19:51:09 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-xor.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=525)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5355 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  xor
+# End time: 19:51:12 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32ui-p-xori.dat 
+# Start time: 19:51:12 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32ui-p-xori.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=220)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 2305 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  xori
+# End time: 19:51:15 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32um-p-div.dat 
+# Start time: 19:51:15 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32um-p-div.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=430)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 4405 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  div
+# End time: 19:51:18 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32um-p-divu.dat 
+# Start time: 19:51:18 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32um-p-divu.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] FAIL testnum=8 (cycles=476)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 4865 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   FAIL  divu  testnum=8
+# End time: 19:51:21 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32um-p-mul.dat 
+# Start time: 19:51:21 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32um-p-mul.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=555)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5655 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  mul
+# End time: 19:51:24 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32um-p-mulh.dat 
+# Start time: 19:51:24 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32um-p-mulh.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=558)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5685 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  mulh
+# End time: 19:51:27 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32um-p-mulhsu.dat 
+# Start time: 19:51:27 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32um-p-mulhsu.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=558)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5685 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  mulhsu
+# End time: 19:51:30 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32um-p-mulhu.dat 
+# Start time: 19:51:30 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32um-p-mulhu.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=558)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5685 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  mulhu
+# End time: 19:51:33 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32um-p-rem.dat 
+# Start time: 19:51:33 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32um-p-rem.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=495)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5055 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  rem
+# End time: 19:51:37 on Oct 11,2026, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop "+PERF_ENABLE=0" btb_isa_20261011_194410.tb_myCPU -gMAX_CYCLES=200000 -gTEST_MODE=1 -gDRAM_HEX=../../tests/unofficial_test_data/empty.dat -gIROM_HEX=../../tests/unofficial_test_data/rv32um-p-remu.dat 
+# Start time: 19:51:37 on Oct 11,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# [TB] IROM = ../../tests/unofficial_test_data/rv32um-p-remu.dat
+# [TB] DRAM = ../../tests/unofficial_test_data/empty.dat
+# 
+# [TB] PASS (cycles=495)
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(244)
+#    Time: 5055 ns  Iteration: 1  Region: /tb_myCPU/g_riscv_tests
+# Break at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 244
+#   PASS  remu
+# End time: 19:51:40 on Oct 11,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# 
+# ================================================================
+# SUMMARY: 46 PASS, 1 FAIL, 0 HANG
+# ================================================================
+# 
+# --- FAIL ---
+#   rv32um-p-divu/testnum=8

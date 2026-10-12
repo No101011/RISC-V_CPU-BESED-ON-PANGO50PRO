@@ -148,13 +148,13 @@ module myCPU (
   wire fetch_go;                                  // 队列有余位,允许发出新取指
   wire redirect_now = predict_wrong | trap_redirect;
 
-  // 分支目标缓冲BTB:记录"哪个地址的跳转上次跳去了哪",取指直接查表推进,命中零气泡
-  // 4K项=每条指令一项;按地址位[2]拆偶奇两半,一拍查出相邻两条的表项
-  // 上电全空,跳转真实发生才记录;表项错了EX2会纠正,只付误预测惩罚,不会算错
-  // IROM 扩到 32KB 后，BTB 表项加宽到 15 位：{take, ras_flag, target_word[14:2]}
-  // 索引仍用 pc[13:3]（2048 行）→ 高低两个 16KB 半区会别名，只是多几次误预测，不会算错
-  reg  [14:0] btb_mem_e [0:2047];   // 偶槽(地址位[2]=0)
-  reg  [14:0] btb_mem_o [0:2047];   // 奇槽(地址位[2]=1)
+  // BTB共4K项，按PC[2]拆成偶奇两半，同时查询相邻两条指令。
+  // 每项19位：[18]valid，[17]PC[14]标签，[16]无条件跳转，
+  // [15]使用RAS，[14:13]两位饱和方向计数器，[12:0]目标地址[14:2]。
+  // 标签区分32KB IROM的两个16KB区域；冲突时替换，不共享方向状态。
+  // 代码和直接预测目标地址范围沿用当前的0x80000000~0x80007fff。
+  reg  [18:0] btb_mem_e [0:2047];   // 偶槽(地址位[2]=0)
+  reg  [18:0] btb_mem_o [0:2047];   // 奇槽(地址位[2]=1)
   integer bi;
   initial begin
     // 上电全空(FPGA 初值)。
@@ -162,24 +162,46 @@ module myCPU (
     //   但 PDS/ADS 的循环展开上限默认是 2000(超了报 Verilog-4092: Loop limit 2000 exceeded),
     //   所以拆成两段 1024 次,而不是一个 2048 次的循环。
     for (bi = 0; bi < 1024; bi = bi + 1) begin
-      btb_mem_e[bi] = 15'd0;
-      btb_mem_o[bi] = 15'd0;
+      btb_mem_e[bi] = 19'd0;
+      btb_mem_o[bi] = 19'd0;
     end
     for (bi = 1024; bi < 2048; bi = bi + 1) begin
-      btb_mem_e[bi] = 15'd0;
-      btb_mem_o[bi] = 15'd0;
+      btb_mem_e[bi] = 19'd0;
+      btb_mem_o[bi] = 19'd0;
     end
   end
 
-  // 写口(EX2侧):分支记"跳+目标",ret只记类型(目标查返回栈),普通jalr不记(目标不定)
-  // 记过"跳"的项不抹掉:循环回边重入立刻预测跳,只在退出时错一次
-  wire        btb_ret   = e2_jump && (e2_instr[6:0] == 7'b110_0111) && (e2_instr[11:7] == 5'd0)
+  function [1:0] btb_sat_update;
+    input [1:0] old_ctr;
+    input       actual_taken;
+    begin
+      if (actual_taken)
+        btb_sat_update = (old_ctr == 2'b11) ? 2'b11 : old_ctr + 2'b01;
+      else
+        btb_sat_update = (old_ctr == 2'b00) ? 2'b00 : old_ctr - 2'b01;
+    end
+  endfunction
+
+  // EX2训练：条件分支无论跳或不跳均更新；JAL/标准RET始终预测跳。
+  // RAS仅用于jalr x0,0(x1/x5)，其他JALR不记录。
+  wire        btb_ret   = e2_jump && (e2_instr[6:0] == 7'b110_0111)
+                        && (e2_instr[14:12] == 3'b000) && (e2_instr[11:7] == 5'd0)
+                        && (e2_instr[31:20] == 12'd0)
                         && ((e2_instr[19:15] == 5'd1) || (e2_instr[19:15] == 5'd5));
   wire        btb_jal   = e2_jump && (e2_instr[6:0] == 7'b110_1111);
-  wire        btb_take  = (e2_branch && e2_branch_taken) || btb_jal || btb_ret;
-  wire [14:0] btb_wword = btb_ret ? {2'b11, 13'd0} : {2'b10, e2_pc_target[14:2]};
+  wire [18:0] btb_old   = e2_pc[2] ? btb_mem_o[e2_pc[13:3]] : btb_mem_e[e2_pc[13:3]];
+  wire        btb_old_branch_hit = btb_old[18] && (btb_old[17] == e2_pc[14]) && !btb_old[16];
+  wire [1:0]  btb_new_ctr = btb_old_branch_hit
+                          ? btb_sat_update(btb_old[14:13], e2_branch_taken)
+                          : (e2_branch_taken ? 2'b10 : 2'b01);
+  // 条件分支的e2_pc_target为PC+立即数，与实际是否跳转无关。
+  wire [18:0] btb_wword = {1'b1, e2_pc[14], (btb_jal || btb_ret), btb_ret,
+                          (e2_branch ? btb_new_ctr : 2'b11),
+                          (btb_ret ? 13'd0 : e2_pc_target[14:2])};
+  // 不能用!predict_wrong门控：产生纠正信号的EX2分支本身需要训练。
+  wire        btb_train = !rst && e2_valid && !stall_back && (e2_branch || btb_jal || btb_ret);
   always @(posedge clk) begin
-    if (btb_take && !stall_back) begin
+    if (btb_train) begin
       if (e2_pc[2]) btb_mem_o[e2_pc[13:3]] <= btb_wword;
       else          btb_mem_e[e2_pc[13:3]] <= btb_wword;
     end
@@ -187,15 +209,20 @@ module myCPU (
 
   // 读口(取指侧):一拍同时查出A、B两条的表项。A=pc那条,B=pc|4那条。
   // A预测跳 -> 往A的目标走,B是错路的,这拍不取B;只有B预测跳 -> 两条都取,往B的目标走。
-  wire [14:0] btb_row_e = btb_mem_e[pc[13:3]];
-  wire [14:0] btb_row_o = btb_mem_o[pc[13:3]];
-  wire [14:0] btb_a     = pc[2] ? btb_row_o : btb_row_e;
-  wire [14:0] btb_b     = btb_row_o;
-  wire [31:0] btb_tgt_a = btb_a[13] ? ras_top_o : {17'b1_0000_0000_0000_0000, btb_a[12:0], 2'b00};
-  wire [31:0] btb_tgt_b = btb_b[13] ? ras_top_o : {17'b1_0000_0000_0000_0000, btb_b[12:0], 2'b00};
+  wire [18:0] btb_row_e = btb_mem_e[pc[13:3]];
+  wire [18:0] btb_row_o = btb_mem_o[pc[13:3]];
+  wire [18:0] btb_a     = pc[2] ? btb_row_o : btb_row_e;
+  wire [18:0] btb_b     = btb_row_o;
+  // A/B位于同一8字节组，PC[14]标签相同。
+  wire        btb_hit_a = btb_a[18] && (btb_a[17] == pc[14]);
+  wire        btb_hit_b = btb_b[18] && (btb_b[17] == pc[14]);
+  wire        btb_predict_a = btb_hit_a && (btb_a[16] || btb_a[14]);
+  wire        btb_predict_b = btb_hit_b && (btb_b[16] || btb_b[14]);
+  wire [31:0] btb_tgt_a = btb_a[15] ? ras_top_o : {17'b1_0000_0000_0000_0000, btb_a[12:0], 2'b00};
+  wire [31:0] btb_tgt_b = btb_b[15] ? ras_top_o : {17'b1_0000_0000_0000_0000, btb_b[12:0], 2'b00};
   wire        slot_b_new = ~pc[2];
-  wire        take_a    = btb_a[14];
-  wire        take_b    = slot_b_new & ~take_a & btb_b[14];
+  wire        take_a    = btb_predict_a;
+  wire        take_b    = slot_b_new & ~take_a & btb_predict_b;
   wire        issue_b   = slot_b_new & ~take_a;             // A 槽预测跳转则 B 槽为错路,不发
   wire [31:0] pc_b      = {pc[31:3], 1'b1, pc[1:0]};        // pc|4(纯位拼接,无加法器)
   wire [31:0] seq_next  = {pc[31:3] + 29'd1, 3'b000};       // 顺序推进:下一对齐组

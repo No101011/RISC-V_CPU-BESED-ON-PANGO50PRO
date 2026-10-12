@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-11",
+  "configuration": "B2 from freshly downloaded official CoreMark sources",
+  "official_commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777",
+  "iterations": 4000,
+  "cpu_hz": 83333333,
+  "isa": "rv32im_zba_zicsr",
+  "optimization": "O3",
+  "active_dat_selected": false,
+  "rtl_simulation_run": false,
+  "pds_run": false,
+  "packages": {
+    "performance": {
+      "build_exit_code": 0,
+      "instruction_bytes": 21836,
+      "dat_checks": {
+        "imem_coremark.dat": {
+          "words": 8192,
+          "sha256": "bb1ab486cd9d7fd1bfde652e6d4e478bd0210e79e783d622e39ae8be6bea4dc9",
+          "same_as_previous_B2": true
+        },
+        "dmem_coremark.dat": {
+          "words": 32768,
+          "sha256": "bc70aaf18e7caf7ffd60ec70df2d4e4231f0c154f8d08f426d02dd169191f133",
+          "same_as_previous_B2": true
+        }
+      },
+      "board_run_evidence": {
+        "source": "user-provided UART text; not directly captured by the agent",
+        "log": "performance/board_performance_2026-10-11.log",
+        "iterations": 4000,
+        "cpu_hz": 83333333,
+        "total_ticks": 1402750453,
+        "total_time_seconds": 16.833006,
+        "coremark": 237.62839,
+        "coremark_per_mhz": 2.851540691406163,
+        "cycles_per_iteration": 350687.61325,
+        "seedcrc": "e9f5",
+        "crclist": "e714",
+        "crcmatrix": "1fd7",
+        "crcstate": "8e3a",
+        "crcfinal": "65c5",
+        "status": "expected CRC and minimum 10-second duration checks passed",
+        "previous_new_btb_ticks": 1402750453,
+        "tick_difference": 0,
+        "scope": "Flashed bitstream hash not independently checked; no new RTL simulation was run"
+      }
+    },
+    "validation": {
+      "build_exit_code": 0,
+      "instruction_bytes": 21836,
+      "dat_checks": {
+        "imem_coremark.dat": {
+          "words": 8192,
+          "sha256": "145824a60420dc1ead9b772afa546bcd0cfb3b4d571d544fd77b8cb8e2d05cd5",
+          "same_as_previous_B2": true
+        },
+        "dmem_coremark.dat": {
+          "words": 32768,
+          "sha256": "f1f1789ce978701536b458039b4e309b523f75bc908eaa7e5f3aaa58df189b95",
+          "same_as_previous_B2": true
+        }
+      },
+      "board_repeat_status": "pending for fresh package; previous byte-identical B2 validation board record passed"
+    }
+  }
+}

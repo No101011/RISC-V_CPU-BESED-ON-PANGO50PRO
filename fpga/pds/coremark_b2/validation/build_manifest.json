@@ -18,10 +18,30 @@
   "linker_flags": "-march=rv32im_zba_zicsr -mabi=ilp32 -mcmodel=medlow -nostartfiles -T port/link.ld -Wl,--gc-sections -Wl,-Map=build/b2/validation/coremark.map --specs=nano.specs",
   "libraries": "-lc -lgcc -lnosys",
   "libc": "newlib_nano",
-  "board_validation": "pending; compilation is not a board run",
+  "board_validation": "passed per user-provided UART log, 2026-10-11; new BTB+B2 validation, 4000 iterations, 16.905628 seconds; CRC passed",
   "sha256": {
     "imem_coremark.dat": "145824a60420dc1ead9b772afa546bcd0cfb3b4d571d544fd77b8cb8e2d05cd5",
     "dmem_coremark.dat": "f1f1789ce978701536b458039b4e309b523f75bc908eaa7e5f3aaa58df189b95",
     "coremark.elf": "c59bacfc49fc92af0a7f9d90833145c09881b9e6aeb222fb60ee564bcab5ee20"
+  },
+  "board_run_evidence_after_btb": {
+    "source": "user-provided UART text; not directly captured by the agent",
+    "context": "B2 Zba+O3 validation after BTB two-bit counters and PC[14] tag change; flashed bitstream hash not independently checked",
+    "log": "board_validation_btb_2bit_tag_2026-10-11.log",
+    "raw_log": "board_validation_btb_2bit_tag_2026-10-11_raw.log",
+    "normalization": "Removed three host receive timestamp markers and joined split Iterations/Compiler labels; raw paste preserved separately",
+    "iterations": 4000,
+    "cpu_hz": 83333333,
+    "total_ticks": 1408802359,
+    "total_time_seconds": 16.905628,
+    "iterations_per_second": 236.607591,
+    "cycles_per_iteration": 352200.58975,
+    "seedcrc": "18f2",
+    "crclist": "e3c1",
+    "crcmatrix": "0747",
+    "crcstate": "8d84",
+    "crcfinal": "5249",
+    "status": "CRC and minimum 10-second duration checks passed",
+    "reported_performance_score": false
   }
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 跑 riscv-tests(rv32ui + rv32um 中适用的 45 例)。编译一次,逐个用例 vsim。
+# 跑 riscv-tests(rv32ui + rv32um，跳过 fence_i)。编译一次,逐个用例 vsim。
 #
 # 在哪里跑:  **Git Bash**(或 MSYS2 / WSL) —— 这是 bash 脚本, cmd/PowerShell 里不能直接跑。
 #   打开: 开始菜单搜 "Git Bash"，或直接运行 D:\realsoftwares\Git\bin\bash.exe
@@ -37,15 +37,14 @@ echo "=== compile ==="
 pass=0; fail=0; fails=""
 for dat in tests/unofficial_test_data/rv32u*-p-*.dat; do
   nm=$(basename "$dat" .dat)
-  # 考纲 37 条 RV32I + 8 条 M,共 45 例适用;以下 2 例不适用:
-  #   fence_i 面向自修改代码,不在设计目标范围;
-  #   divu 官方参考数据存在已知错误(除零期望值与规范不符),已用手工向量另行验证
+  # fence_i 面向自修改代码，此旧脚本继续跳过。
+  # DIVU 已从官方源码重建，除零预期为全1，恢复参与回归。
   case "$nm" in
-    rv32ui-p-fence_i|rv32um-p-divu) continue;;
+    rv32ui-p-fence_i) continue;;
   esac
   res=$("$MS_DIR/vsim" -c -work sim/rvwork tb_riscv +test="$dat" +name="$nm" -do "run -all; quit -f" 2>&1 | grep "RVTEST" || true)
   echo "${res:-RVTEST $nm RESULT=NO_OUTPUT}"
   if echo "$res" | grep -q "RESULT=PASS"; then pass=$((pass+1)); else fail=$((fail+1)); fails="$fails $nm"; fi
 done
-echo "==== SUMMARY: PASS=$pass FAIL=$fail  (scope: RV32I 37 + M 8 = 45) ===="
-[ -n "$fails" ] && echo "FAILED:$fails" || echo "ALL PASS (45/45)"
+echo "==== SUMMARY: PASS=$pass FAIL=$fail  TOTAL=$((pass+fail)) (scope: rv32ui + rv32um, excluding fence_i) ===="
+[ -n "$fails" ] && echo "FAILED:$fails" || echo "ALL PASS ($pass/$((pass+fail)))"

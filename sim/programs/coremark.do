@@ -17,7 +17,7 @@
 set WLIB work
 if {[info exists env(COREMARK_WORK_LIB)]} { set WLIB $env(COREMARK_WORK_LIB) }
 if {![regexp {^[A-Za-z_][A-Za-z0-9_]*$} $WLIB]} { error "Invalid COREMARK_WORK_LIB" }
-catch { vdel -lib $WLIB -all }
+if {[file exists $WLIB]} { vdel -lib $WLIB -all }
 vlib $WLIB
 
 set INC ../../rtl/include
@@ -69,6 +69,9 @@ if {$PERF_ENABLE} {
                      +PERF_STOP_PC=[dict get $PERF_META stop_pc] \
                      +PERF_ITERATIONS=[dict get $PERF_META iterations]
     echo "CoreMark ELF/HEX matched; .text bytes=[dict get $PERF_META text_bytes]"
+}
+if {[info exists env(COREMARK_HOTSPOT_CSV)] && $env(COREMARK_HOTSPOT_CSV) ne ""} {
+    lappend PERF_ARGS +PERF_HOTSPOT_CSV=$env(COREMARK_HOTSPOT_CSV)
 }
 set PERF_CSV coremark_perf.csv
 if {[info exists env(COREMARK_REPORT_CSV)]} { set PERF_CSV $env(COREMARK_REPORT_CSV) }

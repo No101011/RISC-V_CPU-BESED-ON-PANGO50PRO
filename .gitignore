@@ -5,9 +5,12 @@
 .vscode/
 .claude/
 .workbuddy/
+AGENTS.md
 
 # ModelSim / Questa 自动生成的仿真产物，不上传
 sim/programs/work/
+sim/programs/b2_hotspots_*/
+sim/results/b2_hotspots_*/report_ratio_work/
 sim/programs/transcript
 sim/programs/vsim_stacktrace.vstf
 sim/programs/*.wlf
@@ -70,3 +73,41 @@ transcript
 *.map
 *.elf
 fpga/pds/**/*.zip
+
+# 编译器中间文件和可由 HEX/DAT 重新生成的二进制
+*.o
+*.a
+*.d
+*.bin
+*.gcda
+*.gcno
+
+# tests 下各构建目录中的 HEX/DAT 是构建副本；FPGA/PDS 交付目录里的镜像保留
+tests/**/build/**/*.hex
+tests/**/build/**/*.dat
+tests/**/coremark_build_info.h
+
+# PDS CoreMark 包里的过程性构建信息；正式镜像和板测日志继续纳入版本管理
+fpga/pds/coremark_*/**/build.log
+fpga/pds/coremark_*/**/build_log.txt
+fpga/pds/coremark_*/**/coremark_build_info.h
+fpga/pds/coremark_*/**/zba_instructions.txt
+
+# 临时 ModelSim 工作库（对应脚本和结果快照保存在 sim/results）
+sim/programs/btb_*/
+sim/programs/*_work/
+
+# 可重建的官方源码下载压缩包和编译过程日志
+tests/**/official_HEAD.zip
+tests/**/upstream_HEAD.zip
+tests/**/build.log
+tests/**/*_build.log
+tests/**/*_regenerate_*.log
+
+# 官方源码下载副本与临时重建工作区；项目使用的 CoreMark 源码保留在 tests/coremark/src/
+tests/coremark_official_reclone_20261011/official_source/
+tests/coremark_official_reclone_20261011/rebuild_workspace/
+
+# 通用构建目录规则之后恢复仓库根 CoreMark 仿真镜像
+!tests/coremark/build/imem.hex
+!tests/coremark/build/dmem.hex
