@@ -46,6 +46,11 @@ module myCPU (
   wire        e2_sb_range;          // 前向声明:EX2 地址落在 DRAM 区间
   wire        e2_spec_rd_hit;            // 前向声明:投机读命中(EX1 用预测地址发的读)
   reg         m1_st2ld_fwd;             // 前向声明:直传的 load 进入 MEM1
+  //ex2查询l0
+  wire        l0_e2_raw_hit;   
+  wire [31:0] l0_e2_data;
+  wire        e2_l0_hit;
+
 `ifdef SUBWORD_FAST
   reg         e2_d1_ld;                 // 前向声明:d1命中随载荷进EX2(已格式化数据接力进MEM1腿)
 `endif
@@ -610,6 +615,7 @@ module myCPU (
                   e2_sb_hit ? sb_ld_data :
                   e2_st2ld_fwd  ? m1_rs2 :
                   e2_spec_rd_hit ? perip_rdram :          // 投机读:数据这一拍正从 DRAM 读口到达,直接捕获
+                  e2_l0_hit      ? l0_e2_data :           //查l0
                   (e2_wb_sel == `WB_PC4) ? e2_pc4 : e2_alu_out;
   always @(posedge clk) begin
     if (rst) mem1_fwd_reg <= 32'h0;
@@ -1118,15 +1124,36 @@ module myCPU (
   l0_cache u_l0 (
       .clk(clk), .rst(rst),
       .ld_raddr(spec_ld_waddr), .ld_hit(l0_hit), .ld_data(l0_data),
+      .ld2_raddr (e2_alu_out[17:2]), .ld2_hit(l0_e2_raw_hit), .ld2_data(l0_e2_data),
       .wr_en(l0_fill), .wr_inv(l0_invald),
       .wr_addr(w_alu_out[17:2]), .wr_data(l0_wdata)
   );
+    // MEM1 同拍正在写入这个字 内存和缓存尚未完成更新，不能使用旧缓存值。
+  wire e2_l0_mem1_store_conflict = m1_mem_we && dram_range && (m1_alu_out[17:2] == e2_alu_out[17:2]);
+  // WB 的 store 已在上一拍写入内存，
+  // 但 L0 的更新/作废要在本拍时钟沿才发生。
+  // 查询与捕获使用时钟沿前的数据，因此仍须阻止。
+  wire e2_l0_wb_store_conflict = w_mem_we_r
+                  && w_drange_r
+                  && (w_alu_out[17:2] == e2_alu_out[17:2]);
+  // 仅加速有效、自然对齐、DRAM 范围内的 LW。
+  assign e2_l0_hit =
+                  !rst
+                  && e2_valid
+                  && e2_mem_re
+                  && (e2_mem_width == `MEM_WORD)
+                  && (e2_alu_out[1:0] == 2'b00)
+                  && e2_sb_range
+                  && !stall_back
+                  && l0_e2_raw_hit
+                  && !e2_l0_mem1_store_conflict
+                  && !e2_l0_wb_store_conflict;
 
   // ---- 提前一级查表:用ID预测的地址在EX1就查store_buffer/L0 ----
   // 拿不准的按未命中算(同拍store在写/EX2还有更老的store),回落到EX2查表或存储器读
   wire d1_hit = spec_addr_valid && (d1_sb_hit || l0_hit)
-                 && !(m1_mem_we && dram_range && (m1_alu_out[17:2] == spec_ld_waddr))
-                 && !(e2_mem_we && (e2_alu_out[17:2] == spec_ld_waddr));
+                  && !(m1_mem_we && dram_range && (m1_alu_out[17:2] == spec_ld_waddr))
+                  && !(e2_mem_we && (e2_alu_out[17:2] == spec_ld_waddr));
 
   // 命中的数据存一拍:下一拍消费者到EX1,从选择器的EX2P那一路取用
   always @(posedge clk) begin
@@ -1161,9 +1188,9 @@ module myCPU (
   wire e2_fast_hit = e2_sb_hit || e2_st2ld_fwd;
 `ifdef SUBWORD_FAST
   // EX2载荷"下拍MEM1腿可转发"总闸:缓冲命中/直传/投机读/d1接力,四路任一
-  wire e2_ld_ready = e2_fast_hit || e2_spec_rd_hit || e2_d1_ld;
+  wire e2_ld_ready = e2_fast_hit || e2_spec_rd_hit || e2_d1_ld || e2_l0_hit;
 `else
-  wire e2_ld_ready = e2_fast_hit || e2_spec_rd_hit;
+  wire e2_ld_ready = e2_fast_hit || e2_spec_rd_hit || e2_l0_hit;
 `endif
 
   always @(posedge clk) begin

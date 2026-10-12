@@ -1,0 +1,92 @@
+# do ../results/ex2_l0_review_20261012_160451/compile.do
+# ex2_l0_review_20261012_160451_work
+# Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 16:05:16 on Oct 12,2026
+# vlog -sv -work ex2_l0_review_20261012_160451_work "+incdir+../../rtl/include" "+incdir+../tb/tb_myCPU" ../../rtl/core/alu.v ../../rtl/core/branch_comp.v ../../rtl/core/csr_regfile.v ../../rtl/core/ctrl.v ../../rtl/core/ex1_ex2_reg.v ../../rtl/core/ex2_mem1_reg.v ../../rtl/core/forward_unit.v ../../rtl/core/hazard_unit.v ../../rtl/core/id_ex1_reg.v ../../rtl/core/if_id_reg.v ../../rtl/core/imm_gen.v ../../rtl/core/l0_cache.v ../../rtl/core/mdu.v ../../rtl/core/mem_wb_reg.v ../../rtl/core/pc_reg.v ../../rtl/core/perf_counters.v ../../rtl/core/pmul.v ../../rtl/core/ras.v ../../rtl/core/regfile.v ../../rtl/core/store_buffer.v ../../rtl/core/trap_ctrl.v ../../rtl/soc/myCPU.sv ../../sim/tb/tb_myCPU/tb_myCPU.sv 
+# -- Compiling module alu
+# -- Compiling module branch_comp
+# -- Compiling module csr_regfile
+# -- Compiling module ctrl
+# -- Compiling module ex1_ex2_reg
+# -- Compiling module ex2_mem1_reg
+# -- Compiling module forward_unit
+# -- Compiling module hazard_unit
+# -- Compiling module id_ex1_reg
+# -- Compiling module if_id_reg
+# -- Compiling module imm_gen
+# -- Compiling module l0_cache
+# -- Compiling module mdu
+# -- Compiling module mem_wb_reg
+# -- Compiling module pc_reg
+# -- Compiling module perf_counters
+# -- Compiling module pmul
+# -- Compiling module ras
+# -- Compiling module regfile
+# -- Compiling module store_buffer
+# -- Compiling module trap_ctrl
+# -- Compiling module myCPU
+# -- Compiling module tb_myCPU
+# 
+# Top level modules:
+# 	tb_myCPU
+# End time: 16:05:16 on Oct 12,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vopt 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 16:05:16 on Oct 12,2026
+# vopt -work ex2_l0_review_20261012_160451_work "+acc" ex2_l0_review_20261012_160451_work.tb_myCPU -o tb_review_opt 
+# 
+# Top level modules:
+# 	tb_myCPU
+# 
+# Analyzing design...
+# -- Loading module tb_myCPU
+# -- Loading module myCPU
+# -- Loading module ras
+# -- Loading module pc_reg
+# -- Loading module if_id_reg
+# -- Loading module regfile
+# -- Loading module imm_gen
+# -- Loading module ctrl
+# -- Loading module id_ex1_reg
+# -- Loading module alu
+# -- Loading module mdu
+# -- Loading module pmul
+# -- Loading module branch_comp
+# -- Loading module csr_regfile
+# -- Loading module trap_ctrl
+# -- Loading module ex1_ex2_reg
+# -- Loading module ex2_mem1_reg
+# -- Loading module store_buffer
+# -- Loading module l0_cache
+# -- Loading module mem_wb_reg
+# -- Loading module forward_unit
+# -- Loading module hazard_unit
+# -- Loading module perf_counters
+# Optimizing 23 design-units (inlining 0/23 module instances):
+# -- Optimizing module myCPU(fast)
+# -- Optimizing module tb_myCPU(fast)
+# -- Optimizing module ctrl(fast)
+# -- Optimizing module store_buffer(fast)
+# -- Optimizing module id_ex1_reg(fast)
+# -- Optimizing module mdu(fast)
+# ** Note: (vopt-143) Recognized 1 FSM in module "mdu(fast)".
+# -- Optimizing module perf_counters(fast)
+# -- Optimizing module pmul(fast)
+# -- Optimizing module ex1_ex2_reg(fast)
+# -- Optimizing module csr_regfile(fast)
+# -- Optimizing module hazard_unit(fast)
+# -- Optimizing module forward_unit(fast)
+# -- Optimizing module if_id_reg(fast)
+# -- Optimizing module ex2_mem1_reg(fast)
+# -- Optimizing module alu(fast)
+# -- Optimizing module l0_cache(fast)
+# -- Optimizing module mem_wb_reg(fast)
+# -- Optimizing module imm_gen(fast)
+# -- Optimizing module branch_comp(fast)
+# -- Optimizing module trap_ctrl(fast)
+# -- Optimizing module regfile(fast)
+# -- Optimizing module ras(fast)
+# -- Optimizing module pc_reg(fast)
+# Optimized design name is tb_review_opt
+# End time: 16:05:17 on Oct 12,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

@@ -138,3 +138,25 @@ load依赖321131周期（9.156%），mul依赖129600（3.695%），计时区间M
 
 完整日志、CSV、注释后的PC清单、汇总脚本和复现命令在
 `sim/results/b2_hotspots_20261011_220300/`。短仿真不足10秒提示为预期，正式分数继续采用上板B2成绩。
+
+## EX2 实际地址影子查询（2026-10-12）
+
+在输出目录已存在的前提下，增加：
+
+```powershell
+$env:COREMARK_EX2_SHADOW_CSV = '../results/my_run/ex2_shadow.csv'
+```
+
+`tb_myCPU.sv` 内的 `ex2_l0_shadow.svh` 仅观察 DUT 内部寄存器和数组，
+不增加 DUT 端口、不写缓存、不改变 ready/stall/forward 信号。
+只采样 COREMARK_TIMED 区间中 EX2 有效、可推进、地址落在128KB DRAM且自然对齐的 load。
+
+- raw hit：用实际地址的索引、标签读取现有128项L0的当前内容，不使用同拍将写入的填充数据。
+- guarded hit：raw hit且没有MEM1同字store，也没有WB同字store等待更新/作废L0。
+- validated hit：guarded hit的字节提取/符号扩展结果与TB内存一致；数据一致性仅用于观察器校验，不能作为硬件命中条件。guarded mismatch必须为0，否则需修正新鲜度策略。
+- releasable cycle：当前确实因EX2该load等待，且没有EX1 load/mul、其他阶段依赖、DRAM/MDU/CSR停顿、重定向或空ID阻止放行。每个基线周期最多计一次。
+- producer/consumer：分别记录EX2 load PC及ID `d_pc`，消费者桶之和必须等于可解除周期总数。
+- SB比较：额外观察现有4项store buffer的字节掩码覆盖；SB-only收益单列，不算作新增L0查询口收益。
+
+影子统计保持原容量、填充、作废和执行顺序。因此可解除周期是基线轨迹上的机会数，
+不是改完RTL后的实测提速；实现后的时序、缓存演化及上板成绩仍需重新验证。

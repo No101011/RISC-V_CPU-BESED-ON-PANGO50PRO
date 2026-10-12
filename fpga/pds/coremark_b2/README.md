@@ -1,16 +1,65 @@
-# B2：Zba + O3，直接与 B1 对比
+# B2：最终采用 Zba + O3，无 LTO
+
+## 非 B2 文件清理状态
+
+2026-10-12：用户进一步要求删除其他CoreMark文件。已删除554个可重建的非B2镜像/编译产物、
+旧编译库文件及B1/LTO构建脚本；默认构建和仿真入口现均采用B2。
+完整删除旧备份、ZIP、审计及历史资料被自动审批拒绝，要求用户对这些恢复/追溯资料单独确认。
+这些历史资料暂时保留，清单见../b2_refresh_20261012_163627/；不能将当前状态表述为全部非B2文件已删除。
+B2镜像、共享官方源码/BSP、CPU RTL及ISA回归用例保持不变。
+
+## 2026-10-12：EX2 L0 查询后 B2 performance 上板通过
+
+用户UART日志保存于`performance_long/board_performance_ex2_l0_2026-10-12.log`。
+参数与当前B2 performance_long manifest一致：Zba+O3、无LTO、4000次、83333333Hz、performance种子。
+seedcrc=e9f5、list/matrix/state=e714/1fd7/8e3a、final=65c5，Correct operation validated。
+1379802185/83333333=16.557626286秒，迭代率241.580521921，与输出四舍五入一致，超过10秒。
+本轮有效性能结果为**241.580522 CoreMark、2.898966 CoreMark/MHz**。
+
+| 指标 | 新BTB、改动前B2 | EX2 L0查询后B2 |
+|---|---:|---:|
+| 周期 | 1402750453 | 1379802185 |
+| 时间（秒） | 16.833006 | 16.557626 |
+| CoreMark | 237.628390 | 241.580522 |
+| CoreMark/MHz | 2.851541 | 2.898966 |
+| 周期/迭代 | 350687.613250 | 344950.546250 |
+
+同模式、编译参数、次数和频率比较，节省22948268周期，周期降低1.635948%、吞吐提升1.663156%。
+此前B2 10次影子统计仅LW可省57343周期，理想吞吐提升1.662046%，与本轮实测收益接近。
+按4000次线性外推预计省22937200周期，实测多省11068周期；短仿真和上板长运行有启动/热身差异，
+不能把差值解释为每次命中的严格周期对账。软件DAT已确认与前次B2相同，结果支持EX2 L0优化的约1.66%收益。
+
+证据为用户UART文本，下载位流/镜像哈希未独立核对，本轮PDS资源与时序也尚未核对。
+当前新RTL+B2 validation结果仍待提供；旧BTB后B2 validation及新RTL+B4 validation记录分别保留。
+本次只记录和分析结果，没有修改RTL、镜像、IP或执行新仿真/实现。
+
+## 2026-10-12：重新编译与 DAT 清理
+
+已重新编译4000次上板performance_long/validation及两组10次短仿真镜像，GCC15.2.0、O3、无LTO。
+官方六个核心文件哈希通过，ELF/HEX匹配，DAT为无BOM纯LF、ROM8192行/RAM32768行。
+根目录活动DAT已成对选择performance_long；当前PDS的ROM/RAM初始化常量均逐字匹配该包。
+RAM通过调用PDS随附的原始Tcl初始化生成器更新，包装文件INIT_FILE也已同步；端口和IP架构未改变。
+CPU RTL未因本次操作修改，没有运行仿真、PDS实现或下载；下一步从Compile重新生成位流。
+
+删除50个旧/重复CoreMark DAT，包括B1/B3/B4、旧A1、重复导出/备份、B2旧2200次DAT及旧B4解码DAT。
+旧压缩包中40个DAT条目也已移除；源码、ELF/HEX、历史日志和参数记录保留，ISA回归DAT不变。
+当前完整包为`../coremark_b2_2026-10-12.zip`，含下面四组镜像。
+详细构建/清理清单、重建前manifest与IP备份见`../b2_refresh_20261012_163627/`。
+
+默认重建：`build_coremark_b2.ps1`；默认选择脚本现在选择B2 performance_long，
+`select_coremark_image.ps1 -RunMode Validation`则选择B2 validation。
 
 ## 最终采用配置（2026-10-11）
 
 用户已决定采用 **B2：rv32im_zba_zicsr、O3、无LTO**，结束B3/B4后续对比。
-当前正式基线为新BTB下的237.628390 CoreMark、2.851541 CoreMark/MHz。
+当时正式基线为新BTB下的237.628390 CoreMark、2.851541 CoreMark/MHz；最新结果见本文首节。
 性能和验证模式的既有上板记录均已通过，详见后文。
 
 两份根目录活动DAT已备份并成对选择本包的`performance_long/`（4000次、83333333Hz）。
 PDS工程两个内存IP的.idf INIT_FILE已备份并切回本包同目录的对应DAT绝对路径。
 配置记录见`../adopted_coremark_config.json`。
-此操作仅更新输入配置，未重生成IP或位流；下次下载前重新加载IP配置并生成两个内存IP及位流。
-B3/B4产物和已有validation日志保留，不再主动推进后续对比。
+该2026-10-11操作当时仅更新输入配置；2026-10-12初始化内容同步状态见上节，位流仍需重新生成。
+B3/B4历史日志保留，其DAT已按用户要求删除，不再主动推进后续对比。
 
 生成日期：2026-10-11；xPack GCC 15.2.0。
 编译参数为 `-march=rv32im_zba_zicsr -mabi=ilp32 -mcmodel=medlow -O3`，
@@ -37,15 +86,13 @@ powershell -NoProfile -ExecutionPolicy Bypass -File fpga/pds/select_coremark_ima
 3. 核对 CPU setup/hold，再下载；UART 使用 9600-8-N-1 文本接收。
 4. 保存完整报表，确认 `-O3`、`rv32im_zba_zicsr`、CPU_HZ=83333333、Iterations=4000。
 
-若要同为2200次的对照，把 PackageDir 改为 `fpga/pds/coremark_b2/performance`。
-其运行时间可能不足10秒：仍可分析周期/迭代，但不满足有效成绩的时间要求。
+旧2200次DAT已清理，当前上板性能镜像固定采用4000次。
 4000次是否达到10秒同样以实际串口时间为准。
 
-## 五套独立文件
+## 当前四套独立文件
 
 | 目录 | 模式 | 次数 | CPU_HZ |
 |---|---|---:|---:|
-| `performance` | performance | 2200 | 83333333 |
 | `performance_long` | performance | 4000 | 83333333 |
 | `validation` | validation | 4000 | 83333333 |
 | `sim_performance` | performance | 10 | 100000000 |
@@ -140,18 +187,10 @@ CoreMark Size=666表示三个算法各自的数据大小，2000字节整数分�
 该FAIL不能作为已证实RTL缺陷，纠正后的回归尚未运行；详见 `../../../sim/results/divu_investigation_20261011/README.md`。
 原ZIP为生成时快照，最新记录在目录与manifest中。
 
-## 比较基线
+## 当前 B2 比较基线
 
-用户已经提供的 B1 上板性能结果：
-
-- 83333333Hz、2200次、870744965 ticks。
-- 210.547680 CoreMark，2.526572 CoreMark/MHz。
-- **395793.165909 周期/迭代**。
-- 日志在 `../coremark_b1/performance/board_performance_2026-10-11.log`。
-
-计算 `B2周期/迭代 = B2 Total ticks / B2 Iterations`，与上述 B1 比较。
-同频率下吞吐量收益为 `B1周期/迭代 / B2周期/迭代 - 1`。
-不同次数的 Total ticks 总数不能直接比较，预热的影响也应留意。
+当前采用结果为241.580522 CoreMark、2.898966 CoreMark/MHz。
+EX2 L0改动前同B2基线为237.628390/2.851541，详细同配置比较见本文首节。
 
 performance 预期 seedcrc=e9f5、CRC=e714/1fd7/8e3a。
 运行至少10秒并显示 `Correct operation validated` 才符合该性能运行的时间/CRC要求。
@@ -161,8 +200,7 @@ performance 预期 seedcrc=e9f5、CRC=e714/1fd7/8e3a。
 validation 选择命令使用 `-RunMode Validation -PackageDir fpga/pds/coremark_b2/validation`。
 其预期 seedcrc=18f2、CRC=e3c1/0747/8d84，正常不打印 `CoreMark 1.0` 成绩行。
 
-恢复 B1 性能版使用 `-RunMode Performance -PackageDir fpga/pds/coremark_b1/performance`。
-不传 PackageDir 则选择原 A1 官方包。每次选择后均须更新两个内存IP和bitstream。
+不传 PackageDir 默认选择B2 performance_long。切换模式后须同步两个内存IP初始化并生成新位流。
 
 ## 短仿真及重建
 
@@ -189,5 +227,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File fpga/pds/build_coremark_b2.p
 ```
 
 可指定 `-Toolchain`、`-Python`。产物在 `tests/coremark/build/b2/` 和本目录。
-通用 `tests/coremark/build.ps1` 新增 `-Optimization O2|O3`，默认仍为 O2，
-原 A1/B1 构建命令保持有效；官方核心源码未修改。
+通用 `tests/coremark/build.ps1` 默认采用Zba+O3、无LTO，输出build/b2/sim_performance；官方核心源码未修改。

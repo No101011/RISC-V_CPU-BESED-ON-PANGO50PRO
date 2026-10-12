@@ -1,0 +1,383 @@
+{
+  "keep": [
+    "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b2\\performance_long\\dmem_coremark.dat",
+    "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b2\\performance_long\\imem_coremark.dat",
+    "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b2\\sim_performance\\dmem_coremark.dat",
+    "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b2\\sim_performance\\imem_coremark.dat",
+    "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b2\\sim_validation\\dmem_coremark.dat",
+    "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b2\\sim_validation\\imem_coremark.dat",
+    "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b2\\validation\\dmem_coremark.dat",
+    "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b2\\validation\\imem_coremark.dat",
+    "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\dmem_coremark.dat",
+    "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\imem_coremark.dat"
+  ],
+  "delete_files": [
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\ip_init_audit_20261012\\dmem_decoded.dat",
+      "relative": "fpga\\pds\\ip_init_audit_20261012\\dmem_decoded.dat",
+      "sha256": "ed69b621a7647ed1d692846f568e5b8aeaf4387247049286e63268997891caf1",
+      "bytes": 327680
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\ip_init_audit_20261012\\imem_decoded.dat",
+      "relative": "fpga\\pds\\ip_init_audit_20261012\\imem_decoded.dat",
+      "sha256": "a663e133356f30b66bf0bbc298b9a8bf3c5805e94f1551ab30bc2686a1bde3cf",
+      "bytes": 81920
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\_backup_coremark_selection_20261010_234629_762\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\_backup_coremark_selection_20261010_234629_762\\dmem_coremark.dat",
+      "sha256": "e8d43a445219ac4dbd1c6a5b6f87ae51528ecf3a0119f3f521f60f1eef8dba95",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\_backup_coremark_selection_20261010_234629_762\\imem_coremark.dat",
+      "relative": "fpga\\pds\\_backup_coremark_selection_20261010_234629_762\\imem_coremark.dat",
+      "sha256": "926fb60f4b9079748e6a85404aaea9394f087aea5f0f46842256f894bd41b295",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\_backup_coremark_selection_20261011_215715_639\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\_backup_coremark_selection_20261011_215715_639\\dmem_coremark.dat",
+      "sha256": "c028b05bd579c9ddec1c37ac2de9504918d3f000d403e1c2c2144beee34535dd",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\_backup_coremark_selection_20261011_215715_639\\imem_coremark.dat",
+      "relative": "fpga\\pds\\_backup_coremark_selection_20261011_215715_639\\imem_coremark.dat",
+      "sha256": "a513fbf065390ea943ecad29c76744d2371a842303504fe51dcc3e0b656ad7e4",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\_backup_coremark_selection_20261012_163801_299\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\_backup_coremark_selection_20261012_163801_299\\dmem_coremark.dat",
+      "sha256": "bc70aaf18e7caf7ffd60ec70df2d4e4231f0c154f8d08f426d02dd169191f133",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\_backup_coremark_selection_20261012_163801_299\\imem_coremark.dat",
+      "relative": "fpga\\pds\\_backup_coremark_selection_20261012_163801_299\\imem_coremark.dat",
+      "sha256": "bb1ab486cd9d7fd1bfde652e6d4e478bd0210e79e783d622e39ae8be6bea4dc9",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b1\\performance\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b1\\performance\\dmem_coremark.dat",
+      "sha256": "fd1e181065d7b6f89811cdcb74375a5633a016c41d7f95b9f7fc9367eb8dd1db",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b1\\performance\\imem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b1\\performance\\imem_coremark.dat",
+      "sha256": "58799e9a43c5fe2f61308088f919933e58de43eb8e7bdc005b08b2222ec5b5d7",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b1\\performance_long\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b1\\performance_long\\dmem_coremark.dat",
+      "sha256": "47b54d592bc9a903dfbabe920f01e67809bcfb19c5643576fddc89b0b3d1c77d",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b1\\performance_long\\imem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b1\\performance_long\\imem_coremark.dat",
+      "sha256": "de2f2cabdb4f2518db5e0f757b314f81a111136ca957de6c539d4b335288cca9",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b1\\sim_performance\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b1\\sim_performance\\dmem_coremark.dat",
+      "sha256": "1721556808ef86891cac74b3a10f559f309ae3a44c28e61ce83456a11b8b670e",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b1\\sim_performance\\imem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b1\\sim_performance\\imem_coremark.dat",
+      "sha256": "bad51d04e355ced2caaf18bd0791ccaf8c1db68dff00d05211a2616714cccc35",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b1\\sim_validation\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b1\\sim_validation\\dmem_coremark.dat",
+      "sha256": "15893012b09bacaeb98a607c6829c5a221e95ec54a1fa61b2b70dbc32131260c",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b1\\sim_validation\\imem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b1\\sim_validation\\imem_coremark.dat",
+      "sha256": "f987db20ac140451012cbdc544570f16125cbcc5acfe479fcda20f63927967a0",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b1\\validation\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b1\\validation\\dmem_coremark.dat",
+      "sha256": "d7c536f8b3f730ad1f6c12b87f1eb8d6418b06b314e2f6a1e8b6a3bbffce7418",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b1\\validation\\imem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b1\\validation\\imem_coremark.dat",
+      "sha256": "945035c59f41c46d33545bb06c4486429110cab8c98ee1231f54a1edbb983b01",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b2\\performance\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b2\\performance\\dmem_coremark.dat",
+      "sha256": "32c7e3ad06166416e1a2943625a963e9c9c2f51b8e7639df2f36bba6d9855bcd",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b2\\performance\\imem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b2\\performance\\imem_coremark.dat",
+      "sha256": "fc6c9e7ef22c7581f025fad7938b5b349fff15b8fd786dd7cde2c5f07daf090a",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b3\\performance_long\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b3\\performance_long\\dmem_coremark.dat",
+      "sha256": "c8014efe6b0f87e8f35ca0233eca6236c3108b3621fcc2e556c43af35a2ec111",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b3\\performance_long\\imem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b3\\performance_long\\imem_coremark.dat",
+      "sha256": "15cc3d336119dfdad44625546caa4b49c64c62e3b41f7cc45a4a0b75b4585aca",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b3\\sim_performance\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b3\\sim_performance\\dmem_coremark.dat",
+      "sha256": "dbd814d83a29e46711f1ed4af454c076c38407a7622b6ae9e68124d961bc7c43",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b3\\sim_performance\\imem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b3\\sim_performance\\imem_coremark.dat",
+      "sha256": "f3d87d9a7260de3912834950246528addc03a3f6af33e314c38a6683c5b57d38",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b3\\sim_validation\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b3\\sim_validation\\dmem_coremark.dat",
+      "sha256": "dbbeb2ad3bf50c898f7c59eeb3c0e6ee9a9e15a2b43c8a82c6f4afc552a43e72",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b3\\sim_validation\\imem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b3\\sim_validation\\imem_coremark.dat",
+      "sha256": "0a670bfc74d40b1ef041157553e5834c313b8c4807d7477b4b7f0bf77b634c6f",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b3\\validation\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b3\\validation\\dmem_coremark.dat",
+      "sha256": "11ffac053fe3d5892d8cc8bac1d07384f7699e6df912ed7ade925272b401e095",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b3\\validation\\imem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b3\\validation\\imem_coremark.dat",
+      "sha256": "ea7c1697f6bef1f88dda7226bd8d53b216c9d9c30674a5f1b966f07b735ce8aa",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b4\\performance_long\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b4\\performance_long\\dmem_coremark.dat",
+      "sha256": "3087a92e25e496a21f4d6c6388745eb85612862e883c822bca9b57d9d218972f",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b4\\performance_long\\imem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b4\\performance_long\\imem_coremark.dat",
+      "sha256": "3cf1338eb230ad34d9fb5ed3caf8e692cf25811462ff53acb2acef65ea7c1d0f",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b4\\sim_performance\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b4\\sim_performance\\dmem_coremark.dat",
+      "sha256": "4e9bc6a65ce72f0d8a41e835225c372fb8a8c8001b6d35c9de9edc4bc8a34e42",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b4\\sim_performance\\imem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b4\\sim_performance\\imem_coremark.dat",
+      "sha256": "e3bc1966af29c58fdcf51ef25ab1342d61091e77a0af04d82e54b9cb9141a9c1",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b4\\sim_validation\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b4\\sim_validation\\dmem_coremark.dat",
+      "sha256": "807487da422d0c4b2e4528d4a91217cda7be245b50c211f3799cfe44fdda31e2",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b4\\sim_validation\\imem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b4\\sim_validation\\imem_coremark.dat",
+      "sha256": "22b438950f7ff5de1ddf7e5731b27f618ca0055f6b1cb754d1e8c077409aa403",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b4\\validation\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b4\\validation\\dmem_coremark.dat",
+      "sha256": "c605ca59926f0934e4009f8fde1d3bf6947688e6264be0a2a7a93e1839d941fc",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b4\\validation\\imem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_b4\\validation\\imem_coremark.dat",
+      "sha256": "0edcdbdd87b85aff8f3fccbefeb97a20c589949175c678a0fffe85b1e1e7d157",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_fresh_20261011\\performance\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_fresh_20261011\\performance\\dmem_coremark.dat",
+      "sha256": "bc70aaf18e7caf7ffd60ec70df2d4e4231f0c154f8d08f426d02dd169191f133",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_fresh_20261011\\performance\\imem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_fresh_20261011\\performance\\imem_coremark.dat",
+      "sha256": "bb1ab486cd9d7fd1bfde652e6d4e478bd0210e79e783d622e39ae8be6bea4dc9",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_fresh_20261011\\validation\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_fresh_20261011\\validation\\dmem_coremark.dat",
+      "sha256": "f1f1789ce978701536b458039b4e309b523f75bc908eaa7e5f3aaa58df189b95",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_fresh_20261011\\validation\\imem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_fresh_20261011\\validation\\imem_coremark.dat",
+      "sha256": "145824a60420dc1ead9b772afa546bcd0cfb3b4d571d544fd77b8cb8e2d05cd5",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_official\\performance\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_official\\performance\\dmem_coremark.dat",
+      "sha256": "d0181d2a324c3ac79350e94e9a51379bff45cb2401fa0cb0d2ce8644531c1a34",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_official\\performance\\imem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_official\\performance\\imem_coremark.dat",
+      "sha256": "94dc0c3f182f2a5b593ec7676893b1219bda79c50e4dd5fc4de7b7f89e914bf3",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_official\\validation\\dmem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_official\\validation\\dmem_coremark.dat",
+      "sha256": "c028b05bd579c9ddec1c37ac2de9504918d3f000d403e1c2c2144beee34535dd",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_official\\validation\\imem_coremark.dat",
+      "relative": "fpga\\pds\\coremark_official\\validation\\imem_coremark.dat",
+      "sha256": "a513fbf065390ea943ecad29c76744d2371a842303504fe51dcc3e0b656ad7e4",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark\\_backup_pre_build_report_20261010\\dmem_coremark.dat",
+      "relative": "tests\\coremark\\_backup_pre_build_report_20261010\\dmem_coremark.dat",
+      "sha256": "31c3fa82b69d2f50b569de7ef09a391308c60597628dc7afe134af0ca9c069bf",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark\\_backup_pre_build_report_20261010\\imem_coremark.dat",
+      "relative": "tests\\coremark\\_backup_pre_build_report_20261010\\imem_coremark.dat",
+      "sha256": "ac6286e48de1eac51908795791bb4825c1aa3c7bdb7abd725ab569a1d8432e61",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark_official_reclone_20261011\\packages\\performance_long\\dmem_coremark.dat",
+      "relative": "tests\\coremark_official_reclone_20261011\\packages\\performance_long\\dmem_coremark.dat",
+      "sha256": "bc70aaf18e7caf7ffd60ec70df2d4e4231f0c154f8d08f426d02dd169191f133",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark_official_reclone_20261011\\packages\\performance_long\\imem_coremark.dat",
+      "relative": "tests\\coremark_official_reclone_20261011\\packages\\performance_long\\imem_coremark.dat",
+      "sha256": "bb1ab486cd9d7fd1bfde652e6d4e478bd0210e79e783d622e39ae8be6bea4dc9",
+      "bytes": 73728
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark_official_reclone_20261011\\packages\\validation\\dmem_coremark.dat",
+      "relative": "tests\\coremark_official_reclone_20261011\\packages\\validation\\dmem_coremark.dat",
+      "sha256": "f1f1789ce978701536b458039b4e309b523f75bc908eaa7e5f3aaa58df189b95",
+      "bytes": 294912
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark_official_reclone_20261011\\packages\\validation\\imem_coremark.dat",
+      "relative": "tests\\coremark_official_reclone_20261011\\packages\\validation\\imem_coremark.dat",
+      "sha256": "145824a60420dc1ead9b772afa546bcd0cfb3b4d571d544fd77b8cb8e2d05cd5",
+      "bytes": 73728
+    }
+  ],
+  "archives": [
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b1_2026-10-11.zip",
+      "sha256": "ab70b5d750de9dcf701bc7a520ab5bac46018cd79568b8303607caf27585ef90",
+      "remove_entries": [
+        "coremark_b1/performance/dmem_coremark.dat",
+        "coremark_b1/performance/imem_coremark.dat",
+        "coremark_b1/performance_long/dmem_coremark.dat",
+        "coremark_b1/performance_long/imem_coremark.dat",
+        "coremark_b1/sim_performance/dmem_coremark.dat",
+        "coremark_b1/sim_performance/imem_coremark.dat",
+        "coremark_b1/sim_validation/dmem_coremark.dat",
+        "coremark_b1/sim_validation/imem_coremark.dat",
+        "coremark_b1/validation/dmem_coremark.dat",
+        "coremark_b1/validation/imem_coremark.dat"
+      ]
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b2_2026-10-11.zip",
+      "sha256": "526d6bdc204c024bdcc0e54f2f20e87f9cc774539f1be72d0a875d3cc0d597a1",
+      "remove_entries": [
+        "coremark_b2/performance/dmem_coremark.dat",
+        "coremark_b2/performance/imem_coremark.dat",
+        "coremark_b2/performance_long/dmem_coremark.dat",
+        "coremark_b2/performance_long/imem_coremark.dat",
+        "coremark_b2/sim_performance/dmem_coremark.dat",
+        "coremark_b2/sim_performance/imem_coremark.dat",
+        "coremark_b2/sim_validation/dmem_coremark.dat",
+        "coremark_b2/sim_validation/imem_coremark.dat",
+        "coremark_b2/validation/dmem_coremark.dat",
+        "coremark_b2/validation/imem_coremark.dat"
+      ]
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b3_b4_lto_20261011.zip",
+      "sha256": "14266587bbf3ee951bd13f77c11abd174459db471bb6e41ab832c24035b777ed",
+      "remove_entries": [
+        "coremark_b3/performance_long/dmem_coremark.dat",
+        "coremark_b3/performance_long/imem_coremark.dat",
+        "coremark_b3/sim_performance/dmem_coremark.dat",
+        "coremark_b3/sim_performance/imem_coremark.dat",
+        "coremark_b3/sim_validation/dmem_coremark.dat",
+        "coremark_b3/sim_validation/imem_coremark.dat",
+        "coremark_b3/validation/dmem_coremark.dat",
+        "coremark_b3/validation/imem_coremark.dat",
+        "coremark_b4/performance_long/dmem_coremark.dat",
+        "coremark_b4/performance_long/imem_coremark.dat",
+        "coremark_b4/sim_performance/dmem_coremark.dat",
+        "coremark_b4/sim_performance/imem_coremark.dat",
+        "coremark_b4/sim_validation/dmem_coremark.dat",
+        "coremark_b4/sim_validation/imem_coremark.dat",
+        "coremark_b4/validation/dmem_coremark.dat",
+        "coremark_b4/validation/imem_coremark.dat"
+      ]
+    },
+    {
+      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_fresh_20261011.zip",
+      "sha256": "6eb1f25b44a2e86f02bdfe16584eead023b35a7ce36313764326abddf1245cc1",
+      "remove_entries": [
+        "coremark_fresh_20261011/performance/dmem_coremark.dat",
+        "coremark_fresh_20261011/performance/imem_coremark.dat",
+        "coremark_fresh_20261011/validation/dmem_coremark.dat",
+        "coremark_fresh_20261011/validation/imem_coremark.dat"
+      ]
+    }
+  ],
+  "scope": "Only obsolete/duplicate CoreMark images, obsolete 2200-iteration B2 DAT, and B4 decoded audit DAT; ISA fixtures/demos untouched"
+}

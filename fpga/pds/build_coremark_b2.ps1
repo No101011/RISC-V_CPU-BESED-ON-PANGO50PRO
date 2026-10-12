@@ -1,18 +1,20 @@
 <# Build independent B2 (Zba + O3, no LTO) packages; active DATs are not selected. #>
 param(
     [string]$Toolchain = 'D:/realsoftwares/xpack-riscv-none-elf-gcc-15.2.0-1/bin',
-    [string]$Python = 'python'
+    [string]$Python = 'python',
+    [ValidateSet('performance_long','validation','sim_performance','sim_validation')]
+    [string[]]$Packages = @('performance_long','validation','sim_performance','sim_validation')
 )
 $ErrorActionPreference = 'Stop'
 $repositoryPath = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 $previousLocation = Get-Location
 $jobs = @(
-    @{ Name='performance';      Mode='Performance'; Iters=2200; Hz=83333333 },
     @{ Name='performance_long'; Mode='Performance'; Iters=4000; Hz=83333333 },
     @{ Name='validation';       Mode='Validation';  Iters=4000; Hz=83333333 },
     @{ Name='sim_performance';  Mode='Performance'; Iters=10;   Hz=100000000 },
     @{ Name='sim_validation';   Mode='Validation';  Iters=10;   Hz=100000000 }
 )
+$jobs = @($jobs | Where-Object { $Packages -contains $_.Name })
 try {
     Set-Location -LiteralPath $repositoryPath
     foreach ($job in $jobs) {

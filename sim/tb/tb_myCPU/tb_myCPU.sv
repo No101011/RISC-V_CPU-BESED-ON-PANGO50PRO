@@ -296,6 +296,8 @@ module tb_myCPU #(
   wire perf_mul_dep = perf_e1mul || perf_e2mul;
   wire perf_d1_probe = perf_e1_advance && u_cpu.e1_mem_re && u_cpu.spec_addr_valid;
 
+  `include "ex2_l0_shadow.svh"
+
   // Optional simulation-only PC attribution, covering the 32 KB instruction
   // window. Consumer dependency buckets are cycle unions; individual producer
   // stage buckets can overlap and must not be added as lost-cycle totals.
@@ -484,6 +486,7 @@ module tb_myCPU #(
         if (perf_active) perf_boundary_errors = perf_boundary_errors + 1;
         perf_window = '0;
         hotspot_reset;
+        shadow_reset;
         perf_start_tick = u_cpu.csr_rdata;
         perf_active = 1;
       end
@@ -505,6 +508,7 @@ module tb_myCPU #(
         end
       end
       if (perf_active) hotspot_sample;
+      if (perf_active) shadow_sample;
       perf_prev_any = u_cpu.stall;
       perf_prev_dep = u_cpu.load_use_stall;
       perf_prev_ld = perf_ld_dep;
@@ -639,6 +643,7 @@ module tb_myCPU #(
         if (tag == "EXIT" && perf_iterations_seen && perf_iterations > 0 &&
             perf_ticks_seen && perf_reported_ticks == perf_window[P_CYC]) begin
           hotspot_dump;
+          shadow_dump;
           $display(" iterations=%0d cycles/iteration=%.6f arch_instructions/iteration=%.6f",
                    perf_iterations,perf_ratio(perf_window[P_CYC],perf_iterations),
                    perf_ratio(perf_window[P_ARCH],perf_iterations));

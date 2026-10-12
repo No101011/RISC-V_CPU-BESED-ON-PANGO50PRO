@@ -30,12 +30,12 @@ foreach f [lsort [glob ../../rtl/core/*.v]] {
     if {[string match "*imem.v" $f] || [string match "*dmem.v" $f]} { continue }
     lappend CORE_SRCS $f
 }
-eval vlog -sv -work $WLIB "+incdir+$INC" $CORE_SRCS \
+eval vlog -sv -work $WLIB "+incdir+$INC" "+incdir+../tb/tb_myCPU" $CORE_SRCS \
     ../../rtl/soc/myCPU.sv \
     ../../sim/tb/tb_myCPU/tb_myCPU.sv
 
-set IHEX ../../tests/coremark/build/imem.hex
-set DHEX ../../tests/coremark/build/dmem.hex
+set IHEX ../../fpga/pds/coremark_b2/sim_performance/imem.hex
+set DHEX ../../fpga/pds/coremark_b2/sim_performance/dmem.hex
 if {[info exists env(COREMARK_IMEM_HEX)]} { set IHEX $env(COREMARK_IMEM_HEX) }
 if {[info exists env(COREMARK_DMEM_HEX)]} { set DHEX $env(COREMARK_DMEM_HEX) }
 
@@ -72,6 +72,10 @@ if {$PERF_ENABLE} {
 }
 if {[info exists env(COREMARK_HOTSPOT_CSV)] && $env(COREMARK_HOTSPOT_CSV) ne ""} {
     lappend PERF_ARGS +PERF_HOTSPOT_CSV=$env(COREMARK_HOTSPOT_CSV)
+}
+if {[info exists env(COREMARK_EX2_SHADOW_CSV)] && $env(COREMARK_EX2_SHADOW_CSV) ne ""} {
+    if {!$PERF_ENABLE} { error "EX2 shadow requires timed-report metadata" }
+    lappend PERF_ARGS +EX2_SHADOW_CSV=$env(COREMARK_EX2_SHADOW_CSV)
 }
 set PERF_CSV coremark_perf.csv
 if {[info exists env(COREMARK_REPORT_CSV)]} { set PERF_CSV $env(COREMARK_REPORT_CSV) }

@@ -30,7 +30,7 @@ param(
 $ErrorActionPreference = 'Stop'
 $here = $PSScriptRoot                                   # fpga/pds
 $root = Split-Path (Split-Path $here -Parent) -Parent    # 仓库根
-if (-not $Src) { $Src = Join-Path $root 'tests\coremark\build\imem.hex' }
+if (-not $Src) { $Src = Join-Path $root 'tests\coremark\build\b2\performance_long\imem.hex' }
 if (-not $Dst) { $Dst = Join-Path $here 'imem_coremark.dat' }
 
 if (-not (Test-Path $Src)) { throw ("找不到 {0}（先构建 CoreMark：tests\coremark\build.ps1）" -f $Src) }

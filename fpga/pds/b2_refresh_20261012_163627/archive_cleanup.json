@@ -1,0 +1,26 @@
+[
+  {
+    "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b1_2026-10-11.zip",
+    "removed_dat_entries": 10,
+    "old_sha256": "ab70b5d750de9dcf701bc7a520ab5bac46018cd79568b8303607caf27585ef90",
+    "new_sha256": "d02d865a8c0c7a6d694941e6e51f9d280db42e95cc6ecf3247e71c093cf942f9"
+  },
+  {
+    "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b2_2026-10-11.zip",
+    "removed_dat_entries": 10,
+    "old_sha256": "526d6bdc204c024bdcc0e54f2f20e87f9cc774539f1be72d0a875d3cc0d597a1",
+    "new_sha256": "b62fcb32721cbbb081b838abe4211a8cc291e0bd4f00b2b86bb3ef179f1151cb"
+  },
+  {
+    "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b3_b4_lto_20261011.zip",
+    "removed_dat_entries": 16,
+    "old_sha256": "14266587bbf3ee951bd13f77c11abd174459db471bb6e41ab832c24035b777ed",
+    "new_sha256": "79dd4b5032b71c063977e63a9a2c0b7b65cd8db4bc0a9e36770353f164a28c7a"
+  },
+  {
+    "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_fresh_20261011.zip",
+    "removed_dat_entries": 4,
+    "old_sha256": "6eb1f25b44a2e86f02bdfe16584eead023b35a7ce36313764326abddf1245cc1",
+    "new_sha256": "402cc9676ea54511c6b61ff4f08d9dcfdd60e9464d109e96276217ca1be2280e"
+  }
+]

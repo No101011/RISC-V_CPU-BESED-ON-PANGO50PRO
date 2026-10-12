@@ -35,10 +35,10 @@ param(
     [string]$CpuHz = '100000000',
     [ValidateSet('newlib_nano','picolibc','newlib')][string]$Libc = 'newlib_nano',
     [ValidateSet('Performance','Validation')][string]$RunMode = 'Performance',
-    [string]$BuildDir = 'build',
-    [ValidateSet('rv32im_zicsr','rv32im_zba_zicsr')][string]$Isa = 'rv32im_zicsr',
+    [string]$BuildDir = 'build/b2/sim_performance',
+    [ValidateSet('rv32im_zicsr','rv32im_zba_zicsr')][string]$Isa = 'rv32im_zba_zicsr',
     [string]$Python = 'python',
-    [ValidateSet('O2','O3')][string]$Optimization = 'O2',
+    [ValidateSet('O2','O3')][string]$Optimization = 'O3',
     [switch]$Lto
 )
 # 故意用 Continue：gcc 会把 warning 写到 stderr，PowerShell 5.1 会把它当成“错误记录”，

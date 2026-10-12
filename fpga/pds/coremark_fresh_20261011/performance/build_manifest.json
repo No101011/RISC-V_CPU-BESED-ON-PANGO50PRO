@@ -57,5 +57,6 @@
     "previous_new_btb_ticks": 1402750453,
     "tick_difference": 0,
     "scope": "Flashed bitstream hash not independently checked; no new RTL simulation was run"
-  }
+  },
+  "dat_distribution_status": "Removed at user request on 2026-10-12; original hashes and board logs are historical evidence"
 }

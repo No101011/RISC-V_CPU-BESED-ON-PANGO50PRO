@@ -1,0 +1,188 @@
+# onerror {quit -code 1}
+#  Warning: onerror command for use within macro
+#  do coremark.do
+# work
+# b2_ex2_shadow_20261012_131140_work
+# ../../rtl/include
+# Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 13:14:13 on Oct 12,2026
+# vlog -sv -work b2_ex2_shadow_20261012_131140_work "+incdir+../../rtl/include" "+incdir+../tb/tb_myCPU" ../../rtl/core/alu.v ../../rtl/core/branch_comp.v ../../rtl/core/csr_regfile.v ../../rtl/core/ctrl.v ../../rtl/core/ex1_ex2_reg.v ../../rtl/core/ex2_mem1_reg.v ../../rtl/core/forward_unit.v ../../rtl/core/hazard_unit.v ../../rtl/core/id_ex1_reg.v ../../rtl/core/if_id_reg.v ../../rtl/core/imm_gen.v ../../rtl/core/l0_cache.v ../../rtl/core/mdu.v ../../rtl/core/mem_wb_reg.v ../../rtl/core/pc_reg.v ../../rtl/core/perf_counters.v ../../rtl/core/pmul.v ../../rtl/core/ras.v ../../rtl/core/regfile.v ../../rtl/core/store_buffer.v ../../rtl/core/trap_ctrl.v ../../rtl/soc/myCPU.sv ../../sim/tb/tb_myCPU/tb_myCPU.sv 
+# -- Compiling module alu
+# -- Compiling module branch_comp
+# -- Compiling module csr_regfile
+# -- Compiling module ctrl
+# -- Compiling module ex1_ex2_reg
+# -- Compiling module ex2_mem1_reg
+# -- Compiling module forward_unit
+# -- Compiling module hazard_unit
+# -- Compiling module id_ex1_reg
+# -- Compiling module if_id_reg
+# -- Compiling module imm_gen
+# -- Compiling module l0_cache
+# -- Compiling module mdu
+# -- Compiling module mem_wb_reg
+# -- Compiling module pc_reg
+# -- Compiling module perf_counters
+# -- Compiling module pmul
+# -- Compiling module ras
+# -- Compiling module regfile
+# -- Compiling module store_buffer
+# -- Compiling module trap_ctrl
+# -- Compiling module myCPU
+# -- Compiling module tb_myCPU
+# 
+# Top level modules:
+# 	tb_myCPU
+# End time: 13:14:13 on Oct 12,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ../../tests/coremark/build/imem.hex
+# ../../tests/coremark/build/dmem.hex
+# ../../fpga/pds/coremark_b2/sim_performance/imem.hex
+# ../../fpga/pds/coremark_b2/sim_performance/dmem.hex
+# 1
+# 1
+# +PERF_ENABLE=1
+# CoreMark ELF/HEX matched; .text bytes=21836
+# +PERF_ENABLE=1 +PERF_START_PC=80002c00 +PERF_STOP_PC=80002c0c +PERF_ITERATIONS=10 +PERF_HOTSPOT_CSV=../results/b2_ex2_shadow_20261012_131140/hotspots.csv
+# +PERF_ENABLE=1 +PERF_START_PC=80002c00 +PERF_STOP_PC=80002c0c +PERF_ITERATIONS=10 +PERF_HOTSPOT_CSV=../results/b2_ex2_shadow_20261012_131140/hotspots.csv +EX2_SHADOW_CSV=../results/b2_ex2_shadow_20261012_131140/ex2_shadow.csv
+# coremark_perf.csv
+# ../results/b2_ex2_shadow_20261012_131140/performance.csv
+# +PERF_ENABLE=1 +PERF_START_PC=80002c00 +PERF_STOP_PC=80002c0c +PERF_ITERATIONS=10 +PERF_HOTSPOT_CSV=../results/b2_ex2_shadow_20261012_131140/hotspots.csv +EX2_SHADOW_CSV=../results/b2_ex2_shadow_20261012_131140/ex2_shadow.csv +PERF_REPORT_CSV=../results/b2_ex2_shadow_20261012_131140/performance.csv
+# 200000000
+# 20000000
+# vsim -onfinish stop -voptargs="+acc" "+PERF_ENABLE=1" "+PERF_START_PC=80002c00" "+PERF_STOP_PC=80002c0c" "+PERF_ITERATIONS=10" "+PERF_HOTSPOT_CSV=../results/b2_ex2_shadow_20261012_131140/hotspots.csv" "+EX2_SHADOW_CSV=../results/b2_ex2_shadow_20261012_131140/ex2_shadow.csv" "+PERF_REPORT_CSV=../results/b2_ex2_shadow_20261012_131140/performance.csv" b2_ex2_shadow_20261012_131140_work.tb_myCPU -gMAX_CYCLES=20000000 -gDRAM_HEX=../../fpga/pds/coremark_b2/sim_performance/dmem.hex -gIROM_HEX=../../fpga/pds/coremark_b2/sim_performance/imem.hex 
+# Start time: 13:14:14 on Oct 12,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "mdu(fast)".
+# //  ModelSim SE-64 2020.4 Oct 13 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_myCPU(fast)
+# Loading work.myCPU(fast)
+# Loading work.ras(fast)
+# Loading work.pc_reg(fast)
+# Loading work.if_id_reg(fast)
+# Loading work.regfile(fast)
+# Loading work.imm_gen(fast)
+# Loading work.ctrl(fast)
+# Loading work.id_ex1_reg(fast)
+# Loading work.alu(fast)
+# Loading work.mdu(fast)
+# Loading work.pmul(fast)
+# Loading work.branch_comp(fast)
+# Loading work.csr_regfile(fast)
+# Loading work.trap_ctrl(fast)
+# Loading work.ex1_ex2_reg(fast)
+# Loading work.ex2_mem1_reg(fast)
+# Loading work.store_buffer(fast)
+# Loading work.l0_cache(fast)
+# Loading work.mem_wb_reg(fast)
+# Loading work.forward_unit(fast)
+# Loading work.hazard_unit(fast)
+# Loading work.perf_counters(fast)
+# [TB] IROM = ../../fpga/pds/coremark_b2/sim_performance/imem.hex
+# [TB] DRAM = ../../fpga/pds/coremark_b2/sim_performance/dmem.hex
+# [EX2_SHADOW] Observer enabled; no DUT controls are changed
+# [PERF] timer CSR PCs: start=80002c00 stop=80002c0c; initial iterations=10
+# 2K performance run parameters for coremark.
+# CoreMark Size    : 666
+# Total ticks      : 3507488
+# Total time (secs): 0.035075
+# Iterations/Sec   : 285.104325
+# ERROR! Must execute for at least 10 secs for a valid result!
+# Iterations       : 10
+# Compiler version : GCC 15.2.0
+# Compiler flags   : -march=rv32im_zba_zicsr -mabi=ilp32 -mcmodel=medlow -O3 -Wall -Wno-unused-variable -Wno-unused-but-set-variable -Wno-implicit-function-declaration -Wno-unused-function -Isrc -Iport -Ibuild/b2/sim_performance -DITERATIONS=10 -DCPU_HZ=100000000 -DTOTAL_DATA_SIZE=2000 -DPERFORMANCE_RUN=1 -ffunction-sections -fdata-sections -fno-builtin-printf --specs=nano.specs
+# Memory location  : STATIC; code=IROM(BRAM), data=DRAM(BRAM); memory/core clock=1:1
+# seedcrc          : 0xe9f5
+# [0]crclist       : 0xe714
+# [0]crcmatrix     : 0x1fd7
+# [0]crcstate      : 0x8e3a
+# [0]crcfinal      : 0xfcaf
+# Errors detected
+# CPU clock (Hz)   : 100000000
+# Linker flags     : -march=rv32im_zba_zicsr -mabi=ilp32 -mcmodel=medlow -nostartfiles -T port/link.ld -Wl,--gc-sections -Wl,-Map=build/b2/sim_performance/coremark.map --specs=nano.specs
+# Link libraries   : -lc -lgcc -lnosys
+# C library        : newlib_nano
+# 
+# ================ PERFORMANCE [EXIT] ================
+#  Observer: pre-NBA CPU edges; retirement=WB, branch/jump resolution=EX2.
+#  Cause counters overlap; any_stall is their union. Runs are not instruction/event counts.
+# ---------------- WHOLE_PROGRAM ----------------
+#  cycles=3544683  arch_inst=2930113  retired_units=2925331  fused_pairs=4782
+#  CPI_arch=1.209743  cycles/retired_unit=1.211720
+#  branch: resolved=535174 mispred=39991 direction=39991 target=17482 accuracy=92.53%
+#  jump: resolved=63538 mispred=518 not_taken_prediction=225 target=517 accuracy=99.18%
+#  prediction: redirects=40509 spurious_taken=0 (events, not lost cycles)
+#  stalls: any=459313 (12.958%) overlapping=0 runs=277737
+#  stall causes: dram=0 (0.000%) dependency=456525 (12.879%) mdu=2788 (0.079%) csr=0 (0.000%)
+#  dependency: load=326839 (9.221%) mul=129686 (3.659%) both=0
+#  dependency stages: e1_load=145221 e1_mul=35675 e2_load=181618 e2_mul=94011 m1_load=0
+#  dependency runs: any=277696 load=183684 mul=94012 (contiguous assertion starts)
+#  frontend_empty_opportunity=40510 (1.143%) no_retirement=619352 (17.473%)
+#  D1 eligible probes=395064 hits=212981 (53.91%) SB_selected=53900 L0_selected=159081 misses=182083 store_conflicts=0
+# ---------------- COREMARK_TIMED ----------------
+#  cycles=3507488  arch_inst=2903833  retired_units=2899123  fused_pairs=4710
+#  CPI_arch=1.207882  cycles/retired_unit=1.209844
+#  branch: resolved=529588 mispred=39533 direction=39533 target=17270 accuracy=92.54%
+#  jump: resolved=63102 mispred=364 not_taken_prediction=79 target=364 accuracy=99.42%
+#  prediction: redirects=39897 spurious_taken=0 (events, not lost cycles)
+#  stalls: any=450731 (12.851%) overlapping=0 runs=274588
+#  stall causes: dram=0 (0.000%) dependency=450731 (12.851%) mdu=0 (0.000%) csr=0 (0.000%)
+#  dependency: load=321131 (9.156%) mul=129600 (3.695%) both=0
+#  dependency stages: e1_load=142508 e1_mul=35640 e2_load=178623 e2_mul=93960 m1_load=0
+#  dependency runs: any=274588 load=180628 mul=93960 (contiguous assertion starts)
+#  frontend_empty_opportunity=39897 (1.137%) no_retirement=608365 (17.345%)
+#  D1 eligible probes=393163 hits=211861 (53.89%) SB_selected=53648 L0_selected=158213 misses=181302 store_conflicts=0
+#  window: last of 1 completed pairs; mcycle start=14417 stop=3521905; mode=performance
+#  Total ticks cross-check: MATCH (3507488)
+# [PERF] PC hotspots CSV = ../results/b2_ex2_shadow_20261012_131140/hotspots.csv
+# [EX2_SHADOW] ex2_dram_aligned_probes=544892
+# [EX2_SHADOW] ex2_word_probes=270382
+# [EX2_SHADOW] ex2_half_probes=180360
+# [EX2_SHADOW] ex2_byte_probes=94150
+# [EX2_SHADOW] l0_raw_hits=268487
+# [EX2_SHADOW] l0_invalid_misses=142061
+# [EX2_SHADOW] l0_tag_misses=134344
+# [EX2_SHADOW] l0_raw_hits_blocked_mem1_store=0
+# [EX2_SHADOW] l0_raw_hits_blocked_wb_store=0
+# [EX2_SHADOW] l0_guarded_hits=268487
+# [EX2_SHADOW] l0_guarded_data_mismatches=0
+# [EX2_SHADOW] l0_safe_validated_hits=268487
+# [EX2_SHADOW] ex2_load_dependency_cycles=178623
+# [EX2_SHADOW] l0_raw_hits_with_ex2_dependency=57429
+# [EX2_SHADOW] l0_safe_hits_with_ex2_dependency=57429
+# [EX2_SHADOW] l0_releasable_cycles=57429
+# [EX2_SHADOW] l0_releasable_word_cycles=57343
+# [EX2_SHADOW] l0_releasable_half_cycles=0
+# [EX2_SHADOW] l0_releasable_byte_cycles=86
+# [EX2_SHADOW] l0_releasable_consumer_cycles=57429
+# [EX2_SHADOW] l0_safe_dependency_other_block_cycles=0
+# [EX2_SHADOW] ex2_dram_unaligned_probes=0
+# [EX2_SHADOW] shadow_store_buffer_safe_hits=54261
+# [EX2_SHADOW] store_buffer_only_releasable_cycles=523
+# [EX2_SHADOW] l0_or_store_buffer_releasable_cycles=57952
+# [EX2_SHADOW] l0_raw_data_mismatches=0
+# [EX2_SHADOW] CSV = ../results/b2_ex2_shadow_20261012_131140/ex2_shadow.csv
+#  iterations=10 cycles/iteration=350748.800000 arch_instructions/iteration=290383.300000
+#  normalized throughput/MHz=2.851043 (simulation estimate; validation is not a performance score)
+#  TB clock=100000000 Hz; program-reported CPU_HZ=100000000; timed duration at TB clock=0.035074880 s
+# ==================================================
+# [PERF] CSV = ../results/b2_ex2_shadow_20261012_131140/performance.csv
+# ** Note: $finish    : ../../sim/tb/tb_myCPU/tb_myCPU.sv(210)
+#    Time: 35446926 ns  Iteration: 0  Instance: /tb_myCPU
+# Break in Module tb_myCPU at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 210
+# Stopped at ../../sim/tb/tb_myCPU/tb_myCPU.sv line 210
+# End time: 13:16:42 on Oct 12,2026, Elapsed time: 0:02:28
+# Errors: 0, Warnings: 0

@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-12",
+  "evidence": "user-pasted UART; not independently captured; downloaded bitstream/image hashes and current PDS timing/resources not independently checked",
+  "context": "B2 performance after user EX2 word-load L0 query change",
+  "log_file": "board_performance_ex2_l0_2026-10-12.log",
+  "run_mode": "performance",
+  "variant": "B2",
+  "optimization": "O3",
+  "lto": false,
+  "iterations": 4000,
+  "cpu_hz": 83333333,
+  "total_ticks": 1379802185,
+  "seconds": 16.557626286230505,
+  "coremark": 241.58052192097378,
+  "reported_coremark": 241.580522,
+  "coremark_per_mhz": 2.89896627464755,
+  "cycles_per_iteration": 344950.54625,
+  "seedcrc": "0xe9f5",
+  "crclist": "0xe714",
+  "crcmatrix": "0x1fd7",
+  "crcstate": "0x8e3a",
+  "crcfinal": "0x65c5",
+  "crc_and_time_check": "passed",
+  "compiler_linker_flags_match": true,
+  "comparison_previous_b2_performance": {
+    "cycles_saved": 22948268,
+    "baseline_ticks": 1402750453,
+    "cycles_saved_per_iteration": 5737.067,
+    "throughput_gain_percent": 1.6631563748393363,
+    "cycle_reduction_percent": 1.6359480013655714
+  },
+  "shadow_comparison": {
+    "scope": "Baseline short-run opportunity estimate; not an exact per-hit cycle audit",
+    "actual_minus_projected_cycles": 11068,
+    "projected_saved_cycles": 22937200,
+    "estimated_word_only_gain_percent": 1.662046087918044
+  },
+  "current_b2_validation": "pending",
+  "log_sha256": "e0dba85631e19a0719bafc14308bdab36a5f43b0d13923186d8c897a546868d0"
+}

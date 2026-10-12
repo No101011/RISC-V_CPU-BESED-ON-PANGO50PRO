@@ -1,11 +1,12 @@
 ﻿<# Select both PDS memory images from a checked official-run package. #>
 param(
-    [ValidateSet('Performance','Validation')][string]$RunMode = 'Validation',
+    [ValidateSet('Performance','Validation')][string]$RunMode = 'Performance',
     [string]$PackageDir = ''
 )
 $ErrorActionPreference = 'Stop'
 $modeName = $RunMode.ToLowerInvariant()
-$package = Join-Path $PSScriptRoot "coremark_official\$modeName"
+$defaultPackageName = if ($RunMode -eq 'Performance') { 'performance_long' } else { 'validation' }
+$package = Join-Path $PSScriptRoot "coremark_b2\$defaultPackageName"
 if ($PackageDir) { $package = (Resolve-Path -LiteralPath $PackageDir).Path }
 $manifestPath = Join-Path $package 'build_manifest.json'
 $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json

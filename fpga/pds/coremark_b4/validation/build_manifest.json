@@ -69,5 +69,41 @@
       "throughput_change_percent": 2.7088289642041463
     },
     "performance_score": "not reported: validation mode"
-  }
+  },
+  "board_results": [
+    {
+      "date": "2026-10-12",
+      "evidence": "User-pasted UART; current RTL attribution inferred from conversation, downloaded bitstream/image hashes and current PDS timing not independently checked",
+      "log_file": "validation/board_validation_2026-10-12.log",
+      "run_mode": "validation",
+      "variant": "B4",
+      "optimization": "O3",
+      "lto": true,
+      "iterations": 4000,
+      "cpu_hz": 83333333,
+      "total_ticks": 1378509297,
+      "seconds": 16.542111630168446,
+      "iterations_per_sec": 241.8070975113634,
+      "cycles_per_iteration": 344627.32425,
+      "seedcrc": "0x18f2",
+      "crclist": "0xe3c1",
+      "crcmatrix": "0x0747",
+      "crcstate": "0x8d84",
+      "crcfinal": "0x5249",
+      "crc_and_time_check": "passed",
+      "build_flags_match": true,
+      "comparison_previous_b4_validation": {
+        "throughput_gain_percent": 1.7198146615038823,
+        "baseline_ticks": 1402217102,
+        "cycle_reduction_percent": 1.6907371166836618,
+        "cycles_saved": 23707805
+      },
+      "local_mycpu_sha256": "f80d84b56154703c36fde3abb06629edb75ff682c2904da494ec37e258368d75",
+      "local_l0_sha256": "6c85cead09dd7b459789e22019c747809ed24d7c5d9de074d02bcf04fa231225",
+      "log_sha256": "5221b8481c96afb6f4afe2d2c96ca288547765eaf165482bf77b85bcc1e693c0",
+      "performance_score": "Not reported: validation mode",
+      "adopted_configuration": "B2 remains selected; this UART identifies B4 validation"
+    }
+  ],
+  "dat_distribution_status": "Removed at user request on 2026-10-12; original hashes and board logs are historical evidence"
 }

@@ -1,0 +1,92 @@
+toolchain : riscv-none-elf-gcc.exe (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0
+  CC   src\core_main.c
+  CC   src\core_list_join.c
+  CC   src\core_matrix.c
+  CC   src\core_state.c
+  CC   src\core_util.c
+  CC   port\core_portme.c
+  CC   port\syscalls.c
+  CC   port\ee_printf.c
+  AS   port\crt0.S
+  LINK build/b2/performance_long/coremark.elf (Performance)
+[bin2hex] build/b2/performance_long/coremark.text.bin (21836 B) -> build/b2/performance_long/imem.hex (5459 words)
+[bin2hex] build/b2/performance_long/coremark.data.bin (3084 B) -> build/b2/performance_long/dmem.hex (771 words)
+   text	   data	    bss	    dec	    hex	filename
+  24908	     12	  26596	  51516	   c93c	build/b2/performance_long/coremark.elf
+
+imem.hex : 5459 字 = 21.3 KB (IROM 上限 8192 字=32KB)
+第 1 条指令 : 00101197
+             期望 00100197 左右（auipc gp 的小立即数）；若是 80101197 说明 .text 还链在 0
+dmem.hex : 771 字
+Packaged performance: 5459 instruction words, 771 data words; official sources unchanged
+start_pc 80002c00 stop_pc 80002c0c iterations 4000 text_bytes 21836
+B2 ready: performance_long, static Zba instruction sites=43
+toolchain : riscv-none-elf-gcc.exe (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0
+  CC   src\core_main.c
+  CC   src\core_list_join.c
+  CC   src\core_matrix.c
+  CC   src\core_state.c
+  CC   src\core_util.c
+  CC   port\core_portme.c
+  CC   port\syscalls.c
+  CC   port\ee_printf.c
+  AS   port\crt0.S
+  LINK build/b2/validation/coremark.elf (Validation)
+[bin2hex] build/b2/validation/coremark.text.bin (21836 B) -> build/b2/validation/imem.hex (5459 words)
+[bin2hex] build/b2/validation/coremark.data.bin (3084 B) -> build/b2/validation/dmem.hex (771 words)
+   text	   data	    bss	    dec	    hex	filename
+  24900	     20	  26588	  51508	   c934	build/b2/validation/coremark.elf
+
+imem.hex : 5459 字 = 21.3 KB (IROM 上限 8192 字=32KB)
+第 1 条指令 : 00101197
+             期望 00100197 左右（auipc gp 的小立即数）；若是 80101197 说明 .text 还链在 0
+dmem.hex : 771 字
+Packaged validation: 5459 instruction words, 771 data words; official sources unchanged
+start_pc 80002c00 stop_pc 80002c0c iterations 4000 text_bytes 21836
+B2 ready: validation, static Zba instruction sites=43
+toolchain : riscv-none-elf-gcc.exe (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0
+  CC   src\core_main.c
+  CC   src\core_list_join.c
+  CC   src\core_matrix.c
+  CC   src\core_state.c
+  CC   src\core_util.c
+  CC   port\core_portme.c
+  CC   port\syscalls.c
+  CC   port\ee_printf.c
+  AS   port\crt0.S
+  LINK build/b2/sim_performance/coremark.elf (Performance)
+[bin2hex] build/b2/sim_performance/coremark.text.bin (21836 B) -> build/b2/sim_performance/imem.hex (5459 words)
+[bin2hex] build/b2/sim_performance/coremark.data.bin (3084 B) -> build/b2/sim_performance/dmem.hex (771 words)
+   text	   data	    bss	    dec	    hex	filename
+  24908	     12	  26596	  51516	   c93c	build/b2/sim_performance/coremark.elf
+
+imem.hex : 5459 字 = 21.3 KB (IROM 上限 8192 字=32KB)
+第 1 条指令 : 00101197
+             期望 00100197 左右（auipc gp 的小立即数）；若是 80101197 说明 .text 还链在 0
+dmem.hex : 771 字
+Packaged performance: 5459 instruction words, 771 data words; official sources unchanged
+start_pc 80002c00 stop_pc 80002c0c iterations 10 text_bytes 21836
+B2 ready: sim_performance, static Zba instruction sites=43
+toolchain : riscv-none-elf-gcc.exe (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0
+  CC   src\core_main.c
+  CC   src\core_list_join.c
+  CC   src\core_matrix.c
+  CC   src\core_state.c
+  CC   src\core_util.c
+  CC   port\core_portme.c
+  CC   port\syscalls.c
+  CC   port\ee_printf.c
+  AS   port\crt0.S
+  LINK build/b2/sim_validation/coremark.elf (Validation)
+[bin2hex] build/b2/sim_validation/coremark.text.bin (21836 B) -> build/b2/sim_validation/imem.hex (5459 words)
+[bin2hex] build/b2/sim_validation/coremark.data.bin (3092 B) -> build/b2/sim_validation/dmem.hex (773 words)
+   text	   data	    bss	    dec	    hex	filename
+  24908	     20	  26588	  51516	   c93c	build/b2/sim_validation/coremark.elf
+
+imem.hex : 5459 字 = 21.3 KB (IROM 上限 8192 字=32KB)
+第 1 条指令 : 00101197
+             期望 00100197 左右（auipc gp 的小立即数）；若是 80101197 说明 .text 还链在 0
+dmem.hex : 773 字
+Packaged validation: 5459 instruction words, 773 data words; official sources unchanged
+start_pc 80002c00 stop_pc 80002c0c iterations 10 text_bytes 21836
+B2 ready: sim_validation, static Zba instruction sites=43

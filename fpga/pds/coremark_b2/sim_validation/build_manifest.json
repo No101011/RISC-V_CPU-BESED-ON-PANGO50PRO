@@ -22,6 +22,27 @@
   "sha256": {
     "imem_coremark.dat": "b86a614eb8e441a8eb44641f39bc6419edf877be8442d48ced4cfb078b2e29a1",
     "dmem_coremark.dat": "f940e282377371ac251d7bdf5abd81ff2522ce6dca86d3e0c0f27c392cc691e5",
-    "coremark.elf": "57ce2b9c017cd127812aeecea86596cc5c0cc017062f2c7271f3e75ec98f954f"
-  }
+    "coremark.elf": "57ce2b9c017cd127812aeecea86596cc5c0cc017062f2c7271f3e75ec98f954f",
+    "build_log.txt": "2d131cd91ec35ab7d80c56dc1fb78f87b209d89133b4d1c2cf89714ec457dc3c",
+    "coremark.dis": "24c9c72bd370ba59149d83fe80f00a1f5acd321a851b9a88d24694f276b00e00",
+    "coremark.map": "dac573666eaa2730d7552e808628ca2202c758997ca73b2d9afc2ff1f2578a6e",
+    "coremark_build_info.h": "03439524c52d26a18eece505048c101cbbb2e9fdc053938ea8513457531fefa7",
+    "dmem.hex": "4136edee457d774c5075e70d6ce01772b8296505473da6649ab30ed220458433",
+    "imem.hex": "a9ef7af30a806303272b30de0d8d560473b04c167507866011040127d16f0066",
+    "zba_instructions.txt": "37e175abb2477928ac9c7201a2d141900b5b3af594d0a2ca0b87e9b98c80b86d"
+  },
+  "variant": "B2",
+  "optimization": "O3",
+  "lto": false,
+  "rebuilt_date": "2026-10-12",
+  "build_exit_code": 0,
+  "text_bytes": 21836,
+  "rtl_mycpu_sha256_at_rebuild": "f80d84b56154703c36fde3abb06629edb75ff682c2904da494ec37e258368d75",
+  "runtime_status": "Recompiled and statically checked; no new RTL simulation or board run in this task",
+  "previous_manifest_snapshot": "fpga\\pds\\b2_refresh_20261012_163627\\fpga\\pds\\coremark_b2\\sim_validation\\build_manifest.json",
+  "image_bytes_match_previous_package": {
+    "imem_coremark.dat": true,
+    "dmem_coremark.dat": true
+  },
+  "historical_board_evidence": {}
 }

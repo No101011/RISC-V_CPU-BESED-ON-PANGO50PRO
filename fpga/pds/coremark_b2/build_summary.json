@@ -1,63 +1,21 @@
 {
-  "configuration": "B2",
-  "created_date": "2026-10-11",
+  "variant": "B2",
   "isa": "rv32im_zba_zicsr",
   "optimization": "O3",
   "lto": false,
-  "compiler": "xPack GCC 15.2.0",
-  "cpu_rtl_changed": false,
-  "active_dat_selected_by_this_build": false,
-  "existing_active_mode": "validation",
-  "recommended_first_package": "performance_long",
-  "b1_reference_cycles_per_iteration": 395793.1659090909,
-  "b1_reference_coremark_per_mhz": 2.5265721748962395,
+  "rebuilt_date": "2026-10-12",
   "packages": [
-    {
-      "package": "performance",
-      "run_mode": "performance",
-      "iterations": 2200,
-      "cpu_hz": 83333333,
-      "text_bytes": 21836,
-      "static_zba_instruction_sites": 43,
-      "test_status": "not run; user will compare B2",
-      "imem_sha256": "fc6c9e7ef22c7581f025fad7938b5b349fff15b8fd786dd7cde2c5f07daf090a",
-      "dmem_sha256": "32c7e3ad06166416e1a2943625a963e9c9c2f51b8e7639df2f36bba6d9855bcd"
-    },
     {
       "package": "performance_long",
       "run_mode": "performance",
       "iterations": 4000,
       "cpu_hz": 83333333,
       "text_bytes": 21836,
-      "static_zba_instruction_sites": 43,
-      "test_status": "performance before and after BTB change passed per user-provided UART logs, 2026-10-11; latest 16.833006 seconds; CRC passed; new-BTB PDS timing checked and passed; external I/O timing scope noted in timing_evidence_after_btb",
-      "board_reference_context": "The following board_log/coremark/cycles fields record the pre-BTB run; board_after_btb records the latest run",
-      "board_log": "performance_long/board_performance_2026-10-11.log",
-      "board_coremark": 210.447866,
-      "board_coremark_per_mhz": 2.525374404859298,
-      "board_cycles_per_iteration": 395980.88825,
-      "board_after_btb": {
-        "log": "performance_long/board_performance_btb_2bit_tag_2026-10-11.log",
-        "coremark": 237.62839,
-        "coremark_per_mhz": 2.851540691406163,
-        "cycles_per_iteration": 350687.61325,
-        "cycle_reduction_percent": 11.438247739725348,
-        "throughput_gain_percent": 12.915561681875287
-      },
       "imem_sha256": "bb1ab486cd9d7fd1bfde652e6d4e478bd0210e79e783d622e39ae8be6bea4dc9",
       "dmem_sha256": "bc70aaf18e7caf7ffd60ec70df2d4e4231f0c154f8d08f426d02dd169191f133",
-      "timing_evidence_after_btb": {
-        "report": "../timing_btb_2026-10-11/top.rtr",
-        "report_time": "2026-10-11 19:41:59",
-        "device": "PG2L50H-FBG484-6",
-        "summary": "All Constraints Met",
-        "cpu_slow_setup_wns_ns": 0.935,
-        "global_min_setup_ns": 0.253,
-        "global_min_hold_ns": 0.082,
-        "drm_used": 48.5,
-        "drm_available": 85,
-        "btb_mapping": "two 2048x19-bit banks mapped to LUTRAM",
-        "scope": "Declared constraints passed; UART/LED external I/O timing unconstrained; flashed bitstream hash not independently checked"
+      "image_bytes_match_previous_package": {
+        "imem_coremark.dat": true,
+        "dmem_coremark.dat": true
       }
     },
     {
@@ -66,29 +24,11 @@
       "iterations": 4000,
       "cpu_hz": 83333333,
       "text_bytes": 21836,
-      "static_zba_instruction_sites": 43,
-      "test_status": "new BTB+B2 validation passed per user-provided UART log, 2026-10-11; 4000 iterations, 16.905628 seconds; expected seed and CRC matched",
       "imem_sha256": "145824a60420dc1ead9b772afa546bcd0cfb3b4d571d544fd77b8cb8e2d05cd5",
       "dmem_sha256": "f1f1789ce978701536b458039b4e309b523f75bc908eaa7e5f3aaa58df189b95",
-      "board_after_btb": {
-        "source": "user-provided UART text; not directly captured by the agent",
-        "context": "B2 Zba+O3 validation after BTB two-bit counters and PC[14] tag change; flashed bitstream hash not independently checked",
-        "log": "validation/board_validation_btb_2bit_tag_2026-10-11.log",
-        "raw_log": "validation/board_validation_btb_2bit_tag_2026-10-11_raw.log",
-        "normalization": "Removed three host receive timestamp markers and joined split Iterations/Compiler labels; raw paste preserved separately",
-        "iterations": 4000,
-        "cpu_hz": 83333333,
-        "total_ticks": 1408802359,
-        "total_time_seconds": 16.905628,
-        "iterations_per_second": 236.607591,
-        "cycles_per_iteration": 352200.58975,
-        "seedcrc": "18f2",
-        "crclist": "e3c1",
-        "crcmatrix": "0747",
-        "crcstate": "8d84",
-        "crcfinal": "5249",
-        "status": "CRC and minimum 10-second duration checks passed",
-        "reported_performance_score": false
+      "image_bytes_match_previous_package": {
+        "imem_coremark.dat": true,
+        "dmem_coremark.dat": true
       }
     },
     {
@@ -97,10 +37,12 @@
       "iterations": 10,
       "cpu_hz": 100000000,
       "text_bytes": 21836,
-      "static_zba_instruction_sites": 43,
-      "test_status": "not run; user will compare B2",
       "imem_sha256": "87a5146ec246caa061d0f64bb75d84736178a6f7aa1841cddaf008a0ffc9aa08",
-      "dmem_sha256": "e1741c0506f7efbc1faeb4b16554a5593e7ae779610eeedbb9ef26adf84ee819"
+      "dmem_sha256": "e1741c0506f7efbc1faeb4b16554a5593e7ae779610eeedbb9ef26adf84ee819",
+      "image_bytes_match_previous_package": {
+        "imem_coremark.dat": true,
+        "dmem_coremark.dat": true
+      }
     },
     {
       "package": "sim_validation",
@@ -108,17 +50,80 @@
       "iterations": 10,
       "cpu_hz": 100000000,
       "text_bytes": 21836,
-      "static_zba_instruction_sites": 43,
-      "test_status": "not run; user will compare B2",
       "imem_sha256": "b86a614eb8e441a8eb44641f39bc6419edf877be8442d48ced4cfb078b2e29a1",
-      "dmem_sha256": "f940e282377371ac251d7bdf5abd81ff2522ce6dca86d3e0c0f27c392cc691e5"
+      "dmem_sha256": "f940e282377371ac251d7bdf5abd81ff2522ce6dca86d3e0c0f27c392cc691e5",
+      "image_bytes_match_previous_package": {
+        "imem_coremark.dat": true,
+        "dmem_coremark.dat": true
+      }
     }
   ],
-  "board_pair_after_btb": {
+  "ip_initialization": {
+    "irom_bram": {
+      "all_words_match": true,
+      "words": 8192,
+      "init_sha256": "2bef4222a069a263c42abf97403670981a50f48e130ab1baff9850b5a109d2b4",
+      "wrapper_sha256": "6a98433fc26af5a9823695299a541890460184a4e49283fad0d793ab33483a49"
+    },
+    "bram_dram": {
+      "all_words_match": true,
+      "words": 32768,
+      "init_sha256": "520e8d712858502deec2e61e006aa31a3cfdb766550cb20d39b0a31dfc186fc0",
+      "wrapper_sha256": "789f6cfc488b13c178d46b2efb27a3c42dfac8bf8d65847e7e10746433f63c6c"
+    }
+  },
+  "cleanup": {
+    "deleted_dat_files": 50,
+    "removed_archive_dat_entries": 40
+  },
+  "historical_board_pair": {
     "status": "performance and validation UART evidence recorded; both exceed 10 seconds and pass expected CRC checks",
     "performance_coremark": 237.62839,
     "performance_coremark_per_mhz": 2.851540691406163,
     "validation_iterations_per_second": 236.607591,
     "scope": "User-provided board logs; does not imply third-party certification or all ISA tests passing"
+  },
+  "status": "B2 performance passed per user UART on current EX2 L0 RTL; current B2 validation and independent PDS timing/resource audit pending",
+  "rtl_unchanged": true,
+  "new_runtime_tests": false,
+  "latest_board_performance": {
+    "date": "2026-10-12",
+    "evidence": "user-pasted UART; not independently captured; downloaded bitstream/image hashes and current PDS timing/resources not independently checked",
+    "context": "B2 performance after user EX2 word-load L0 query change",
+    "log_file": "board_performance_ex2_l0_2026-10-12.log",
+    "run_mode": "performance",
+    "variant": "B2",
+    "optimization": "O3",
+    "lto": false,
+    "iterations": 4000,
+    "cpu_hz": 83333333,
+    "total_ticks": 1379802185,
+    "seconds": 16.557626286230505,
+    "coremark": 241.58052192097378,
+    "reported_coremark": 241.580522,
+    "coremark_per_mhz": 2.89896627464755,
+    "cycles_per_iteration": 344950.54625,
+    "seedcrc": "0xe9f5",
+    "crclist": "0xe714",
+    "crcmatrix": "0x1fd7",
+    "crcstate": "0x8e3a",
+    "crcfinal": "0x65c5",
+    "crc_and_time_check": "passed",
+    "compiler_linker_flags_match": true,
+    "comparison_previous_b2_performance": {
+      "cycles_saved": 22948268,
+      "baseline_ticks": 1402750453,
+      "cycles_saved_per_iteration": 5737.067,
+      "throughput_gain_percent": 1.6631563748393363,
+      "cycle_reduction_percent": 1.6359480013655714
+    },
+    "shadow_comparison": {
+      "scope": "Baseline short-run opportunity estimate; not an exact per-hit cycle audit",
+      "actual_minus_projected_cycles": 11068,
+      "projected_saved_cycles": 22937200,
+      "estimated_word_only_gain_percent": 1.662046087918044
+    },
+    "current_b2_validation": "pending",
+    "log_sha256": "e0dba85631e19a0719bafc14308bdab36a5f43b0d13923186d8c897a546868d0"
   }
 }

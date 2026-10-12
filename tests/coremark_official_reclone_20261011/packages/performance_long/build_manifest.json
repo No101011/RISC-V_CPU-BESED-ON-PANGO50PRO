@@ -23,5 +23,6 @@
     "imem_coremark.dat": "bb1ab486cd9d7fd1bfde652e6d4e478bd0210e79e783d622e39ae8be6bea4dc9",
     "dmem_coremark.dat": "bc70aaf18e7caf7ffd60ec70df2d4e4231f0c154f8d08f426d02dd169191f133",
     "coremark.elf": "94b861577065f1b0b5f8c75c9ef7326107bb975203968ae5eb6374830ebc936d"
-  }
+  },
+  "dat_distribution_status": "Removed at user request on 2026-10-12; original hashes and board logs are historical evidence"
 }

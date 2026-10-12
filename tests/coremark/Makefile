@@ -35,7 +35,7 @@ SIZE    := $(RISCV_PREFIX)size
 # ---------------------------------------------------------------------------
 SRC_DIR   := src
 PORT_DIR  := port
-BUILD     ?= build
+BUILD     ?= build/b2/sim_performance
 SCRIPTS   := scripts
 BUILD_INFO := $(BUILD)/coremark_build_info.h
 
@@ -52,8 +52,8 @@ PORT_SRCS := $(PORT_DIR)/core_portme.c \
 ASM_SRCS  := $(PORT_DIR)/crt0.S
 
 # ---------------------------------------------------------------------------
-ARCH      := -march=rv32im_zicsr -mabi=ilp32 -mcmodel=medlow
-OPT       := -O2
+ARCH      := -march=rv32im_zba_zicsr -mabi=ilp32 -mcmodel=medlow
+OPT       := -O3
 WARN      := -Wall -Wno-unused-variable -Wno-unused-but-set-variable -Wno-implicit-function-declaration
 INC       := -I$(SRC_DIR) -I$(PORT_DIR) -I$(BUILD)
 ITERS     ?= 10
@@ -77,7 +77,7 @@ DEFS      := -DITERATIONS=$(ITERS) -DCPU_HZ=$(CPU_HZ) -DTOTAL_DATA_SIZE=2000 $(R
 # .text 会涨到 40680 字节，超出 32KB IROM 直接链接失败。改用端口自带的
 # port/ee_printf.c（core_portme.h 里 HAS_PRINTF=0），几百字节就支持 %s %d %u %lu
 # %04x %f，还顺带省掉 libc 的 stdio 缓冲。
-LIBC      ?= picolibc
+LIBC      ?= newlib_nano
 
 ifeq ($(LIBC),picolibc)
   LIBC_SPEC    := --specs=picolibc.specs

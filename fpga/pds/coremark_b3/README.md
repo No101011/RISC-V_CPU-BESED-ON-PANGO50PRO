@@ -1,3 +1,5 @@
+> 2026-10-12：用户决定仅采用B2，本目录DAT已删除；源码、ELF、历史日志及参数记录保留。当前镜像见 ../coremark_b2/。
+
 # B3：Zba + O2 + LTO
 
 已编译 performance_long / validation（4000 次、83333333 Hz）和两组 10 次短仿真镜像。

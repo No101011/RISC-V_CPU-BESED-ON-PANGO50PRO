@@ -4,7 +4,7 @@
 >
 > - **工作区（源码在这里）**：`E:\FPGA\github\RISCV\RISCV_CPU_BaseOn_Pangu`
 > - **PDS 工程（在工作区之外，需要写权限）**：`E:\FPGA\github\ZiGuang\RISCV_BASEDON_PANGU`
-> - 最后更新：2026-10-11
+> - 最后更新：2026-10-12
 
 ---
 
@@ -35,8 +35,8 @@
 | `bram_dram` IP | ✓ Logos2 SDPRAM 1.10，32bit×32768，初值 `dmem_coremark.dat` |
 | 引脚约束 | ✓ 50Pro 全部 12 脚已固定：差分时钟、UART、8 LED（见第 4 节） |
 | PDS 流程 | ✓ 2026-10-11 新BTB实现与时序报告已核对，All Constraints Met；seed=5，单种子 |
-| 上板 | ✓ 新BTB+B2 performance/validation实际串口报表均通过：16.833006秒 / 16.905628秒；性能237.628390 CoreMark、2.851541 CoreMark/MHz |
-| 最终采用配置 | 用户决定采用B2：rv32im_zba_zicsr、O3、无LTO；停止B3/B4后续对比。活动DAT和两个IP配置已切回B2 performance_long（4000次），两个内存IP及位流待重生成 |
+| 上板 | ✓ 2026-10-12 EX2 L0+B2 performance用户UART通过：16.557626秒、241.580522 CoreMark、2.898966 CoreMark/MHz；当前新RTL+B2 validation待提供，旧RTL验证记录保留 |
+| 最终采用配置 | B2：rv32im_zba_zicsr、O3、无LTO；2026-10-12四组镜像重编译、旧DAT清理、两个IP初始化均匹配B2 performance_long；用户已提供新性能运行结果，本轮PDS时序/资源及下载位流哈希未独立核对 |
 
 最新新BTB实现 **DRM=48.5/85（57.06%）**；CPU `clkout1→clkout1` slow setup **WNS=+0.935ns、TNS=0**。
 报告 `E:\FPGA\github\ZiGuang\RISCV_BASEDON_PANGU\report_timing\top.rtr`（2026-10-11 19:41:59），
@@ -241,6 +241,80 @@ cmd /c "vsim -c -do coremark.do > sim_D.log 2>&1"
 ---
 
 ## 11. 给下一位代理的建议动作
+
+2026-10-12 用户要求删除除B2外的CoreMark文件。整批删除旧包、备份、审计、历史仿真资料被自动审批拒绝，
+理由是恢复/追溯资料未被单独明确授权；不得绕过拒绝，剩余历史资料需用户明确确认后再删除。
+已改用较安全范围：删除554个可重建的非B2 ELF/HEX/BIN/对象/反汇编/映射、旧编译库文件及B1/LTO构建脚本。
+所有历史LOG/JSON/ZIP、旧备份、reclone副本和审计资料保留，不能声称已全部清除非B2文件。
+默认coremark.do指向B2 sim_performance；通用build.ps1/Makefile默认Zba+O3无LTO且输出B2仿真目录，
+mk_imem_dat默认读B2 performance_long，B2构建脚本不再提供2200次包。中文PS1保留UTF8 BOM。
+B2四组镜像、活动DAT、官方六文件、CPU RTL和ISA用例哈希核对未变；未运行新构建、测试或PDS。
+删除前范围清单和保护哈希在fpga/pds/b2_refresh_20261012_163627/rebuildable_cleanup_plan.json。
+原被拒绝的更大范围清单为同目录non_b2_cleanup_plan.json，后续执行前应重新核对存在路径、范围与授权。
+
+2026-10-12 用户提供EX2 L0查询后B2 performance_long上板结果：4000次、83333333Hz，
+1379802185 ticks、16.557626秒、241.580522 CoreMark、2.898966 CoreMark/MHz、344950.546250周期/迭代。
+实际输出Zba+O3无LTO、build/b2/performance_long、PERFORMANCE_RUN=1，与当前manifest编译/链接参数一致。
+seedcrc=e9f5、CRC=e714/1fd7/8e3a、final=65c5，Correct operation validated，超过10秒且计时换算吻合。
+同B2改动前1402750453 ticks相比节省22948268周期，周期降1.635948%、吞吐升1.663156%。
+与仅LW影子估计1.662046%接近：按4000次外推省22937200，实测多省11068周期，不能当逐次命中对账。
+新性能基线更新为241.580522/2.898966；本轮新RTL+B2 validation仍待提供，B4 validation不替代此记录。
+日志在fpga/pds/coremark_b2/performance_long/board_performance_ex2_l0_2026-10-12.log，README、manifest、汇总和采用配置已更新。
+证据为用户UART文本，本轮PDS时序/资源与下载位流/镜像哈希未独立核对；没有改RTL/镜像/IP或运行新仿真/实现。
+
+2026-10-12 用户授权重生成B2并删除其他未采用DAT，已完成四组B2构建：
+performance_long/validation（4000、83333333Hz）及sim_performance/sim_validation（10、100MHz）。
+GCC15.2.0 Zba+O3无LTO，编译/链接0退出无warning/error；官方6文件哈希、ELF/HEX、DAT格式/深度通过。
+活动DAT切到B2 performance_long，选择脚本默认也切该包；B2构建脚本默认不再生成2200次DAT。
+当前ROM已由用户更新为B2；RAM旧生成内容仍B4，本次调用PDS原始Tcl初始化生成器更新RAM常量并同步包装INIT_FILE。
+先复现旧RAM全部常量一致再生成B2，最终解码ROM8192/RAM32768字均与B2 performance_long匹配。
+IP Compiler的-batch尝试不被支持，实际是Tcl生成初始化常量，未宣称运行完整GUI IP重生成。
+CPU RTL/宏/约束未变；没有运行动态仿真、完整PDS实现、位流生成或下载。
+清理50个旧/重复CoreMark DAT及旧ZIP内40个DAT条目；B1/B3/B4/A1/fresh/reclone/旧备份/2200版/旧解码DAT被移除。
+源码、ELF/HEX、历史日志和参数记录保留，ISA测试DAT保留；目前普通CoreMark DAT共10份（四组B2+活动副本）。
+新包fpga/pds/coremark_b2_2026-10-12.zip，构建/清理/核对/旧manifest及IP备份在fpga/pds/b2_refresh_20261012_163627/。
+下一步从Compile重新生成位流并下载，确认新RTL+B2实际performance/validation；旧位流没有自动更新。
+
+2026-10-12 用户确认最近validation UART来自选择B2 performance_long两份DAT后的实现，已定位IP初始化未同步。
+B2 DAT哈希仍与构建manifest一致；两个.idf指向B2 performance_long（10-11 21:57:17）。
+但生成包装irom_bram.v:49、bram_dram.v:78仍标注B4 validation，init_param.v为10-11 21:37生成。
+只读解码全部INIT参数后，ROM8192字、RAM32768字与B4 validation逐字一致（0差异），
+与B2 performance_long分别差7498/748字，RAM还嵌入完整B4/LTO/validation报告参数。
+因此当前状态是配置路径已切B2而生成IP仍为B4，与本轮UART一致；没有板上位流读回。
+需要重新打开两个内存IP确认B2路径并生成，再重新走实现/位流/下载；本次没有代为生成或改任何RTL/IP/DAT。
+原生成文件快照、解码DAT、路径/哈希/比较JSON和只读脚本在fpga/pds/ip_init_audit_20261012/。
+
+2026-10-12 用户在自行加入仅LW EX2 L0读口后提供上板日志，实际镜像为B4 O3+LTO validation，
+4000次、83333333Hz、1378509297 ticks、16.542112秒、241.807098次/秒。
+seedcrc=18f2、CRC=e3c1/0747/8d84、final=5249，显示Correct operation validated，计时换算通过。
+同配置前次B4 validation 1402217102 ticks相比节省23707805周期，周期降低1.690737%、吞吐提高1.719815%。
+若下载位流唯一变化为EX2 L0查询，则支持约1.7%的收益；与B2短仿真影子估计量级接近，不能精确对账。
+本轮不是B2，也不是performance成绩；采用B2的决定未更改，新RTL+B2 performance结果仍待提供。
+原始日志在fpga/pds/coremark_b4/validation/board_validation_2026-10-12.log，README及结果JSON已追加。
+证据为用户UART文本，下载位流/镜像哈希及本轮PDS时序未独立核对。
+没有修改RTL、活动DAT、IP或运行仿真/实现。
+
+2026-10-12 用户自行加入仅LW的EX2 L0第二查询口后要求检查，静态接线检查与示例一致。
+rtl/core/l0_cache.v增加ld2查询；myCPU.sv增加MEM1/WB同字store守卫、mem1_fwd_pre数据来源和e2_ld_ready命中。
+普通BRAM读和WB写回保留；未使用总stall门控命中，SUBWORD_SPEC仍关闭。
+ModelSim vlog编译和vopt展开均0 Errors/0 Warnings、退出码0，输入哈希前后相同。
+本次没有修改CPU RTL，没有运行动态仿真、PDS或上板；新RTL的CRC/性能/时序尚未验证。
+原WNS=+0.935ns仅是改动前实现基线，不能直接作为本次新RTL时序结论。
+记录、编译脚本/日志、源码快照及输入哈希在sim/results/ex2_l0_review_20261012_160451/。
+
+2026-10-12 用户授权在TB观察EX2实际地址并运行B2仿真，已完成只读L0影子查询。
+观察器为sim/tb/tb_myCPU/ex2_l0_shadow.svh，coremark.do可选COREMARK_EX2_SHADOW_CSV开启。
+ModelSim编译/最终仿真0 Errors/0 Warnings，正常EXIT、CRC正确，计时3507488与UART MATCH。
+原有全部计数及热点CSV与前次B2逐项一致，RTL/宏/软件镜像SHA256未变。
+EX2 DRAM查询544892、原始/安全命中268487、守卫后数据不一致0。
+当前EX2 load依赖178623，其中安全命中且可解除等待57429：LW57343、半字0、字节86。
+静态机会占总周期1.63733%，理想吞吐增幅1.66458%，不是新RTL的实测提速。
+最热两个LW da0/e58分别覆盖27893/26880次，改善LW→LH/LBU地址依赖；
+字段LH da4和LBU e5c本轮全部L0未命中，其后的分支等待未覆盖。
+建议若实施优先仅LW的EX2查询口，覆盖99.85%的机会；SB-only子字转发另有523次，收益小。
+保守阻止MEM1和WB同字store，核对格式化后数据；本轮原始命中未遇阻止案例，不能视为一致性边界测试。
+结果、输入哈希、快照、复现/汇总脚本在sim/results/b2_ex2_shadow_20261012_131140/。
+没有改CPU RTL、宏、镜像、IP、时钟、活动DAT或PDS配置；实现后时序/资源/板测仍待验证。
 
 2026-10-11 用户授权运行当前B2热点仿真，已完成ModelSim SE-64 2020.4两次完整运行及比例诊断。
 B2 Zba+O3、无LTO，performance 10次 @TB 100MHz；宏FUSE_EN/FUSE_F2、SUBWORD_FAST开启，SUBWORD_SPEC关闭。
