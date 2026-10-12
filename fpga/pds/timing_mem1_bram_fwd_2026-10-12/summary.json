@@ -1,0 +1,112 @@
+{
+  "report_time": "2026-10-12 19:30:55",
+  "tool": "PDS 2022.2-SP6.1 build 138931",
+  "device": "PG2L50H-FBG484-6",
+  "analysis_mode": "multi corner",
+  "design_summary": "All Constraints Met",
+  "cpu_period_ns": 12,
+  "cpu_mhz": 83.33333333333333,
+  "clock_pairs": [
+    {
+      "launch": "clkout0",
+      "capture": "clkout0",
+      "slow_setup_ns": 15.017,
+      "slow_hold_ns": 0.179,
+      "fast_setup_ns": 17.043,
+      "fast_hold_ns": 0.117
+    },
+    {
+      "launch": "clkout1",
+      "capture": "clkout0",
+      "slow_setup_ns": 0.63,
+      "slow_hold_ns": 0.253,
+      "fast_setup_ns": 1.98,
+      "fast_hold_ns": 0.099
+    },
+    {
+      "launch": "clkout1",
+      "capture": "clkout1",
+      "slow_setup_ns": 0.179,
+      "slow_hold_ns": 0.102,
+      "fast_setup_ns": 4.767,
+      "fast_hold_ns": 0.067
+    },
+    {
+      "launch": "clkout0",
+      "capture": "clkout1",
+      "slow_setup_ns": 0.321,
+      "slow_hold_ns": 0.268,
+      "fast_setup_ns": 1.858,
+      "fast_hold_ns": 0.103
+    }
+  ],
+  "tns_ns": 0,
+  "ths_ns": 0,
+  "failing_setup_hold_endpoints": 0,
+  "global_min_setup_ns": 0.179,
+  "global_min_hold_ns": 0.067,
+  "cpu_estimated_mhz": 84.5952,
+  "critical_path": {
+    "start": "DRAM ADDR_LOOP[13] DRM read output QB0[16]",
+    "endpoint": "Core_cpu/spec_ld_waddr[13]",
+    "sequence": "DRAM raw return -> formatting/forwarding -> alu_b_fwd -> alu_b -> EX1 ALU alu_raw -> ID spec_base -> speculative address adder -> spec_ld_waddr",
+    "logic_levels": 13,
+    "logic_ns": 4.586,
+    "route_ns": 6.761,
+    "total_data_path_ns": 11.347,
+    "reported_arrival_ns": 15.641,
+    "reported_required_ns": 15.82,
+    "clock_skew_ns": -0.208,
+    "bram_tco_ns": 1.644,
+    "bram_output_route_ns": 2.301
+  },
+  "cpu_hold_path": "u_ex1_ex2_reg/e2_pc[3] -> BTB even bank WADDR[0]",
+  "resources": {
+    "drm": {
+      "used": 49,
+      "total": 85,
+      "percent": 57.647058823529406
+    },
+    "lut": {
+      "used": 7083,
+      "total": 35800,
+      "percent": 19.78491620111732
+    },
+    "ff": {
+      "used": 3208,
+      "total": 71600,
+      "percent": 4.4804469273743015
+    },
+    "distributed_ram": {
+      "used": 1604,
+      "total": 9500,
+      "percent": 16.88421052631579
+    },
+    "apm": {
+      "used": 4,
+      "total": 120
+    },
+    "io": {
+      "used": 12,
+      "total": 250
+    },
+    "l0_drm": 0.5,
+    "regfile_drm": 0.5
+  },
+  "physical_pins_fixed": 12,
+  "io_timing": "UART and LED external input/output delay constraints absent; Timing4086/4087 warnings",
+  "comparison": {
+    "previous_ex2_l0_cpu_setup_ns": 0.68,
+    "previous_report_time": "2026-10-12 17:02:10 (previously read; report overwritten, no preserved prior report here)",
+    "cpu_setup_loss_ns": 0.501,
+    "older_btb_only_cpu_setup_ns": 0.935,
+    "older_btb_only_resources": {
+      "drm": 48.5,
+      "lut": 6929,
+      "ff": 3040,
+      "distributed_ram": 1586
+    },
+    "resource_difference_scope": "Older BTB-only snapshot versus current EX2 L0 plus MEM1 forwarding; cannot attribute entire resource difference solely to MEM1 forwarding"
+  },
+  "scope": "Read-only analysis of existing reports; copied reports and current local source, no implementation or simulation run; flashed bitstream hash not independently checked"
+}

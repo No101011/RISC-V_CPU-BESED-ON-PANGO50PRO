@@ -3,11 +3,11 @@
 ## 后续完整清理请求的状态
 
 2026-10-12，用户进一步要求删除除B2外的CoreMark文件。
-整批删除旧备份、ZIP、审计和历史资料被自动审批拒绝，要求对恢复/追溯资料单独明确确认。
-已按较安全范围删除554个可重建的非B2镜像、编译产物、编译库文件及B1/LTO构建脚本。
-历史日志、JSON、ZIP、备份、reclone和审计资料暂保留；不能声称已完成全部删除。
+整批删除最初被自动审批拒绝，已先清理554个可重建产物。用户随后明确回复“删除”，
+确认清除剩余旧备份、ZIP、审计及历史资料，现已删除剩余61个目标（333个文件）。
+其中被本任务IP Compiler进程40024占用的临时目录/日志，核实进程参数后关闭并完成清理。
 rebuildable_cleanup_plan.json记录已删除的文件和保护哈希；non_b2_cleanup_plan.json是原更大范围清单，
-再次操作前必须核对当前文件存在情况，并取得对这些历史资料的明确确认。
+清单中的目标现均不存在；其绝对路径在递归删除前逐一核对位于仓库内。
 B2四组镜像、活动DAT、共享官方源码、CPU RTL和ISA用例哈希核对不变。
 
 2026-10-12，用户授权重新生成B2并删除其他未采用DAT。
@@ -31,7 +31,7 @@ IP Compiler GUI程序不接受`-batch`，尝试未完成生成，因此没有把
 布尔值按GUI接口转换为0/1，保留CAS_MODE_SEL=AUTO等原配置。
 先用B4输入生成并核对所有旧RAM常量一致，再用B2输入生成并解码所有32768字一致，最后同步初始化文件和包装路径。
 该方式只更新初始化数据，不修改IP结构；过程与生成器SHA256见ram_regeneration.json。
-原IP生成文件完整备份在ip_generated_before.zip，源码检查见refresh_ram_init.py。
+该一次性生成脚本和旧IP备份已在用户确认的后续清理中删除，生成结果/生成器哈希记录仍见ram_regeneration.json。
 
 ## DAT 清理范围
 
@@ -40,7 +40,7 @@ B2旧2200次版、B4解码审计DAT。旧CoreMark ZIP中的40个DAT条目也已�
 删除前逐个解析绝对路径确认在仓库内，核对SHA256与清理计划一致；没有递归删除目录。
 ISA测试、板级demo、源代码、ELF/HEX、历史日志和参数记录保留。
 旧包manifest中的DAT哈希作为历史证据保留，但增加dat_distribution_status标明DAT已删除。
-旧IP审计的JSON及生成参数源码快照仍保留，其原B4解码DAT已删除。
+旧IP审计目录及其他未采用配置的完整文件已在后续清理中删除。
 
 当前普通CoreMark DAT共10份：四组B2各2份，加根目录活动2份。
 新完整ZIP为../coremark_b2_2026-10-12.zip，包含四组共8份DAT。
@@ -53,7 +53,7 @@ ISA测试、板级demo、源代码、ELF/HEX、历史日志和参数记录保留
 - cleanup_plan.json：50个删除文件及40个ZIP删除条目的原路径、哈希和范围。
 - archive_cleanup.json：旧ZIP修改前后哈希。
 - summary.json：四组镜像与当前IP初始化一致性结果。
-- prepare_cleanup.py、clean_archives.py、finalize.py：本次清理与核对记录脚本。
+- non_b2_cleanup_plan.json：用户确认后删除的剩余历史资料清单及保护哈希；一次性旧清理/生成脚本已删除。
 
 下一步：从Compile重新执行PDS完整流程、生成新位流后下载。
 旧位流并未因DAT/IP初始化更新而自动变化；新RTL+B2的性能/验证结果需用户上板提供。

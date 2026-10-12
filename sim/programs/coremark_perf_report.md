@@ -1,16 +1,24 @@
 # CoreMark 仿真性能报表
 
+## 最新当前RTL运行（2026-10-12）
+
+当前默认入口选择`fpga/pds/coremark_b2/sim_performance/`的B2 Zba+O3无LTO短镜像。
+用户授权的一次MEM1普通load实时转发+EX2 L0热点运行在`sim/results/b2_mem1_hotspots_20261012_211042/`。
+计时3328865周期与UART MATCH，CRC正确，CPI_arch=1.146369299，估计3.004026898/MHz。
+EX2 load等待0，EX1 load等待142508，MUL等待129600；后文历史统计对应当时RTL，不代表当前结果。
+只运行performance热点统计；validation和ISA回归未因此完成。10次短运行不满足官方10秒性能规则。
+
 ## 使用
 
 从 `sim/programs` 运行原来的 `vsim -c -do coremark.do`。默认读取
-`tests/coremark/build/imem.hex`、`dmem.hex` 和同目录的 `coremark.elf`。
+`fpga/pds/coremark_b2/sim_performance/imem.hex`、`dmem.hex` 和同目录的 `coremark.elf`。
 运行结束打印报表，并生成当前目录的 `coremark_perf.csv`。
 
 选定镜像和输出文件（以下命令在 `sim/programs` 中执行）：
 
 ```powershell
-$env:COREMARK_IMEM_HEX = '../../tests/coremark/build/sim_validation/imem.hex'
-$env:COREMARK_DMEM_HEX = '../../tests/coremark/build/sim_validation/dmem.hex'
+$env:COREMARK_IMEM_HEX = '../../fpga/pds/coremark_b2/sim_validation/imem.hex'
+$env:COREMARK_DMEM_HEX = '../../fpga/pds/coremark_b2/sim_validation/dmem.hex'
 $env:COREMARK_REPORT_CSV = 'coremark_validation_perf.csv'
 vsim -c -do coremark.do
 ```

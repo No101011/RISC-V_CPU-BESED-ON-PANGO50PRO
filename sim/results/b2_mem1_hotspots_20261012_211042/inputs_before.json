@@ -1,0 +1,134 @@
+[
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\alu.v",
+    "SHA256": "1f6086b2780eb68825dfc47b488baeed7eda55398a8f1a211ab6fef7846861e4"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\branch_comp.v",
+    "SHA256": "9e012f3fffe0689ce712fdee0d848096116f1473e9f6dcc1f913ae7be85bc8a9"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\csr_regfile.v",
+    "SHA256": "69b2146504cae4b2e62af6bdd2021bcd80ee34031660b0afb6015a1d2177d08a"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\ctrl.v",
+    "SHA256": "88b217a11e784479b23e20d734e8e2cecc247b8065018b5c5425c640eace6b52"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\dmem.v",
+    "SHA256": "a32583392b1a603456c19ff74509d8a2efb9ce002a9277919e479c809d8f115d"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\ex1_ex2_reg.v",
+    "SHA256": "d53387c8077571fc8442416f2f8d4103405c77086e9abafd23644e9e41ffb902"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\ex2_mem1_reg.v",
+    "SHA256": "90551d6f6ece87a451b6980b9f5545afc18f26bbeb02e4be3e614e904f19da72"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\forward_unit.v",
+    "SHA256": "891d19587545b727f749f74d58d7da4e1174ee51af6bd92b34db046d266b92f7"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\hazard_unit.v",
+    "SHA256": "5eca36d8697668490ed7233da4db6b2f7271e88280a1c84a5c4ce8909e337b9a"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\id_ex1_reg.v",
+    "SHA256": "531cc00426eacbde34e2aaa29e75bd5a1d056dbb27bd959ac24e38358a123078"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\if_id_reg.v",
+    "SHA256": "6473be59f0bdb950b43f041504f8de272feea0c536aecd3c25867d0ce52df83d"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\imem.v",
+    "SHA256": "3c164ca76142cfdd0c0c38af02f2a27a78264086a02910a1b34c852c3d6895e0"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\imm_gen.v",
+    "SHA256": "44957742aff0fe0918c8c91a21b0bacf3db16940186356702430c93096077fc6"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\l0_cache.v",
+    "SHA256": "6c85cead09dd7b459789e22019c747809ed24d7c5d9de074d02bcf04fa231225"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\mdu.v",
+    "SHA256": "826597ba3495b3014ad6f8943fa378143352bfdb51751a719ef4597798baed3b"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\mem_wb_reg.v",
+    "SHA256": "80e7b96ec9897509d5d1b8cbb9bb5b1bf12efa85f02445ca26a55f30296ba444"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\pc_reg.v",
+    "SHA256": "a427dd8dd01313ad5661c88b185001976e4190f75aba902f05dd452746f87a93"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\perf_counters.v",
+    "SHA256": "08a1ae8a1023046a04b9032f760d9411158a0329e66354030f890e246c7ff145"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\pmul.v",
+    "SHA256": "781dbb4ac55344e2ce33f7a95fb126c5100ffac355ac18989682f9b75e512ef9"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\ras.v",
+    "SHA256": "e3d46f14321deda57eb3b0027bc5600541e0e019a5113e7e3deba21d735e806f"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\regfile.v",
+    "SHA256": "15da3cece02b25a72351e8543680c7d3e547a17a731f666d91e3b35b785e2b6e"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\store_buffer.v",
+    "SHA256": "67fb1f75fc17b018b289bb8dedd097903b8008390060537ab84971d8c8e44983"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\core\\trap_ctrl.v",
+    "SHA256": "ffc5e813f605c2212f427c4171497d172436e223b5cbf6729d305e0fac2bdb5f"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\include\\defines.vh",
+    "SHA256": "5d1d202a1329c86669be25f34f6dd3e2467e1636d99546dc962a261cb742f35a"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\rtl\\soc\\myCPU.sv",
+    "SHA256": "825a7158b3eaf00e546f86ff4b22491ade322cb8a56d624ff9ca3000c797783e"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\sim\\tb\\tb_myCPU\\tb_myCPU.sv",
+    "SHA256": "fd8cdb193d90986c3e33f81a94f4ec0123f61b37b7090df54be3f49e5a548787"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\sim\\tb\\tb_myCPU\\ex2_l0_shadow.svh",
+    "SHA256": "c1b834a4abc885c695ccc787635d65f1e8df8e649a679c69d67765439683e2c6"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\sim\\programs\\coremark.do",
+    "SHA256": "cfe3c26b070087826cba051bfcc16be7d157e4c07df7d313773e767f98750606"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\sim\\programs\\coremark_perf_metadata.py",
+    "SHA256": "08a5a1346ec9a2e90e76e07cf3f6eb59b73492f3c4de360c75900142f5e619c4"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b2\\sim_performance\\coremark.elf",
+    "SHA256": "1a9cbf4a78457a3003179bf5a5d8f169e91677dba2b00693bae3c9594eb2848d"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b2\\sim_performance\\imem.hex",
+    "SHA256": "28228a7d13a48fd7460e0947d3d9c05078ad2c1f951d64f0b95fb13577a43a4e"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b2\\sim_performance\\dmem.hex",
+    "SHA256": "e7f3880c1d67ca310f93b3eeaf51aa011711b6a51072f57abab39f11af5f5ece"
+  },
+  {
+    "Path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b2\\sim_performance\\build_manifest.json",
+    "SHA256": "c696e3558a268c87becd6cc53548876923b8b61c8a10c7a8368d245902b695fd"
+  }
+]

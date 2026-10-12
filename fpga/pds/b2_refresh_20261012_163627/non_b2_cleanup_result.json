@@ -1,0 +1,15 @@
+{
+  "user_confirmed": true,
+  "completed": true,
+  "removed_targets": 61,
+  "removed_files": 333,
+  "earlier_rebuildable_files_removed": 554,
+  "protected_hashes_match": true,
+  "task_ip_compiler_stopped": 40024,
+  "current_b2_packages": [
+    "performance_long",
+    "validation",
+    "sim_performance",
+    "sim_validation"
+  ]
+}

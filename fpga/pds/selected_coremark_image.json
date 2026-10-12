@@ -41,7 +41,7 @@
   "build_exit_code": 0,
   "text_bytes": 21836,
   "rtl_mycpu_sha256_at_rebuild": "f80d84b56154703c36fde3abb06629edb75ff682c2904da494ec37e258368d75",
-  "runtime_status": "Performance board report passed CRC/time checks; current B2 validation pending",
+  "runtime_status": "B2 performance and declared PDS timing constraints passed after MEM1 live forwarding; current B2 validation, ISA regression, and flashed bitstream hash pending",
   "previous_manifest_snapshot": "fpga\\pds\\b2_refresh_20261012_163627\\fpga\\pds\\coremark_b2\\performance_long\\build_manifest.json",
   "image_bytes_match_previous_package": {
     "imem_coremark.dat": true,
@@ -85,7 +85,7 @@
       "throughput_gain_percent": 12.915561681875287
     }
   },
-  "latest_board_performance": {
+  "board_performance_ex2_l0_evidence": {
     "date": "2026-10-12",
     "evidence": "user-pasted UART; not independently captured; downloaded bitstream/image hashes and current PDS timing/resources not independently checked",
     "context": "B2 performance after user EX2 word-load L0 query change",
@@ -124,5 +124,54 @@
     },
     "current_b2_validation": "pending",
     "log_sha256": "e0dba85631e19a0719bafc14308bdab36a5f43b0d13923186d8c897a546868d0"
+  },
+  "latest_board_performance": {
+    "date": "2026-10-12",
+    "evidence": "user-pasted UART; not independently captured; downloaded bitstream/image hashes and current PDS timing/resources not independently checked",
+    "context": "B2 performance after ordinary DRAM load MEM1 live forwarding",
+    "log_file": "board_performance_mem1_bram_fwd_2026-10-12.log",
+    "run_mode": "performance",
+    "variant": "B2",
+    "optimization": "O3",
+    "lto": false,
+    "iterations": 4000,
+    "cpu_hz": 83333333,
+    "total_ticks": 1331289264,
+    "seconds": 15.975471231901885,
+    "reported_seconds": 15.975471,
+    "coremark": 250.38385046271958,
+    "reported_coremark": 250.38385,
+    "coremark_per_mhz": 3.0046062175710597,
+    "cycles_per_iteration": 332822.316,
+    "seedcrc": "0xe9f5",
+    "crclist": "0xe714",
+    "crcmatrix": "0x1fd7",
+    "crcstate": "0x8e3a",
+    "crcfinal": "0x65c5",
+    "crc_and_time_check": "passed",
+    "compiler_linker_flags_match": true,
+    "local_mycpu_sha256": "825a7158b3eaf00e546f86ff4b22491ade322cb8a56d624ff9ca3000c797783e",
+    "local_rtl_hash_scope": "Local source at log analysis; not a verified flashed bitstream source hash",
+    "comparison_previous_b2_performance": {
+      "baseline_ticks": 1379802185,
+      "cycles_saved": 48512921,
+      "cycles_saved_per_iteration": 12128.23025,
+      "throughput_gain_percent": 3.6440556017283354,
+      "cycle_reduction_percent": 3.5159330465910226
+    },
+    "current_b2_validation": "pending",
+    "current_rtl_profile": "not run",
+    "log_sha256": "ebc0741be730ad25682991b25509d12cb14d7b16f5955eba35ea0e1619b272ab"
+  },
+  "latest_timing_analysis": {
+    "ReportTime": "2026-10-12 19:30:55",
+    "Summary": "fpga/pds/timing_mem1_bram_fwd_2026-10-12/summary.json",
+    "DeclaredConstraintsMet": true,
+    "CPUSetupWNSns": 0.179,
+    "CPUFastHoldWHSns": 0.067,
+    "DRMUsed": 49,
+    "LUTUsed": 7083,
+    "FFUsed": 3208,
+    "FlashedBitstreamHashVerified": false
   }
 }

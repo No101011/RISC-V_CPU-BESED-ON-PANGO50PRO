@@ -40,6 +40,7 @@ module myCPU (
   wire dram_range, dram_stall, stall_back;
   reg [1:0] dram_wait_cnt;
   reg       m1_ex2_rd;   // 前向声明:这条load的读地址EX2已提前发过(dram_need在定义前引用)
+  reg       m1_bram_fwd; // 普通EX2 DRAM读的返回有效标志，与EX2→MEM1同步推进
   wire        e2_sb_hit;            // 前向声明:store_buffer命中(EX1的转发选择器在定义处之前引用)
   wire [31:0] sb_ld_data;
   wire        e2_st2ld_fwd;             // 前向声明:store→load 同地址直传命中
@@ -584,8 +585,8 @@ module myCPU (
   );
 
   // -------------------- EX1 --------------------
-  // 转发时序原则:多路选择器每一路都必须是寄存器直接输出,EX1只剩"寄存器->选择器->ALU";
-  // 做不到直连的(如MEM1一路要五选一),提前一拍选好寄存,见下面的预选寄存器。
+  // 已有转发路径使用寄存器直接输出，MEM1多路来源提前一拍预选寄存。
+  // 普通BRAM读例外：MEM1实时返回经过车道提取/扩展后转发，需检查该路径时序。
 
   // MEM1预选转发寄存器:指令从EX2进MEM1时,把"后续指令要转发的值"五选一先存好
   // (缓冲命中/直传/投机读/pc+4/ALU结果),下一拍EX1直接取,零组合逻辑。
@@ -638,16 +639,52 @@ module myCPU (
   //   两种指令不会同时出现,用"EX2是不是load"区分这一路此刻给哪个值。
   wire [31:0] ex2p_leg = e2_mem_re ? d1_data_reg : e2_pc4;
 
+  // 普通BRAM返回的车道提取与符号扩展，独立于SUBWORD_FAST/SUBWORD_SPEC。
+  function automatic [31:0] bram_ld_fmt(
+      input [31:0] word_data,
+      input [1:0]  width,
+      input        sign_ext,
+      input [1:0]  lane
+  );
+    reg [7:0]  byte_data;
+    reg [15:0] half_data;
+    begin
+      case (lane)
+        2'd0: byte_data = word_data[7:0];
+        2'd1: byte_data = word_data[15:8];
+        2'd2: byte_data = word_data[23:16];
+        2'd3: byte_data = word_data[31:24];
+      endcase
+      half_data = lane[1] ? word_data[31:16] : word_data[15:0];
+      case (width)
+        `MEM_BYTE: bram_ld_fmt = sign_ext
+            ? {{24{byte_data[7]}}, byte_data} : {24'b0, byte_data};
+        `MEM_HALF: bram_ld_fmt = sign_ext
+            ? {{16{half_data[15]}}, half_data} : {16'b0, half_data};
+        `MEM_WORD: bram_ld_fmt = word_data;
+        default:   bram_ld_fmt = 32'b0;
+      endcase
+    end
+  endfunction
+
+  // 地址在EX2→MEM1的边沿被BRAM采样，新数据在该沿之后出现。
+  // 使用实时返回值；不能在同一边沿捕获进mem1_fwd_reg（那会捕获旧数据）。
+  wire [31:0] m1_bram_fwd_data = bram_ld_fmt(
+      perip_rdram, m1_mem_width, m1_mem_sign, m1_alu_out[1:0]
+  );
+  wire [31:0] mem1_fwd_data =
+      m1_bram_fwd ? m1_bram_fwd_data : mem1_fwd_reg;
+
   wire [31:0] alu_a_fwd = (e1_fwd_a == `FWD_EX2)   ? e2_alu_out :
                           (e1_fwd_a == `FWD_EX2P)  ? ex2p_leg :
-                          (e1_fwd_a == `FWD_MEM1)  ? mem1_fwd_reg :
+                          (e1_fwd_a == `FWD_MEM1)  ? mem1_fwd_data :
                           (e1_fwd_a == `FWD_WB_ALU)  ? w_alu_out :
                           (e1_fwd_a == `FWD_WB_MEM) ? w_mem_rdata :
                           (e1_fwd_a == `FWD_WB_PC4)   ? w_pc4 : e1_rs1;   // (写回级已合并,无独立写回腿)
 
   wire [31:0] alu_b_fwd = (e1_fwd_b == `FWD_EX2)   ? e2_alu_out :
                           (e1_fwd_b == `FWD_EX2P)  ? ex2p_leg :
-                          (e1_fwd_b == `FWD_MEM1)  ? mem1_fwd_reg :
+                          (e1_fwd_b == `FWD_MEM1)  ? mem1_fwd_data :
                           (e1_fwd_b == `FWD_WB_ALU)  ? w_alu_out :
                           (e1_fwd_b == `FWD_WB_MEM) ? w_mem_rdata :
                           (e1_fwd_b == `FWD_WB_PC4)   ? w_pc4 : e1_rs2;   // (写回级已合并,无独立写回腿)
@@ -1187,11 +1224,33 @@ module myCPU (
                     (e2_mem_width == `MEM_WORD) && (m1_mem_width == `MEM_WORD);
   wire e2_fast_hit = e2_sb_hit || e2_st2ld_fwd;
 `ifdef SUBWORD_FAST
-  // EX2载荷"下拍MEM1腿可转发"总闸:缓冲命中/直传/投机读/d1接力,四路任一
-  wire e2_ld_ready = e2_fast_hit || e2_spec_rd_hit || e2_d1_ld || e2_l0_hit;
+  wire e2_ld_ready_early = e2_fast_hit || e2_spec_rd_hit || e2_d1_ld || e2_l0_hit;
 `else
-  wire e2_ld_ready = e2_fast_hit || e2_spec_rd_hit || e2_l0_hit;
+  wire e2_ld_ready_early = e2_fast_hit || e2_spec_rd_hit || e2_l0_hit;
 `endif
+
+  // 普通读仅对自然对齐的LB/LBU、LH/LHU、LW开放MEM1实时转发。
+  wire e2_bram_align_ok =
+      (e2_mem_width == `MEM_BYTE) ||
+      ((e2_mem_width == `MEM_HALF) && !e2_alu_out[0]) ||
+      ((e2_mem_width == `MEM_WORD) && (e2_alu_out[1:0] == 2'b00));
+
+  // ex2_rd_issue已检查DRAM停顿及MEM1同字store冲突；
+  // !spec_rd_issue确认读口最终选中EX2实际地址。已有提前数据路径优先。
+  // 不使用!stall或扩展后的e2_ld_ready，避免load-use控制形成组合反馈。
+  wire e2_bram_fwd_ready =
+      !rst && e2_valid && e2_mem_re && e2_sb_range &&
+      e2_bram_align_ok && !stall_back &&
+      ex2_rd_issue && !spec_rd_issue && !e2_ld_ready_early;
+
+  // 同时供hazard和ID转发预选使用：消费者下拍进入EX1取MEM1腿。
+  wire e2_ld_ready = e2_ld_ready_early || e2_bram_fwd_ready;
+
+  always @(posedge clk) begin
+    if (rst) m1_bram_fwd <= 1'b0;
+    else if (!stall_back) m1_bram_fwd <= e2_bram_fwd_ready;
+    // 与ex2_mem1_reg一致：不被前级误预测/异常/MDU插泡信号额外清零。
+  end
 
   always @(posedge clk) begin
     if (rst) m1_st2ld_fwd <= 1'b0;
@@ -1286,7 +1345,7 @@ module myCPU (
   wire predict_spurious = e2_predict_taken && !e2_branch && !e2_jump;
   assign predict_wrong = (predict_dir_wrong || (e2_jump && !e2_predict_taken) || predict_jump_bad
                           || predict_target_bad || predict_spurious)
-                         && !stall_back;
+                          && !stall_back;
 
   // CSR的写是延后一拍才真正生效的,所以紧跟在CSR写后面的CSR/mret/ecall要停一两拍,
   // 等前面那个写完再走,保证读到的是新值

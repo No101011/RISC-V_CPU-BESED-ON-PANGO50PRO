@@ -139,18 +139,13 @@ def main():
             REPO / "sim/programs/coremark.do", IMAGE / "coremark.elf",
             IMAGE / "imem.hex", IMAGE / "dmem.hex"]:
         sha256[path.relative_to(REPO).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
-    old = json.loads((REPO / "sim/results/btb_2bit_tag_20261011_194410/summary.json").read_text())
-    b1 = old["runs"]["new_performance"]["scopes"]["COREMARK_TIMED"]
     summary = {"simulator": "ModelSim SE-64 2020.4", "configuration": "B2 Zba+O3, no LTO, current BTB",
                "feature_switches": {"FUSE_EN": True, "FUSE_F2": True,
                                     "SUBWORD_FAST": True, "SUBWORD_SPEC": False},
                "crc": crc, "scopes": scopes, "hotspot_totals": totals,
                "hotspots": hotspots, "function_hotspots": by_function, "input_sha256": sha256,
-               "comparison_b1_short": {"b1_cycles": b1["cycles"],
-                   "b2_cycles": timed["cycles"], "cycle_change_percent": 100*(timed["cycles"]/b1["cycles"]-1),
-                   "throughput_change_percent": 100*(b1["cycles"]/timed["cycles"]-1)},
                "checks": "CRC, EXIT, UART ticks, timer window, histogram sums, ELF mapping and printed CPI checked; rerun raw counters and PC histogram identical",
-               "limitations": "10 iterations at TB 100 MHz; not an official 10-second score; cause/stage counters can overlap; historical B1 was not rerun in this task."}
+               "limitations": "10 iterations at TB 100 MHz; not an official 10-second score; cause/stage counters can overlap."}
     (HERE / "summary.json").write_text(json.dumps(summary, indent=2)+"\n", encoding="utf-8")
     print(json.dumps({"timed": timed, "hotspot_totals": totals,
                       "top_functions": {k: v[:3] for k, v in by_function.items()}}, indent=2))

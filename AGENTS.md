@@ -35,13 +35,18 @@
 | `bram_dram` IP | ✓ Logos2 SDPRAM 1.10，32bit×32768，初值 `dmem_coremark.dat` |
 | 引脚约束 | ✓ 50Pro 全部 12 脚已固定：差分时钟、UART、8 LED（见第 4 节） |
 | PDS 流程 | ✓ 2026-10-11 新BTB实现与时序报告已核对，All Constraints Met；seed=5，单种子 |
-| 上板 | ✓ 2026-10-12 EX2 L0+B2 performance用户UART通过：16.557626秒、241.580522 CoreMark、2.898966 CoreMark/MHz；当前新RTL+B2 validation待提供，旧RTL验证记录保留 |
-| 最终采用配置 | B2：rv32im_zba_zicsr、O3、无LTO；2026-10-12四组镜像重编译、旧DAT清理、两个IP初始化均匹配B2 performance_long；用户已提供新性能运行结果，本轮PDS时序/资源及下载位流哈希未独立核对 |
+| 上板 | ✓ 2026-10-12 MEM1普通load提前转发+B2 performance用户UART通过：15.975471秒、250.383850 CoreMark、3.004606 CoreMark/MHz；当前新RTL+B2 validation待提供，旧RTL验证记录保留 |
+| 最终采用配置 | B2：rv32im_zba_zicsr、O3、无LTO；2026-10-12四组镜像重编译、旧DAT清理、两个IP初始化均匹配B2 performance_long；MEM1转发后performance及19:30:55时序/资源已核对，当前RTL validation和下载位流哈希仍待核对 |
 
-最新新BTB实现 **DRM=48.5/85（57.06%）**；CPU `clkout1→clkout1` slow setup **WNS=+0.935ns、TNS=0**。
-报告 `E:\FPGA\github\ZiGuang\RISCV_BASEDON_PANGU\report_timing\top.rtr`（2026-10-11 19:41:59），
-多 corner 结论 **All Constraints Met**；全部时钟对最小 setup +0.253ns，最小 hold +0.082ns。
-快照与分析见 `fpga/pds/timing_btb_2026-10-11/README.md`；CPU关键路径已转为PC/BTB/下一PC选择。
+最新MEM1普通load提前转发实现 **DRM=49/85（57.65%）**；CPU `clkout1→clkout1` slow setup **WNS=+0.179ns、TNS=0**。
+报告 `E:\FPGA\github\ZiGuang\RISCV_BASEDON_PANGU\report_timing\top.rtr`（2026-10-12 19:30:55），
+多corner结论 **All Constraints Met**；全部时钟对最小setup +0.179ns，最小hold +0.067ns，TNS/THS/失败端点均0。
+快照与分析见 `fpga/pds/timing_mem1_bram_fwd_2026-10-12/README.md`。
+CPU关键路径是DRAM返回→格式化/转发→EX1 ALU→ID预算基址/地址加法→spec_ld_waddr，13级，余量179ps。
+最终P&R LUT7083、FF3208、Distributed RAM1604；12脚固定YES。UART/LED缺少外部I/O时序约束的提示仍在。
+保持83.333333MHz；当前RTL+B2 validation及ISA回归尚未运行/提供。未独立核对已下载位流哈希。
+旧新BTB实现（2026-10-11 19:41:59）DRM48.5/85、CPU setup +0.935ns、全局setup +0.253ns、hold +0.082ns；
+旧快照在 `fpga/pds/timing_btb_2026-10-11/README.md`，当时CPU关键路径为PC/BTB/下一PC选择。
 旧实现基线（2026-10-10 21:03）CPU setup +0.899ns，全局最小setup +0.483ns、hold +0.079ns。
 LED/UART缺少外部I/O时序约束的提示不等于引脚未固定；已声明内部时序约束全部通过。
 全部12个引脚在 `place_route/top_prr.prt` 中为固定分配 YES。
@@ -241,6 +246,79 @@ cmd /c "vsim -c -do coremark.do > sim_D.log 2>&1"
 ---
 
 ## 11. 给下一位代理的建议动作
+
+2026-10-12 用户授权进行一次热点统计，已完成当前RTL+B2 performance 10次@TB100MHz的一次完整ModelSim仿真。
+CPU哈希825a7158b3eaf00e546f86ff4b22491ade322cb8a56d624ff9ca3000c797783e，现有EX2 L0与MEM1普通load实时转发均启用。
+编译/最终仿真0 Errors/0 Warnings，正常EXIT，seedcrc=e9f5、CRC=e714/1fd7/8e3a、10次final=fcaf。
+UART ticks=3328865与COREMARK_TIMED MATCH；架构指令2903833，CPI_arch=1.146369299，估计3.004026898/MHz。
+不足10秒ERROR为预期时长检查，正式上板成绩仍用250.383850 CoreMark、3.004606/MHz。
+与两项load优化前的B2热点基线相比恰好少178623周期，EX2 load等待178623→0，吞吐提高5.365883%。
+剩余load等待142508（4.280979%），全部在EX1；core_bench_list119981、core_state_transition20314。
+MUL等待129600（3.893219%）不变，EX1/EX2为35640/93960，全部matrix_test；若EX2 MUL等待全少一拍，理想收益约2.904568%，未实施。
+分支39533/529588、jump364/63102误预测均不变；矩阵182c/1950各3241次，RET299次，计时区间DRAM/MDU/CSR停顿0。
+原始CSV、PC/函数注释、输入前后哈希及脚本/快照在sim/results/b2_mem1_hotspots_20261012_211042/，33输入哈希不变。
+汇总检查CRC、窗口对账、PC桶与整体计数、比例和ELF映射全部通过。本次未改RTL/TB/宏/软件镜像/IP/FDC/PDS，未实施四条待处理策略。
+只跑了一次performance热点仿真，不能视为validation、ISA回归或仿真可重复性的双次验证；这些仍待用户后续要求。
+
+### 待处理的四条时序优化策略（2026-10-12，用户要求暂不修改）
+
+用户明确要求目前先不动，记住下列四条策略，留待之后处理。当前保持RTL/实现配置不变，
+不要主动实施这些策略、运行优化对比或重新实现；待用户后续要求再推进。
+背景：MEM1普通load实时转发+B2 performance为250.383850 CoreMark、3.004606 CoreMark/MHz；
+19:30:55实现CPU setup +0.179ns，最差路径BRAM返回→转发→EX1 ALU→ID预算地址。
+
+1. **拆分实时转发用途**：ALU操作数保留寄存器转发，BRAM实时返回独立接分支比较器和store写数据。
+   保留load→branch和load→store数据收益；store基址依赖仍等待。必须从数据连接上隔离实时腿与ALU，
+   仅限制hazard放行指令类型不保证移除长路径。代价是部分load→算术/地址依赖收益下降，需量化。
+2. **普通ADDI专用地址计算**：针对EX1 ADDI→ID load链，先并行合并两条指令的立即数，
+   再以基址加合并偏移计算预测地址，绕开通用ALU结果选择与第二次串行加法。
+   仅覆盖识别明确的普通ADDI，需处理符号扩展、进位、DRAM范围和融合指令，收益待实现验证。
+3. **EX1真实地址提前读**：EX1真实load地址直接发BRAM，下一拍EX2接返回，减少ID地址预测依赖。
+   可能把瓶颈转移为BRAM返回→EX1地址加法→BRAM地址端；需重审读口仲裁、返回时序及地址扇出。
+4. **保持RTL、改善布局布线**：研究BRAM/返回选择逻辑/ALU的相对布局，或顺序运行不同P&R种子。
+   当前关键路径布线占59.584%，BRAM后首根网络2.301ns；收益不确定，不能消除13级逻辑串联。
+
+讨论时的优先建议：结构简洁和时序稳定优先策略1；尽量保留现有收益可先策略4再研究策略2，
+策略3调整范围更大。这是后续候选方向，不是已实施方案或已验证收益。
+
+2026-10-12 用户要求分析新时序，已读取19:30:55多corner报告All Constraints Met。
+CPU slow setup +0.179ns、fast hold +0.067ns；四组setup/hold TNS/THS/失败端点均0，脉宽通过。
+最差路径DRAM原始返回→格式化/转发→EX1 ALU→ID spec_base→地址加法器→spec_ld_waddr[13]，13级；
+逻辑4.586ns、布线6.761ns，BRAM后首根网络2.301ns；另有到spec_addr_valid的+0.188ns路径。
+此前17:02:10报告曾读CPU setup +0.680ns，此次降低0.501ns，该前次报告已覆盖，仅有此前读取值。
+最差hold仍为EX2 PC[3]→BTB偶数bank写地址。P&R DRM49、LUT7083、FF3208、Distributed RAM1604、APM4。
+L0与寄存器堆各占0.5 DRM；不能把相对10月11日旧快照的全部资源差额归因本次MEM1转发。
+12引脚固定YES；UART/LED外部时序未约束提示存在。保持83.333333MHz，不将估算84.5952MHz作提频保证。
+报告/日志/本地RTL/FDC快照及哈希在fpga/pds/timing_mem1_bram_fwd_2026-10-12/。
+本次只分析已有报告、保存记录，未修改RTL/FDC/IP、未运行实现或仿真；下载位流哈希及新RTL B2 validation仍待核对。
+
+2026-10-12 用户提供普通load MEM1实时转发后的B2 performance上板日志：4000次、1331289264 ticks，
+15.975471秒、250.383850 CoreMark、3.004606 CoreMark/MHz、332822.316周期/迭代。
+seedcrc=e9f5，CRC=e714/1fd7/8e3a，final=65c5，Correct operation validated，时长超过10秒；
+参数与B2 performance_long manifest一致。相比上一版EX2 L0减少48512921周期，吞吐提升3.644056%。
+日志及结果JSON在fpga/pds/coremark_b2/performance_long/board_performance_mem1_bram_fwd_2026-10-12*。
+证据为用户UART文本；本地CPU哈希仍为825a7158b3eaf00e546f86ff4b22491ade322cb8a56d624ff9ca3000c797783e，
+不能据此证明已下载位流对应哈希。当前RTL+B2 validation、ISA回归、热点统计和实现时序/资源仍待核对。
+本次仅记录与分析结果，未修改RTL/镜像/IP/FDC，未运行新仿真或PDS。
+
+2026-10-12 用户授权先备份再写入普通load的MEM1提前转发。已复制当前rtl/soc/myCPU.sv为
+rtl/soc/myCPU.sv.bak_premem1_bram_fwd_20261012_192405_393，复制后SHA256一致：
+e74a391bd3c078e1486ff34337ffb23788734c55c1b917febe127d265d24acab。
+随后仅修改myCPU.sv的转发逻辑：普通EX2 DRAM读实际获得读口且自然对齐时，允许消费者下拍进入EX1；
+返回有效标志与EX2→MEM1同步推进，MEM1原始BRAM返回按真实地址提取/扩展后接入A/B转发腿。
+D1/SB/直传/投机读/L0已有提前数据路径保持优先，MMIO和未获得提前读口的load保留原路径。
+写入后CPU SHA256=825a7158b3eaf00e546f86ff4b22491ade322cb8a56d624ff9ca3000c797783e。
+已人工核对与备份的差异；本次未编译、仿真或运行PDS。当前新RTL功能/性能/时序均待验证，
+第1节已记录的上板成绩属于修改前EX2 L0版本，不能视为本次MEM1转发的验证结果。
+新增BRAM输出→格式化→转发→EX1运算路径，后续应重新核对setup/hold；B2镜像/IP/FDC未改。
+
+2026-10-12 用户在被告知自动审批要求对旧备份/ZIP/审计/历史日志单独确认后明确回复“删除”。
+已完成剩余61个目标（333个文件）的清理，加之前删除的554个可重建产物；B1/B3/B4/A1/fresh/reclone及旧CoreMark对照资料删除。
+递归删除前逐个解析绝对路径、确认在仓库内且不覆盖保护文件、不含reparse point。
+临时IP Compiler40024占用ip_stage和stdout/stderr，核实命令行指向本任务临时IP后停止，仅清理本任务后台进程。
+B2四组镜像/活动DAT、官方共享源码、CPU RTL/宏及ISA测试文件哈希核对未变；没有运行新构建、仿真或PDS。
+B2热点汇总脚本已去除对删除的B1 summary.json的依赖；旧BTB结果目录仅保留DIVU/ISA回归文件。
+剩余删除清单及保护哈希在fpga/pds/b2_refresh_20261012_163627/non_b2_cleanup_plan.json，当前清理不再等待确认。
 
 2026-10-12 用户要求删除除B2外的CoreMark文件。整批删除旧包、备份、审计、历史仿真资料被自动审批拒绝，
 理由是恢复/追溯资料未被单独明确授权；不得绕过拒绝，剩余历史资料需用户明确确认后再删除。

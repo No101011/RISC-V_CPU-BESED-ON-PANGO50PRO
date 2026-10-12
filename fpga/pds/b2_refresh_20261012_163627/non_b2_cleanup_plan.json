@@ -5,36 +5,36 @@
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b1",
       "relative": "fpga\\pds\\coremark_b1",
       "directory": true,
-      "file_count": 48,
-      "bytes": 1901430
+      "file_count": 18,
+      "bytes": 40853
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b3",
       "relative": "fpga\\pds\\coremark_b3",
       "directory": true,
-      "file_count": 47,
-      "bytes": 1408221
+      "file_count": 15,
+      "bytes": 35362
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b4",
       "relative": "fpga\\pds\\coremark_b4",
       "directory": true,
-      "file_count": 49,
-      "bytes": 2249803
+      "file_count": 17,
+      "bytes": 46558
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_official",
       "relative": "fpga\\pds\\coremark_official",
       "directory": true,
-      "file_count": 9,
-      "bytes": 81389
+      "file_count": 5,
+      "bytes": 16330
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_fresh_20261011",
       "relative": "fpga\\pds\\coremark_fresh_20261011",
       "directory": true,
-      "file_count": 22,
-      "bytes": 363433
+      "file_count": 8,
+      "bytes": 16406
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark_official_reclone_20261011",
@@ -61,15 +61,15 @@
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b2\\performance",
       "relative": "fpga\\pds\\coremark_b2\\performance",
       "directory": true,
-      "file_count": 9,
-      "bytes": 414229
+      "file_count": 3,
+      "bytes": 5437
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark\\build\\b2\\performance",
       "relative": "tests\\coremark\\build\\b2\\performance",
       "directory": true,
-      "file_count": 17,
-      "bytes": 497576
+      "file_count": 0,
+      "bytes": 0
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\b2_refresh_20261012_163627\\ip_stage",
@@ -103,106 +103,92 @@
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark\\build\\b1",
       "relative": "tests\\coremark\\build\\b1",
       "directory": true,
-      "file_count": 85,
-      "bytes": 2253321
+      "file_count": 0,
+      "bytes": 0
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark\\build\\b3",
       "relative": "tests\\coremark\\build\\b3",
       "directory": true,
-      "file_count": 68,
-      "bytes": 1806643
+      "file_count": 0,
+      "bytes": 0
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark\\build\\b4",
       "relative": "tests\\coremark\\build\\b4",
       "directory": true,
-      "file_count": 68,
-      "bytes": 2651833
+      "file_count": 0,
+      "bytes": 0
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark\\build\\official",
       "relative": "tests\\coremark\\build\\official",
       "directory": true,
-      "file_count": 32,
-      "bytes": 440383
+      "file_count": 0,
+      "bytes": 0
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark\\build\\port",
       "relative": "tests\\coremark\\build\\port",
       "directory": true,
-      "file_count": 4,
-      "bytes": 14608
+      "file_count": 0,
+      "bytes": 0
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark\\build\\sim_validation",
       "relative": "tests\\coremark\\build\\sim_validation",
       "directory": true,
-      "file_count": 16,
-      "bytes": 219233
+      "file_count": 0,
+      "bytes": 0
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark\\build\\src",
       "relative": "tests\\coremark\\build\\src",
       "directory": true,
-      "file_count": 5,
-      "bytes": 41340
+      "file_count": 0,
+      "bytes": 0
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\sim\\programs\\btb_new_perf_20261011_194410",
       "relative": "sim\\programs\\btb_new_perf_20261011_194410",
       "directory": true,
-      "file_count": 22,
-      "bytes": 3768398
+      "file_count": 0,
+      "bytes": 0
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\sim\\programs\\btb_new_val_20261011_194410",
       "relative": "sim\\programs\\btb_new_val_20261011_194410",
       "directory": true,
-      "file_count": 22,
-      "bytes": 3768154
+      "file_count": 0,
+      "bytes": 0
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\sim\\programs\\btb_old_perf_20261011_194410",
       "relative": "sim\\programs\\btb_old_perf_20261011_194410",
       "directory": true,
-      "file_count": 22,
-      "bytes": 3742801
+      "file_count": 0,
+      "bytes": 0
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\sim\\programs\\btb_ratio_probe2_20261011_194410",
       "relative": "sim\\programs\\btb_ratio_probe2_20261011_194410",
       "directory": true,
-      "file_count": 22,
-      "bytes": 852195
+      "file_count": 0,
+      "bytes": 0
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\sim\\programs\\btb_ratio_probe_20261011_194410",
       "relative": "sim\\programs\\btb_ratio_probe_20261011_194410",
       "directory": true,
-      "file_count": 22,
-      "bytes": 840642
+      "file_count": 0,
+      "bytes": 0
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\sim\\programs\\coremark_official_work",
       "relative": "sim\\programs\\coremark_official_work",
       "directory": true,
-      "file_count": 22,
-      "bytes": 3313488
-    },
-    {
-      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\build_coremark_b1.ps1",
-      "relative": "fpga\\pds\\build_coremark_b1.ps1",
-      "directory": false,
-      "file_count": 1,
-      "bytes": 3579
-    },
-    {
-      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\build_coremark_lto.ps1",
-      "relative": "fpga\\pds\\build_coremark_lto.ps1",
-      "directory": false,
-      "file_count": 1,
-      "bytes": 6392
+      "file_count": 0,
+      "bytes": 0
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\coremark_b1_2026-10-11.zip",
@@ -266,55 +252,6 @@
       "directory": false,
       "file_count": 1,
       "bytes": 1464
-    },
-    {
-      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark\\build\\coremark.data.bin",
-      "relative": "tests\\coremark\\build\\coremark.data.bin",
-      "directory": false,
-      "file_count": 1,
-      "bytes": 3024
-    },
-    {
-      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark\\build\\coremark.elf",
-      "relative": "tests\\coremark\\build\\coremark.elf",
-      "directory": false,
-      "file_count": 1,
-      "bytes": 31660
-    },
-    {
-      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark\\build\\coremark.map",
-      "relative": "tests\\coremark\\build\\coremark.map",
-      "directory": false,
-      "file_count": 1,
-      "bytes": 48509
-    },
-    {
-      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark\\build\\coremark.text.bin",
-      "relative": "tests\\coremark\\build\\coremark.text.bin",
-      "directory": false,
-      "file_count": 1,
-      "bytes": 19720
-    },
-    {
-      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark\\build\\coremark_build_info.h",
-      "relative": "tests\\coremark\\build\\coremark_build_info.h",
-      "directory": false,
-      "file_count": 1,
-      "bytes": 690
-    },
-    {
-      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark\\build\\dmem.hex",
-      "relative": "tests\\coremark\\build\\dmem.hex",
-      "directory": false,
-      "file_count": 1,
-      "bytes": 7560
-    },
-    {
-      "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\tests\\coremark\\build\\imem.hex",
-      "relative": "tests\\coremark\\build\\imem.hex",
-      "directory": false,
-      "file_count": 1,
-      "bytes": 49300
     },
     {
       "path": "E:\\FPGA\\github\\RISCV\\RISCV_CPU_BaseOn_Pangu\\fpga\\pds\\b2_refresh_20261012_163627\\ip_generated_before.zip",

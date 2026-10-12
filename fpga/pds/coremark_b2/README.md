@@ -1,12 +1,38 @@
 # B2：最终采用 Zba + O3，无 LTO
 
+## 2026-10-12：当前RTL热点仿真
+
+用户授权的一次performance 10次@TB100MHz仿真完成：正常EXIT、CRC正确、UART/窗口3328865 ticks MATCH，
+CPI_arch=1.146369299，归一化估计3.004026898/MHz，不替代上板正式成绩。
+与两项load优化前相比少178623周期，EX2 load等待降为0；剩余EX1 load等待142508（4.281%），MUL等待129600（3.893%）。
+分支/jump误预测计数未变；热点已按PC/函数整理。没有修改RTL或软件镜像，也没有实施四条待处理时序策略。
+详细报告：[当前RTL热点统计](../../../sim/results/b2_mem1_hotspots_20261012_211042/README.md)。
+当前validation与ISA回归仍待完成；短仿真不足10秒提示是预期的时长检查。
+
+## 2026-10-12：普通 load MEM1 实时转发后 performance 上板通过
+
+用户UART记录：`performance_long/board_performance_mem1_bram_fwd_2026-10-12.log`；计算结果见同名`_result.json`。
+B2参数与本地manifest一致：Zba+O3、无LTO、4000次、83333333Hz。
+seedcrc=e9f5，CRC=e714/1fd7/8e3a，final=65c5，Correct operation validated。
+1331289264/83333333=15.975471232秒，得分250.383850463，均与串口四舍五入一致且超过10秒。
+最新性能为**250.383850 CoreMark、3.004606 CoreMark/MHz**，332822.316周期/迭代。
+相比上一版EX2 L0的1379802185 ticks，减少48512921周期，周期降低3.515933%，吞吐提升3.644056%。
+相对新BTB、EX2 L0改动前的1402750453 ticks，累计吞吐提升5.367818%。
+收益超过只估算两处LH/LBU→branch热点的约1.7%：本次路径覆盖所有符合条件的普通DRAM load，
+该估计不是整个路径的上限。具体各PC/指令类型贡献尚需当前RTL热点统计，不能仅凭总ticks确定。
+当前源文件SHA256=825a7158b3eaf00e546f86ff4b22491ade322cb8a56d624ff9ca3000c797783e，
+仅记录本地源码状态，下载位流/镜像对应关系未独立核对。
+新RTL的B2 validation及ISA回归仍待完成。随后19:30:55 PDS多corner报告已核对：All Constraints Met，
+CPU setup +0.179ns、fast hold +0.067ns、DRM49/85，新增返回路径已成为关键路径，余量较小。
+报告快照与完整分析见`../timing_mem1_bram_fwd_2026-10-12/README.md`；下载位流哈希仍未独立核对。
+本次仅记录与分析用户日志，没有修改RTL/镜像/IP/FDC或运行仿真/实现。
+
 ## 非 B2 文件清理状态
 
-2026-10-12：用户进一步要求删除其他CoreMark文件。已删除554个可重建的非B2镜像/编译产物、
-旧编译库文件及B1/LTO构建脚本；默认构建和仿真入口现均采用B2。
-完整删除旧备份、ZIP、审计及历史资料被自动审批拒绝，要求用户对这些恢复/追溯资料单独确认。
-这些历史资料暂时保留，清单见../b2_refresh_20261012_163627/；不能将当前状态表述为全部非B2文件已删除。
-B2镜像、共享官方源码/BSP、CPU RTL及ISA回归用例保持不变。
+2026-10-12：已先删除554个可重建的非B2产物。用户随后明确确认删除剩余旧备份、ZIP、审计和历史资料，
+已完成剩余61个目标的清理（333个文件）。B1/B3/B4、旧A1、fresh/reclone副本及旧CoreMark对照记录已删除。
+默认构建和仿真入口均采用B2；B2镜像、共享官方源码/BSP、CPU RTL及ISA回归用例保持不变。
+清单和保护哈希见../b2_refresh_20261012_163627/non_b2_cleanup_plan.json。
 
 ## 2026-10-12：EX2 L0 查询后 B2 performance 上板通过
 
@@ -59,7 +85,7 @@ CPU RTL未因本次操作修改，没有运行仿真、PDS实现或下载；下�
 PDS工程两个内存IP的.idf INIT_FILE已备份并切回本包同目录的对应DAT绝对路径。
 配置记录见`../adopted_coremark_config.json`。
 该2026-10-11操作当时仅更新输入配置；2026-10-12初始化内容同步状态见上节，位流仍需重新生成。
-B3/B4历史日志保留，其DAT已按用户要求删除，不再主动推进后续对比。
+B3/B4的镜像及历史文件已按用户后续确认删除，不再推进对比。
 
 生成日期：2026-10-11；xPack GCC 15.2.0。
 编译参数为 `-march=rv32im_zba_zicsr -mabi=ilp32 -mcmodel=medlow -O3`，
